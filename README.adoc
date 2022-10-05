@@ -1,0 +1,115 @@
+:icons: true
+:project-name: Catane 
+= Les colons de Catane
+
+== Introduction
+
+L'objectif de ce projet est de spécifier, concevoir et mettre en œuvre une version en ligne du jeu de plateau *{project-name}*.
+
+=== Resources
+
+Catan, ou {project-name}, est un jeu de société multijoueur conçu par Klaus Teuber. 
+Il a été publié pour la première fois en 1995 en Allemagne par Franckh-Kosmos Verlag sous le nom de _Die Siedler von Catan_. 
+Les joueurs jouent le rôle de colons, chacun essayant de construire et de développer des exploitations tout en échangeant et en acquérant des ressources. Les joueurs gagnent des points de victoire au fur et à mesure que leurs colonies se développent.
+Le premier à atteindre un certain nombre de points de victoire, généralement 10, gagne. Le jeu et ses nombreuses extensions sont également publiés par Catan Studio, Filosofia, GP, Inc, 999 Games, Κάισσα (Káissa) et Devir. Dès sa sortie, The Settlers of Catan est devenu l'un des premiers jeux de société de style allemand à atteindre une certaine popularité en dehors de l'Europe. En 2020, plus de 32 millions d'exemplaires en 40 langues avaient été vendus.
+
+Les règles du jeu sont disponibles en ligne, sur différents sites:
+
+* https://www.regledujeu.fr/catane/[Règle du jeu]
+* https://cdn.1j1ju.com/medias/6c/8a/cc-les-colons-de-catane-regle.pdf[1j1ju]
+* http://ludikerborg.free.fr/Jeux/catan/Catan.pdf[Ludikerborg]
+== Préparation
+
+=== Équipes de développement
+
+Pour réaliser ce projet, vous allez vous organiser en groupes de 4 étudiants.
+
+[IMPORTANT]
+====
+Les participants du projet doivent *impérativement* utiliser leurs comptes étudiants de GitLab.
+Généralement, ces comptes commencent par la lettre `E` suivie par 6 chiffres et 1 lettre.
+====
+
+WARNING: Si vous utilisez un autre compte que celui contenant votre code étudiant, vous n'aurez pas de note de projet.
+
+
+=== Environnement
+
+. Avant toute chose, un membre du groupe doit créer un *"Fork"* du projet sur le serveur.
+Pour ce faire, cliquez sur l'icône "Fork" ("Créer une divergence" en français) de la page du projet,
+ou alors cliquez sur le lien suivant: https://gitlab.univ-nantes.fr/naomod/ooad/projet-2021/-/forks/new[Fork]
+
+. Ajoutez ensuite les autres membres du groupe à votre *fork*.
+
+. Chaque membre du groupe doit cloner *ce fork du projet* (et non pas celui d'origine). Par la suite,
+toutes les modifications devront être poussées sur ce *fork*.
+
+[IMPORTANT]
+====
+Il ne doit y avoir qu'un seul *fork* par groupe d'étudiants.
+Il sera utilisé comme espace de rendu des fichiers liés au projet.
+====
+
+=== Organisation du code source
+
+Cette version initiale du projet s'appuie sur l'article
+https://frakton.com/utilizing-maven-front-end-plugin-for-angular-spring-boot/[Utilizing Maven Front-end Plugin for Angular & Spring Boot] de Rion Halili.
+
+L'utilisation de Maven pour compiler un projet TypeScript peut poser certains problèmes,
+notamment si vous utilisez Windows.
+Si c'est le cas, vous pouvez vous passer de Maven et utiliser directement https://www.npmjs.com/[npm] (ou https://yarnpkg.com/[yarn], https://gulpjs.com/[gulp], etc.).
+
+
+=== Mise à jour du projet
+
+Le projet originel sera mis à jour fréquemment pour corriger des erreurs et ajouter des exemples de code source.
+Cela impliquera la mise à jour de vos divergences pour récupérer les changements.
+Pour cela, vous devez faire:
+
+[source,sh]
+----
+git remote add upstream https://gitlab.univ-nantes.fr/naomod/ooad/projet-2021.git # pas besoin si déjà fait
+git pull upstream master
+----
+
+* La première ligne ajoute le dépôt originel et le nomme "upstream"
+* La deuxième ligne récupère les changements et les fusionne avec votre divergence
+
+CAUTION: Les mises à jour peuvent créer des conflits sur vos divergences : vous devrez corriger ces conflits. Vous trouverez plus d'informations sur la résolution de conflits https://www.atlassian.com/fr/git/tutorials/using-branches/merge-conflicts[ici].
+
+== Tâches à réaliser
+
+Le processus de développement suivra le modèle de développement agile{nbsp}: vous allez réaliser et délivrer plusieurs versions du projet.
+
+=== Livrables attendus
+
+. Livrable 1, échéance le vendredi 15 octobre{nbsp}:
+** Analyse du domaine: Cas d'utilisation "Préparation", classes conceptuelles, actions/activités
+** Spécification des exigences{nbsp}: Spécification des cas d'utilisation de connexion, choix d'une partie, préparation.
+** Spécification des composants{nbsp}: Spécification initiale de l'interface du composant "Serveur", permettant la connexion au serveur.
+
+
+. Livrable final, échéance le *jeudi 23 décembre 2021*:
+** Analyse du domaine{nbsp}: mise à jour du livrable précédent
+** Spécification des exigences{nbsp}: Spécification de *tous* les cas d'utilisation du projet.
+** Spécification des composants{nbsp}: Spécification de *tous* les composants du projet.
+** Conception détaillée{nbsp}: Conception détaillée de tous les composants.
+** Code source, tests unitaires et d'intégration.
+
+=== Critères d'évaluation
+
+Les critères qui seront utilisés pour évaluer le travail rendu son les suivants:
+
+* Le respect des exigences logicielles.
+* La qualité du dossier de conception rendu.
+* La précision, la correction et la clarté de la conception{nbsp}: diagrammes, descriptions textuelles, etc..
+* La cohérence entre la conception et le code.
+* La qualité du code source.
+
+
+IMPORTANT: Les critères d'évaluation listés ci-dessus seront les seuls respectés. Ainsi, lisez bien les spécifications des exigences et assurez-vous de bien les respecter. Pour rendre un code source de qualité, rappelez-vous de ce que vous avez appris dans le module https://naomod.univ-nantes.io/sce/slides/[Construction et évolution de logiciels].
+
+
+
+
+

@@ -1,0 +1,8 @@
+@startuml
+class "Class A" as a
+class "Class B" as b
+class "Class C" as c
+
+a *-- b
+a -> c : "\t\t\t"
+@enduml
