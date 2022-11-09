@@ -6,6 +6,8 @@
 Objectif::
 Description du jeu _{project}_ sous la forme d'un diagramme de classes conceptuelles et d'actions.
 
+image::Class_Diagram.png[]
+
 Moyens::
 Utilisez une approche itérative pour découvrir toutes les classes conceptuelles et les actions du jeu.
 

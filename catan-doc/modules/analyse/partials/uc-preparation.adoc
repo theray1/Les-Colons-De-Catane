@@ -1,12 +1,26 @@
-[cols="30s,70n",options="header", frame=sides]
+La préparation est la phase qui précède le jeu à proprement parler au cours de laquelle les joueurs préparent le plateau et mettent en places les éléments nécessaires pour pouvoir prendre le premier tour.
+
+[cols="30s,70n",options="header", frame=all]
 |===
 | Item | Description
+
+| Objectif contextuel
+| Initialiser le plateau, déterminer l’ordre de jeu et répartir les ressources et pièces initiales pour pouvoir démarrer la partie.
+
+| Portée
+| Tout le jeu
 
 | Condition de succès
 | La partie peut démarrer ; Chaque joueur a installé deux colonies et deux routes sur le plateau, à récupéré les ressources correspondantes et l’ordre de jeu est déterminé.
 
 | Condition d'échec
 | Les joueurs n’arrivent pas à décider leur couleur ou l’ordre de jeu. Le plateau ne propose pas une répartition des tuiles satisfaisante (selon les joueurs).
+
+| Évènement déclencheur 
+| Instanciation d’une partie.
+
+| Fréquence
+| Une fois par partie.
 
 | Acteurs principaux:
 | Plateau, Joueurs
