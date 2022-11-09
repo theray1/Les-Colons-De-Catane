@@ -2,24 +2,6 @@
 |===
 | Item | Description
 
-| #
-| 1
-
-| Cas d'utilisation
-| Préparation
-
-| Alias
-| _à compléter_
-
-| Objectif contextuel
-| _à compléter_
-
-| Portée
-| _à compléter_
-
-| Niveau
-| _à compléter_
-
 | Condition de succès
 | La partie peut démarrer ; Chaque joueur a installé deux colonies et deux routes sur le plateau, à récupéré les ressources correspondantes et l’ordre de jeu est déterminé.
 
@@ -28,16 +10,6 @@
 
 | Acteurs principaux:
 | Plateau, Joueurs
-
-| Événement déclencheur
-| _à compléter_
-
-
-| Priorité
-| _à compléter_
-
-| Fréquence
-| _à compléter_
 
 | Pré-conditions
 a|
@@ -59,40 +31,5 @@ a|
 . Chaque joueur place, dans l’ordre définit à l’étape 6, 1 colonie et 1 route qui y est rattachée. 
 . Chaque joueur place, dans l’ordre inverse de celui définit à l’étape 6, 1 colonie et 1 route qui y est rattachée, mais la colonie doit être à plus de 2 intersections d’une colonie du joueur.
 . La partie commence avec le joueur au plus grand score.
-
-
-| Extensions
-a|
-. _à compléter_
-. _à compléter_
-
-| Alternatives
-a|
-. _à compléter_
-. _à compléter_
-
-| Cas d'utilisation supérieur
-| _à compléter_
-
-| Cas d'utilisation subordonnés
-| _à compléter_
-// _optional, depending on tools, links to sub.use cases_
-
-| Objectif de performance
-| _à compléter_
-
-| Problèmes ouverts
-a|
-- _à compléter_
-- _à compléter_
-
-| Échéancier
-| _à compléter_
-
-| Contraintes
-| _à compléter_
-
-| Annexes
-| _à compléter_
 
 |===
