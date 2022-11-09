@@ -1,4 +1,3 @@
-
 [cols="30s,70n",options="header", frame=sides]
 |===
 | Item | Description
@@ -7,7 +6,7 @@
 | 1
 
 | Cas d'utilisation
-| _à compléter_
+| Préparation
 
 | Alias
 | _à compléter_
@@ -22,16 +21,13 @@
 | _à compléter_
 
 | Condition de succès
-| _à compléter_
+| La partie peut démarrer ; Chaque joueur a installé deux colonies et deux routes sur le plateau, à récupéré les ressources correspondantes et l’ordre de jeu est déterminé.
 
 | Condition d'échec
-| _à compléter_
+| Les joueurs n’arrivent pas à décider leur couleur ou l’ordre de jeu. Le plateau ne propose pas une répartition des tuiles satisfaisante (selon les joueurs).
 
 | Acteurs principaux:
-| _à compléter_
-
-| Acteurs secondaires
-| _à compléter_
+| Plateau, Joueurs
 
 | Événement déclencheur
 | _à compléter_
@@ -45,24 +41,24 @@
 
 | Pré-conditions
 a|
-- _à compléter_
-- _à compléter_
+- 3 ou 4 joueurs sont disponibles pour jouer.
 
 | Post-conditions
 a|
-- _à compléter_
-- _à compléter_
-- _à compléter_
+- La partie peut démarrer
 
 
 | Scénario nominal
 a|
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
+. Placer les 6 cartes représentant la mer autour du terrain.
+. Placer les 19 tuiles terrains de manière aléatoire.
+. Placer les 18 jetons numérotés sur les tuiles terrains, mais aucun sur la carte désert.
+. Les cartes ressources sont mises face visible, les cartes développement sont mises face cachée.
+. Le voleur est placé sur la case désert.
+. Chaque joueur lance les 2 dés afin de déterminer l’ordre de jeu. Celui ayant le meilleur score commence, puis l’ordre est celui des aiguilles d’une montre.
+. Chaque joueur place, dans l’ordre définit à l’étape 6, 1 colonie et 1 route qui y est rattachée. 
+. Chaque joueur place, dans l’ordre inverse de celui définit à l’étape 6, 1 colonie et 1 route qui y est rattachée, mais la colonie doit être à plus de 2 intersections d’une colonie du joueur.
+. La partie commence avec le joueur au plus grand score.
 
 
 | Extensions
