@@ -12,10 +12,10 @@
 | Summary
 
 | Condition de succès
-| L’utilisateur a pu se connecter et est identifié
+| Le client a pu rejoindre un lobby
 
 | Condition d'échec
-| L’utilisateur n’a pas pu se connecter
+| Le client n’a pas pu se connecter
 
 | Événement déclencheur
 | L’utilisateur veut se connecter
