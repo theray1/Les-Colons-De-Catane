@@ -39,11 +39,13 @@ a|
 | Scénario nominal
 a|
 . Le serveur reçoit des demandes de joueurs
-. Le serveur lance la Création
+. Le serveur créé la partie
 
-| Alternatives	
+| Extension	
 a| 
-. Le serveur envoie un message au joueur indiquant aucune partie disponible
+* 2.a : Le serveur n'arrive pas à créer la partie
+* 2.a.1 : Le serveur envoie un message d'erreur au joueur 
+
 
 | Problèmes ouverts	
 a|
