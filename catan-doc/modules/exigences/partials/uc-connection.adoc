@@ -35,7 +35,8 @@ a|
 | Scénario nominal
 a|
 . Le client établit une connexion entre le client et le serveur
-. L’utilisateur s’identifie
+. Le client s’identifie
+. Le client rejoint un lobby disponible
 
 |===
 
