@@ -15,7 +15,7 @@
 | Summary
 
 | Condition de succès
-| Une partie prête à accueillir des joueurs
+| Une partie est en attente d'initialisation
 
 | Condition d'échec
 | Le serveur ne peut pas créer de partie
