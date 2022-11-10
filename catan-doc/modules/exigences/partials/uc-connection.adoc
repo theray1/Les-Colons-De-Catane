@@ -2,20 +2,10 @@
 |===
 | Item | Description
 
-| # 
-| 1
+| Ce cas d'utilisation relève de la connexion au serveur par le client.
 
 | Cas d'utilisation	
-| _à compléter_
-
-| Alias
-| _à compléter_
-
-| Objectif contextuel
-| _à compléter_
-
-| Portée	
-| _à compléter_
+| Connexion au serveur
 
 | Niveau
 | Summary
@@ -26,18 +16,8 @@
 | Condition d'échec
 | L’utilisateur n’a pas pu se connecter
 
-| Acteurs principaux:
-| _à compléter_
-
-| Acteurs secondaires
-| _à compléter_
-
 | Événement déclencheur
 | L’utilisateur veut se connecter
-
-
-| Priorité
-| _à compléter_
 
 | Fréquence
 | Une fois par session
@@ -55,41 +35,6 @@ a|
 a|
 . Le client établit une connexion entre le client et le serveur
 . L’utilisateur s’identifie
-
-
-| Extensions	
-a| 
-. _à compléter_
-. _à compléter_
-
-| Alternatives	
-a| 
-. _à compléter_
-. _à compléter_
-
-| Cas d'utilisation supérieur
-| _à compléter_
-
-| Cas d'utilisation subordonnés 
-| _à compléter_
-// _optional, depending on tools, links to sub.use cases_
-
-| Objectif de performance
-| _à compléter_
-
-| Problèmes ouverts	
-a|
-- _à compléter_
-- _à compléter_
-
-| Échéancier	
-| _à compléter_
-
-| Contraintes
-| _à compléter_
-
-| Annexes
-| _à compléter_
 
 |===
 
