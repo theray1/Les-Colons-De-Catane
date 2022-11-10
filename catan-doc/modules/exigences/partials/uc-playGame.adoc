@@ -18,10 +18,8 @@
 | Le serveur déconnecte le joueur
 
 | Acteurs principaux:
-| Le joueur
+| Les joueurs
 
-| Acteurs secondaires
-| Les autres joueurs
 
 | Événement déclencheur
 a|
@@ -34,21 +32,20 @@ a|
 | Pré-conditions 
 a| 
 - Le joueur doit être connecté dans la partie
-- La partie est démarrée
+- La partie est démarrée et initialisée
 
 | Post-conditions
 a| 
-- _à compléter_
+- La partie est terminée
+- L'ensemble des joueurs sont déconnectés
 
 
 | Scénario nominal
 a|
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
+. Le serveur donne la main à un joueur
+. Le joueur joue son tour
+. Le joueur termine son tour
+. Le serveur donne la main au joueur suivant
 
 
 | Extensions	
