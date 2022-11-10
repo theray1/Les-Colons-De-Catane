@@ -38,7 +38,7 @@ Additionnellement, utilisez des diagrammes d'activités UML pour illustrer les c
 
 === Cas d'utilisation "Mise en place d'une partie"
 
-include::partial$uc-template.adoc[]
+include::partials/uc-template.adoc[]
 
 .Diagramme d'activités: Mise en place d'une partie
 [plantuml]
@@ -48,13 +48,7 @@ include::example$ad-mise-en-place.puml[]
 
 === Cas d'utilisation Jouer un tour
 
-include::partial$uc-template-en.adoc[leveloffset=+2]
-
-.Diagramme d'activités: Cas d'utilisation B
-[plantuml]
-....
-include::example$ad-mise-en-place.puml[]
-....
+include::partials/uc-playturn.adoc[leveloffset=+2]
 
 == Activités
 
