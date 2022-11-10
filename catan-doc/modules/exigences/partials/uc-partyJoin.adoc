@@ -1,0 +1,58 @@
+[cols="30s,70n",options="header", frame=sides]
+|===
+| Item | Description
+
+| # 
+| Rejoindre une partie
+
+| Cas d'utilisation	
+| Joindre une partie 
+
+| Niveau
+| Summary
+
+| Condition de succès
+| Le client soit dans une partie en attente de lancement
+
+| Condition d'échec
+| Aucune partie disponible ou déconnexion du client
+
+| Acteurs principaux:
+| Le joueur
+
+| Acteurs secondaires
+| Le serveur
+
+| Événement déclencheur
+| L’utilisateur connecté attend 
+
+| Fréquence
+| Une fois par partie
+
+| Pré-conditions 
+a| 
+- Un client en attente de partie ET un serveur opérationnel
+
+| Post-conditions
+a| 
+- L’utilisateur est dans une partie avec un ou plusieurs clients
+
+
+| Scénario nominal
+a|
+. L’utilisateur choisi sa partie non démarré et non pleine (1)
+. Le serveur joint un client à une partie
+
+
+| Extensions	
+a| 
+. (1) : Si le serveur n’a plus de partie disponible, il en crée une nouvelle!
+
+
+|===
+
+
+
+
+
+
