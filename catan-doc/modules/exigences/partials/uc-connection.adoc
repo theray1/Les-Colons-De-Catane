@@ -18,13 +18,13 @@
 | _à compléter_
 
 | Niveau
-| _à compléter_
+| Summary
 
 | Condition de succès
-| _à compléter_
+| L’utilisateur a pu se connecter et est identifié
 
 | Condition d'échec
-| _à compléter_
+| L’utilisateur n’a pas pu se connecter
 
 | Acteurs principaux:
 | _à compléter_
@@ -33,35 +33,28 @@
 | _à compléter_
 
 | Événement déclencheur
-| _à compléter_
+| L’utilisateur veut se connecter
 
 
 | Priorité
 | _à compléter_
 
 | Fréquence
-| _à compléter_
+| Une fois par session
 
 | Pré-conditions 
 a| 
-- _à compléter_
-- _à compléter_
+- Un serveur opérationnel 
 
 | Post-conditions
 a| 
-- _à compléter_
-- _à compléter_
-- _à compléter_
+- Si succès alors il est identifié au bon serveur 
 
 
 | Scénario nominal
 a|
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
+. Le client établit une connexion entre le client et le serveur
+. L’utilisateur s’identifie
 
 
 | Extensions	
