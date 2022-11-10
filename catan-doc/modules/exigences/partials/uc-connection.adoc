@@ -2,6 +2,7 @@
 |===
 | Item | Description
 
+| Description
 | Ce cas d'utilisation relève de la connexion au serveur par le client.
 
 | Cas d'utilisation	
