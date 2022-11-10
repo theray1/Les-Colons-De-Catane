@@ -36,14 +36,14 @@ a|
 
 | Scénario nominal
 a|
-. Placer les 6 cartes représentant la mer autour du terrain.
-. Placer les 19 tuiles terrains de manière aléatoire.
-. Placer les 18 jetons numérotés sur les tuiles terrains, mais aucun sur la carte désert.
-. Les cartes ressources sont mises face visible, les cartes développement sont mises face cachée.
-. Le voleur est placé sur la case désert.
+. Le maître du jeu place les 6 cartes représentant la mer autour du terrain.
+. Le maître du jeu place les 19 tuiles terrains de manière aléatoire.
+. Le maître du jeu place les 18 jetons numérotés sur les tuiles terrains, mais aucun sur la carte désert.
+. Le maître du jeu met les cartes ressources face visible et les cartes développement face cachée.
+. Le maître du jeu place le voleur sur la case désert.
 . Chaque joueur lance les 2 dés afin de déterminer l’ordre de jeu. Celui ayant le meilleur score commence, puis l’ordre est celui des aiguilles d’une montre.
 . Chaque joueur place, dans l’ordre définit à l’étape 6, 1 colonie et 1 route qui y est rattachée. 
 . Chaque joueur place, dans l’ordre inverse de celui définit à l’étape 6, 1 colonie et 1 route qui y est rattachée, mais la colonie doit être à plus de 2 intersections d’une colonie du joueur.
-. La partie commence avec le joueur au plus grand score.
+. Le joueur ayant le plus grand score commence la partie.
 
 |===
