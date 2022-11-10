@@ -24,11 +24,12 @@
 | Les autres joueurs
 
 | Événement déclencheur
-- Au tour du joueur
-- La partie est en cours
+a|
+. Au tour du joueur
+. La partie est en cours
 
 | Fréquence
-- Summary
+| Summary
 
 | Pré-conditions 
 a| 
