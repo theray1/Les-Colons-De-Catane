@@ -28,7 +28,7 @@
 
 | Pré-conditions 
 a| 
-- Des joueurs en recherche de partie
+- Un joueur est en recherche de partie
 - Plus de partie disponible
 
 | Post-conditions
