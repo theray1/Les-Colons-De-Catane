@@ -33,7 +33,7 @@ a|
 
 | Post-conditions
 a| 
-- Une partie créée et prête à accueillir des joueurs en attente
+- Une partie créée et en attente d'initialisation
 
 
 | Scénario nominal
