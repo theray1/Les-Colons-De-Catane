@@ -6,96 +6,57 @@
 | 1
 
 | Cas d'utilisation	
-| _à compléter_
+| Création de la partie
 
 | Alias
 | _à compléter_
 
 | Objectif contextuel
-| _à compléter_
-
-| Portée	
-| _à compléter_
+| Créer une partie pour accueillir des joueurs
 
 | Niveau
-| _à compléter_
+| Summary
 
 | Condition de succès
-| _à compléter_
+| Une partie prête à accueillir des joueurs
 
 | Condition d'échec
-| _à compléter_
+| Le serveur ne peut pas créer de partie
 
 | Acteurs principaux:
-| _à compléter_
-
-| Acteurs secondaires
-| _à compléter_
+| Le serveur
 
 | Événement déclencheur
-| _à compléter_
-
-
-| Priorité
-| _à compléter_
+| Plus de partie disponible pour accueillir des joueurs
 
 | Fréquence
-| _à compléter_
+| A chaque fois que c'est nécessaire
 
 | Pré-conditions 
 a| 
-- _à compléter_
-- _à compléter_
+- Des joueurs en recherche de partie
+- Plus de partie disponible
 
 | Post-conditions
 a| 
-- _à compléter_
-- _à compléter_
-- _à compléter_
+- Une partie créée et prête à accueillir des joueurs en attente
 
 
 | Scénario nominal
 a|
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-
-
-| Extensions	
-a| 
-. _à compléter_
-. _à compléter_
+. Le serveur reçoit des demandes de joueurs
+. Le serveur lance la Création
 
 | Alternatives	
 a| 
-. _à compléter_
-. _à compléter_
-
-| Cas d'utilisation supérieur
-| _à compléter_
-
-| Cas d'utilisation subordonnés 
-| _à compléter_
-// _optional, depending on tools, links to sub.use cases_
-
-| Objectif de performance
-| _à compléter_
+. Le serveur envoie un message au joueur indiquant aucune partie disponible
 
 | Problèmes ouverts	
 a|
-- _à compléter_
-- _à compléter_
-
-| Échéancier	
-| _à compléter_
+- Le joueur demande lui même de créer une partie 
 
 | Contraintes
-| _à compléter_
+| Le serveur n'a plus de place pour créer une partie
 
-| Annexes
-| _à compléter_
 
 |===
