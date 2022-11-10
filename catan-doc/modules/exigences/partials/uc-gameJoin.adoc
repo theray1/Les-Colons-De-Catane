@@ -12,19 +12,19 @@
 | Summary
 
 | Condition de succès
-| Le client soit dans une partie en attente de lancement
+| Le client est dans une partie en attente de lancement
 
 | Condition d'échec
 | Aucune partie disponible ou déconnexion du client
 
 | Acteurs principaux:
-| Le joueur
+| Le client
 
 | Acteurs secondaires
 | Le serveur
 
 | Événement déclencheur
-| L’utilisateur connecté attend 
+| Le client connecté attend 
 
 | Fréquence
 | Une fois par partie
@@ -35,13 +35,13 @@ a|
 
 | Post-conditions
 a| 
-- L’utilisateur est dans une partie avec un ou plusieurs clients
+- Le client est dans une partie avec un ou plusieurs autres clients
 
 
 | Scénario nominal
 a|
-. L’utilisateur choisi sa partie non démarré et non pleine (1)
-. Le serveur joint un client à une partie
+. Le client choisi sa partie non démarré et non pleine (1)
+. Le serveur joint le client à une partie
 
 
 | Extensions	
