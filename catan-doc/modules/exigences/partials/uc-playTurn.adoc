@@ -15,8 +15,9 @@
 | La partie a terminé son tour
 
 | Condition d'échec
-| Le serveur déconnecte le joueur 
-| Le joueur se déconnect
+a|
+. Le serveur déconnecte le joueur 
+. Le joueur se déconnect
 
 | Acteurs principaux:
 | Le joueur
