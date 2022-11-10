@@ -8,9 +8,6 @@
 | Cas d'utilisation	
 | Création de la partie
 
-| Alias
-| _à compléter_
-
 | Objectif contextuel
 | Créer une partie pour accueillir des joueurs
 
@@ -28,9 +25,6 @@
 
 | Événement déclencheur
 | Plus de partie disponible pour accueillir des joueurs
-
-| Fréquence
-| A chaque fois que c'est nécessaire
 
 | Pré-conditions 
 a| 
