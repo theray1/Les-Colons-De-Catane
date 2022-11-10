@@ -1,0 +1,54 @@
+[cols="30s,70n",options="header", frame=sides]
+|===
+| Item | Description
+
+| # 
+| 1
+
+| Cas d'utilisation	
+| Jouer un tour
+
+| Objectif contextuel
+| Le joueur va jouer son tour dans la partie
+
+| Condition de succès
+| La partie a terminé son tour
+
+| Condition d'échec
+| Le serveur déconnecte le joueur 
+| Le joueur se déconnect
+
+| Acteurs principaux:
+| Le joueur
+
+
+| Événement déclencheur
+a|
+. Au tour du joueur
+. La partie est en cours
+
+| Fréquence
+| Summary
+
+| Pré-conditions 
+a| 
+- Le joueur doit être connecté dans la partie
+- La partie est démarrée et initialisée
+- Au tour du joueur
+
+| Post-conditions
+a| 
+- Le joueur a terminé son tour
+
+
+| Scénario nominal
+a|
+. Le serveur donne la main à un joueur
+. Le joueur joue son tour
+. Le joueur termine son tour
+. Le serveur donne la main au joueur suivant
+
+| Contraintes
+| Le joueur doit être connecté
+
+|===
