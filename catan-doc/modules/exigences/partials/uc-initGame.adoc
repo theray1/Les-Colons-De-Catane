@@ -1,1 +1,112 @@
 
+[cols="30s,70n",options="header", frame=sides]
+|===
+| Item | Description
+
+| # 
+| à compléter_
+
+| Cas d'utilisation	
+| Initialiser la partie
+
+| Alias
+| _à compléter_
+
+| Objectif contextuel
+| Initialiser le plateau, déterminer l’ordre de jeu et répartir les ressources et pièces initiales pour pouvoir démarrer la partie.
+
+| Portée	
+| Tout le jeu
+
+| Niveau
+| _à compléter_
+
+| Condition de succès
+| Les clients ont chacun installé 2 colonies et 2 routes sur le plateau, ont récupéré les ressources correspondantes et l'ordre de jeu a été déterminé.
+
+| Condition d'échec
+| l'ordre de jeu n'a pas été determiné car au moins un des clients joueurs a quitté la partie
+
+| Acteurs principaux:
+| Le serveur
+
+| Acteurs secondaires
+| Les clients joueurs
+
+| Événement déclencheur
+| la partie a dans son lobby 4 clients joueurs
+
+
+| Priorité
+| _à compléter_
+
+| Fréquence
+| à chaque partie
+
+| Pré-conditions 
+a| 
+- la partie a été créé
+- il y a 4 clients joueurs dans le lobby de la partie
+
+
+| Post-conditions
+a| 
+- la partie peut commencer 
+
+
+| Scénario nominal
+a|
+. Le serveur place les 6 cartes représentant la mer autour du terrain.
+. Le serveur place les 19 tuiles terrains de manière aléatoire.
+. Le serveur place les 18 jetons numérotés sur les tuiles terrains, mais aucun sur la carte désert.
+. Le serveur met les cartes ressources face visible et les cartes développement face cachée.
+. Le serveur place le voleur sur la case désert.
+. Chaque client joueur lance les 2 dés afin de déterminer l’ordre de jeu. Celui ayant le meilleur score commence, puis l’ordre est celui des aiguilles d’une montre.
+. Chaque client joueur place, dans l’ordre définit à l’étape 6, 1 colonie et 1 route qui y est rattachée. 
+. Chaque client joueur place, dans l’ordre inverse de celui définit à l’étape 6, 1 colonie et 1 route qui y est rattachée, mais la colonie doit être à plus de 2 intersections d’une colonie du joueur.
+. Le client joueur ayant le plus grand score commence la partie.
+
+
+
+
+| Extensions	
+a| 
+. _à compléter_
+. _à compléter_
+
+| Alternatives	
+a| 
+. _à compléter_
+. _à compléter_
+
+| Cas d'utilisation supérieur
+| _à compléter_
+
+| Cas d'utilisation subordonnés 
+| _à compléter_
+// _optional, depending on tools, links to sub.use cases_
+
+| Objectif de performance
+| _à compléter_
+
+| Problèmes ouverts	
+a|
+- _à compléter_
+- _à compléter_
+
+| Échéancier	
+| _à compléter_
+
+| Contraintes
+| _à compléter_
+
+| Annexes
+| _à compléter_
+
+|===
+
+
+
+
+
+
