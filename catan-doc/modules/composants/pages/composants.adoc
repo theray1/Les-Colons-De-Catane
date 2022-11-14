@@ -53,4 +53,32 @@ database "MySql" {
 [Folder 3] --> [Frame 4]
 
 @enduml
+
+
+@startuml
+[Server]
+[Rest (Middleware)]
+[WebSocket (Middleware)]
+[WebSocket server (Proxy)]
+[Client]
+
+DataAccess - [Server]
+[WebSocket (Middleware)] ..> DataAccess : use
+[Rest (Middleware)] ..> DataAccess : use
+DataAccess2 - [WebSocket (Middleware)]
+DataAccess3 - [Rest (Middleware)]
+[WebSocket server (Proxy)] ..> DataAccess2 : use
+DataAccess4 -[WebSocket server (Proxy)]
+[Client] ..> DataAccess4 : use
+
+[Server] ..> DataAccess5 : use
+DataAccess5 - [Client WS (Proxy)]
+
+[Client WS (Proxy)] ..> DataAccess6 : use
+DataAccess6 - [Web socket Client (M:MiddleWare)]
+
+[Web socket Client (M:MiddleWare)] ..> DataAccess7 : use
+DataAccess7 - [Client]
+
+@enduml
 ....
