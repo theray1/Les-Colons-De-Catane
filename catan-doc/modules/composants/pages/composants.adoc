@@ -47,15 +47,15 @@ Ainsi on obtient plusieurs diagram en fonction de chaque intéractions :
 [Client]
 [Middleware]
 
-[Server] - b : "\t\t"
-b )- [Middleware] : "\t\t"
+[Server] - ServerToClient : "\t\t"
+ServerToClient )- [Middleware] : "\t\t"
 [Server] - ClientToServer : "\t\t"
 ClientToServer )- [Middleware] : "\t\t"
 
 [Middleware] - a : "\t\t"
 a )- [Client] : "\t\t"
-[Middleware] - ServerToClient : "\t\t"
-ServerToClient )- [Client] : "\t\t"
+[Middleware] - b : "\t\t"
+b )- [Client] : "\t\t"
 @enduml
 ....
 
