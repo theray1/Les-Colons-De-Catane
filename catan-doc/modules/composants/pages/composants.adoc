@@ -1,3 +1,7 @@
+Welcome to AsciiDocLIVE!
+------------------------
+
+Composants (idée générale)
 [plantuml]
 ....
 @startuml
@@ -27,3 +31,31 @@ DataAccess7 - [Client]
 
 @enduml
 ....
+
+On part sur 3 composants : 
+
+* Serveur
+* Réseau (WebSockets)
+* Client
+
+Ainsi on obtient plusieurs diagram en fonction de chaque intéractions : 
+
+[plantuml]
+....
+@startuml
+[Server]
+[Client]
+[Middleware]
+
+[Server] - Serializable : "\t\t"
+Serializable )- [Middleware] : "\t\t"
+[Server] - ClientToServer : "\t\t"
+ClientToServer )- [Middleware] : "\t\t"
+
+[Middleware] - Serializable2 : "\t\t"
+Serializable2 )- [Client] : "\t\t"
+[Middleware] - ClientToServer2 : "\t\t"
+ClientToServer2 )- [Client] : "\t\t"
+@enduml
+....
+
