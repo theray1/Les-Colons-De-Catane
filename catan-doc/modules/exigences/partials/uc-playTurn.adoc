@@ -1,55 +1,95 @@
-[cols="30s,70n",options="header", frame=sides]
+Le tour de jeu est une période pendant laquelle un joueur actif peut décider d’interagir avec le jeu.
+
+
+[cols="30s,70n",options="header", frame=all]
 |===
 | Item | Description
 
-| # 
-| 1
+
 
 | Cas d'utilisation	
-| Jouer un tour
+| Tour de jeu
+
+| Alias
+| à compléter
 
 | Objectif contextuel
-| Le joueur va jouer son tour dans la partie
+| Permettre à la partie de progresser, à l’échelle d’un tour de jeu.
+
+| Portée	
+| Le serveur et les clients dans la partie en cours.
 
 | Condition de succès
-| La partie a terminé son tour
+| Le client actif a effectué toutes les actions obligatoires de son tour et ne souhaite plus effectuer d’actions optionnelles / facultatives, ou la partie se finit
 
 | Condition d'échec
-a|
-. Le serveur déconnecte le joueur 
-. Le joueur se déconnect
+| Le client actif n’est pas en mesure de jouer.
 
 | Acteurs principaux:
-| Le joueur
-
+| Clients, Serveur
 
 | Événement déclencheur
-a|
-. Au tour du joueur
-. La partie est en cours
+| Le tour précédent est terminé, ou la préparation est terminée.
 
 | Fréquence
-| Summary
+| Un tour de jeu par joueur, par tour de table 
 
 | Pré-conditions 
 a| 
-- Le joueur doit être connecté dans la partie
-- La partie est démarrée et initialisée
-- Au tour du joueur
-
+- La connexion bidirectionnel client-server est établit et le serveur a envoyer la commande de début de partie
 | Post-conditions
 a| 
-- Le joueur a terminé son tour
+- Le serveur a validé la commande de fin de tour ou de partie et les autres clients les ont recues. 
 
 
 | Scénario nominal
 a|
-. Le serveur donne la main à un joueur
-. Le joueur joue son tour
-. Le joueur termine son tour
-. Le serveur donne la main au joueur suivant
+. Le serveur execute la commande de lancer de des
+. Le client actif recoie la commande correspondant au résultat du lancer de dés.
+. Chaque client dont une ou plusieurs colonies se trouvent sur les bords d’une tuile terrain ayant un jeton numéroté correspondant au score du lancer, recevra un certain nombre de commande leur donnant des cartes ressources, qui sont cachées aux yeux des autres joueurs. 
+. Le client actif peut proposer plusieurs commandes d'échanges de ses ressources avec un autre joueur. Les client joueurs peuvent envoyer des commandes pour faire des contre-propositions.
+. Le client peut envoyer des commandes de construction de routes (jusqu’à 13)au prix de ressources. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
+. Le client actif peut envoyer des commandes de constructions de colonies. Pour un nombre total de commandes inférieur ou égale à celui qu’il peut encore construire (le maximum est 5 colonies). Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
+. Le client peux envoyer des commandes de construction de colonie. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
+. Au prix de ressources, le joueur peut tirer une carte Développement qu’il pourra utiliser à partir du tour suivant.
+. On vérifie si un joueur a gagné la partie (ie qu’il a 10 PV) 
 
-| Contraintes
-| Le joueur doit être connecté
+
+| Extensions	
+a| 
+* 2a. Le score du joueur au lancer de dés est 7 :
+* 2a1.Personne ne reçoit de ressources, les joueurs possédant plus de 7 cartes doivent en défausser la moitié (moins un si ils ont un nombre impair de cartes). .Le voleur est déplacé par le joueur sur une tuile dont il privera la récolte de ressources et le joueur actif vole au hasard une carte d’un joueur qui possède une colonie adjacente à la tuile où est placé le voleur.
+* 2b. Le score du joueur au lancer de dés est différent de 7 :
+* 2ba. Le voleur est sur une tuile sur laquelle il n’a pas de villes ni de colonies : 
+* 2ba1. Les joueurs recevront 1 carte ressources par colonie et 2 cartes ressources par villes placées sur les tuiles où le voleur n’est pas présent.
+* 2bb. Le voleur est sur une tuile sur en contact avec des villes ou colonies : 
+* 2bb1. Les joueurs ne recevront aucune carte ressources pour leurs colonies et villes placées sur la tuile où est le voleur.
+* 4a : 5 routes du joueur sont connectées entre elles :
+* 4a1. Le joueur prend la carte « route la plus longue ».
+* 4b : le joueur a plus de routes que les autres :
+* 4b1. Le joueur prend la carte « route la plus longue »
+* 8a. Un joueur  a 10 PV : 
+* 8a1 : ce joueur est déclaré vainqueur de la partie et la partie s’achève.
+* 8b. Aucun joueur n’a 10 PV : 
+* 8b1 : La partie continue
+
+| Variations
+a|
+* 3bis. Le joueur actif peut proposer plusieurs échanges de ses ressources avec la réserve : 
+* 3bis-a. le joueur a construit une colonie ou une ville près d’un port :
+* 3bis-a1. le joueur échange 3 ressources contre 1 
+* 3bis-a2.  le joueur échange 2 ressources contre 1  
+* 3bis-b. le joueur n’a construit ni colonie ni ville près d’un port :
+* 3bis-b1. le joueur échange 4 ressources contre 1 
+* 7a : le joueur tire une carte chevalier
+* 7abis : le joueur tire une carte progrès
+* 7ater : le joueur tire une carte point de victoire
+
+
+| Cas d'utilisation subordonnés 
+| Récolter des ressources
+ Faire des échanges
 
 |===
+
+
