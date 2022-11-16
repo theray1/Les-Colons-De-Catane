@@ -44,12 +44,6 @@ a|
 . Le serveur execute la commande d'initialisation de partie.
 . Le serveur envoie les commandes nécéssaire pour synchroniser les clients.
 
-| Cas d'utilisation supérieur
-|  Création de la partie
-
-| Cas d'utilisation subordonnés 
-| Démarrer la partie
-
 |===
 
 
