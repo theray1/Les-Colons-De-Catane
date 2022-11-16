@@ -1,4 +1,4 @@
-# Diagramme de séquence 
+# Diagrammes de séquence 
 ## -- Connexion Client vers Serveur --
 
 Pour que le client et le serveur communiquent, il faut une connexion entre ces 2 entités. Pour ce faire, nous utilisons un proxy qui fait le lie entre le TypeScript du client et l'adapter de websocket qui est en Java.
@@ -14,3 +14,22 @@ AdapterWebSocket --> Serveur : connect("Joueur")
 
 @enduml
 ....
+
+## -- Envoi d'actions : Client vers Serveur --
+
+Pour que le serveur réceptionne corretement les actions des 
+utilisateurs, le serveur reçoit une liste de commandes à exécuter par le client.
+On peut ainsi envoyer une seule commande attendre que le serveur confirme son application.
+
+[plantuml]
+....
+@startuml
+
+Client -> ServerProxy : SendActions(ListActions)
+
+ServerProxy -->> AdapterWebSocket : SendActions(ListActions)
+AdapterWebSocket --> Serveur : SendActions(ListActions)
+
+@enduml
+....
+
