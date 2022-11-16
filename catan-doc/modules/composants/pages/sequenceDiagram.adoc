@@ -1,5 +1,5 @@
 # Diagrammes de séquence 
-# -- Connexion Client vers Serveur --
+# Connexion Client vers Serveur
 
 Pour que le client et le serveur communiquent, il faut une connexion entre ces 2 entités. Pour ce faire, nous utilisons un proxy qui fait le lie entre le TypeScript du client et l'adapter de websocket qui est en Java.
 Nous avons ici le diagramme de séquence du cas d'utilisation "connexion d'un client"
@@ -14,13 +14,6 @@ AdapterWebSocket --> Serveur : connect("Joueur")
 
 @enduml
 ....
-
-# -- Envoi d'actions : Client vers Serveur --
-
-Pour que le serveur réceptionne corretement les actions des 
-utilisateurs, le serveur reçoit une liste de commandes à exécuter par le client.
-On peut ainsi envoyer une seule commande attendre que le serveur confirme son application.
-
 
 ## Echange entre un joueur et la banque/le port
 [plantuml]
@@ -86,4 +79,70 @@ ServerProxy -> Client : result("Nathan a acheté une carte")
 ServerProxy -> Client : result("La carte xx")
 Client -> autres : result("Nathan a acheté une carte")
 Client -> nathan : result("La carte xx")
+....
+
+## Un joueur bouge le voleur
+[plantuml]
+....
+actor "__Nathan : Client__" as nathan
+actor "__Sunye : Client__" as sunye
+actor "__Autres : Client__" as autres
+
+sunye -> Client : Je bouge le voleur sur la case 2 et je prend une carte de Nathan
+Client -> ServerProxy : BougerVoleur(map[2], "Nathan")
+ServerProxy ->> AdapterWebSocket : Erreur : BougerVoleur(map[2], "Nathan")
+AdapterWebSocket -> Serveur : BougerVoleur(map[2], "Nathan")
+AdapterWebSocket ->> ServerProxy : erreur
+
+
+Serveur -> AdapterWebSocket : result("Bouger voleur et Nathan perd une carte et Sunye gagne une carte")
+Serveur -> AdapterWebSocket : result("Perdre une carte de la ressource xx et bouger voleur et Sunye gagne une carte")
+Serveur -> AdapterWebSocket : result("La ressource volée et bouger voleur et Nathan perd une carte")
+AdapterWebSocket ->> ServerProxy : result("Bouger voleur et Nathan perd une carte et Sunye gagne une carte")
+AdapterWebSocket ->> ServerProxy : result("Perdre une carte de la ressource xx et bouger voleur et Sunye gagne une carte")
+AdapterWebSocket ->> ServerProxy : result("La ressource volée et bouger voleur et Nathan perd une carte")
+ServerProxy -> Client : result("Bouger voleur et Nathan perd une carte et Sunye gagne une carte")
+ServerProxy -> Client : result("Perdre une carte de la ressource xx et bouger voleur et Sunye gagne une carte")
+ServerProxy -> Client : result("La ressource volée et bouger voleur et Nathan perd une carte")
+Client -> autres : result("Bouger voleur et Nathan perd une carte et Sunye gagne une carte")
+Client -> nathan : result("Perdre une carte de la ressource xx et bouger voleur et Sunye gagne une carte")
+Client -> sunye : result("La ressource volée et bouger voleur et Nathan perd une carte")
+....
+
+## Un joueur constuit un batiment 
+[plantuml]
+....
+actor "__Nathan : Client__" as nathan
+actor "__Autres : Client__" as autres
+
+nathan -> Client : Je construis une colonie en case 2 emplacement 2
+Client -> ServerProxy : ConstruireBatiment(Structure.Colonie, map[2].[2])
+ServerProxy ->> AdapterWebSocket : Erreur : ConstruireBatiment(Structure.Colonie, map[2].[2])
+AdapterWebSocket -> Serveur : ConstruireColonie(typeStructure, emplacement)
+AdapterWebSocket ->> ServerProxy : erreur
+
+Serveur -> AdapterWebSocket : result("Placer colonie en case 2, emplacement 2 de Nathan")
+AdapterWebSocket ->> ServerProxy : result("Placer colonie en case 2, emplacement 2 de Nathan")
+ServerProxy -> Client : result("Placer colonie en case 2, emplacement 2 de Nathan")
+Client -> autres : result("Placer colonie en case 2, emplacement 2 de Nathan")
+Client -> nathan : result("Placer colonie en case 2, emplacement 2 de Nathan")
+....
+
+## Un joueur active une carte
+[plantuml]
+....
+actor "__Nathan : Client__" as nathan
+actor "__Autres : Client__" as autres
+
+nathan -> Client : J'active la carte progres
+Client -> ServerProxy : UtiliserCarte(CarteDeveloppement.Progres.xx)
+ServerProxy ->> AdapterWebSocket : Erreur : UtiliserCarte(CarteDeveloppement.Progres.xx)
+AdapterWebSocket -> Serveur : UtiliserCarte(CarteDeveloppement.Progres.xx)
+AdapterWebSocket ->> ServerProxy : erreur
+
+Serveur -> AdapterWebSocket : result("Nathan a utilisé une carte progrès avec les actions xxx")
+AdapterWebSocket ->> ServerProxy : result("Nathan a utilisé une carte progrès avec les actions xxx")
+ServerProxy -> Client : result("Nathan a utilisé une carte progrès avec les actions xxx")
+Client -> autres : result("Nathan a utilisé une carte progrès avec les actions xxx")
+Client -> nathan : result("Nathan a utilisé une carte progrès avec les actions xxx")
 ....
