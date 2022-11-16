@@ -11,16 +11,3 @@ AdapterWebSocket --> Serveur : connect("Joueur")
 
 @enduml
 ....
-
-## -- Connexion Serveur vers Client --
-
-[plantuml]
-....
-@startuml
-
-Client -> ServerProxy : connect("Joueur")
-ServerProxy -->> AdapterWebSocket : "Connection"
-AdapterWebSocket --> Serveur : connect("Joueur")
-
-@enduml
-....
