@@ -8,20 +8,18 @@
 | Cas d'utilisation	
 | Connexion au serveur
 
-| Niveau
-| Summary
 
 | Condition de succès
-| Le client a pu rejoindre un lobby (sorte de salle d'attente pour les joueurs avant l'initialisation de la partie)
+| Le client a rejoint un lobby (sorte de salle d'attente pour les joueurs avant l'initialisation de la partie)
 
 | Condition d'échec
 | Le client n’a pas pu se connecter
 
 | Événement déclencheur
-| L’utilisateur veut se connecter
+| L’utilisateur désire se connecter
 
 | Fréquence
-| Une fois par session
+| Une ou plusieurs fois par session
 
 | Pré-conditions 
 a| 
@@ -29,7 +27,7 @@ a|
 
 | Post-conditions
 a| 
-- Si succès alors il est identifié au bon serveur 
+- Si succès alors il est identifié et connecté au serveur 
 
 
 | Scénario nominal
