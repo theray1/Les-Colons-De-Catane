@@ -40,13 +40,13 @@ a|
 
 | Scénario nominal
 a|
-. Le client choisi sa partie non démarré et non pleine (1)
-. Le serveur joint le client à une partie
+. Le client choisi sa partie non démarré et non pleine. Il envoie au serveur la commande correspondante (1)
+. Le serveur associe le client à une partie.
 
 
 | Extensions	
 a| 
-. (1) : Si le serveur n’a plus de partie disponible, il en crée une nouvelle!
+. (1) : Si le serveur n’a plus de partie disponible, il en crée une nouvelle et associe le client à cette partie
 
 
 |===
