@@ -9,7 +9,7 @@
 | Création de la partie
 
 | Objectif contextuel
-| Créer une partie pour accueillir des joueurs
+| Créer une partie pour accueillir des clients
 
 | Niveau
 | Summary
@@ -24,11 +24,11 @@
 | Le serveur
 
 | Événement déclencheur
-| Plus de partie disponible pour accueillir des joueurs
+| Plus de partie disponible pour accueillir des clients
 
 | Pré-conditions 
 a| 
-- Un joueur est en recherche de partie
+- Un client est en recherche de partie
 - Plus de partie disponible
 
 | Post-conditions
@@ -38,13 +38,13 @@ a|
 
 | Scénario nominal
 a|
-. Le serveur reçoit des demandes de joueurs
-. Le serveur créé la partie
+Le serveur décide de créer une nouvelle partie.
+Il crée la partie et l'ajoute à sa liste de partie.
 
 | Extension	
 a| 
 * 2.a : Le serveur n'arrive pas à créer la partie
-* 2.a.1 : Le serveur envoie un message d'erreur au joueur 
+* 2.a.1 : Le serveur envoie un message d'erreur (sous forme de commande) au joueur essayant de se connecter
 
 
 | Problèmes ouverts	
