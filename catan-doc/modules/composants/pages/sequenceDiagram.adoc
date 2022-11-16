@@ -1,6 +1,9 @@
 # Diagramme de séquence 
 ## -- Connexion Client vers Serveur --
 
+Pour que le client et le serveur communiquent, il faut une connexion entre ces 2 entités. Pour ce faire, nous utilisons un proxy qui fait le lie entre le TypeScript du client et l'adapter de websocket qui est en Java.
+Nous avons ici le diagramme de séquence du cas d'utilisation "connexion d'un client"
+
 [plantuml]
 ....
 @startuml
