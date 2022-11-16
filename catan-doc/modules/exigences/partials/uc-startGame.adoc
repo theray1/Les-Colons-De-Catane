@@ -2,100 +2,58 @@
 |===
 | Item | Description
 
-| # 
-| 1
 
 | Cas d'utilisation	
-| _à compléter_
+| Démarrer la partie
 
-| Alias
-| _à compléter_
 
 | Objectif contextuel
-| _à compléter_
+| Lancer l'execution du 1er tour sur une partie initialisée
 
 | Portée	
-| _à compléter_
-
-| Niveau
-| _à compléter_
+| Le serveur et les Clients
 
 | Condition de succès
-| _à compléter_
+| Le 1er tour est démarré sur le serveur et les clients dans la partie
 
 | Condition d'échec
-| _à compléter_
+| Tout les clients et le serveur ne sont pas en train d'executer le 1er tour
 
 | Acteurs principaux:
-| _à compléter_
-
-| Acteurs secondaires
-| _à compléter_
+| Le serveur et les clients dans la partie concernée
 
 | Événement déclencheur
-| _à compléter_
+| la partie a dans son lobby 4 clients connectés
 
-
-| Priorité
-| _à compléter_
 
 | Fréquence
-| _à compléter_
+| A chaque partie
 
 | Pré-conditions 
 a| 
-- _à compléter_
-- _à compléter_
+- La partie a été initialisée
+
 
 | Post-conditions
 a| 
-- _à compléter_
-- _à compléter_
-- _à compléter_
+- La 1er tour est en cours sur le serveur et les Clients
 
 
 | Scénario nominal
 a|
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-. _à compléter_
-
-
-| Extensions	
-a| 
-. _à compléter_
-. _à compléter_
-
-| Alternatives	
-a| 
-. _à compléter_
-. _à compléter_
+. Le serveur envoie la commande de début de partie quand il y 4 joueurs dans une partie initialisée
+. Le serveur envoie la commande de début de tour.
 
 | Cas d'utilisation supérieur
-| _à compléter_
+| Initialiser la partie
 
 | Cas d'utilisation subordonnés 
-| _à compléter_
-// _optional, depending on tools, links to sub.use cases_
-
-| Objectif de performance
-| _à compléter_
-
-| Problèmes ouverts	
-a|
-- _à compléter_
-- _à compléter_
-
-| Échéancier	
-| _à compléter_
-
-| Contraintes
-| _à compléter_
-
-| Annexes
-| _à compléter_
+| Tour de jeu
 
 |===
+
+
+
+
+
+
