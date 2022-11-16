@@ -1,5 +1,5 @@
 # Diagrammes de séquence 
-## -- Connexion Client vers Serveur --
+# -- Connexion Client vers Serveur --
 
 Pour que le client et le serveur communiquent, il faut une connexion entre ces 2 entités. Pour ce faire, nous utilisons un proxy qui fait le lie entre le TypeScript du client et l'adapter de websocket qui est en Java.
 Nous avons ici le diagramme de séquence du cas d'utilisation "connexion d'un client"
@@ -15,44 +15,75 @@ AdapterWebSocket --> Serveur : connect("Joueur")
 @enduml
 ....
 
-## -- Envoi d'actions : Client vers Serveur --
+# -- Envoi d'actions : Client vers Serveur --
 
 Pour que le serveur réceptionne corretement les actions des 
 utilisateurs, le serveur reçoit une liste de commandes à exécuter par le client.
 On peut ainsi envoyer une seule commande attendre que le serveur confirme son application.
 
+
+## Echange entre un joueur et la banque/le port
 [plantuml]
 ....
-@startuml
 
 actor "__Sunye : Client__" as nathan
-participant "__:Client__" as Client
+actor "__Autres : Client__" as autres
 
-nathan -> Client : ConstruireBatiment(Structure.Colonie, map[2].[2])
-Client -> ServerProxy : ConstruireBatiment(Structure.Colonie, map[2].[2])
-ServerProxy -->> AdapterWebSocket : ConstruireBatiment(Structure.Colonie, map[2].[2])
-AdapterWebSocket --> Serveur : ConstruireColonie(typeStructure, emplacement)
+nathan -> Client : Echanger 4 pierres et 1 brique
+Client -> ServerProxy : Erreur : Echanger({"pierre":4}, {"brique":1})
+ServerProxy ->> AdapterWebSocket : Echanger({"pierre":4}, {"brique":1})
+AdapterWebSocket -> Serveur : Echanger({"pierre":4}, {"brique":1})
+AdapterWebSocket ->> ServerProxy : erreur
 
-nathan -> Client : BougerVoleur(map[2], "Nathan")
-Client -> ServerProxy : BougerVoleur(map[2], "Nathan")
-ServerProxy -->> AdapterWebSocket : BougerVoleur(map[2], "Nathan")
-AdapterWebSocket --> Serveur : BougerVoleur(map[2], "Nathan")
 
-nathan -> Client : AcheterCarte()
-Client -> ServerProxy : AcheterCarte()
-ServerProxy -->> AdapterWebSocket : AcheterCarte()
-AdapterWebSocket --> Serveur : AcheterCarte()
-
-nathan -> Client : Echanger({"pierre":1}, {"brique":1}, "Nathan")
-Client -> ServerProxy : Echanger({"pierre":1}, {"brique":1}, "Nathan")
-ServerProxy -->> AdapterWebSocket : Echanger({"pierre":1}, {"brique":1}, "Nathan")
-AdapterWebSocket --> Serveur : Echanger({"pierre":1}, {"brique":1}, "Nathan")
-
-nathan -> Client : Echanger({"pierre":4}, {"brique":1})
-Client -> ServerProxy : Echanger({"pierre":4}, {"brique":1})
-ServerProxy -->> AdapterWebSocket : Echanger({"pierre":4}, {"brique":1})
-AdapterWebSocket --> Serveur : Echanger({"pierre":4}, {"brique":1})
-
-@enduml
+Serveur -> AdapterWebSocket : result("Nathan perd x ressources")
+Serveur -> AdapterWebSocket : result("La/les carte(s) xx")
+AdapterWebSocket ->> ServerProxy : result("Nathan perd x ressources")
+AdapterWebSocket ->> ServerProxy : result("La/les carte(s) xx")
+ServerProxy -> Client : result("Nathan perd x ressources")
+ServerProxy -> Client : result("La/les carte(s) xx")
+Client -> autres : result("Nathan perd x ressources")
+Client -> nathan : result("La/les carte(s) xx")
 ....
 
+## Echange entre un joueur et un autre joueur
+[plantuml]
+....
+
+actor "__Nathan : Client__" as nathan
+actor "__Sunye : Client__" as sunye
+
+nathan -> Client : Echanger 1 pierre contre 1 brique à Sunye
+Client -> ServerProxy : Erreur : Echanger({"pierre":1}, {"brique":1}, "Nathan")
+ServerProxy -->> AdapterWebSocket : Echanger({"pierre":1}, {"brique":1}, "Nathan")
+AdapterWebSocket -> Serveur : Echanger({"pierre":1}, {"brique":1}, "Nathan")
+AdapterWebSocket ->> ServerProxy : error
+
+
+Serveur -> AdapterWebSocket : result("Nathan te propose un échange avec les ressources 1 pierre contre 1 brique")
+AdapterWebSocket -->> ServerProxy : result("Nathan te propose un échange avec les ressources 1 pierre contre 1 brique")
+ServerProxy -> Client : result("Nathan te propose un échange avec les ressources 1 pierre contre 1 brique")
+Client -> sunye : result("Nathan te propose un échange avec les ressources 1 pierre contre 1 brique")
+....
+
+## Achat d'une carte par un Joueur
+[plantuml]
+....
+actor "__Nathan : Client__" as nathan
+actor "__Autres : Client__" as autres
+
+nathan -> Client : Acheter une carte
+Client -> ServerProxy : Erreur : AcheterCarte()
+ServerProxy ->> AdapterWebSocket : AcheterCarte()
+AdapterWebSocket -> Serveur : AcheterCarte()
+AdapterWebSocket ->> ServerProxy : erreur
+
+Serveur -> AdapterWebSocket : result("Nathan a acheté une carte")
+Serveur -> AdapterWebSocket : result("La carte xx")
+AdapterWebSocket ->> ServerProxy : result("Nathan a acheté une carte")
+AdapterWebSocket ->> ServerProxy : result("La carte xx")
+ServerProxy -> Client : result("Nathan a acheté une carte")
+ServerProxy -> Client : result("La carte xx")
+Client -> autres : result("Nathan a acheté une carte")
+Client -> nathan : result("La carte xx")
+....
