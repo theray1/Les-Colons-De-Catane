@@ -4,7 +4,7 @@
 
 
 | Cas d'utilisation	
-| Démarrer la partie
+| Initialiser la partie
 
 
 | Objectif contextuel
@@ -14,41 +14,41 @@
 | Le serveur et les Clients
 
 | Condition de succès
-| Le 1er tour est démarré sur le serveur et les clients dans la partie
+| La partie est initialisée dans l'état juste avant le 1er tour. Les clients ont reçu toutes les commandes les concernant
 
 | Condition d'échec
-| Tout les clients et le serveur ne sont pas en train d'executer le 1er tour
+| La partie n'est est initialisée dans l'état juste avant le 1er tour ou les clients ont reçu toutes les commandes les concernant
 
 | Acteurs principaux:
 | Le serveur et les clients dans la partie concernée
 
 | Événement déclencheur
-| la partie a dans son lobby 4 clients connecté
+| la partie a été créer
 
 
 | Fréquence
-| A chaque partie
+| Quand il y a 4 joueurs dans la partie.
 
 | Pré-conditions 
 a| 
-- La partie a été initialisée
+- La partie a été créer
 
 
 | Post-conditions
 a| 
-- La 1er tour est en cours sur le serveur et les Clients
+- La partie est initialisée et prete pour le 1er tour
 
 
 | Scénario nominal
 a|
-. Le serveur envoie la commande de début de partie quand il y 4 joueurs dans une partie initialisée
-. Le serveur envoie la commande de début de tour.
+. Le serveur execute la commande d'initialisation de partie.
+. Le serveur envoie les commandes nécéssaire pour synchroniser les clients.
 
 | Cas d'utilisation supérieur
-| Initialiser la partie
+|  Création de la partie
 
 | Cas d'utilisation subordonnés 
-| Tour de jeu
+| Démarrer la partie
 
 |===
 
