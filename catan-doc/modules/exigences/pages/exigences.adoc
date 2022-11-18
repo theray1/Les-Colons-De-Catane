@@ -314,26 +314,45 @@ Chaque exigence doit être identifiée de manière unique par un numéro de séq
 
 ==== Description sous la forme d'un cas d'utilisation
 
-.Cas d'utilisation A
-include::partial$uc-a.adoc[]
+.connexion
+include::partial$uc-connection.adoc[]
 
-=== Fonctionnalité B
+=== Creation de partie
 
-NOTE: Ajoutez la description de la fonctionnalité "B" en vous basant sur la structure de la fonctionnalité "A"
-
-==== Description sous la forme d'un cas d'utilisation
-.Cas d'utilisation B
-include::partial$uc-b.adoc[]
-
-=== Fonctionnalité C
-
-NOTE: Ajoutez la description de la fonctionnalité "C" en vous basant sur la structure de la fonctionnalité "A"
+Le serveur s'assure d'avoir des parties de disponible pour les clients se connectants.
 
 ==== Description sous la forme d'un cas d'utilisation
+.uc-createGame
+include::partial$uc-createGame.adoc[]
 
-.Cas d'utilisation C
-include::partial$uc-c.adoc[]
+=== gameJoin
+Un client peut demander au serveur de le placer dans une partie
 
+==== Description sous la forme d'un cas d'utilisation
+
+.uc-gameJoin
+include::partial$uc-gameJoin.adoc[]
+
+=== initGame
+Avant de démarrer, une partie doir etre initialisée
+
+==== Description sous la forme d'un cas d'utilisation
+.uc-initGame
+include::partial$uc-initGame.adoc
+
+=== startGame
+Quand une partie est pleine, le serveur démarre la partie.
+
+==== Description sous la forme d'un cas d'utilisation
+.uc-startGame
+include::partial$uc-startGame.adoc
+
+=== playGame
+Description complete d'un tour de jeux
+
+==== Description sous la forme d'un cas d'utilisation
+.uc-playTurn
+include::partial$uc-playTurn.adoc
 
 [#nonfunctional]
 == Autres exigences non-fonctionnelles
