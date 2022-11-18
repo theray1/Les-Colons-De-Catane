@@ -25,6 +25,8 @@ Aucune jusqu'à présent.
 
 [NOTE]
 ====
+Ce document s'adresse aux membres du groupe de ce projet, ainsi qu'à la personne chargée de son évaluation.
+
 Décrire les différents types de lecteurs auxquels le document est destiné, tels que les développeurs, les chefs de projet, le personnel du marketing, les utilisateurs, les testeurs et les rédacteurs de la documentation. 
 
 Décrivez le contenu et l'organisation du reste de ce SRS. Suggérer un ordre de lecture du document, en commençant par les sections d'aperçu et en poursuivant par les sections les plus pertinentes pour chaque type de lecteur.
@@ -60,9 +62,9 @@ Le reste de ce document contient une description globale du système logiciel {p
 
 === Perspectives du produit
 
-{project} est un jeu de cartes où plusieurs joueurs s'affrontent.
+{project} est un jeu de plateau où plusieurs joueurs s'affrontent.
 Le logiciel {project} doit permettre aux joueurs qui sont connectés à Internet d'utiliser leurs appareils connectés pour jouer.
-Ainsi, "{project}" est une version électronique en ligne du jeu de cartes.
+Ainsi, "{project}" est une version électronique en ligne du jeu de plateau.
 
 Bien que le système soit distribué et organisé en différents composants, les joueurs doivent le percevoir comme un seul logiciel.
 La figure <<deployment>> présente l'architecture globale du logiciel.
@@ -127,8 +129,7 @@ Distinguez les classes d'utilisateurs les plus importantes pour ce produit de ce
 ====
 
 Le logiciel {project} n'a qu'une seule classe d'utilisateurs : les joueurs.
-Les joueurs peuvent avoir différents niveaux : débutants, intermédiaires ou experts.
-Cependant, indépendamment de leur niveau, les joueurs doivent utiliser la même interface utilisateur pour jouer les uns contre les autres.
+Les joueurs doivent utiliser la même interface utilisateur pour jouer les uns contre les autres.
 
 [NOTE]
 ====
