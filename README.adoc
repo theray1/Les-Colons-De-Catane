@@ -100,11 +100,30 @@ Le processus de développement suivra le modèle de développement agile{nbsp}: 
 
 Les critères qui seront utilisés pour évaluer le travail rendu son les suivants:
 
-* Le respect des exigences logicielles.
-* La qualité du dossier de conception rendu.
-* La précision, la correction et la clarté de la conception{nbsp}: diagrammes, descriptions textuelles, etc..
-* La cohérence entre la conception et le code.
-* La qualité du code source.
+* Analyse du domaine
+** Les cas d'utilisation sont-ils clairs, bien décrits et respectent les directives vues en cours ?
+** Le diagramme de classes du domaine est-il asseez détaillé et montre clairement la structure du jeu Catane (emplacements, intersections, cartes, joueurs)
+** L'analyse du dommaine est-elle suffisante pour comprendre le jeu Catane sans faire appel aux règles ?
+
+* Specification des exigences
+** Les exigences fonctionnelles sont-elles claires (bien écrites) ?
+** La specification des exigences fonctionnelles sont-elles suffisantes pour qu'un développeur mette en oeuvre l'application "Jeu Catane" ?
+
+* Conception préliminaire
+** Les responsabilités des composants sont clairement décrites ?
+** Les interfaces des composants sont-elles bien spécifiées ? 
+** Y a-t-il des diagrammes d'interaction qui valident les interfaces spécifiées ? Plusieurs interactions par interface ?
+** Les signatures des opérations des interfaces sont-elles correctement spécifiées ? Avec des pré- et post-conditions ? 
+
+* Conception détaillée
+** La conception interne des composants est-elle claire et correcte ?
+** Un développeur sera-t-il capable de mettre en oeuvre les composants à partir de leur conception ? Ou au moins de comprendre, à haut niveau, le code ?
+
+* Mise en oeuvre
+** L'implémentation contient-elle (au moins) deux bouchons pour tester les composants serveur et client de façon isolée ?
+** Le code est-il cohérent avec la conception ? 
+** La qualité du code source Java et Typescript est-elle digne d'un étudiant du master Alma ?
+
 
 
 IMPORTANT: Les critères d'évaluation listés ci-dessus seront les seuls respectés. Ainsi, lisez bien les spécifications des exigences et assurez-vous de bien les respecter. Pour rendre un code source de qualité, rappelez-vous de ce que vous avez appris dans le module https://naomod.univ-nantes.io/sce/slides/[Construction et évolution de logiciels].
