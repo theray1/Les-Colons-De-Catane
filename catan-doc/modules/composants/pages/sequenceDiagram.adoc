@@ -198,3 +198,20 @@ AdapterWebSocket ->> ServerProxy : result("Le joueur x jette xx cartes, le joueu
 ServerProxy -> Client : result("Le joueur x jette xx cartes, le joueur y jette yy cartes ...")
 Client -> toutLeMonde : result("Le joueur x jette xx cartes, le joueur y jette yy cartes ...")
 ....
+
+## Un joueur fini son tour et gagne
+[plantuml]
+....
+actor "__Tout le monde : Client__" as toutLeMonde
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
+
+Serveur -> Serveur : VerifCondiVictoire()
+
+Serveur -> AdapterWebSocket : result("Nathan a gagné")
+AdapterWebSocket ->> ServerProxy : result("Nathan a gagné")
+ServerProxy -> Client : result("Nathan a gagné")
+
+....
