@@ -44,7 +44,7 @@ a|
 
 | Scénario nominal
 a|
-. Le serveur execute la commande de lancer de des
+. Le serveur execute la commande de lancer de des et l'envoie aux clients
 . Le client actif recoie la commande correspondant au résultat du lancer de dés.
 . Chaque client dont une ou plusieurs colonies se trouvent sur les bords d’une tuile terrain ayant un jeton numéroté correspondant au score du lancer, recevra un certain nombre de commandes leur donnant des cartes ressources, qui sont cachées aux yeux des autres joueurs. 
 . Le client actif peut proposer plusieurs commandes d'échanges de ses ressources avec un autre joueur. Les client joueurs peuvent envoyer des commandes pour faire des contre-propositions.
@@ -58,11 +58,43 @@ a|
 
 | Extensions	
 a| 
-* 2a. A n'importe quel moment, le client peut recevoir des commandes set pour mettre a jour la partie. (La partie est une suite de commandes)
+* 2a. Le lancer de dés est égale à 7 :
+* 2a1 Aucun client ne reçoit de ressources (donc pas de commandes), les client possédant plus de 7 cartes recoivent du serveur des commandes leur faisant défausser la moitier de leurs carte. Le client actif envoie une commande déplacant le voleur sur une tuile dont il privera la récolte. Le serveur envoie une commande au client actif donnant les ressource volée au hasard à une colonie adjacente à la tuile où est placé le voleur.
+* 2b. Le score du joueur au lancer de dés est différent de 7 :
+* 2ba. Le voleur est sur une tuile sur laquelle il n’a pas de villes ni de colonies :
+* 2ba1. Les joueurs recevront 1 carte ressources par colonie et 2 cartes ressources par villes placées sur les tuiles où le voleur n’est pas présent.
 
-| Cas d'utilisation subordonnés 
-| Récolter des ressources
- Faire des échanges
+* 2bb. Le voleur est sur une tuile sur en contact avec des villes ou colonies :
+
+* 2bb1. Les clients ne recevront aucune commande donnant des carte ressources pour leurs colonies et villes placées sur la tuile où est le voleur.
+
+* 6a : 5 routes du client sont connectées entre elles :
+
+* 6a1. Le clients recoit une commande donnant la carte « route la plus longue ».
+
+* 6b : le client a plus de routes que les autres :
+
+* 6b1. * 6a1. Le clients recoit une commande donnant la carte « route la plus longue ».
+
+* 9a. Un client a 10 PV ou plus :
+
+* 9a1 : ce client est déclaré vainqueur et le serveur envoie une commande désignant ce client comme vainqueur. Le serveur envoie une commande signalant la fin de la partie.
+
+* 9b. Aucun joueur n’a au moins 10 PV :
+* 9b1 : La partie continue (Le serveur désigne le prochain joueur et envoie la commande de tour suivant)
+
+| Variations
+a|
+* 3bis. Le client actif peut envoyer plusieurs commande échanges de ses ressources avec la réserve : 
+* 3bis-a. le client actif a construit une colonie ou une ville près d’un port :
+* 3bis-a1. le client actif envoie une commande échangant 3 ressources contre 1.
+* 3bis-a2.  le client actif envoie une commande échangant 2 ressources contre 1
+* 3bis-b. le client actif n’a construit ni colonie ni ville près d’un port :
+* 3bis-b1. le client actif envoie une commande échangant 4 ressources contre 1
+* 8a : le client actif a recu une commande lui faisant tirer une carte chevalier
+* 8abis : le client actif a recu une commande lui faisant tirer une carte progrès
+* 8ater : le client actif a recu une commande lui faisant tirer une carte point de victoire
+
 
 |===
 
