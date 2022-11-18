@@ -105,3 +105,62 @@ Voici les 4 contraintes que nous avons déterminées :
 . La communication vers la base de données.
 . La communication entre les machines.
 . La sécurité.
+
+[plantuml]
+....
+@startuml
+package "Server" {
+  package "Networking" {
+    interface ConnectHandler{
+      sendMessage() : void 
+      isEnabled() : Boolean
+    }
+    
+  }
+  
+  package "Api"{
+    interface Command {
+      execute() : void
+    }
+    
+    
+  }
+  
+  package "Game"{
+    
+  }
+  package "Core"{
+    package "Commands"{
+      abstract Trade {}
+      Trade <|--- TradeWithPlayer
+      Trade <|--- TradeWithNonPlayerEntity
+      Trade <|--- AcceptTrade
+      class TradeWithPlayer{
+      }
+      class TradeWithNonPlayerEntity{
+      }
+      class AcceptTrade{
+      }
+      class BuyCard{
+      }
+      class MoveThieve{
+      }
+      class Build{
+      }
+      class ActiveCard{
+      }
+      class ping{
+      }
+      class ActivateThieve{
+      }
+      class Victory{
+      }
+    }
+    
+  }
+  
+}
+
+package "Client" {
+}
+....
