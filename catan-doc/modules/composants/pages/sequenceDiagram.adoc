@@ -146,3 +146,35 @@ ServerProxy -> Client : result("Nathan a utilisé une carte progrès avec les ac
 Client -> autres : result("Nathan a utilisé une carte progrès avec les actions xxx")
 Client -> nathan : result("Nathan a utilisé une carte progrès avec les actions xxx")
 ....
+
+## Un joueur a fait 7 (activation du voleur)
+[plantuml]
+....
+actor "__Nathan : Client__" as nathan
+actor "__Autres : Client__" as autres
+actor "__Tout le monde : Client__" as toutLeMonde
+
+nathan -> Client : J'ai fait 7
+Client -> ServerProxy : ActivationVoleur()
+ServerProxy ->> AdapterWebSocket : Erreur : ActivationVoleur()
+AdapterWebSocket -> Serveur : ActivationVoleur()
+AdapterWebSocket ->> ServerProxy : erreur
+
+Serveur -> AdapterWebSocket : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
+AdapterWebSocket ->> ServerProxy : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
+ServerProxy -> Client : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
+Client -> autres : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
+Client -> nathan : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
+
+
+toutLeMonde -> Client : Je jette ces cartes là
+Client -> ServerProxy : JeterCartes(xxx)
+ServerProxy ->> AdapterWebSocket : Erreur : JeterCartes(xxx)
+AdapterWebSocket -> Serveur : JeterCartes(xxx)
+AdapterWebSocket ->> ServerProxy : erreur
+
+Serveur -> AdapterWebSocket : result("Le joueur x jette xx cartes, le joueur y jette yy cartes ...")
+AdapterWebSocket ->> ServerProxy : result("Le joueur x jette xx cartes, le joueur y jette yy cartes ...")
+ServerProxy -> Client : result("Le joueur x jette xx cartes, le joueur y jette yy cartes ...")
+Client -> toutLeMonde : result("Le joueur x jette xx cartes, le joueur y jette yy cartes ...")
+....
