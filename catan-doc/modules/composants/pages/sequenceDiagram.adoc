@@ -21,6 +21,10 @@ AdapterWebSocket --> Serveur : connect("Joueur")
 
 actor "__Sunye : Client__" as nathan
 actor "__Autres : Client__" as autres
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
 
 nathan -> Client : Echanger 4 pierres et 1 brique
 Client -> ServerProxy : Erreur : Echanger({"pierre":4}, {"brique":1})
@@ -45,6 +49,10 @@ Client -> nathan : result("La/les carte(s) xx")
 
 actor "__Nathan : Client__" as nathan
 actor "__Sunye : Client__" as sunye
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
 
 nathan -> Client : Echanger 1 pierre contre 1 brique à Sunye
 Client -> ServerProxy : Erreur : Echanger({"pierre":1}, {"brique":1}, "Nathan")
@@ -64,6 +72,10 @@ Client -> sunye : result("Nathan te propose un échange avec les ressources 1 pi
 ....
 actor "__Nathan : Client__" as nathan
 actor "__Autres : Client__" as autres
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
 
 nathan -> Client : Acheter une carte
 Client -> ServerProxy : Erreur : AcheterCarte()
@@ -87,6 +99,10 @@ Client -> nathan : result("La carte xx")
 actor "__Nathan : Client__" as nathan
 actor "__Sunye : Client__" as sunye
 actor "__Autres : Client__" as autres
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
 
 sunye -> Client : Je bouge le voleur sur la case 2 et je prend une carte de Nathan
 Client -> ServerProxy : BougerVoleur(map[2], "Nathan")
@@ -114,6 +130,10 @@ Client -> sunye : result("La ressource volée et bouger voleur et Nathan perd un
 ....
 actor "__Nathan : Client__" as nathan
 actor "__Autres : Client__" as autres
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
 
 nathan -> Client : Je construis une colonie en case 2 emplacement 2
 Client -> ServerProxy : ConstruireBatiment(Structure.Colonie, map[2].[2])
@@ -133,6 +153,10 @@ Client -> nathan : result("Placer colonie en case 2, emplacement 2 de Nathan")
 ....
 actor "__Nathan : Client__" as nathan
 actor "__Autres : Client__" as autres
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
 
 nathan -> Client : J'active la carte progres
 Client -> ServerProxy : UtiliserCarte(CarteDeveloppement.Progres.xx)
@@ -150,21 +174,17 @@ Client -> nathan : result("Nathan a utilisé une carte progrès avec les actions
 ## Un joueur a fait 7 (activation du voleur)
 [plantuml]
 ....
-actor "__Nathan : Client__" as nathan
-actor "__Autres : Client__" as autres
 actor "__Tout le monde : Client__" as toutLeMonde
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
 
-nathan -> Client : J'ai fait 7
-Client -> ServerProxy : ActivationVoleur()
-ServerProxy ->> AdapterWebSocket : Erreur : ActivationVoleur()
-AdapterWebSocket -> Serveur : ActivationVoleur()
-AdapterWebSocket ->> ServerProxy : erreur
+Serveur -> Serveur : LancerDés() = 7
 
 Serveur -> AdapterWebSocket : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
 AdapterWebSocket ->> ServerProxy : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
 ServerProxy -> Client : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
-Client -> autres : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
-Client -> nathan : result("Le voleur a été activé et vous perdez la moitié des cartes si plus de 7")
 
 
 toutLeMonde -> Client : Je jette ces cartes là
