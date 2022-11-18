@@ -43,6 +43,8 @@ Ainsi on obtient plusieurs diagram en fonction de chaque intéractions :
 [plantuml]
 ....
 @startuml
+left to right direction
+
 [Server]
 [Client]
 [Middleware]
