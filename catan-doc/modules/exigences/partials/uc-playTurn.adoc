@@ -48,11 +48,12 @@ a|
 . Le client actif recoie la commande correspondant au résultat du lancer de dés.
 . Chaque client dont une ou plusieurs colonies se trouvent sur les bords d’une tuile terrain ayant un jeton numéroté correspondant au score du lancer, recevra un certain nombre de commandes leur donnant des cartes ressources, qui sont cachées aux yeux des autres joueurs. 
 . Le client actif peut proposer plusieurs commandes d'échanges de ses ressources avec un autre joueur. Les client joueurs peuvent envoyer des commandes pour faire des contre-propositions.
+. Le client actif peut envoyer une commande d'utilisation d'une carte développement qu'il possède.
 . Le client peut envoyer des commandes de construction de routes (jusqu’à 13)au prix de ressources. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
 . Le client actif peut envoyer des commandes de constructions de colonies. Pour un nombre total de commandes inférieur ou égale à celui qu’il peut encore construire (le maximum est 5 colonies). Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
-. Le client peux envoyer des commandes de construction de colonie. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
+. Le client peux envoyer des commandes de construction de villes. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
 . Le client peut envoyer une commande pour tirer une carte de Développement. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
-.Le serveur vérifie si un client vérifie les condition de victoire. Si il y a un gagnant, le serveur envoie la commande de victoire (ie qu’il a 10 PV).
+.Le serveur vérifie si un client vérifie les conditions de victoire. Si il y a un gagnant, le serveur envoie la commande de victoire (ie qu’il a 10 PV ou plus).
 
 
 | Extensions	
