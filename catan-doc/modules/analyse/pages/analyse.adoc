@@ -7,7 +7,7 @@
 Objectif::
 Description du jeu _{project}_ sous la forme d'un diagramme de classes conceptuelles et d'actions.
 
-image::Class_Diagram.png[]
+
 
 Moyens::
 Utilisez une approche itérative pour découvrir toutes les classes conceptuelles et les actions du jeu.
@@ -16,10 +16,7 @@ Utilisez une approche itérative pour découvrir toutes les classes conceptuelle
 
 == Modèle du domaine
 
-[NOTE]
-====
-Décrivez ici les classes conceptuelles du domaine, ainsi que leurs attributs et associations.
-====
+image::Class_Diagram.png[]
 
 .Classes conceptuelles
 [plantuml]
