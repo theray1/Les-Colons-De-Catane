@@ -58,7 +58,7 @@ a|
 
 | Extensions	
 a| 
-* 2a. Le score du client au lancer de dés est 7. Dans ce cas le serveur envoie aux clients concerné les commandes permettant de ce mettre a jour.
+* 2a. A n'importe quel moment, le client peut recevoir des commandes set pour mettre a jour la partie. (La partie est une suite de commandes)
 
 | Cas d'utilisation subordonnés 
 | Récolter des ressources
