@@ -109,58 +109,105 @@ Voici les 4 contraintes que nous avons déterminées :
 [plantuml]
 ....
 @startuml
-package "Server" {
-  package "Networking" {
-    interface ConnectHandler{
-      sendMessage() : void 
-      isEnabled() : Boolean
+package Server {
+	class Server{
+		main() : void
+	}
+  package Api {
+    package Commands {
+      interface Command {
+        execute(): void
+      }
+      
+      abstract CommandAbstract {
+      		controler : ControlerGame
+      		Sender : String
+      }
+      note bottom: All commands extend from this class
+      Command <|--- CommandAbstract
+      
+    }
+
+    package Networking {
+      interface ConnectHandler {
+        sendMessage(): void
+        isEnabled(): Boolean
+      }
+		interface WebSocketAdapter {}
+		ConnectHandler <|--- WebSocketAdapter
     }
     
-  }
-  
-  package "Api"{
-    interface Command {
-      execute() : void
+    package controler{
+    	interface ControlerNetwork{}
+    	note top : Network management "module"
+    	
+    	interface ControlerCommands{
+    	}
+    	note top : Commands management "module"
+    	
+    	interface ControlerGame{
+    	}
+    	note top : Game management "module"
     }
-    
-    
+
   }
-  
-  package "Game"{
+
+  package Core {
+  package NetworkingImpl {
+    	
+      class WebSocketAdapterImpl {}
+      
+    }
+  	package controlerImpl {
+  		class ControlerServer{}
+  		note left : Server management "module"
+  		
+  		class ControlerNetworkImpl{}
+    	
+    	class ControlerCommandsImpl{
+    		commands : List<Command>
+    	}
+    	
+    	class ControlerGameImpl{
+    		players : List<Player>
+    	}
+    	
+    	
+    	
+    	
+    	ControlerNetworkImpl ..> WebSocketAdapterImpl : use
+    	ControlerGameImpl ..> GameImpl : use
+    	
+    	ControlerServer *-- ControlerNetworkImpl
+    	ControlerServer *-- ControlerCommandsImpl
+    	ControlerServer *-- ControlerGameImpl
+    	
+  	}
     
-  }
-  package "Core"{
-    package "Commands"{
+
+    package CommandsImpl {
       abstract Trade {}
       Trade <|--- TradeWithPlayer
       Trade <|--- TradeWithNonPlayerEntity
       Trade <|--- AcceptTrade
-      class TradeWithPlayer{
-      }
-      class TradeWithNonPlayerEntity{
-      }
-      class AcceptTrade{
-      }
-      class BuyCard{
-      }
-      class MoveThieve{
-      }
-      class Build{
-      }
-      class ActiveCard{
-      }
-      class ping{
-      }
-      class ActivateThieve{
-      }
-      class Victory{
-      }
+      class TradeWithPlayer {}
+      class TradeWithNonPlayerEntity {}
+      class AcceptTrade {}
+      class BuyCard {}
+      class MoveThieve {}
+      class Build {}
+      class ActiveCard {}
+      class ping {}
+      class ActivateThieve {}
+      class Victory {}
     }
-    
+
+    package GameImpl {}
+
   }
-  
+
 }
 
-package "Client" {
-}
+package Client {}
+@enduml
 ....
