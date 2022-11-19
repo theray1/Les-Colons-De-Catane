@@ -1,0 +1,118 @@
+Les différents packages
+=======================
+
+* Commands : Les différentes commandes utilisable par l'application (Ex: build, acheterCarte ...).
+* Networking : La partie réseau avec les communications entre clients et serveur.
+* Controler : Les contrôleurs (ou modules) de l'application, un pour chaque partie.
+
+Un serveur se compose d'un contrôler de server (ControlerServer) qui possède plusieurs modules (un par partie) c'est-à-dire : 
+un contrôler de jeu (ControlerGame), un contrôler de jeu (ControlerNetwork) et un contrôler de commandes (ControlerCommands).
+L'intêret est de séparer chaque partie du serveur pour éviter se retrouver avec une super classe Serveur qui contient des appels dans tous les sens de réseau, de jeu ...
+ 
+[plantuml]
+....
+@startuml
+package Server {
+	class Server{
+		main() : void
+	}
+  package Api {
+    package Commands {
+      interface Command {
+        execute(): void
+      }
+      
+      abstract CommandAbstract {
+      		controler : ControlerGame
+      		Sender : String
+      		Reciever : String
+      }
+      note bottom: All commands extend from this class
+      Command <|--- CommandAbstract
+      
+    }
+
+    package Networking {
+      interface ConnectHandler {
+        sendMessage(): void
+        isEnabled(): Boolean
+      }
+		interface WebSocketAdapter {}
+		ConnectHandler <|--- WebSocketAdapter
+    }
+    
+    package controler{
+    	interface ControlerNetwork{}
+    	note top : Network management "module"
+    	
+    	interface ControlerCommands{
+    	}
+    	note top : Commands management "module"
+    	
+    	interface ControlerGame{
+    	}
+    	note top : Game management "module"
+    }
+
+  }
+
+  package Core {
+  package NetworkingImpl {
+    	
+      class WebSocketAdapterImpl {}
+      
+    }
+  	package controlerImpl {
+  		class ControlerServer{}
+  		note left : Server management "module"
+  		
+  		class ControlerNetworkImpl{}
+    	
+    	class ControlerCommandsImpl{
+    		commands : List<Command>
+    	}
+    	
+    	class ControlerGameImpl{
+    		players : List<Player>
+    	}
+    	
+    	
+    	
+    	
+    	ControlerNetworkImpl ..> WebSocketAdapterImpl : use
+    	ControlerGameImpl ..> GameImpl : use
+    	
+    	ControlerServer *-- ControlerNetworkImpl
+    	ControlerServer *-- ControlerCommandsImpl
+    	ControlerServer *-- ControlerGameImpl
+    	
+  	}
+    
+
+    package CommandsImpl {
+      abstract Trade {}
+      Trade <|--- TradeWithPlayer
+      Trade <|--- TradeWithNonPlayerEntity
+      Trade <|--- AcceptTrade
+      class TradeWithPlayer {}
+      class TradeWithNonPlayerEntity {}
+      class AcceptTrade {}
+      class BuyCard {}
+      class MoveThieve {}
+      class Build {}
+      class ActiveCard {}
+      class Ping {}
+      class ActivateThieve {}
+      class Victory {}
+      class SetResources{}
+    }
+
+    package GameImpl {}
+
+  }
+
+}
+
+package Client {}
+@enduml
+....
