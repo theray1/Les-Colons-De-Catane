@@ -1,7 +1,7 @@
 site:
   title: Projet Catane - Website - Le meilleur groupe :) (car il y a Nathan)
   url: https://naomod.univ-nantes.io/ooad/projet-2022
-  start_page: README.adoc
+  start_page: catan-doc::index.adoc
 asciidoc:
   attributes:
     plantuml-server-url: http://www.plantuml.com/plantuml
