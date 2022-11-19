@@ -46,6 +46,7 @@ package Server {
     	note top : Network management "module"
     	
     	interface ControlerCommands{
+    		stock(Command) : void
     	}
     	note top : Commands management "module"
     	
@@ -63,7 +64,10 @@ package Server {
       
     }
   	package controlerImpl {
-  		class ControlerServer{}
+  		class ControlerServer{
+  		stock(Command) : void
+  		getNextCommand() : Command
+  		}
   		note left : Server management "module"
   		
   		class ControlerNetworkImpl{}

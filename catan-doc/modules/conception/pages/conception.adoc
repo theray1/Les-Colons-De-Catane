@@ -77,9 +77,11 @@ NOTE: TODO!
 NOTE: Décrivez dans cette partie les patrons logiciels utilisés pour mettre en œuvre l'application.
 
 
-=== Patron de conception "A"
+=== Patron de conception Commandes
 
-NOTE: TODO!
+Nous utilisons le patron Commandes qui permet à au client et au serveur d'avoir un objet de communication.
+Ainsi le client (le joueur), lorsque c'est à lui de jouer peut emmetre des commandes et ainsi communiquer avec le serveur.
+Chaque commande à une implémentation (un comportement présci) et cela permet au server de savoir quoi faire.
 
 === Patron architectural "B"
 
