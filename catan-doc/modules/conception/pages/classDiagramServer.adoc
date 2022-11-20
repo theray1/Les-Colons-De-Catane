@@ -1,12 +1,11 @@
 Les différents packages
 =======================
 
-* Commands : Les différentes commandes utilisable par l'application (Ex: build, acheterCarte ...).
 * Networking : La partie réseau avec les communications entre clients et serveur.
 * Controler : Les contrôleurs (ou modules) de l'application, un pour chaque partie.
 
 Un serveur se compose d'un contrôler de server (ControlerServer) qui possède plusieurs modules (un par partie) c'est-à-dire : 
-un contrôler de jeu (ControlerGame), un contrôler de jeu (ControlerNetwork) et un contrôler de commandes (ControlerCommands).
+un contrôler de jeu (ControlerGame) et un contrôler de jeu (ControlerNetwork).
 L'intêret est de séparer chaque partie du serveur pour éviter se retrouver avec une super classe Serveur qui contient des appels dans tous les sens de réseau, de jeu ...
  
 [plantuml]
@@ -45,11 +44,6 @@ package Server {
     	interface ControlerNetwork{}
     	note top : Network management "module"
     	
-    	interface ControlerCommands{
-    		stock(Command) : void
-    	}
-    	note top : Commands management "module"
-    	
     	interface ControlerGame{
     	}
     	note top : Game management "module"
@@ -65,16 +59,16 @@ package Server {
     }
   	package controlerImpl {
   		class ControlerServer{
-  		stock(Command) : void
-  		getNextCommand() : Command
+  		receivedCommands : List<Command>
+    	toSendCommands : List<Command>
+  		receiveCommand(Command) : void
+  		sendCommand(Command) : void
+  		getNextCommandToExecute() : Command
+  		getNextCommandToSend() : Command
   		}
   		note left : Server management "module"
   		
   		class ControlerNetworkImpl{}
-    	
-    	class ControlerCommandsImpl{
-    		commands : List<Command>
-    	}
     	
     	class ControlerGameImpl{
     		players : List<Player>
@@ -87,7 +81,6 @@ package Server {
     	ControlerGameImpl ..> GameImpl : use
     	
     	ControlerServer *-- ControlerNetworkImpl
-    	ControlerServer *-- ControlerCommandsImpl
     	ControlerServer *-- ControlerGameImpl
     	
   	}
