@@ -4,15 +4,15 @@ Les différents packages
 * Networking : La partie réseau avec les communications entre clients et serveur.
 * Controler : Les contrôleurs (ou modules) de l'application, un pour chaque partie.
 
-Un serveur se compose d'un contrôler de server (ControlerServer) qui possède plusieurs modules (un par partie) c'est-à-dire : 
+Un serveur se compose d'un contrôler de Client (ControlerClient) qui possède plusieurs modules (un par partie) c'est-à-dire : 
 un contrôler de jeu (ControlerGame) et un contrôler de jeu (ControlerNetwork).
 L'intêret est de séparer chaque partie du serveur pour éviter se retrouver avec une super classe Serveur qui contient des appels dans tous les sens de réseau, de jeu ...
  
 [plantuml]
 ....
 @startuml
-package Server {
-	class Server{
+package Client {
+	class Client{
 		main() : void
 	}
   package Api {
@@ -81,7 +81,7 @@ package Server {
       
     }
   	package controlerImpl {
-  		class ControlerServer{
+  		class ControlerClient{
   		receivedCommands : List<Command>
     	toSendCommands : List<Command>
   		receiveCommand(Command) : void
@@ -89,7 +89,7 @@ package Server {
   		getNextCommandToExecute() : Command
   		getNextCommandToSend() : Command
   		}
-  		note left : Server management "module"
+  		note left : Client management "module"
   		
   		class ControlerNetworkImpl{}
     	
@@ -103,9 +103,9 @@ package Server {
     	ControlerNetworkImpl ..> WebSocketAdapterImpl : use
     	ControlerGameImpl ..> GameImpl : use
     	
-    	ControlerServer *-- ControlerNetworkImpl
-    	ControlerServer *-- ControlerGameImpl
-    	ControlerServer *--	 CommandFactoryImpl
+    	ControlerClient *-- ControlerNetworkImpl
+    	ControlerClient *-- ControlerGameImpl
+    	ControlerClient *--	 CommandFactoryImpl
     	
   	}
     
