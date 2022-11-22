@@ -35,11 +35,11 @@ NOTE: TODO!
 
 === Portabilité
 
-NOTE: TODO!
+Pour l'instant, le jeu est uniquement disponible sur navigateur.
 
 === Sécurité
 
-NOTE: TODO!
+Pour l'instant il n'y a pas vraiment de sécurité au niveau de la connexion. Quant au serveur, lui, s'il reçoit des commandes d'un autre joueur alors que ce n'est pas son tour, la commande est annulé, de même quand la commande est impossible (proposition de ressources non valide ...). 
 
 ==== Exigence de sécurité
 
@@ -48,9 +48,6 @@ Notre système doit être sécurisé, même si nous ne manipulons pas des donné
 
 N'ayant pas à nous occuper de l'authentification de l'utilisateur nous admettons que le système s'occupant de cela est correct et lui-même sécurisé. Nous admettons également que, quelle que soit la plateforme utilisée (web, logiciel, application) le service d'authentification sera le même pour tous.
 
-=== Maintenanbilité
-
-NOTE: TODO!
 
 ==== Maintenabilité
 
