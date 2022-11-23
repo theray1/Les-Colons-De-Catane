@@ -84,6 +84,23 @@ Chaque commande a une implémentation (un comportement précis) et cela permet a
 
 Nous utilisons le patron Factory qui permet au client et au server d'avoir un créateur d'instance de commande.
 
+=== Patron de conception Facade
+
+NOTE: TODO!
+
+=== Patron de conception Builder
+
+NOTE: TODO!
+
+=== Patron de conception Bridge
+
+NOTE: TODO!
+
+=== Patron de conception Mediator
+
+NOTE: TODO!
+
+
 === Patron architectural "B"
 
 NOTE: TODO!
