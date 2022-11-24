@@ -29,8 +29,6 @@ package Server {
                 sendMessageTo(Player): void
                 isEnabled(): Boolean
             }
-            interface WebSocketAdapter {}
-            ConnectionHandler <|-- WebSocketAdapter
         }
 
         package controler {
@@ -62,11 +60,11 @@ package Server {
             class WebSocketAdapterImpl {}
             class NetworkControlerImpl {}
 
-            WebSocketAdapter <|-- WebSocketAdapterImpl
+            ConnectionHandler <|-- WebSocketAdapterImpl
 
             NetworkControler <|-- NetworkControlerImpl
             
-            NetworkControlerImpl *-- ConnectionHandler
+            NetworkControlerImpl *-up- ConnectionHandler
 
         }
         package controlerImpl {
@@ -84,8 +82,10 @@ package Server {
   
     package GameImpl {
         class GameFacadeImpl {}
+        
+        GameFacade <|-- GameFacadeImpl
     }
 
 }
 @enduml
-    ....
+....

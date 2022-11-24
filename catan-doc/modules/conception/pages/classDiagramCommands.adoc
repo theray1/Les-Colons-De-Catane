@@ -1,3 +1,5 @@
+[plantuml]
+....
 @startuml
   abstract Trade {}
   class TradeWithPlayer {}
@@ -32,3 +34,4 @@
   Command <|-- EndTurn
   Command <|-- Trade
 @enduml
+....
