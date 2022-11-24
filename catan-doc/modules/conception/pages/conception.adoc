@@ -78,11 +78,9 @@ NOTE: Décrivez dans cette partie les patrons logiciels utilisés pour mettre en
 
 Nous utilisons le patron Commandes qui permet à au client et au serveur d'avoir un objet de communication.
 Ainsi le client (le joueur), lorsque c'est à lui de jouer peut émettre des commandes et ainsi communiquer avec le serveur.
-Chaque commande a une implémentation (un comportement précis) et cela permet au server de savoir quoi faire.
+Chaque commande a une implémentation (un comportement précis) et cela permet au serveur de savoir quoi faire.
 
-=== Patron de conception Factory
-
-Nous utilisons le patron Factory qui permet au client et au server d'avoir un créateur d'instance de commande.
+include::classDiagramCommands.adoc[]
 
 === Patron de conception Facade
 
@@ -92,7 +90,7 @@ Cela va permettre dans une version future, de pouvoir changer l'implémentation 
 === Patron de conception Builder
 
 Le Builder va nous permettre d'avoir une classe qui permet d'instancier les commandes (cf: Design pattern Commandes).
-Avec ce builder, nous allons pouvoir fabriquer nos commandes sans que le serveur ait à connaitre les commandes.
+Avec ce builder, nous allons pouvoir fabriquer nos commandes sans que le serveur ait à connaître les commandes.
 
 === Patron de conception Bridge
 

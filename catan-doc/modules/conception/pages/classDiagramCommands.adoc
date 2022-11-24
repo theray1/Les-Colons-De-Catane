@@ -1,0 +1,34 @@
+@startuml
+  abstract Trade {}
+  class TradeWithPlayer {}
+  class TradeWithNonPlayerEntity {}
+  class AcceptTrade {}
+  class DenyTrade {}
+  class BuyCard {}
+  class MoveThieve {}
+  class Build {}
+  class ActiveCard {}
+  class Ping {}
+  class ActivateThieve {}
+  class Win {}
+  class SetResources{}
+  class EndTurn{}
+  
+  interface Command{}
+  
+  Trade <|-left- TradeWithPlayer
+  Trade <|-up- TradeWithNonPlayerEntity
+  Trade <|-down- AcceptTrade
+  Trade <|-right- DenyTrade
+  
+  Command <|-left- BuyCard
+  Command <|-left- MoveThieve
+  Command <|-right- Build
+  Command <|-right- ActiveCard
+  Command <|-up- Ping
+  Command <|-up- ActivateThieve
+  Command <|-down- Win
+  Command <|-down- SetResources
+  Command <|-- EndTurn
+  Command <|-- Trade
+@enduml

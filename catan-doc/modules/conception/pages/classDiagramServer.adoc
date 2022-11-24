@@ -2,97 +2,90 @@
 ....
 @startuml
 package Server {
-	class Server{
-		main() : void
-	}
-  
 
-  
-  package Core {
-  package Game{
-  	interface GameFacade{}
-  }
-    package Commands {
-      interface CommandFactory{
-      	createCommand(type) : Command
-      	serializeCommand(Command) : String
-      }
-      interface Command {
-        execute(Context): void
-      }
+    class Server {
+        main(): void
+    }
+
+    package Core {
+        package Game {
+            interface GameFacade {}
+        }
+        package Commands {
+            interface CommandBuilder {}
+            interface Command {
+                execute(Context): void
+            }
+
+            interface Serialiser {
+                serialize(Command): String
+                deSerialize(String): Command
+            }
+        }
+
+        package Networking {
+            interface ConnectionHandler {
+                Broadcast(Command): void
+                sendMessageTo(Player): void
+                isEnabled(): Boolean
+            }
+            interface WebSocketAdapter {}
+            ConnectionHandler <|-- WebSocketAdapter
+        }
+
+        package controler {
+            interface NetworkControler {
+            	sendCommandTo(Command, List<Player>) : void
+            }
+            note top: Network management "module"
+
+            interface ControlerGame {}
+            note top: The superclass of an instance of a game
+
+        }
+
+    }
       
-      note bottom: All commands extend from this class
-      
-      interface Serialiser{
-      	serialize(Command) : String
-      	deSerialize(String) : Command
-      }
-    }
+    package ServerImpl {
+        package CommandsImpl {
+            class SerializerImpl {}
+            class CommandsImpl {}
+            note bottom : Represent all types of commands.
+            class CommandBuilderImpl {}
 
-    package Networking {
-      interface ConnectionHandler {
-        Broadcast(Command): void
-        sendMessageTo(Player): void
-        isEnabled(): Boolean
-      }
-		interface WebSocketAdapter {}
-		ConnectionHandler <|--- WebSocketAdapter
-    }
-    
-    package controler{
-    	interface NetworkControler{}
-    	note top : Network management "module"
+            Command <|--CommandsImpl
+            CommandBuilder <|-- CommandBuilderImpl
+        }
 
-  }
+        package NetworkingImpl {
 
-  package ServerImpl {
-  package CommandsImpl {
-  	  class SerializerImpl{}
-      class CommandFactoryImpl{}
-      abstract Trade {}
-      Trade <|--- TradeWithPlayer
-      Trade <|--- TradeWithNonPlayerEntity
-      Trade <|--- AcceptTrade
-      Trade <|--- DenyTrade
-      class TradeWithPlayer {}
-      class TradeWithNonPlayerEntity {}
-      class AcceptTrade {}
-      class DenyTrade {}
-      class BuyCard {}
-      class MoveThieve {}
-      class Build {}
-      class ActiveCard {}
-      class Ping {}
-      class ActivateThieve {}
-      class Win {}
-      class SetResources{}
-      class EndTurn{}
+            class WebSocketAdapterImpl {}
+            class NetworkControlerImpl {}
+
+            WebSocketAdapter <|-- WebSocketAdapterImpl
+
+            NetworkControler <|-- NetworkControlerImpl
+            
+            NetworkControlerImpl *-- ConnectionHandler
+
+        }
+        package controlerImpl {
+
+            class ControlerGameImpl {
+                players: List<Player>
+                commands: List<Command>
+                receiveCommand(Command): void
+            }
+            ControlerGameImpl *-up- NetworkControler
+            ControlerGameImpl *-up- GameFacade
+            ControlerGame <|-up- ControlerGameImpl
+        }
     }
-    
-  package NetworkingImpl {
-    	
-      class WebSocketAdapterImpl {}
-      class NetworkControlerImpl{}
-      
-    }
-  	package controlerImpl {
   
-    	
-    	class ControlerGameImpl{
-    		players : List<Player>
-    		commands : List<Command>
-  		receiveCommand(Command) : void
-  		sendCommand(Command) : void
-  		getNextCommandToExecute() : Command
-  		getNextCommandToSend() : Command
-    		}
-    	ControlerGameImpl ..> NetworkControler : use
-  	}
-  }
-      package GameImpl {
-		class GameFacadeImpl{}
+    package GameImpl {
+        class GameFacadeImpl {}
     }
 
 }
 @enduml
-....
+    ....
