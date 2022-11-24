@@ -86,11 +86,13 @@ Nous utilisons le patron Factory qui permet au client et au server d'avoir un cr
 
 === Patron de conception Facade
 
-NOTE: TODO!
+Ce design pattern va nous permettre d'avoir une classe qui fait le lien entre le serveur et le package qui implémente le jeu.
+Cela va permettre dans une version future, de pouvoir changer l'implémentation du jeu sans changer le serveur.
 
 === Patron de conception Builder
 
-NOTE: TODO!
+Le Builder va nous permettre d'avoir une classe qui permet d'instancier les commandes (cf: Design pattern Commandes).
+Avec ce builder, nous allons pouvoir fabriquer nos commandes sans que le serveur ait à connaitre les commandes.
 
 === Patron de conception Bridge
 
