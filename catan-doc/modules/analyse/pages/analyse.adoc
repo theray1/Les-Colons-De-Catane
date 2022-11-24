@@ -22,12 +22,6 @@ include::classDiagram.adoc[]
 
 include::classDiagramTile.adoc[]
 
-.Classes conceptuelles
-[plantuml]
-....
-include::example$cd-analyse.puml[]
-....
-
 == Cas d'utilisation
 
 [NOTE]
