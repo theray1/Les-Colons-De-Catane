@@ -9,15 +9,38 @@ package Server {
 
     package Core {
         package Game {
-            interface GameFacade {}
+            interface GameFacade {
+	            start() : void
+	        	end() : void
+	        	endPlayer() : void
+	        	trade(Player, List<resource>, Player, List<resource>) : void
+	        	addresourcesTo(Player, List<resource>) : void
+	        	removeresourcesTo(Player, List<resource>) : void
+            }
         }
         package Commands {
-            interface CommandBuilder {}
+            interface CommandFactory {
+            	createCommand_ActivateThieve(List<Player>) : Command
+            	createCommand_MoveThieve(List<Player>, Coordinates) : Command
+            	createCommand_Ping(List<Player>) : Command
+            	createCommand_Build(List<Player>, Building) : Command
+            	createCommand_ActiveCard(List<Player>, Card) : Command
+            	createCommand_AddCard(List<Player>, Player, Integer) : Command
+            	createCommand_BuyCard(List<Player>, List<Resource>) : Command
+            	createCommand_EndTour(List<Player>, Player) : Command
+            	createCommand_Win(List<Player>) : Command
+            	createCommand_SetResources(Player) : Command
+            	createCommand_AddResources(List<Player>, Player, Integer) : Command
+            	createCommand_TradeWithNonPlayerEntity(Player, List<Resource>, List<Resource> ) : Command
+            	createCommand_TradeWithPlayer(Player, List<Resource>, Player, List<Resource>) : Command
+            	createCommand_DenyTrade(Player, Player) : Command
+            	createCommand_AcceptTrade(Player, Player) : Command
+            }
             interface Command {
                 execute(Context): void
             }
 
-            interface Serialiser {
+            interface Serializer {
                 serialize(Command): String
                 deSerialize(String): Command
             }
@@ -37,7 +60,9 @@ package Server {
             }
             note top: Network management "module"
 
-            interface ControlerGame {}
+            interface GameControler {
+                receiveCommand(Command): void
+            }
             note top: The superclass of an instance of a game
 
         }
@@ -49,10 +74,11 @@ package Server {
             class SerializerImpl {}
             class CommandsImpl {}
             note bottom : Represent all types of commands.
-            class CommandBuilderImpl {}
+            class CommandFactoryImpl {}
 
             Command <|--CommandsImpl
-            CommandBuilder <|-- CommandBuilderImpl
+            CommandFactory <|-- CommandFactoryImpl
+            Serializer <|-- SerializerImpl
         }
 
         package NetworkingImpl {
@@ -69,21 +95,22 @@ package Server {
         }
         package controlerImpl {
 
-            class ControlerGameImpl {
+            class GameControlerImpl {
                 players: List<Player>
                 commands: List<Command>
-                receiveCommand(Command): void
             }
-            ControlerGameImpl *-up- NetworkControler
-            ControlerGameImpl *-up- GameFacade
-            ControlerGame <|-up- ControlerGameImpl
+            GameControlerImpl *-up- NetworkControler
+            GameControlerImpl *-up- GameFacade
+            GameControlerImpl *-up- Serializer
+            GameControler <|-up- GameControlerImpl
+            
         }
     }
   
     package GameImpl {
         class GameFacadeImpl {}
         
-        GameFacade <|-- GameFacadeImpl
+        GameFacade <|-right- GameFacadeImpl
     }
 
 }
