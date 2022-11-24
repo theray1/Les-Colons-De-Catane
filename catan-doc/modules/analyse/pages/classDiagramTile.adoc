@@ -1,0 +1,31 @@
+[plantuml]
+....
+@startuml
+	interface Tile{}
+	interface Edge{}
+	interface Harbor{}
+	interface Vertice{}
+	interface Resource{}
+	class TileImpl{}
+	class ResourceImpl{}
+	Enum Tiles{
+			HILL
+			FOREST
+			MOUNTAIN
+			PASTURE
+			FIELD
+			DESERT
+	}
+
+	Tile <|-down- TileImpl
+	TileImpl *-down- Tiles
+	TileImpl *-right- Harbor
+	TileImpl *-right- "0-1" Resource	
+	TileImpl *-left- Edge
+	TileImpl *-left- Vertice
+	Edge <|-down- EdgeImpl
+  	Vertice <|-down- VerticeImpl
+  	Harbor <|-down- HarborImpl
+  	Resource <|-down- ResourceImpl
+@enduml
+....

@@ -18,6 +18,10 @@ Utilisez une approche itérative pour découvrir toutes les classes conceptuelle
 
 image::Class_Diagram.png[]
 
+=== Zoom sur TileImpl
+
+image::classDiagramTile.png[]
+
 .Classes conceptuelles
 [plantuml]
 ....

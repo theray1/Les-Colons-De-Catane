@@ -124,43 +124,37 @@ package Game{
 		'Package Map
 	  	Robber <|-up- RobberImpl
 	  	Map <|-up- MapImpl
-	  	Tile <|-up- TileImpl
-	  	Edge <|-up- EdgeImpl
-	  	Vertice <|-up- VerticeImpl
-	  	Harbor <|-up- HarborImpl
 	  	MapImpl *-up- Tile
-	  	MapImpl *-down- "0-1" Robber
-	   TileImpl *-down- Tiles
-	  	TileImpl *-down- Harbor
-	  	TileImpl *-down- "0-1" Resource	
-	  	TileImpl *-down- Edge
-	  	TileImpl *-down- Vertice
-	  	EdgeImpl *-down- Harbor
-	  	VerticeImpl *-down- Harbor
+	  	TileImpl *-down- "0-1" Robber
+	  	EdgeImpl *-up- "0-1" Harbor
+	  	VerticeImpl *-down-"0-1" Harbor
 		Location <|-down- Edge
 		Location <|-down- Vertice
 		Location <|-down- Harbor	
 	  	
 	  	'Package Resource
-		Resource <|-- ResourceImpl
-		ResourceImpl *-- "1" Resources
+		ResourceImpl *-up- "1" Resources
 		
 	  	'Package Building
 		Building <|-- BuildingAbstract
 		VerticeImpl *-- "0-1" VerticeBuilding
 		EdgeImpl *-- "0-1" EdgeBuilding	
+		EdgeBuilding <|-- Road
+		VerticeBuilding <|-- City
+		VerticeBuilding <|-- Settlement
 		
 		'Package Player
-		Player <|-- PlayerImpl		
+		Player <|-left- PlayerImpl		
 		
 		'Package Game
-		Game <|-- GameImpl
-		GameImpl *-- Dice
-		GameImpl *-- "1" Map
+		Game <|-down- GameImpl
+		GameImpl *-down- Dice
+		GameImpl *-down- "1" Map
+		GameImpl *-down- Player
 		
 		'Package Card
-		DeveloppementCard *-- "1" DeveloppementCards
-		Card <|-down- ResourceCard
-		Card <|-down- DeveloppementCard
+		DeveloppementCard *-up- "1" DeveloppementCards
+		Card <|-right- ResourceCard
+		Card <|-right- DeveloppementCard
 @enduml
 ....
