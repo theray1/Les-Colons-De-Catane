@@ -39,7 +39,7 @@ a|
 . Le maître du jeu place les 6 cartes représentant la mer autour du terrain.
 . Le maître du jeu place les 19 tuiles terrains de manière aléatoire.
 . Le maître du jeu place les 18 jetons numérotés sur les tuiles terrains, mais aucun sur la carte désert.
-. Le maître du jeu met les cartes ressources face visible et les cartes développement face cachée.
+. Le maître du jeu crée les pioches de cartes ressources et développement.
 . Le maître du jeu place le voleur sur la case désert.
 . Chaque joueur lance les 2 dés afin de déterminer l’ordre de jeu. Celui ayant le meilleur score commence, puis l’ordre est celui des aiguilles d’une montre.
 . Chaque joueur place, dans l’ordre définit à l’étape 6, 1 colonie et 1 route qui y est rattachée. 

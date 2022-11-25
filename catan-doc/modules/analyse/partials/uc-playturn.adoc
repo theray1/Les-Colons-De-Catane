@@ -51,7 +51,7 @@ a|
 . Le joueur actif lance les dés.
 . Chaque joueur dont une ou plusieurs colonies se trouvent sur les bords d’une tuile terrain ayant un jeton numéroté correspondant au score du lancer, recevra un certain nombre de cartes ressources, qui sont cachées aux yeux des autres joueurs. 
 . Le joueur actif peut proposer plusieurs échanges de ses ressources avec un autre joueur. Les autres joueurs peuvent faire des contre-propositions.
-. Le joueur peut construire une ou plusieurs routes (jusqu’à 13)au prix de ressources, mais elles doivent être connectées à une colonie ou une route
+. Le joueur peut construire une ou plusieurs routes (jusqu’à 13) au prix de ressources, mais elles doivent être connectées à une colonie ou une route
 . Le joueur peut construire un nombre de colonies inférieur ou égale à celui qu’il peut encore construire, au prix de ressources. (le maximum est 5 colonies).
 . Le joueur peut construire plusieurs villes, au prix de ressources et seulement à partir de colonies déjà créées. Les colonies détruites peuvent être recréées par le joueur plus tard dans le jeu. 
 . Au prix de ressources, le joueur peut tirer une carte Développement qu’il pourra utiliser à partir du tour suivant.

@@ -1,0 +1,33 @@
+
+
+=== Créer les pioches de cartes ressources et développement
+
+Acteurs : Joueurs, Plateau, Cartes
+
+. Un joueur sépare les cartes en 6 piles, une pour chaque type de carte (Bois, Roche, Brique, Laine, Blé, Développement).
+. Une fois les cartes séparées et regroupées selon leur type, un joueur les dispose de la manière suivante: face visible pour les cartes ressource (Bois, Roche, Brique, Laine, Blé) et face cachée pour les cartes développement.
+. Un joueur mélange aléatoirement le paquet de cartes développement.
+
+
+=== Récolter les ressources
+
+Acteurs : Joueurs, Plateau, Cartes, Dés
+
+Pré-condition : Lors du tour d'un joueur, lorsque les dés ont déjà été lancés et que le résultat n'est pas 7.
+
+. Le résultat du dés correspond à une case ou plusieurs sur le plateau. C'est cases sont les seules qui vont produire des ressources pendant le tour en cours.
+. Chaque joueur récolte des ressources de la manière suivante:  
+    - pour chaque colonie autour d'une des tuiles productrices, le propriétaire de cette colonie reçoit une (1) ressource correspondant au type de la tuile.
+    - pour chaque ville autour d'une des tuiles productrices, le propriétaire de cette ville reçoit deux (2) ressources correspondant au type de la tuile.
+
+
+
+=== Vérifier les points de victoire
+
+. Le joueur actif compte l'ensemble de ses points de victoire de la manière suivante: 
+    - Chaque colonie que le joueur possède vaut 1 point de victoire (PV).
+    - Chaque ville que le joueur possède vaut 2 points de victoire (PV).
+    - Chaque carte de développement "Point de Victoire" que le joueur possède vaut 2 points de victoire (PV).
+    - Le joueur qui possède "La route la plus longue" (L'enchaînement de route le plus long et de longueur 5 ou plus) a 2 points de victoire supplémentaires.
+    - Le joueur qui possède "L'armée la plus grande" (L'armée d'un joueur est composée des cartes "Chevalier" retournées/activées que le joueur possède. Le joueur qui possède le plus de "Chevalier" et qui en possède 3 ou plus, a L'armée la plus grande) a 2 points de victoire supplémentaires.
+. Si le joueur actif possède 10 PV ou plus, alors il a gagné la partie en cours.

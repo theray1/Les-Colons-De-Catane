@@ -42,7 +42,7 @@ include::../partials/uc-preparation.adoc[]
 .Diagramme d'activités: Mise en place d'une partie
 [plantuml]
 ....
-include::example$ad-mise-en-place.puml[]
+include::../examples/ad-mise-en-place.puml[]
 ....
 
 === Cas d'utilisation Jouer un tour
@@ -51,10 +51,7 @@ include::../partials/uc-playturn.adoc[]
 
 == Activités
 
-[NOTE]
-====
-
-====
+include::../partials/activities.adoc[]
 
 == Opérations
 
