@@ -31,6 +31,7 @@ package server {
             	createCommand_TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
             	createCommand_DenyTrade(Player, Player) : Command
             	createCommand_AcceptTrade(Player, Player) : Command
+            	createCommand_LoginComplete(Player) : Command
             }
             interface Command {
                 execute(): void
@@ -59,6 +60,8 @@ package server {
 
             interface GameControler {
                 receiveCommand(Command): void
+                addParticipant(Login, Player) : void
+                addPlayer() : Player
             }
 
         }
@@ -68,15 +71,15 @@ package server {
     package serverImpl {
         package commandsImpl {
             class SerializerImpl {}
-            class CommandsImpl {
-            		recipients : Player[]
+            abstract CommandAbstract {
             }
             note bottom : Represent all types of commands.
             class CommandGameFactoryImpl {}
 
-            Command <|--CommandsImpl
+            Command <|--CommandAbstract
             CommandGameFactory <|-- CommandGameFactoryImpl
             Serializer <|-- SerializerImpl
+            CommandAbstract *-- "1-4"  Player
         }
 
         package networkingImpl {
@@ -93,6 +96,12 @@ package server {
 		   
         }
         package controlerImpl {
+        
+	        Enum Status{
+        	   		NOTSTARTED
+        	   		STARTED
+        	   		FINISHED
+	        	   }
 
             class GameControlerImpl {
                 players: Player[]
@@ -102,15 +111,11 @@ package server {
             GameControlerImpl *-up- GameFacade
             GameControlerImpl *-up- Serializer
             GameControler <|-up- GameControlerImpl
+            GameControlerImpl *-- Status
             
         }
     }
-  
-    package gameImpl {
-        class GameFacadeImpl {}
-        
-        GameFacade <|-up- GameFacadeImpl
-    }
+ 
     
     package managment{
     	package api{

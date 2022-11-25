@@ -2,7 +2,9 @@
 ....
 @startuml
   abstract Trade {}
-  abstract CommandAbstract{}
+  abstract CommandAbstract{
+  		recipients : Player[]
+  }
   class TradeWithPlayer {}
   class TradeWithNonPlayerEntity {}
   class AcceptTrade {}
@@ -18,6 +20,8 @@
   class AddResources{}
   class AddCard{}
   class EndTurn{}
+  class Login{}
+  class LoginComplete{}
   
   interface Player{}
   
@@ -32,6 +36,8 @@
   Trade <|-right- DenyTrade
   
   Command <|-down- CommandAbstract
+  Command <|-down- Login
+  Command <|-down- LoginComplete
   CommandAbstract <|-left- BuyCard
   CommandAbstract <|-left- MoveThieve
   CommandAbstract <|-right- Build

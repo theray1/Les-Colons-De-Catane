@@ -9,7 +9,28 @@ Pour que le client et le serveur communiquent, il faut une connexion entre ces 2
 @startuml
 
 actor "__Client : Client__" as client
+participant "__:Client__" as Client
+participant "__:ServerProxy__" as ServerProxy
+participant "__:AdapterWebSocket__" as AdapterWebSocket
+participant "__:Serveur__" as Serveur
 
+participant "__:Factory__" as Factory
+participant "__:GameManager__" as GameManager
+participant "__:GameControler__" as GameControler
+participant "__:CommandFactory__" as CommandFactory
+participant "__:NetworkControler__" as NetworkControler
+
+client -> Client : Je me connecte
+Client -> ServerProxy : connect("Client")
+ServerProxy -->> AdapterWebSocket : erreur : connect("Client")
+AdapterWebSocket -> Serveur : connect("Client")
+Serveur -> Factory : CreateCommandLogin("Client"): CommandLogin
+Serveur -> GameManager : addParticipant(CommandLogin) : boolean
+GameManager -> GameControler : addParticipant(CommandLogin) : boolean
+GameControler -> GameControler : addPlayer() : Player
+GameControler -> NetworkControler : addParticipant(CommandLogin, Player) : boolean
+GameControler -> CommandFactory : createCommand_LoginComplete(Player) : CommandLC
+GameControler -> NetworkControler : sendCommand(CommandLC) : boolean
 @enduml
 ....
 

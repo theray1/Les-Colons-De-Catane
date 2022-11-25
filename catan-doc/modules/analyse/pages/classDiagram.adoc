@@ -108,6 +108,8 @@ package Game{
 	}
 	
 	package GameImpl{
+		class GameFacadeImpl{}
+		note right : The facade between Game and server
 		class GameImpl{
 			ID_PARTY : double
 		}
