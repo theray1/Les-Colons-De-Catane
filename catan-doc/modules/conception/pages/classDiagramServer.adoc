@@ -13,26 +13,26 @@ package Server {
 	            start() : void
 	        	end() : void
 	        	endPlayer() : void
-	        	trade(Player, List<resource>, Player, List<resource>) : void
-	        	addresourcesTo(Player, List<resource>) : void
-	        	removeresourcesTo(Player, List<resource>) : void
+	        	trade(Player, Resource[], Player, Resource[]) : void
+	        	addresourcesTo(Player, Resource[]) : void
+	        	removeresourcesTo(Player, Resource[]) : void
             }
         }
         package Commands {
             interface CommandFactory {
-            	createCommand_ActivateThieve(List<Player>) : Command
-            	createCommand_MoveThieve(List<Player>, Coordinates) : Command
-            	createCommand_Ping(List<Player>) : Command
-            	createCommand_Build(List<Player>, Building) : Command
-            	createCommand_ActiveCard(List<Player>, Card) : Command
-            	createCommand_AddCard(List<Player>, Player, Integer) : Command
-            	createCommand_BuyCard(List<Player>, List<Resource>) : Command
-            	createCommand_EndTour(List<Player>, Player) : Command
-            	createCommand_Win(List<Player>) : Command
+            	createCommand_ActivateThieve(Player[]) : Command
+            	createCommand_MoveThieve(Player[], Coordinates) : Command
+            	createCommand_Ping(Player[]) : Command
+            	createCommand_Build(Player[], Building) : Command
+            	createCommand_ActiveCard(Player[], Card) : Command
+            	createCommand_AddCard(Player[], Player, Integer) : Command
+            	createCommand_BuyCard(Player[], Resource[]) : Command
+            	createCommand_EndTour(Player[], Player) : Command
+            	createCommand_Win(Player[]) : Command
             	createCommand_SetResources(Player) : Command
-            	createCommand_AddResources(List<Player>, Player, Integer) : Command
-            	createCommand_TradeWithNonPlayerEntity(Player, List<Resource>, List<Resource> ) : Command
-            	createCommand_TradeWithPlayer(Player, List<Resource>, Player, List<Resource>) : Command
+            	createCommand_AddResources(Player[], Player, Integer) : Command
+            	createCommand_TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+            	createCommand_TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
             	createCommand_DenyTrade(Player, Player) : Command
             	createCommand_AcceptTrade(Player, Player) : Command
             }
@@ -56,7 +56,7 @@ package Server {
 
         package controler {
             interface NetworkControler {
-            	sendCommandTo(Command, List<Player>) : void
+            	sendCommandTo(Command, Player[]) : void
             }
             note top: Network management "module"
 
@@ -96,8 +96,8 @@ package Server {
         package controlerImpl {
 
             class GameControlerImpl {
-                players: List<Player>
-                commands: List<Command>
+                players: Player[]
+                commands: Command[]
             }
             GameControlerImpl *-up- NetworkControler
             GameControlerImpl *-up- GameFacade
