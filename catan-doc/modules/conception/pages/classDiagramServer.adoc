@@ -9,6 +9,7 @@ package Server {
 
     package Core {
         package Game {
+        	   interface Player{}
             interface GameFacade {
 	            start() : void
 	        	end() : void
@@ -37,7 +38,8 @@ package Server {
             	createCommand_AcceptTrade(Player, Player) : Command
             }
             interface Command {
-                execute(Context): void
+                execute(): void
+                getRecipients() : Player[]
             }
 
             interface Serializer {
@@ -49,21 +51,20 @@ package Server {
         package Networking {
             interface ConnectionHandler {
                 Broadcast(Command): void
-                sendMessageTo(Player): void
+                sendCommand(Command): void
                 isEnabled(): Boolean
             }
         }
 
         package controler {
             interface NetworkControler {
-            	sendCommandTo(Command, Player[]) : void
+            	sendCommand(Command) : void
             }
             note top: Network management "module"
 
             interface GameControler {
                 receiveCommand(Command): void
             }
-            note top: The superclass of an instance of a game
 
         }
 
@@ -72,7 +73,9 @@ package Server {
     package ServerImpl {
         package CommandsImpl {
             class SerializerImpl {}
-            class CommandsImpl {}
+            class CommandsImpl {
+            		recipients : Player[]
+            }
             note bottom : Represent all types of commands.
             class CommandFactoryImpl {}
 
@@ -82,8 +85,9 @@ package Server {
         }
 
         package NetworkingImpl {
-
-            class WebSocketAdapterImpl {}
+            class WebSocketAdapterImpl {
+               links : Map[key: GameImpl.Player][value: Socket]
+            }
             class NetworkControlerImpl {}
 
             ConnectionHandler <|-- WebSocketAdapterImpl
@@ -91,7 +95,7 @@ package Server {
             NetworkControler <|-- NetworkControlerImpl
             
             NetworkControlerImpl *-up- ConnectionHandler
-
+		   
         }
         package controlerImpl {
 

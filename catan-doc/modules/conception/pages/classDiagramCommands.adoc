@@ -2,6 +2,7 @@
 ....
 @startuml
   abstract Trade {}
+  abstract CommandAbstract{}
   class TradeWithPlayer {}
   class TradeWithNonPlayerEntity {}
   class AcceptTrade {}
@@ -18,24 +19,32 @@
   class AddCard{}
   class EndTurn{}
   
-  interface Command{}
+  interface Player{}
+  
+  interface Command{
+  	execute() : void
+  	getRecipients() : Player[]
+  }
   
   Trade <|-left- TradeWithPlayer
   Trade <|-up- TradeWithNonPlayerEntity
   Trade <|-down- AcceptTrade
   Trade <|-right- DenyTrade
   
-  Command <|-left- BuyCard
-  Command <|-left- MoveThieve
-  Command <|-right- Build
-  Command <|-right- ActiveCard
-  Command <|-up- Ping
-  Command <|-up- ActivateThieve
-  Command <|-up- AddResources
-  Command <|-down- AddCard
-  Command <|-down- Win
-  Command <|-down- SetResources
-  Command <|-- EndTurn
-  Command <|-- Trade
+  Command <|-down- CommandAbstract
+  CommandAbstract <|-left- BuyCard
+  CommandAbstract <|-left- MoveThieve
+  CommandAbstract <|-right- Build
+  CommandAbstract <|-right- ActiveCard
+  CommandAbstract <|-up- Ping
+  CommandAbstract <|-up- ActivateThieve
+  CommandAbstract <|-up- AddResources
+  CommandAbstract <|-down- AddCard
+  CommandAbstract <|-down- Win
+  CommandAbstract <|-down- SetResources
+  CommandAbstract <|-- EndTurn
+  CommandAbstract <|-- Trade
+  
+  CommandAbstract *-- "1-4" Player
 @enduml
 ....

@@ -87,14 +87,9 @@ include::classDiagramCommands.adoc[]
 Ce design pattern va nous permettre d'avoir une classe qui fait le lien entre le serveur et le package qui implémente le jeu.
 Cela va permettre dans une version future, de pouvoir changer l'implémentation du jeu sans changer le serveur.
 
-=== Patron de conception Builder
+=== Patron de conception Factory
 
-Le Builder va nous permettre d'avoir une classe qui permet d'instancier les commandes (cf: Design pattern Commandes).
-Avec ce builder, nous allons pouvoir fabriquer nos commandes sans que le serveur ait à connaître les commandes.
-
-=== Patron de conception Bridge
-
-NOTE: TODO!
+La factory va nous permettre d'avoir une classe qui permet d'instancier les commandes (cf: Design pattern Commandes).
 
 === Patron de conception Mediator
 
