@@ -55,4 +55,6 @@ include::../partials/activities.adoc[]
 
 == Opérations
 
+include::../partials/operations.adoc[]
+
 // include::uc-template.adoc[]
