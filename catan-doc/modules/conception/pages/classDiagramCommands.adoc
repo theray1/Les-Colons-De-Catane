@@ -37,7 +37,7 @@
   
   Command <|-down- CommandAbstract
   Command <|-down- Login
-  Command <|-down- LoginComplete
+  CommandAbstract <|-down- LoginComplete
   CommandAbstract <|-left- BuyCard
   CommandAbstract <|-left- MoveThieve
   CommandAbstract <|-right- Build
