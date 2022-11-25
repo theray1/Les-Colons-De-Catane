@@ -1,27 +1,35 @@
-//étape 4 du scénario nominal du cas d'utilisation "Jouer un tour"
-Player::construireRoute()
+=== étape 4 du scénario nominal du cas d'utilisation "Jouer un tour"
+
+Player::construireRoute() +
+
 pre: Le joueur lançant cette opération a au moins une ressource de bois et une ressource de brique à utiliser pour construire cette route.
 
 post: Une route a été construite sur le terrain.
 
-//étape 5 du scénario nominal du cas d'utilisation "Jouer un tour"
-Player::construireColonie()
+=== étape 5 du scénario nominal du cas d'utilisation "Jouer un tour"
+
+Player::construireColonie() +
+
 pre: Le joueur lançant cette opération a au moins une ressource de bois, une ressource de brique, une ressource de blé et une ressource de laine à utiliser pour construire cette colonie.
 
 post: Une colonie a été construite sur le terrain.
 
 
-//étape 6 du scénario nominal du cas d'utilisation "Jouer un tour"
-Player::construireVille()
+=== étape 6 du scénario nominal du cas d'utilisation "Jouer un tour"
+
+Player::construireVille() +
+
 pre: 
--Le joueur lançant cette opération a au moins deux ressources de blé et trois ressources de roche à utiliser pour construire cette ville.
+-Le joueur lançant cette opération a au moins deux ressources de blé et trois ressources de roche à utiliser pour construire cette ville. +
 -Le joueur lançant cette opération a au moins une colonie à utiliser pour la transformer en ville.
 
 post: Une ville a été construite sur le terrain.
 
 
-//étape 7 du scénario nominal du cas d'utilisation "Jouer un tour"
-Player::piocherCarteDeveloppement()
+=== étape 7 du scénario nominal du cas d'utilisation "Jouer un tour"
+
+Player::piocherCarteDeveloppement() +
+
 pre: Le joueur lançant cette opération a au moins une ressource de blé, une ressource de laine et une ressource de roche à utiliser pour piocher cette carte.
 
 post: Le joueur a tiré une carte de développement
