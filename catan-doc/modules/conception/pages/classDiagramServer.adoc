@@ -49,12 +49,14 @@ package server {
                 Broadcast(Command): void
                 sendCommand(Command): void
                 isEnabled(): Boolean
+                addParticipant(Login, Player) : void
             }
         }
 
         package controler {
             interface NetworkControler {
             	sendCommand(Command) : void
+            	addParticipant(Login, Player) : void
             }
             note right: Network management "module"
 
