@@ -1,14 +1,9 @@
 [plantuml]
 ....
 @startuml
-package Server {
-
-    class Server {
-        main(): void
-    }
-
-    package Core {
-        package Game {
+package server {
+    package core {
+        package game {
         	   interface Player{}
             interface GameFacade {
 	            start() : void
@@ -19,8 +14,8 @@ package Server {
 	        	removeresourcesTo(Player, Resource[]) : void
             }
         }
-        package Commands {
-            interface CommandFactory {
+        package commands {
+            interface CommandGameFactory {
             	createCommand_ActivateThieve(Player[]) : Command
             	createCommand_MoveThieve(Player[], Coordinates) : Command
             	createCommand_Ping(Player[]) : Command
@@ -48,7 +43,7 @@ package Server {
             }
         }
 
-        package Networking {
+        package networking {
             interface ConnectionHandler {
                 Broadcast(Command): void
                 sendCommand(Command): void
@@ -60,7 +55,7 @@ package Server {
             interface NetworkControler {
             	sendCommand(Command) : void
             }
-            note top: Network management "module"
+            note right: Network management "module"
 
             interface GameControler {
                 receiveCommand(Command): void
@@ -70,23 +65,23 @@ package Server {
 
     }
       
-    package ServerImpl {
-        package CommandsImpl {
+    package serverImpl {
+        package commandsImpl {
             class SerializerImpl {}
             class CommandsImpl {
             		recipients : Player[]
             }
             note bottom : Represent all types of commands.
-            class CommandFactoryImpl {}
+            class CommandGameFactoryImpl {}
 
             Command <|--CommandsImpl
-            CommandFactory <|-- CommandFactoryImpl
+            CommandGameFactory <|-- CommandGameFactoryImpl
             Serializer <|-- SerializerImpl
         }
 
-        package NetworkingImpl {
+        package networkingImpl {
             class WebSocketAdapterImpl {
-               links : Map[key: GameImpl.Player][value: Socket]
+               links : Map[key: gameImpl.Player][value: Socket]
             }
             class NetworkControlerImpl {}
 
@@ -111,10 +106,38 @@ package Server {
         }
     }
   
-    package GameImpl {
+    package gameImpl {
         class GameFacadeImpl {}
         
-        GameFacade <|-right- GameFacadeImpl
+        GameFacade <|-up- GameFacadeImpl
+    }
+    
+    package managment{
+    	package api{
+    		interface CommandLoginFactory{
+	    		createCommandLogin(Content) : Command
+	    	}
+    	}
+    	
+    	package managmentImpl{
+    		class CommandLoginFactoryWebSocket{}
+    		
+		    CommandLoginFactory <|-- CommandLoginFactoryWebSocket
+		    
+		    class ServerGameManager{
+		    	createParty() : void
+		    	insertClient(Command) : void
+		    }
+			
+		    class Server {
+		        main(): void
+		    }
+		    
+		    ServerGameManager "1" *-right- "*" GameControler
+		    ServerGameManager "1" *-down- "1" CommandLoginFactory
+		    Server "1" *-down- "1" ServerGameManager
+    	}
+    
     }
 
 }

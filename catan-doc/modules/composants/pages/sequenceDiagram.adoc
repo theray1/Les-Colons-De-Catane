@@ -2,7 +2,16 @@
 # Connexion Client vers Serveur
 
 Pour que le client et le serveur communiquent, il faut une connexion entre ces 2 entités. Pour ce faire, nous utilisons un proxy qui fait le lie entre le TypeScript du client et l'adapter de websocket qui est en Java.
-Nous avons ici le diagramme de séquence du cas d'utilisation "connexion d'un client"
+
+## Connexion d'un client
+[plantuml]
+....
+@startuml
+
+actor "__Client : Client__" as client
+
+@enduml
+....
 
 [plantuml]
 ....
@@ -15,11 +24,13 @@ AdapterWebSocket --> Serveur : connect("Joueur")
 @enduml
 ....
 
+
+
 ## Echange entre un joueur et la banque/le port
 [plantuml]
 ....
 
-actor "__Sunye : Client__" as nathan
+actor "__Nathan : Client__" as nathan
 actor "__Autres : Client__" as autres
 participant "__:Client__" as Client
 participant "__:ServerProxy__" as ServerProxy
