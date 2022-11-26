@@ -10,8 +10,8 @@ package server {
 	        	end() : void
 	        	endPlayer() : void
 	        	trade(Player, Resource[], Player, Resource[]) : void
-	        	addresourcesTo(Player, Resource[]) : void
-	        	removeresourcesTo(Player, Resource[]) : void
+	        	addResourcesTo(Player, Resource[]) : void
+	        	removeResourcesTo(Player, Resource[]) : void
             }
         }
         package commands {
@@ -32,6 +32,8 @@ package server {
             	createCommand_DenyTrade(Player, Player) : Command
             	createCommand_AcceptTrade(Player, Player) : Command
             	createCommand_LoginComplete(Player) : Command
+            	createCommand_SetGame(Player[]) : Command
+            	createCommand_SetPlayer(Player) : Command
             }
             interface Command {
                 execute(): void
@@ -109,6 +111,7 @@ package server {
                 players: Player[]
                 commands: Command[]
             }
+            GameControlerImpl *-up- CommandGameFactory
             GameControlerImpl *-up- NetworkControler
             GameControlerImpl *-up- GameFacade
             GameControlerImpl *-up- Serializer

@@ -2,9 +2,7 @@
 ....
 @startuml
   abstract Trade {}
-  abstract CommandAbstract{
-  		recipients : Player[]
-  }
+  abstract CommandAbstract{}
   class TradeWithPlayer {}
   class TradeWithNonPlayerEntity {}
   class AcceptTrade {}
@@ -22,6 +20,8 @@
   class EndTurn{}
   class Login{}
   class LoginComplete{}
+  class SetGame{}
+  class SetPlayer{}
   
   interface Player{}
   
@@ -42,12 +42,14 @@
   CommandAbstract <|-left- MoveThieve
   CommandAbstract <|-right- Build
   CommandAbstract <|-right- ActiveCard
+  CommandAbstract <|-up- SetGame
   CommandAbstract <|-up- Ping
   CommandAbstract <|-up- ActivateThieve
   CommandAbstract <|-up- AddResources
   CommandAbstract <|-down- AddCard
   CommandAbstract <|-down- Win
   CommandAbstract <|-down- SetResources
+  CommandAbstract <|-down- SetPlayer
   CommandAbstract <|-- EndTurn
   CommandAbstract <|-- Trade
   

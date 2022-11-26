@@ -1,129 +1,139 @@
-Les différents packages
-=======================
-
-* Networking : La partie réseau avec les communications entre clients et serveur.
-* Controler : Les contrôleurs (ou modules) de l'application, un pour chaque partie.
-
-Un serveur se compose d'un contrôler de Client (ControlerClient) qui possède plusieurs modules (un par partie) c'est-à-dire : 
-un contrôler de jeu (ControlerGame) et un contrôler de jeu (ControlerNetwork).
-L'intêret est de séparer chaque partie du serveur pour éviter se retrouver avec une super classe Serveur qui contient des appels dans tous les sens de réseau, de jeu ...
- 
 [plantuml]
 ....
 @startuml
-package Client {
-	class Client{
-		main() : void
-	}
-  
-  package Commons{
-    
-  }
-  
-  package Core {
-    package Commands {
-      interface CommandFactory{
-      	createCommand(type) : Command
-      }
-      interface Command {
-        execute(): void
-      }
-      
-      abstract CommandAbstract {
-      		controler : ControlerGame
-      		Sender : String
-      		Reciever : String
-      }
-      note bottom: All commands extend from this class
-      Command <|--- CommandAbstract
-      
-    }
+package client {
+    package core {
+        package game {
+        	   interface Player{}
+            interface GameFacade {
+	        	trade(Player, Resource[], Player, Resource[]) : void
+	        	addResourcesTo(Player, Resource[]) : void
+	        	removeResourcesTo(Player, Resource[]) : void
+            }
+        }
+        package commands {
+            interface CommandGameFactory {
+            	createCommand_ActivateThieve(Player[]) : Command
+            	createCommand_MoveThieve(Player[], Coordinates) : Command
+            	createCommand_Ping(Player[]) : Command
+            	createCommand_Build(Player[], Building) : Command
+            	createCommand_ActiveCard(Player[], Card) : Command
+            	createCommand_AddCard(Player[], Player, Integer) : Command
+            	createCommand_BuyCard(Player[], Resource[]) : Command
+            	createCommand_EndTour(Player[], Player) : Command
+            	createCommand_TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+            	createCommand_TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
+            	createCommand_DenyTrade(Player, Player) : Command
+            	createCommand_AcceptTrade(Player, Player) : Command
+            }
+            interface Command {
+                execute(): void
+                getRecipients() : Player[]
+            }
 
-    package Networking {
-      interface ConnectHandler {
-        sendMessage(): void
-        isEnabled(): Boolean
-      }
-		interface WebSocketAdapter {}
-		ConnectHandler <|--- WebSocketAdapter
+            interface Serializer {
+                serialize(Command): String
+                deSerialize(String): Command
+            }
+        }
+
+        package networking {
+            interface ConnectionHandler {
+                sendCommand(Command): void
+                isEnabled(): Boolean
+                addServer(Login) : void
+            }
+        }
+
+        package controler {
+            interface NetworkControler {
+            	sendCommand(Command) : void
+            	addServer(Login) : void
+            }
+            note right: Network management "module"
+
+            interface GameControler {
+                receiveCommand(Command): void
+                addServer(Login) : void
+            }
+
+        }
+
     }
+      
+    package clientImpl {
+        package commandsImpl {
+            class SerializerImpl {}
+            abstract CommandAbstract {
+            }
+            note bottom : Represent all types of commands.
+            class CommandGameFactoryImpl {}
+
+            Command <|--CommandAbstract
+            CommandGameFactory <|-- CommandGameFactoryImpl
+            Serializer <|-- SerializerImpl
+            CommandAbstract *-- "1-4"  Player
+        }
+
+        package networkingImpl {
+            class WebSocketAdapterImpl {
+               server: Socket
+            }
+            class NetworkControlerImpl {}
+
+            ConnectionHandler <|-- WebSocketAdapterImpl
+
+            NetworkControler <|-- NetworkControlerImpl
+            
+            NetworkControlerImpl *-up- ConnectionHandler
+		   
+        }
+        package controlerImpl {
+
+            class GameControlerImpl {
+                players: Player[]
+                me : Player
+                commands: Command[]
+            }
+            GameControlerImpl *-up- CommandGameFactory
+            GameControlerImpl *-up- NetworkControler
+            GameControlerImpl *-up- GameFacade
+            GameControlerImpl *-up- Serializer
+            GameControler <|-up- GameControlerImpl
+            
+        }
+    }
+ 
     
-    package controler{
-    	interface ControlerNetwork{}
-    	note top : Network management "module"
-    	
-    	interface ControlerGame{
+    package managment{
+    	package api{
+    		interface CommandLoginFactory{
+	    		createCommandLogin(Content) : Command
+	    	}
+	    	note right : The login of the server
     	}
-    	note top : Game management "module"
-    }
-
-  }
-
-  package ClientImpl {
-  package CommandsImpl {
-      abstract CommandFactoryImpl{}
-      abstract Trade {}
-      Trade <|--- TradeWithPlayer
-      Trade <|--- TradeWithNonPlayerEntity
-      Trade <|--- AcceptTrade
-      class TradeWithPlayer {}
-      class TradeWithNonPlayerEntity {}
-      class AcceptTrade {}
-      class BuyCard {}
-      class MoveThieve {}
-      class Build {}
-      class ActiveCard {}
-      class Ping {}
-      class ActivateThieve {}
-      class Victory {}
-      class SetResources{}
-      class End{}
-      
-    }
-    
-  package NetworkingImpl {
     	
-      class WebSocketAdapterImpl {}
-      
-    }
-  	package controlerImpl {
-  		class ControlerClient{
-  		receivedCommands : List<Command>
-    	toSendCommands : List<Command>
-  		receiveCommand(Command) : void
-  		sendCommand(Command) : void
-  		getNextCommandToExecute() : Command
-  		getNextCommandToSend() : Command
-  		}
-  		note left : Client management "module"
-  		
-  		class ControlerNetworkImpl{}
-    	
-    	class ControlerGameImpl{
-    		players : List<Player>
+    	package managmentImpl{
+    		class CommandLoginFactoryWebSocket{}
+    		
+		    CommandLoginFactory <|-- CommandLoginFactoryWebSocket
+		    
+		    class clientGameManager{
+		    	createTheParty() : void
+		    	connectServer(Command) : void
+		    }
+			
+		    class client {
+		        main(): void
+		    }
+		    
+		    clientGameManager "1" *-right- "*" GameControler
+		    clientGameManager "1" *-down- "1" CommandLoginFactory
+		    client "1" *-down- "1" clientGameManager
     	}
-    	
-    	
-    	
-    	
-    	ControlerNetworkImpl ..> WebSocketAdapterImpl : use
-    	ControlerGameImpl ..> GameImpl : use
-    	
-    	ControlerClient *-- ControlerNetworkImpl
-    	ControlerClient *-- ControlerGameImpl
-    	ControlerClient *--	 CommandFactoryImpl
-    	
-  	}
     
-
-    
-
-    package GameImpl {}
-
-  }
+    }
 
 }
-
-package Client {}
 @enduml
 ....
