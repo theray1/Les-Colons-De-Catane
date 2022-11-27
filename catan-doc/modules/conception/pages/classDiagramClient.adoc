@@ -11,6 +11,17 @@ package client {
 	        	removeResourcesTo(Player, Resource[]) : void
             }
         }
+        
+        package observer{
+        	interface Observable{
+        		addObserver(Observer) : void
+        		removeObserver(Observer) : void
+        		notifyObservers() : void
+        	}
+        	interface Observer{
+        		update() : void
+        	}
+        }
         package commands {
             interface CommandGameFactory {
             	createCommand_ActivateThieve(Player[]) : Command
@@ -52,9 +63,22 @@ package client {
             }
             note right: Network management "module"
 
-            interface GameControler {
+            interface GameControler{
                 receiveCommand(Command): void
                 addServer(Login) : void
+                
+            	do_ActivateThieve() : void
+            	do_MoveThieve() : void
+            	do_Ping() : void
+            	do_Build() : void
+            	do_ActiveCard() : void
+            	do_AddCard() : void
+            	do_BuyCard() : void
+            	do_EndTour() : void
+				do_TradeWithNonPlayerEntity() : void
+            	do_TradeWithPlayer() : void
+            	do_DenyTrade() : void
+            	do_AcceptTrade() : void
             }
 
         }
@@ -63,35 +87,30 @@ package client {
       
     package clientImpl {
         package commandsImpl {
-            class SerializerImpl {}
-            abstract CommandAbstract {
+            class SerializerImpl <<Serializer>>{}
+            abstract CommandAbstract <<Command>>{
             }
-            note bottom : Represent all types of commands.
-            class CommandGameFactoryImpl {}
+            note right of CommandAbstract
+            		Represent all types of commands.
+            end note
+            class CommandGameFactoryImpl <<CommandGameFactory>>{}
 
-            Command <|--CommandAbstract
-            CommandGameFactory <|-- CommandGameFactoryImpl
-            Serializer <|-- SerializerImpl
-            CommandAbstract *-- "1-4"  Player
+            CommandAbstract *-up- "1-4"  Player
         }
 
         package networkingImpl {
-            class WebSocketAdapterImpl {
+            class WebSocketAdapterImpl <<ConnectionHandler>>{
                server: Socket
             }
-            class NetworkControlerImpl {}
+            class NetworkControlerImpl <<NetworkControler>>{}
 
-            ConnectionHandler <|-- WebSocketAdapterImpl
-
-            NetworkControler <|-- NetworkControlerImpl
             
             NetworkControlerImpl *-up- ConnectionHandler
 		   
         }
         package controlerImpl {
 
-            class GameControlerImpl {
-                players: Player[]
+            class GameControlerImpl <<GameControler>><<Observable>>{
                 me : Player
                 commands: Command[]
             }
@@ -99,7 +118,8 @@ package client {
             GameControlerImpl *-up- NetworkControler
             GameControlerImpl *-up- GameFacade
             GameControlerImpl *-up- Serializer
-            GameControler <|-up- GameControlerImpl
+            GameControlerImpl *-up- Observer
+            GameControlerImpl *-up- "3-4" Player
             
         }
     }
@@ -114,24 +134,28 @@ package client {
     	}
     	
     	package managmentImpl{
-    		class CommandLoginFactoryWebSocket{}
+    		class CommandLoginFactoryWebSocket <<CommandLoginFactory>>{}
     		
-		    CommandLoginFactory <|-- CommandLoginFactoryWebSocket
 		    
-		    class clientGameManager{
+		    class ClientGameManager{
 		    	createTheParty() : void
 		    	connectServer(Command) : void
 		    }
 			
-		    class client {
+		    class Client {
 		        main(): void
 		    }
 		    
-		    clientGameManager "1" *-right- "*" GameControler
-		    clientGameManager "1" *-down- "1" CommandLoginFactory
-		    client "1" *-down- "1" clientGameManager
+		    ClientGameManager "1" *-up- "*" GameControler
+		    ClientGameManager "1" *-up- "1" CommandLoginFactory
+		    Client "1" *-up- "1" ClientGameManager
     	}
     
+    }
+        
+        
+    package ui{
+    	class WindowObserverImpl <<Observer>>{}
     }
 
 }

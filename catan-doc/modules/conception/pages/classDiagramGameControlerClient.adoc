@@ -1,0 +1,85 @@
+[plantuml]
+....
+@startuml
+
+interface GameControler{
+	receiveCommand(Command): void
+	addServer(Login) : void
+	
+	do_ActivateThieve() : void
+	do_MoveThieve() : void
+	do_Ping() : void
+	do_Build() : void
+	do_ActiveCard() : void
+	do_AddCard() : void
+	do_BuyCard() : void
+	do_EndTour() : void
+	do_TradeWithNonPlayerEntity() : void
+	do_TradeWithPlayer() : void
+	do_DenyTrade() : void
+	do_AcceptTrade() : void
+}
+
+interface Observable{
+	addObserver(Observer) : void
+	removeObserver(Observer) : void
+	notifyObservers() : void
+}
+
+interface Observer{
+	update() : void
+}
+
+interface Command {
+    execute(): void
+    getRecipients() : Player[]
+}
+
+interface Serializer {
+    serialize(Command): String
+    deSerialize(String): Command
+}
+
+interface NetworkControler {
+	sendCommand(Command) : void
+	addServer(Login) : void
+}
+
+interface CommandGameFactory {
+	createCommand_ActivateThieve(Player[]) : Command
+	createCommand_MoveThieve(Player[], Coordinates) : Command
+	createCommand_Ping(Player[]) : Command
+	createCommand_Build(Player[], Building) : Command
+	createCommand_ActiveCard(Player[], Card) : Command
+	createCommand_AddCard(Player[], Player, Integer) : Command
+	createCommand_BuyCard(Player[], Resource[]) : Command
+	createCommand_EndTour(Player[], Player) : Command
+	createCommand_TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+	createCommand_TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
+	createCommand_DenyTrade(Player, Player) : Command
+	createCommand_AcceptTrade(Player, Player) : Command
+}
+
+interface Player{}
+interface GameFacade {
+	trade(Player, Resource[], Player, Resource[]) : void
+	addResourcesTo(Player, Resource[]) : void
+	removeResourcesTo(Player, Resource[]) : void
+}
+
+class GameControlerImpl{
+	me : Player
+}
+
+GameControler <|-down- GameControlerImpl
+Observable <|-down- GameControlerImpl
+GameControlerImpl *-down- CommandGameFactory
+GameControlerImpl *-right- NetworkControler
+GameControlerImpl *-down- GameFacade
+GameControlerImpl *-left- Serializer
+GameControlerImpl *-right- Observer
+GameControlerImpl *-right- "3-4" Player
+GameControlerImpl *-left- Command
+
+@enduml
+....

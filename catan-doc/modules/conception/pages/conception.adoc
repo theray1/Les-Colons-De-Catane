@@ -95,6 +95,10 @@ La factory va nous permettre d'avoir une classe qui permet d'instancier les comm
 
 NOTE: TODO!
 
+=== Patron de conception Observateur
+
+L'interêt de l'observateur c'est comme son nom l'indique d'observer. Ainsi, en considérant l'interface graphique comme un observer, elle ne va jamais impacter et avoir le moindre effet de bord sur le jeu. De plus, grâce à la méthode notifyObservers(), l'interface graphique sera mise à jour uniquement lorsqu'il y aura des changements. 
+
 
 === Patron architectural "B"
 
