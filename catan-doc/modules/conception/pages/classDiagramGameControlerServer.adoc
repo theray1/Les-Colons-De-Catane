@@ -1,0 +1,64 @@
+@startuml
+interface GameControler {
+    receiveCommand(Command): void
+    addParticipant(Login, Player) : void
+    addPlayer() : Player
+}
+
+class GameControlerImpl{
+    players: Player[]
+    commands: Command[]
+}
+interface CommandGameFactory {
+	createCommand_ActivateThieve(Player[]) : Command
+	createCommand_MoveThieve(Player[], Coordinates) : Command
+	createCommand_Ping(Player[]) : Command
+	createCommand_Build(Player[], Building) : Command
+	createCommand_ActiveCard(Player[], Card) : Command
+	createCommand_AddCard(Player[], Player, Integer) : Command
+	createCommand_BuyCard(Player[], Resource[]) : Command
+	createCommand_EndTour(Player[], Player) : Command
+	createCommand_Win(Player[]) : Command
+	createCommand_SetResources(Player) : Command
+	createCommand_AddResources(Player[], Player, Integer) : Command
+	createCommand_TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+	createCommand_TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
+	createCommand_DenyTrade(Player, Player) : Command
+	createCommand_AcceptTrade(Player, Player) : Command
+	createCommand_LoginComplete(Player) : Command
+	createCommand_SetGame(Player[]) : Command
+	createCommand_SetPlayer(Player) : Command
+}
+interface Serializer {
+    serialize(Command): String
+    deSerialize(String): Command
+}
+interface NetworkControler {
+	sendCommand(Command) : void
+	addParticipant(Login, Player) : void
+}
+
+interface GameFacade {
+	start() : void
+	end() : void
+	endPlayer() : void
+	trade(Player, Resource[], Player, Resource[]) : void
+	addResourcesTo(Player, Resource[]) : void
+	removeResourcesTo(Player, Resource[]) : void
+}
+
+Enum Status{
+	NOTSTARTED
+	STARTED
+	FINISHED
+}
+
+GameControler <|-down- GameControlerImpl
+GameControlerImpl *-down- "1" CommandGameFactory
+GameControlerImpl *-right- "1" NetworkControler
+GameControlerImpl *-left- "1" GameFacade
+GameControlerImpl *-down- "1" Serializer
+GameControlerImpl *-right- "1" Status
+            
+            
+@enduml

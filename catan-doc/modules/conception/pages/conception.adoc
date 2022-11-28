@@ -85,6 +85,31 @@ Chaque commande a une implémentation (un comportement précis) et cela permet a
 include::classDiagramCommands.adoc[]
 ....
 
+===Explications des différentes commandes :
+
+[options="header"]
+|=======================
+|Commande |Explications      
+|ActivateThieve    |Choix de la nouvelle position du voleur par le joueur.    
+|MoveThieve    |Déplacer le voleur vers une certaine tuile.
+|Ping    |Permet au server de verifier si le joueur n'est pas déconnecté.
+|Build    |Placer un nouveau batiment pour un joueur.
+|ActiveCard    |Activer une carte.
+|AddCard    |Ajouter une carte pour un joueur
+|BuyCard    |Acheter une carte.
+|EndTour    |Mettre fin au tour du joueur actif.
+|Win    |Déclarer la victoire d'un joueur.
+|SetResources    |Saisir le nombre de ressource d'un joueur.
+|AddResources    |Distribuer des ressources à un joueur.
+|TradeWithNonPlayerEntity    |Proposition d'échange entre un joueur et une entité non joueur (banque ou port).
+|TradeWithPlayer    |Proposition d'échange entre deux joueurs. 
+|DenyTrade    |Refuser l'échange d'un autre joueur.
+|AcceptTrade    |Accepter l'échange d'un autre joueur.
+|LoginComplete    |Indiquer au client qu'il est bien login.
+|SetGame    |Saisir l'état actuel de la partie. Envoyée une fois par le serveur au début de la partie.
+|SetPlayer    |Dire au client qu'elle est le joueur qu'il joue (=> lui indiquer sa couleur).
+|=======================
+
 === Patron de conception Facade
 
 Ce design pattern va nous permettre d'avoir une classe qui fait le lien entre le serveur et le package qui implémente le jeu.
@@ -144,6 +169,12 @@ include::classDiagramIndications.adoc[]
 include::classDiagramServer.adoc[]
 ....
 
+=== CameControlerServer
+
+[plantuml]
+....
+include::classDiagramGameControlerServer.adoc[]
+....
 
 == Client
 

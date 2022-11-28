@@ -4,7 +4,7 @@ package server {
         package game {
         	   interface Player{}
             interface GameFacade {
-	            start() : void
+	        	start() : void
 	        	end() : void
 	        	endPlayer() : void
 	        	trade(Player, Resource[], Player, Resource[]) : void
@@ -94,16 +94,16 @@ package server {
         	   		NOTSTARTED
         	   		STARTED
         	   		FINISHED
-	        	   }
+	        }
 
             class GameControlerImpl <<GameControler>>{
                 players: Player[]
                 commands: Command[]
             }
-            GameControlerImpl *-up- CommandGameFactory
-            GameControlerImpl *-up- NetworkControler
-            GameControlerImpl *-up- GameFacade
-            GameControlerImpl *-up- Serializer
+            GameControlerImpl *-up- "1" CommandGameFactory
+            GameControlerImpl *-up- "1" NetworkControler
+            GameControlerImpl *-up- "1" GameFacade
+            GameControlerImpl *-up- "1" Serializer
             GameControlerImpl *-- "1" Status
             
         }
