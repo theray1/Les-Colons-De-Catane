@@ -2,5 +2,6 @@
 class A <<B>>{}
 note left : A extends B
 
-B <|-- A
+BB <|-- AA
+note right : Is like this
 @enduml
