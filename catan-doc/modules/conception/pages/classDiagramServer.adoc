@@ -72,27 +72,18 @@ package server {
       
     package serverImpl {
         package commandsImpl {
-            class SerializerImpl {}
-            abstract CommandAbstract {
-            }
+            class SerializerImpl <<Serializer>>{}
+            abstract CommandAbstract <<CommandGameFactory>>{}
             note bottom : Represent all types of commands.
-            class CommandGameFactoryImpl {}
-
-            Command <|--CommandAbstract
-            CommandGameFactory <|-- CommandGameFactoryImpl
-            Serializer <|-- SerializerImpl
+            class CommandGameFactoryImpl <<CommandGameFactory>>{}
             CommandAbstract *-- "1-4"  Player
         }
 
         package networkingImpl {
-            class WebSocketAdapterImpl {
+            class WebSocketAdapterImpl <<ConnectionHandler>>{
                links : Map[key: gameImpl.Player][value: Socket]
             }
-            class NetworkControlerImpl {}
-
-            ConnectionHandler <|-- WebSocketAdapterImpl
-
-            NetworkControler <|-- NetworkControlerImpl
+            class NetworkControlerImpl <<NetworkControler>>{}
             
             NetworkControlerImpl *-up- ConnectionHandler
 		   
@@ -105,7 +96,7 @@ package server {
         	   		FINISHED
 	        	   }
 
-            class GameControlerImpl {
+            class GameControlerImpl <<GameControler>>{
                 players: Player[]
                 commands: Command[]
             }
@@ -113,8 +104,7 @@ package server {
             GameControlerImpl *-up- NetworkControler
             GameControlerImpl *-up- GameFacade
             GameControlerImpl *-up- Serializer
-            GameControler <|-up- GameControlerImpl
-            GameControlerImpl *-- Status
+            GameControlerImpl *-- "1" Status
             
         }
     }
@@ -128,9 +118,8 @@ package server {
     	}
     	
     	package managmentImpl{
-    		class CommandLoginFactoryWebSocket{}
+    		class CommandLoginFactoryWebSocket <<CommandLoginFactory>>{}
     		
-		    CommandLoginFactory <|-- CommandLoginFactoryWebSocket
 		    
 		    class ServerGameManager{
 		    	createParty() : void
