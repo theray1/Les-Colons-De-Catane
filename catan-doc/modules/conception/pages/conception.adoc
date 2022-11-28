@@ -131,6 +131,12 @@ Voici les 4 contraintes que nous avons déterminées :
 
 == Diagrammes de classes
 
+=== Indications de notations
+[plantuml]
+....
+include::classDiagramIndications.adoc[]
+....
+
 == Server
 
 [plantuml]

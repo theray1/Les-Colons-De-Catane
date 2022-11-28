@@ -1,0 +1,4 @@
+@startuml
+class A <<B>>{}
+note left : A extends B
+@enduml
