@@ -14,25 +14,25 @@ package server {
         }
         package commands {
             interface CommandGameFactory {
-            	createCommand_ActivateThieve(Player[]) : Command
-            	createCommand_MoveThieve(Player[], Coordinates) : Command
-            	createCommand_Ping(Player[]) : Command
-            	createCommand_Build(Player[], Building) : Command
-            	createCommand_ActiveCard(Player[], Card) : Command
-            	createCommand_AddCard(Player[], Player, Integer) : Command
-            	createCommand_BuyCard(Player[], Resource[]) : Command
-            	createCommand_EndTour(Player[], Player) : Command
-            	createCommand_StartTour(Player[], Player) : Command
-            	createCommand_Win(Player[]) : Command
-            	createCommand_SetResources(Player) : Command
-            	createCommand_AddResources(Player[], Player, Integer) : Command
-            	createCommand_TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
-            	createCommand_TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
-            	createCommand_DenyTrade(Player, Player) : Command
-            	createCommand_AcceptTrade(Player, Player) : Command
-            	createCommand_LoginComplete(Player) : Command
-            	createCommand_SetGame(Player[]) : Command
-            	createCommand_SetPlayer(Player) : Command
+            	ActivateThieve(Player[]) : Command
+            	MoveThieve(Player[], Coordinates) : Command
+            	Ping(Player[]) : Command
+            	Build(Player[], Building) : Command
+            	ActiveCard(Player[], Card) : Command
+            	AddCard(Player[], Player, Integer) : Command
+            	BuyCard(Player[], Resource[]) : Command
+            	EndTurn(Player[], Player) : Command
+            	StartTurn(Player[], Player) : Command
+            	Win(Player[]) : Command
+            	SetResources(Player) : Command
+            	AddResources(Player[], Player, Integer) : Command
+            	TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+            	TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
+            	DenyTrade(Player, Player) : Command
+            	AcceptTrade(Player, Player) : Command
+            	LoginComplete(Player) : Command
+            	SetGame(Player[]) : Command
+            	SetPlayer(Player) : Command
             }
             interface Command {
                 execute(): void

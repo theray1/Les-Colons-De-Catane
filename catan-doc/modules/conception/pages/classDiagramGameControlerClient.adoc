@@ -4,18 +4,19 @@ interface GameControler{
 	receiveCommand(Command): void
 	addServer(Login) : void
 	
-	do_ActivateThieve() : void
-	do_MoveThieve() : void
-	do_Ping() : void
-	do_Build() : void
-	do_ActiveCard() : void
-	do_AddCard() : void
-	do_BuyCard() : void
-	do_EndTour() : void
-	do_TradeWithNonPlayerEntity() : void
-	do_TradeWithPlayer() : void
-	do_DenyTrade() : void
-	do_AcceptTrade() : void
+	ActivateThieve() : void
+	MoveThieve() : void
+	Ping() : void
+	Build() : void
+	ActiveCard() : void
+	AddCard() : void
+	BuyCard() : void
+	StartTurn() : void
+	EndTurn() : void
+	TradeWithNonPlayerEntity() : void
+	TradeWithPlayer() : void
+	DenyTrade() : void
+	AcceptTrade() : void
 }
 
 interface Observable{
@@ -44,18 +45,18 @@ interface NetworkControler {
 }
 
 interface CommandGameFactory {
-	createCommand_ActivateThieve(Player[]) : Command
-	createCommand_MoveThieve(Player[], Coordinates) : Command
-	createCommand_Ping(Player[]) : Command
-	createCommand_Build(Player[], Building) : Command
-	createCommand_ActiveCard(Player[], Card) : Command
-	createCommand_AddCard(Player[], Player, Integer) : Command
-	createCommand_BuyCard(Player[], Resource[]) : Command
-	createCommand_EndTour(Player[], Player) : Command
-	createCommand_TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
-	createCommand_TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
-	createCommand_DenyTrade(Player, Player) : Command
-	createCommand_AcceptTrade(Player, Player) : Command
+	ActivateThieve(Player[]) : Command
+	MoveThieve(Player[], Coordinates) : Command
+	Ping(Player[]) : Command
+	Build(Player[], Building) : Command
+	ActiveCard(Player[], Card) : Command
+	AddCard(Player[], Player, Integer) : Command
+	BuyCard(Player[], Resource[]) : Command
+	EndTour(Player[], Player) : Command
+	TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+	TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
+	DenyTrade(Player, Player) : Command
+	AcceptTrade(Player, Player) : Command
 }
 
 interface Player{}

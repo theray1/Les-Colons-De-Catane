@@ -15,6 +15,7 @@
   class SetResources{}
   class AddResources{}
   class AddCard{}
+  class StartTurn{}
   class EndTurn{}
   class Login{}
   class LoginComplete{}
@@ -49,6 +50,7 @@
   CommandAbstract <|-down- SetResources
   CommandAbstract <|-down- SetPlayer
   CommandAbstract <|-- EndTurn
+  CommandAbstract <|-- StartTurn
   CommandAbstract <|-- Trade
   
   CommandAbstract *-- "1-4" Player
