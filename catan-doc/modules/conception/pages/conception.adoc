@@ -97,6 +97,7 @@ include::classDiagramCommands.adoc[]
 |ActiveCard    |Activer une carte.
 |AddCard    |Ajouter une carte pour un joueur
 |BuyCard    |Acheter une carte.
+|StartTour    |Indique au joueur que c'est à lui de jouer.
 |EndTour    |Mettre fin au tour du joueur actif.
 |Win    |Déclarer la victoire d'un joueur.
 |SetResources    |Saisir le nombre de ressource d'un joueur.

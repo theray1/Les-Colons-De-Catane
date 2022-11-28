@@ -22,6 +22,7 @@ package server {
             	createCommand_AddCard(Player[], Player, Integer) : Command
             	createCommand_BuyCard(Player[], Resource[]) : Command
             	createCommand_EndTour(Player[], Player) : Command
+            	createCommand_StartTour(Player[], Player) : Command
             	createCommand_Win(Player[]) : Command
             	createCommand_SetResources(Player) : Command
             	createCommand_AddResources(Player[], Player, Integer) : Command
