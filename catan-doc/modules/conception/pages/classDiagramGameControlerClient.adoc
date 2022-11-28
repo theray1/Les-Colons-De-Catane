@@ -1,5 +1,3 @@
-[plantuml]
-....
 @startuml
 
 interface GameControler{
@@ -82,4 +80,3 @@ GameControlerImpl *-right- "3-4" Player
 GameControlerImpl *-left- Command
 
 @enduml
-....
