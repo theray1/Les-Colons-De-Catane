@@ -80,7 +80,10 @@ Nous utilisons le patron Commandes qui permet à au client et au serveur d'avoir
 Ainsi le client (le joueur), lorsque c'est à lui de jouer peut émettre des commandes et ainsi communiquer avec le serveur.
 Chaque commande a une implémentation (un comportement précis) et cela permet au serveur de savoir quoi faire.
 
+[plantuml]
+....
 include::classDiagramCommands.adoc[]
+....
 
 === Patron de conception Facade
 
@@ -130,9 +133,22 @@ Voici les 4 contraintes que nous avons déterminées :
 
 == Server
 
+[plantuml]
+....
 include::classDiagramServer.adoc[]
+....
 
 
 == Client
 
+[plantuml]
+....
 include::classDiagramClient.adoc[]
+....
+
+=== CameControlerClient
+
+[plantuml]
+....
+include::classDiagramGameControlerClient.adoc[]
+....
