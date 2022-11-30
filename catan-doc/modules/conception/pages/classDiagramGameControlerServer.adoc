@@ -1,7 +1,7 @@
 @startuml
 interface GameControler {
     receiveCommand(Command): void
-    addParticipant(Login, Player) : void
+    addParticipant(Login, Player)
     addPlayer() : Player
 }
 
@@ -35,17 +35,17 @@ interface Serializer {
     deSerialize(String): Command
 }
 interface NetworkControler {
-	sendCommand(Command) : void
-	addParticipant(Login, Player) : void
+	sendCommand(Command)
+	addParticipant(Login, Player)
 }
 
 interface GameFacade {
-	start() : void
-	end() : void
-	endPlayer() : void
-	trade(Player, Resource[], Player, Resource[]) : void
-	addResourcesTo(Player, Resource[]) : void
-	removeResourcesTo(Player, Resource[]) : void
+	start()
+	end()
+	endPlayer()
+	trade(Player, Resource[], Player, Resource[])
+	addResourcesTo(Player, Resource[])
+	removeResourcesTo(Player, Resource[])
 }
 
 Enum Status{

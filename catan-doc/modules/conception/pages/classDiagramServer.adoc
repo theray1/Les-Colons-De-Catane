@@ -4,12 +4,12 @@ package server {
         package game {
         	   interface Player{}
             interface GameFacade {
-	        	start() : void
-	        	end() : void
-	        	endPlayer() : void
-	        	trade(Player, Resource[], Player, Resource[]) : void
-	        	addResourcesTo(Player, Resource[]) : void
-	        	removeResourcesTo(Player, Resource[]) : void
+	        	start()
+	        	end()
+	        	endPlayer()
+	        	trade(Player, Resource[], Player, Resource[])
+	        	addResourcesTo(Player, Resource[])
+	        	removeResourcesTo(Player, Resource[])
             }
         }
         package commands {
@@ -50,20 +50,20 @@ package server {
                 Broadcast(Command): void
                 sendCommand(Command): void
                 isEnabled(): Boolean
-                addParticipant(Login, Player) : void
+                addParticipant(Login, Player)
             }
         }
 
         package controler {
             interface NetworkControler {
-            	sendCommand(Command) : void
-            	addParticipant(Login, Player) : void
+            	sendCommand(Command)
+            	addParticipant(Login, Player)
             }
             note right: Network management "module"
 
             interface GameControler {
                 receiveCommand(Command): void
-                addParticipant(Login, Player) : void
+                addParticipant(Login, Player)
                 addPlayer() : Player
             }
 
@@ -123,8 +123,8 @@ package server {
     		
 		    
 		    class ServerGameManager{
-		    	createParty() : void
-		    	insertClient(Command) : void
+		    	createParty()
+		    	insertClient(Command)
 		    }
 			
 		    class Server {

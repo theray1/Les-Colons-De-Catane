@@ -2,25 +2,25 @@
 
 interface GameControler{
 	receiveCommand(Command): void
-	addServer(Login) : void
+	addServer(Login)
 	
-	ActivateThieve() : void
-	MoveThieve() : void
-	Ping() : void
-	Build() : void
-	ActiveCard() : void
-	AddCard() : void
-	BuyCard() : void
-	StartTurn() : void
-	EndTurn() : void
-	TradeWithNonPlayerEntity() : void
-	TradeWithPlayer() : void
-	DenyTrade() : void
-	AcceptTrade() : void
+	ActivateThieve()
+	MoveThieve()
+	Ping()
+	Build()
+	ActiveCard()
+	AddCard()
+	BuyCard()
+	StartTurn()
+	EndTurn()
+	TradeWithNonPlayerEntity()
+	TradeWithPlayer()
+	DenyTrade()
+	AcceptTrade()
 }
 
 interface Observer{
-	update() : void
+	update()
 }
 
 interface Command {
@@ -34,8 +34,8 @@ interface Serializer {
 }
 
 interface NetworkControler {
-	sendCommand(Command) : void
-	addServer(Login) : void
+	sendCommand(Command)
+	addServer(Login)
 }
 
 interface CommandGameFactory {
@@ -55,9 +55,9 @@ interface CommandGameFactory {
 
 interface Player{}
 interface GameFacade {
-	trade(Player, Resource[], Player, Resource[]) : void
-	addResourcesTo(Player, Resource[]) : void
-	removeResourcesTo(Player, Resource[]) : void
+	trade(Player, Resource[], Player, Resource[])
+	addResourcesTo(Player, Resource[])
+	removeResourcesTo(Player, Resource[])
 }
 
 class GameControlerImpl{

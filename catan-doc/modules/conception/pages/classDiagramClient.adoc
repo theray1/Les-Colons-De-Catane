@@ -4,9 +4,9 @@ package client {
         package game {
         	   interface Player{}
             interface GameFacade {
-	        	trade(Player, Resource[], Player, Resource[]) : void
-	        	addResourcesTo(Player, Resource[]) : void
-	        	removeResourcesTo(Player, Resource[]) : void
+	        	trade(Player, Resource[], Player, Resource[])
+	        	addResourcesTo(Player, Resource[])
+	        	removeResourcesTo(Player, Resource[])
             }
         }
         package commands {
@@ -40,33 +40,33 @@ package client {
             interface ConnectionHandler {
                 sendCommand(Command): void
                 isEnabled(): Boolean
-                addServer(Login) : void
+                addServer(Login)
             }
         }
 
         package controler {
             interface NetworkControler {
-            	sendCommand(Command) : void
-            	addServer(Login) : void
+            	sendCommand(Command)
+            	addServer(Login)
             }
             note right: Network management "module"
 
             interface GameControler{
                 receiveCommand(Command): void
-                addServer(Login) : void
+                addServer(Login)
                 
-            	ActivateThieve() : void
-            	MoveThieve() : void
-            	Ping() : void
-            	Build() : void
-            	ActiveCard() : void
-            	AddCard() : void
-            	BuyCard() : void
-            	EndTour() : void
-			TradeWithNonPlayerEntity() : void
-            	TradeWithPlayer() : void
-            	DenyTrade() : void
-            	AcceptTrade() : void
+            	ActivateThieve()
+            	MoveThieve()
+            	Ping()
+            	Build()
+            	ActiveCard()
+            	AddCard()
+            	BuyCard()
+            	EndTour()
+			TradeWithNonPlayerEntity()
+            	TradeWithPlayer()
+            	DenyTrade()
+            	AcceptTrade()
             }
 
         }
@@ -125,8 +125,8 @@ package client {
     		
 		    
 		    class ClientGameManager{
-		    	createTheParty() : void
-		    	connectServer(Command) : void
+		    	createTheParty()
+		    	connectServer(Command)
 		    }
 			
 		    class Client {
