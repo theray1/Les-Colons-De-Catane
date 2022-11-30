@@ -82,7 +82,7 @@ Chaque commande a une implémentation (un comportement précis) et cela permet a
 
 [plantuml]
 ....
-include::classDiagramCommands.adoc[]
+include::classDiagramCommands.plantuml[]
 ....
 
 ===Explications des différentes commandes :
@@ -160,33 +160,33 @@ Voici les 4 contraintes que nous avons déterminées :
 === Indications de notations
 [plantuml]
 ....
-include::classDiagramIndications.adoc[]
+include::classDiagramIndications.plantuml[]
 ....
 
 == Server
 
 [plantuml]
 ....
-include::classDiagramServer.adoc[]
+include::classDiagramServer.plantuml[]
 ....
 
 === CameControlerServer
 
 [plantuml]
 ....
-include::classDiagramGameControlerServer.adoc[]
+include::classDiagramGameControlerServer.plantuml[]
 ....
 
 == Client
 
 [plantuml]
 ....
-include::classDiagramClient.adoc[]
+include::classDiagramClient.plantuml[]
 ....
 
 === CameControlerClient
 
 [plantuml]
 ....
-include::classDiagramGameControlerClient.adoc[]
+include::classDiagramGameControlerClient.plantuml[]
 ....
