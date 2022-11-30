@@ -76,14 +76,14 @@ package client {
     package clientImpl {
         package commandsImpl {
             class SerializerImpl <<Serializer>>{}
-            abstract CommandAbstract <<Command>>{
+            abstract AbstractCommand <<Command>>{
             }
-            note right of CommandAbstract
+            note right of AbstractCommand
             		Represent all types of commands.
             end note
             class CommandGameFactoryImpl <<CommandGameFactory>>{}
 
-            CommandAbstract *-up- "1-4"  Player
+            AbstractCommand *-up- "1-4"  Player
         }
 
         package networkingImpl {

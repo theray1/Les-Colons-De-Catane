@@ -4,67 +4,67 @@ package server {
         package game {
         	   interface Player{}
             interface GameFacade {
-	        	start()
-	        	end()
-	        	endPlayer()
-	        	trade(Player, Resource[], Player, Resource[])
-	        	addResourcesTo(Player, Resource[])
-	        	removeResourcesTo(Player, Resource[])
+	        	+start()
+	        	+end()
+	        	+endPlayer()
+	        	+trade(Player, Resource[], Player, Resource[])
+	        	+addResourcesTo(Player, Resource[])
+	        	+removeResourcesTo(Player, Resource[])
             }
         }
         package commands {
             interface CommandGameFactory {
-            	ActivateThieve(Player[]) : Command
-            	MoveThieve(Player[], Coordinates) : Command
-            	Ping(Player[]) : Command
-            	Build(Player[], Building) : Command
-            	ActiveCard(Player[], Card) : Command
-            	AddCard(Player[], Player, Integer) : Command
-            	BuyCard(Player[], Resource[]) : Command
-            	EndTurn(Player[], Player) : Command
-            	StartTurn(Player[], Player) : Command
-            	Win(Player[]) : Command
-            	SetResources(Player) : Command
-            	AddResources(Player[], Player, Integer) : Command
-            	TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
-            	TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
-            	DenyTrade(Player, Player) : Command
-            	AcceptTrade(Player, Player) : Command
-            	LoginComplete(Player) : Command
-            	SetGame(Player[]) : Command
-            	SetPlayer(Player) : Command
+            	+ActivateThieve(Player[]) : Command
+            	+MoveThieve(Player[], Coordinates) : Command
+            	+Ping(Player[]) : Command
+            	+Build(Player[], Building) : Command
+            	+ActiveCard(Player[], Card) : Command
+            	+AddCard(Player[], Player, Integer) : Command
+            	+BuyCard(Player[], Resource[]) : Command
+            	+EndTurn(Player[], Player) : Command
+            	+StartTurn(Player[], Player) : Command
+            	+Win(Player[]) : Command
+            	+SetResources(Player) : Command
+            	+AddResources(Player[], Player, Integer) : Command
+            	+TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+            	+TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
+            	+DenyTrade(Player, Player) : Command
+            	+AcceptTrade(Player, Player) : Command
+            	+LoginComplete(Player) : Command
+            	+SetGame(Player[]) : Command
+            	+SetPlayer(Player) : Command
             }
             interface Command {
-                execute()
-                getRecipients() : Player[]
+                +execute()
+                +getRecipients() : Player[]
             }
 
             interface Serializer {
-                serialize(Command): String
-                deSerialize(String): Command
+                +serialize(Command): String
+                +deSerialize(String): Command
             }
         }
 
         package networking {
             interface ConnectionHandler {
-                Broadcast(Command)
-                sendCommand(Command)
-                isEnabled(): Boolean
-                addParticipant(Login, Player)
+                +Broadcast(Command)
+                +sendCommand(Command)
+                +isEnabled(): Boolean
+                +addParticipant(Login, Player)
             }
         }
 
         package controler {
             interface NetworkControler {
-            	sendCommand(Command)
-            	addParticipant(Login, Player)
+            	+sendCommand(Command)
+            	+addParticipant(Login, Player)
             }
             note right: Network management "module"
 
             interface GameControler {
-                receiveCommand(Command)
-                addParticipant(Login, Player)
-                addPlayer() : Player
+                +receiveCommand(Command)
+                +addParticipant(Login, Player)
+                +addPlayer() : Player
             }
 
         }
@@ -74,10 +74,10 @@ package server {
     package serverImpl {
         package commandsImpl {
             class SerializerImpl <<Serializer>>{}
-            abstract CommandAbstract <<CommandGameFactory>>{}
+            abstract AbstractCommand <<Command>>{}
             note bottom : Represent all types of commands.
             class CommandGameFactoryImpl <<CommandGameFactory>>{}
-            CommandAbstract *-- "1-4"  Player
+            AbstractCommand *-- "1-4"  Player
         }
 
         package networkingImpl {
@@ -92,15 +92,15 @@ package server {
         package controlerImpl {
         
 	        Enum Status{
-        	   		NOTSTARTED
-        	   		STARTED
-        	   		FINISHED
+    	   		NOTSTARTED
+    	   		STARTED
+    	   		FINISHED
 	        }
 
             class GameControlerImpl <<GameControler>>{
-                players: Player[]
-                commands: Command[]
-				executor: Executor
+                -players: Player[]
+                -commands: Command[]
+				-executor: Executor
             }
             GameControlerImpl *-up- "1" CommandGameFactory
             GameControlerImpl *-up- "1" NetworkControler
@@ -115,7 +115,7 @@ package server {
     package managment{
     	package api{
     		interface CommandLoginFactory{
-	    		createCommandLogin(Content) : Command
+	    		+createCommandLogin(Content) : Command
 	    	}
     	}
     	
@@ -124,12 +124,12 @@ package server {
     		
 		    
 		    class ServerGameManager{
-		    	createParty()
-		    	insertClient(Command)
+		    	+createParty()
+		    	+insertClient(Command)
 		    }
 			
 		    class Server {
-		        main()
+		        {static}+main()
 		    }
 		    
 		    ServerGameManager "1" *-right- "*" GameControler
