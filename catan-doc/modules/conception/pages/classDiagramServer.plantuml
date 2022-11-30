@@ -3,10 +3,11 @@ package server {
     package core {
         package game {
         	interface Player{}
+        	interface Resource{}
             interface GameFacade {
 	        	+start()
 	        	+end()
-	        	+endPlayer()
+	        	+endPlayerTurn()
 	        	+trade(Player, Resource[], Player, Resource[])
 	        	+addResourcesTo(Player, Resource[])
 	        	+removeResourcesTo(Player, Resource[])

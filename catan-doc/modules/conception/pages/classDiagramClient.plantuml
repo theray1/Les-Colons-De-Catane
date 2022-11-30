@@ -2,7 +2,8 @@
 package client {
     package core {
         package game {
-        	   interface Player{}
+        	interface Player{}
+        	interface Resource{}
             interface GameFacade {
 	        	+trade(Player, Resource[], Player, Resource[])
 	        	+addResourcesTo(Player, Resource[])
