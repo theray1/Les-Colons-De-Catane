@@ -1,7 +1,7 @@
 @startuml
 
 interface GameControler{
-	receiveCommand(Command): void
+	receiveCommand(Command)
 	addServer(Login)
 	
 	ActivateThieve()
@@ -19,12 +19,9 @@ interface GameControler{
 	AcceptTrade()
 }
 
-interface Observer{
-	update()
-}
 
 interface Command {
-    execute(): void
+    execute()
     getRecipients() : Player[]
 }
 
@@ -65,7 +62,6 @@ class GameControlerImpl{
 }
 
 GameControler <|-down- GameControlerImpl
-Observable <|-down- GameControlerImpl
 GameControlerImpl *-down- CommandGameFactory
 GameControlerImpl *-right- NetworkControler
 GameControlerImpl *-down- GameFacade

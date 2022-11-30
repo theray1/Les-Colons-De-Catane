@@ -26,7 +26,7 @@ package client {
             	AcceptTrade(Player, Player) : Command
             }
             interface Command {
-                execute(): void
+                execute()
                 getRecipients() : Player[]
             }
 
@@ -38,7 +38,7 @@ package client {
 
         package networking {
             interface ConnectionHandler {
-                sendCommand(Command): void
+                sendCommand(Command)
                 isEnabled(): Boolean
                 addServer(Login)
             }
@@ -52,7 +52,7 @@ package client {
             note right: Network management "module"
 
             interface GameControler{
-                receiveCommand(Command): void
+                receiveCommand(Command)
                 addServer(Login)
                 
             	ActivateThieve()
@@ -130,7 +130,7 @@ package client {
 		    }
 			
 		    class Client {
-		        main(): void
+		        main()
 		    }
 		    
 		    ClientGameManager "1" *-up- "*" GameControler

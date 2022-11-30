@@ -35,7 +35,7 @@ package server {
             	SetPlayer(Player) : Command
             }
             interface Command {
-                execute(): void
+                execute()
                 getRecipients() : Player[]
             }
 
@@ -47,8 +47,8 @@ package server {
 
         package networking {
             interface ConnectionHandler {
-                Broadcast(Command): void
-                sendCommand(Command): void
+                Broadcast(Command)
+                sendCommand(Command)
                 isEnabled(): Boolean
                 addParticipant(Login, Player)
             }
@@ -62,7 +62,7 @@ package server {
             note right: Network management "module"
 
             interface GameControler {
-                receiveCommand(Command): void
+                receiveCommand(Command)
                 addParticipant(Login, Player)
                 addPlayer() : Player
             }
@@ -128,7 +128,7 @@ package server {
 		    }
 			
 		    class Server {
-		        main(): void
+		        main()
 		    }
 		    
 		    ServerGameManager "1" *-right- "*" GameControler

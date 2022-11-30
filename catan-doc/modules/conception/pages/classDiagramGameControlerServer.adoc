@@ -1,6 +1,6 @@
 @startuml
 interface GameControler {
-    receiveCommand(Command): void
+    receiveCommand(Command)
     addParticipant(Login, Player)
     addPlayer() : Player
 }
