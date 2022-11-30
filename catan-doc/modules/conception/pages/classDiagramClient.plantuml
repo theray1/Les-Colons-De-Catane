@@ -89,7 +89,7 @@ package client {
 
         package networkingImpl {
             class WebSocketAdapterImpl <<ConnectionHandler>>{
-               #server: Socket
+               -server: Socket
             }
             class NetworkControlerImpl <<NetworkControler>>{}
 
@@ -100,8 +100,8 @@ package client {
         package controlerImpl {
 
             class GameControlerImpl <<GameControler>>{
-                #me : Player
-                #commands: Command[]
+                -me : Player
+                -commands: Command[]
             }
             GameControlerImpl *-up- "1" CommandGameFactory
             GameControlerImpl *-up- "1" NetworkControler

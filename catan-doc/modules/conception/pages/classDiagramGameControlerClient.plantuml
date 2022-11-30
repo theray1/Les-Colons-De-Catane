@@ -1,64 +1,65 @@
 @startuml
 
 interface GameControler{
-	receiveCommand(Command)
-	addServer(Login)
+	+receiveCommand(Command)
+	+addServer(Login)
 	
-	ActivateThieve()
-	MoveThieve()
-	Ping()
-	Build()
-	ActiveCard()
-	AddCard()
-	BuyCard()
-	StartTurn()
-	EndTurn()
-	TradeWithNonPlayerEntity()
-	TradeWithPlayer()
-	DenyTrade()
-	AcceptTrade()
+	+ActivateThieve()
+	+MoveThieve()
+	+Ping()
+	+Build()
+	+ActiveCard()
+	+AddCard()
+	+BuyCard()
+	+StartTurn()
+	+EndTurn()
+	+TradeWithNonPlayerEntity()
+	+TradeWithPlayer()
+	+DenyTrade()
+	+AcceptTrade()
 }
 
 
 interface Command {
-    execute()
-    getRecipients() : Player[]
+    +execute()
+    +getRecipients() : Player[]
 }
 
 interface Serializer {
-    serialize(Command): String
-    deSerialize(String): Command
+    +serialize(Command): String
+    +deSerialize(String): Command
 }
 
 interface NetworkControler {
-	sendCommand(Command)
-	addServer(Login)
+	+sendCommand(Command)
+	+addServer(Login)
 }
 
 interface CommandGameFactory {
-	ActivateThieve(Player[]) : Command
-	MoveThieve(Player[], Coordinates) : Command
-	Ping(Player[]) : Command
-	Build(Player[], Building) : Command
-	ActiveCard(Player[], Card) : Command
-	AddCard(Player[], Player, Integer) : Command
-	BuyCard(Player[], Resource[]) : Command
-	EndTour(Player[], Player) : Command
-	TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
-	TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
-	DenyTrade(Player, Player) : Command
-	AcceptTrade(Player, Player) : Command
+	+ActivateThieve(Player[]) : Command
+	+MoveThieve(Player[], Coordinates) : Command
+	+Ping(Player[]) : Command
+	+Build(Player[], Building) : Command
+	+ActiveCard(Player[], Card) : Command
+	+AddCard(Player[], Player, Integer) : Command
+	+BuyCard(Player[], Resource[]) : Command
+	+StartTurn(Player[], Player) : Command
+	+EndTurn(Player[], Player) : Command
+	+TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+	+TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
+	+DenyTrade(Player, Player) : Command
+	+AcceptTrade(Player, Player) : Command
 }
 
 interface Player{}
 interface GameFacade {
-	trade(Player, Resource[], Player, Resource[])
-	addResourcesTo(Player, Resource[])
-	removeResourcesTo(Player, Resource[])
+	+trade(Player, Resource[], Player, Resource[])
+	+addResourcesTo(Player, Resource[])
+	+removeResourcesTo(Player, Resource[])
 }
 
 class GameControlerImpl{
-	me : Player
+	-me : Player
 }
 
 GameControler <|-down- GameControlerImpl

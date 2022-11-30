@@ -2,7 +2,7 @@
 package server {
     package core {
         package game {
-        	   interface Player{}
+        	interface Player{}
             interface GameFacade {
 	        	+start()
 	        	+end()
@@ -83,7 +83,7 @@ package server {
 
         package networkingImpl {
             class WebSocketAdapterImpl <<ConnectionHandler>>{
-               links : Map[key: gameImpl.Player][value: Socket]
+               -links : Map[key: gameImpl.Player][value: Socket]
             }
             class NetworkControlerImpl <<NetworkControler>>{}
             

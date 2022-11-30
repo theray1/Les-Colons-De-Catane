@@ -1,51 +1,51 @@
 @startuml
 interface GameControler {
-    receiveCommand(Command)
-    addParticipant(Login, Player)
-    addPlayer() : Player
+    +receiveCommand(Command)
+    +addParticipant(Login, Player)
+    +addPlayer() : Player
 }
 
 class GameControlerImpl{
-    players: Player[]
-    commands: Command[]
+    -players: Player[]
+    -commands: Command[]
 }
 interface CommandGameFactory {
-	ActivateThieve(Player[]) : Command
-	MoveThieve(Player[], Coordinates) : Command
-	Ping(Player[]) : Command
-	Build(Player[], Building) : Command
-	ActiveCard(Player[], Card) : Command
-	AddCard(Player[], Player, Integer) : Command
-	BuyCard(Player[], Resource[]) : Command
-	StartTurn(Player[], Player) : Command
-	EndTurn(Player[], Player) : Command
-	Win(Player[]) : Command
-	SetResources(Player) : Command
-	AddResources(Player[], Player, Integer) : Command
-	TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
-	TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
-	DenyTrade(Player, Player) : Command
-	AcceptTrade(Player, Player) : Command
-	LoginComplete(Player) : Command
-	SetGame(Player[]) : Command
-	SetPlayer(Player) : Command
+	+ActivateThieve(Player[]) : Command
+	+MoveThieve(Player[], Coordinates) : Command
+	+Ping(Player[]) : Command
+	+Build(Player[], Building) : Command
+	+ActiveCard(Player[], Card) : Command
+	+AddCard(Player[], Player, Integer) : Command
+	+BuyCard(Player[], Resource[]) : Command
+	+StartTurn(Player[], Player) : Command
+	+EndTurn(Player[], Player) : Command
+	+Win(Player[]) : Command
+	+SetResources(Player) : Command
+	+AddResources(Player[], Player, Integer) : Command
+	+TradeWithNonPlayerEntity(Player, Resource[], Resource[] ) : Command
+	+TradeWithPlayer(Player, Resource[], Player, Resource[]) : Command
+	+DenyTrade(Player, Player) : Command
+	+AcceptTrade(Player, Player) : Command
+	+LoginComplete(Player) : Command
+	+SetGame(Player[]) : Command
+	+SetPlayer(Player) : Command
 }
 interface Serializer {
-    serialize(Command): String
-    deSerialize(String): Command
+    +serialize(Command): String
+    +deSerialize(String): Command
 }
 interface NetworkControler {
-	sendCommand(Command)
-	addParticipant(Login, Player)
+	+sendCommand(Command)
+	+addParticipant(Login, Player)
 }
 
 interface GameFacade {
-	start()
-	end()
-	endPlayer()
-	trade(Player, Resource[], Player, Resource[])
-	addResourcesTo(Player, Resource[])
-	removeResourcesTo(Player, Resource[])
+	+start()
+	+end()
+	+endPlayer()
+	+trade(Player, Resource[], Player, Resource[])
+	+addResourcesTo(Player, Resource[])
+	+removeResourcesTo(Player, Resource[])
 }
 
 Enum Status{
