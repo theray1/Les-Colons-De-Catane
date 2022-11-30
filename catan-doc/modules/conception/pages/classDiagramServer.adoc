@@ -100,7 +100,7 @@ package server {
             class GameControlerImpl <<GameControler>>{
                 players: Player[]
                 commands: Command[]
-				Executor: executor
+				executor: Executor
             }
             GameControlerImpl *-up- "1" CommandGameFactory
             GameControlerImpl *-up- "1" NetworkControler
