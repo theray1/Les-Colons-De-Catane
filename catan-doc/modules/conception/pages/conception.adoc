@@ -63,7 +63,33 @@ NOTE: TODO!
 
 === Interface ou protocoles de communication
 
-NOTE: TODO!
+Nous utilisons websocket sur lequel nous envoyons des commandes serialize en JSON
+(voir command pattern plus bas). Le client et le serveur doivent savoir quel class instancier
+a la reception d'une commande. On ajoute un parameter "type" dans la commande serialize
+et definitions un mapping commun entre le client serveur.
+Pour ce faire on définit le nom des commandes suivantes:
+
+|====
+|   ActivateThieve
+|   MoveThieve
+|   Ping
+|   Build
+|   ActiveCard
+|   AddCard
+|   BuyCard
+|   EndTurn
+|   StartTurn
+|   Win
+|	SetResources
+|	AddResources
+|	TradeWithNonPlayerEntity
+|	TradeWithPlayer
+|	DenyTrade
+|	AcceptTrade
+|	LoginComplete
+|	SetGame
+|	SetPlayer
+|====
 
 === Correction
 
@@ -100,7 +126,7 @@ include::classDiagramCommands.plantuml[]
 |StartTour    |Indique au joueur que c'est à lui de jouer.
 |EndTour    |Mettre fin au tour du joueur actif.
 |Win    |Déclarer la victoire d'un joueur.
-|SetResources    |Saisir le nombre de ressource d'un joueur.
+|SetResources    |Saisir le nombre de ressources d'un joueur.
 |AddResources    |Distribuer des ressources à un joueur.
 |TradeWithNonPlayerEntity    |Proposition d'échange entre un joueur et une entité non joueur (banque ou port).
 |TradeWithPlayer    |Proposition d'échange entre deux joueurs. 
@@ -170,7 +196,7 @@ include::classDiagramIndications.plantuml[]
 include::classDiagramServer.plantuml[]
 ....
 
-=== CameControlerServer
+=== CameControllerServer
 
 [plantuml]
 ....
