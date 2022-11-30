@@ -8,3 +8,9 @@ package-lock.json
 target/
 dist/
 out/
+catan-doc/modules/architecture/.DS_Store
+catan-doc/modules/architecture/pages/.DS_Store
+catan-doc/modules/composants/.DS_Store
+catan-doc/modules/composants/pages/.DS_Store
+catan-doc/modules/conception/.DS_Store
+catan-doc/modules/conception/.DS_Store
