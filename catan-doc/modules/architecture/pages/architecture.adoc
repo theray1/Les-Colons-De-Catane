@@ -111,19 +111,30 @@ dans les différents projets qui respectent une même architecture.
 
 == Vue des processus
 
-[NOTE]
-====
-TODO!
-====
+[plantuml]
+....
+@startuml
+package ProcessusServer{
+	package ThreadSpring{
+		JavaSpring : Ecoute des sockets ...
+	}
+	
+	package ThreadPrincipal{
+		serverMain : GameManager
+	}
+	
+	package ThreadN{
+		GameControlerN : La n-ième Game.
+	}
+}
+@enduml
+....
 
 
 == Vue technique : traduction de UML en code source
 
-[NOTE]
-====
-Expliquez, dans cette section, l'ensemble de règles que vous utiliserez par la suite pour traduire les
-diagrammes de conception UML en code source Java et TypeScript.
-====
+Nous allons simplement nous répartir le travail pour que chacun code une partie du projet.
+L'idéal serait que tout le monde "touche à tout" et donc il serait interessent de ne pas distribuer simplement chaque classe à chaqu'un.
 
 
 
@@ -134,40 +145,80 @@ diagrammes de conception UML en code source Java et TypeScript.
 | UML | Java | TypeScript
 
 | Integer
-|
-|
+| int
+| number
 
 | Boolean
-|
-|
+| bool
+| boolean
 
 | String
-|
-|
+| String
+| string
 
 | Real
-|
-|
+| double
+| number
 
 |===
 
+D'après : https://www.typescriptlang.org/docs/handbook/basic-types.html
+
 === Conventions de codage
 
-Ce projet respecte les conventions JAVA distribuées par Oracle. Cela nous permet d'affirmer que notre code est "propre" selon les normes java présentes à cette adresse : "https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html".
+Ce projet respecte les conventions JAVA distribuées par Oracle. Cela nous permet d'affirmer que notre code est "propre" selon les normes java présentes à cette adresse : https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html.
 
 === Règles de traduction des composants
 
-NOTE: Explique ici les règles que vous allez utiliser pour mettre en œuvre les composants UML.
+Du côté serveur, on se retrouver avec 2 composants dont un qui ne sera pas codé qui est JavaSpring.
+Le composant principal que nous nommons Server est l'ensemble des GameManager, GameControler, GameFacade... 
+
+Du côté client, on va également se retrouver avec 2 composants dont un qui ne sera aussi pas codé et qui gère les webSockets, il n'a pas de nom.
+On va devoir également codé le composant principal que nous nommons, incroyable nom, Client qui regroupe l'ensemble des GameManager, GameControler, GameFacade...
 
 === Règles de traduction des classes
 
-NOTE: Explique ici les règles que vous allez utiliser pour mettre en œuvre les classes UML.
+Nous allons interpreter les diagrames UML tout simplements avec un package donne un package, une classe donne une classe...
+Chaque classe utilisera une référence à une interface et non une classe pour minimiser le couplage.
+[plantuml]
+....
+@startuml
+package test{
+	interface Test{}
+	class TestImpl extends Test{}
+}
+@enduml
+....
+
+Ainsi, on va se retrouver avec un manager, ce dernier permet coté serveur de gérer l'ensemble des parties et de faire le lien entre ces dernières et Java Spring, et du coté client de faire le lien entre la librairie de websocket et la partie.
+Pour la partie, c'est le contrôler qui va gérer cela, faire le lien entre le NetworkControler, la GameFacade et la CommandFactory.
+
+* NetworkControler : Le contrôler qui s'occupe de la partie réseau, avec ce dernier, aucune commande/ressource du GameControler ne sort.
+* GameFacade : Du designPattern Facade, cette classe permet de faire le lien entre le GameControler et le package du jeu. Cela permet de minimiser le couplage.
+* CommandFactory : Du designPattern Factory, cette classe permet de fabriquer les Commands (cf Conception). 
 
 === Règles de traduction des associations
 
-NOTE: Expliquez ici les règles qui vous devrez  suivre pour mettre en œuvre les associations,
-agrégations composites et agrégations partagées.
+Les associations entre les classes / interfaces, sont assez simple : 
 
+[plantuml]
+....
+@startuml
+interface Test{}
+class Test2 {}
+note top : Test2 is composed of 1 Test
+
+Test2 *-- Test
+
+interface Test3{}
+class Test4 {}
+note top : Test4 is composed of 3-4 Test3
+
+Test4 *-- "3-4" Test3
+@enduml
+....
+Ainsi lorsqu'il n'y a pas de cardinalité, c'est qu'il y a une association de 1 pour 1.
+Quoi qu'il arrive, dans notre serveur, il n'y aura qu'un seul GameManager et autant de GameControler qu'il n'y a de partie.
 
 == Conclusion
 
