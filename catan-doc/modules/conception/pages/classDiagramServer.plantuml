@@ -43,6 +43,8 @@ package server {
                 +serialize(Command): String
                 +deSerialize(String): Command
             }
+            
+            abstract AbstractCommand implements Command{}
         }
 
         package networking {
@@ -74,7 +76,6 @@ package server {
     package serverImpl {
         package commandsImpl {
             class SerializerImpl <<Serializer>>{}
-            abstract AbstractCommand <<Command>>{}
             note bottom : Represent all types of commands.
             class CommandGameFactoryImpl <<CommandGameFactory>>{}
             AbstractCommand *-- "1-4"  Player
