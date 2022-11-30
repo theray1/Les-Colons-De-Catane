@@ -13,6 +13,10 @@ package server {
             }
         }
         package commands {
+        	interface CommandLoginFactory{
+	    		+createCommandLogin(Content) : Command
+	    	}
+	    	
             interface CommandGameFactory {
             	+ActivateThieve(Player[]) : Command
             	+MoveThieve(Player[], Coordinates) : Command
@@ -34,8 +38,7 @@ package server {
             	+SetGame(Player[]) : Command
             	+SetPlayer(Player) : Command
             }
-            interface Command {
-                +execute()
+            interface Command <<Runnable>>{
                 +getRecipients() : Player[]
             }
 
@@ -114,15 +117,8 @@ package server {
  
     
     package managment{
-    	package api{
-    		interface CommandLoginFactory{
-	    		+createCommandLogin(Content) : Command
-	    	}
-    	}
     	
-    	package managmentImpl{
     		class CommandLoginFactoryWebSocket <<CommandLoginFactory>>{}
-    		
 		    
 		    class ServerGameManager{
 		    	+createParty()
@@ -136,7 +132,6 @@ package server {
 		    ServerGameManager "1" *-right- "*" GameControler
 		    ServerGameManager "1" *-down- "1" CommandLoginFactory
 		    Server "1" *-down- "1" ServerGameManager
-    	}
     
     }
 

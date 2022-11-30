@@ -10,6 +10,11 @@ package client {
             }
         }
         package commands {
+            interface CommandLoginFactory{
+	    		+createCommandLogin(Content) : Command
+	    	}
+	    	note right : The login of the server
+	    	
             interface CommandGameFactory {
             	+ActivateThieve(Player[]) : Command
             	+MoveThieve(Player[], Coordinates) : Command
@@ -25,17 +30,17 @@ package client {
             	+DenyTrade(Player, Player) : Command
             	+AcceptTrade(Player, Player) : Command
             }
-            interface Command {
-                +execute()
-                vgetRecipients() : Player[]
+            interface Command <<Runnable>>{
+                +getRecipients() : Player[]
             }
 
             interface Serializer {
                 +serialize(Command): String
-                vdeSerialize(String): Command
+                +deSerialize(String): Command
             }
             
             abstract AbstractCommand implements Command{}
+            AbstractCommand *-up- "1-4"  Player
         }
 
         package networking {
@@ -79,12 +84,8 @@ package client {
     package clientImpl {
         package commandsImpl {
             class SerializerImpl <<Serializer>>{}
-            note right of AbstractCommand
-            		Represent all types of commands.
-            end note
             class CommandGameFactoryImpl <<CommandGameFactory>>{}
 
-            AbstractCommand *-up- "1-4"  Player
         }
 
         package networkingImpl {
@@ -94,7 +95,7 @@ package client {
             class NetworkControlerImpl <<NetworkControler>>{}
 
             
-            NetworkControlerImpl *-up- ConnectionHandler
+            NetworkControlerImpl *-- ConnectionHandler
 		   
         }
         package controlerImpl {
@@ -103,28 +104,19 @@ package client {
                 -me : Player
                 -commands: Command[]
             }
-            GameControlerImpl *-up- "1" CommandGameFactory
-            GameControlerImpl *-up- "1" NetworkControler
-            GameControlerImpl *-up- "1" GameFacade
-            GameControlerImpl *-up- "1" Serializer
-            GameControlerImpl *-up- "3-4" Player
+            GameControlerImpl *-- "1" CommandGameFactory
+            GameControlerImpl *-- "1" NetworkControler
+            GameControlerImpl *-- "1" GameFacade
+            GameControlerImpl *-- "1" Serializer
+            GameControlerImpl *-- "3-4" Player
             
         }
     }
  
     
     package managment{
-    	package api{
-    		interface CommandLoginFactory{
-	    		+createCommandLogin(Content) : Command
-	    	}
-	    	note right : The login of the server
-    	}
-    	
-    	package managmentImpl{
     		class CommandLoginFactoryWebSocket <<CommandLoginFactory>>{}
     		
-		    
 		    class ClientGameManager{
 		    	+createTheParty()
 		    	+connectServer(Command)
@@ -134,10 +126,9 @@ package client {
 		        {static}+main()
 		    }
 		    
-		    ClientGameManager "1" *-up- "*" GameControler
-		    ClientGameManager "1" *-up- "1" CommandLoginFactory
-		    Client "1" *-up- "1" ClientGameManager
-    	}
+		    ClientGameManager "1" *-- "*" GameControler
+		    ClientGameManager "1" *-- "1" CommandLoginFactory
+		    Client "1" *-- "1" ClientGameManager
     
     }
 
