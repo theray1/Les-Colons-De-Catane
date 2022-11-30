@@ -1,0 +1,27 @@
+@startuml
+node "Game Server" as server {
+    artifact "Spring" as modeA
+    artifact "Java" as modeB
+}
+node "Game Client Nathan" as nathan {
+    artifact "Angular" as modeCa
+    artifact "TypeScript" as modeDs
+}
+node "Game Client Rodrigue" as rodrigue {
+    artifact "Angular" as modeCqqs
+    artifact "TypeScript" as modeDv
+}
+node "Game Client Erwan" as erwan {
+    artifact "Angular" as modeCq
+    artifact "TypeScript" as modeDe
+}
+node "Game Client Bilal" as bilal {
+    artifact "Angular" as modeCg
+    artifact "TypeScript" as modeDh
+}
+
+server -up- nathan : <<protocol>> Web Socket and HTTP
+server -down- rodrigue : <<protocol>>  Web Socket and HTTP
+server -left- erwan : <<protocol>> Web Socket and HTTP
+server -right- bilal : <<protocol>> Web Socket and HTTP
+@enduml

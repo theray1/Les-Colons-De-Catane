@@ -33,7 +33,7 @@ pour montrer comment seront réparties les instances de ceci.
 .Exemple d'un diagramme de déploiement (niveau spécification)
 [plantuml]
 ----
-include::example$deployment-diagram-example.plantuml[]
+include::deployment.adoc[]
 ----
 
 [NOTE]
@@ -45,7 +45,7 @@ Vous pouvez profiter de ce diagramme pour expliquer le protocole de communicatio
 .Exemple d'un diagramme de déploiement (niveau instance)
 [plantuml]
 ----
-include::example$deployment-diagram-example.plantuml[]
+include::deploymentInstance.adoc[]
 ----
 
 [NOTE]
@@ -153,7 +153,7 @@ diagrammes de conception UML en code source Java et TypeScript.
 
 === Conventions de codage
 
-NOTE: Expliquez ici les conventions de codage, Java et TypeScript, que les développeurs devront respecter.
+Ce projet respecte les conventions JAVA distribuées par Oracle. Cela nous permet d'affirmer que notre code est "propre" selon les normes java présentes à cette adresse : "https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html".
 
 === Règles de traduction des composants
 
@@ -171,5 +171,4 @@ agrégations composites et agrégations partagées.
 
 == Conclusion
 
-NOTE: Ajoutez une conclusion à la section "architecture" de votre documentation.
-
+Ceci est une conclusion hative; bien qu'elle existe, elle ne doit pas être utilisée dans un quelconque but de productivité ou de compréhension de ce projet. Nous remercions tous nos proches d'avoir pu contribuer de près ou de loin à ce fabuleux et merveilleux projet. :) Voilà merci à toutes et à tous. Bisouuuuuh UwU. 
