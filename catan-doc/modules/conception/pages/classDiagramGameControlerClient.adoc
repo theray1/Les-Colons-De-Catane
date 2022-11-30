@@ -19,12 +19,6 @@ interface GameControler{
 	AcceptTrade() : void
 }
 
-interface Observable{
-	addObserver(Observer) : void
-	removeObserver(Observer) : void
-	notifyObservers() : void
-}
-
 interface Observer{
 	update() : void
 }
@@ -76,7 +70,6 @@ GameControlerImpl *-down- CommandGameFactory
 GameControlerImpl *-right- NetworkControler
 GameControlerImpl *-down- GameFacade
 GameControlerImpl *-left- Serializer
-GameControlerImpl *-right- Observer
 GameControlerImpl *-right- "3-4" Player
 GameControlerImpl *-left- Command
 

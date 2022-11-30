@@ -9,17 +9,6 @@ package client {
 	        	removeResourcesTo(Player, Resource[]) : void
             }
         }
-        
-        package observer{
-        	interface Observable{
-        		addObserver(Observer) : void
-        		removeObserver(Observer) : void
-        		notifyObservers() : void
-        	}
-        	interface Observer{
-        		update() : void
-        	}
-        }
         package commands {
             interface CommandGameFactory {
             	ActivateThieve(Player[]) : Command
@@ -109,7 +98,7 @@ package client {
         }
         package controlerImpl {
 
-            class GameControlerImpl <<GameControler>><<Observable>>{
+            class GameControlerImpl <<GameControler>>{
                 me : Player
                 commands: Command[]
             }
@@ -117,7 +106,6 @@ package client {
             GameControlerImpl *-up- "1" NetworkControler
             GameControlerImpl *-up- "1" GameFacade
             GameControlerImpl *-up- "1" Serializer
-            GameControlerImpl *-up- "*" Observer
             GameControlerImpl *-up- "3-4" Player
             
         }
@@ -151,11 +139,7 @@ package client {
     	}
     
     }
-        
-        
-    package ui{
-    	class WindowObserverImpl <<Observer>>{}
-    }
+
 
 }
 @enduml
