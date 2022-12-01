@@ -4,13 +4,14 @@ package server {
         package game {
         	interface Player{}
         	interface Resource{}
+        	interface Coordinates{}
             interface GameFacade {
 	        	+start()
 	        	+end()
 	        	+endPlayerTurn()
-	        	+trade(Player, Resource[], Player, Resource[])
 	        	+addResourcesTo(Player, Resource[])
 	        	+removeResourcesTo(Player, Resource[])
+	        	+moveRobber(Coordinates)
             }
         }
         package commands {
@@ -92,6 +93,9 @@ package server {
             class NetworkControlerImpl <<NetworkControler>>{}
             
             NetworkControlerImpl *-up- ConnectionHandler
+		    class Message{
+		    	+content : String
+		    }
 		   
         }
         package controlerImpl {
@@ -108,7 +112,6 @@ package server {
 				-executor: Executor
             }
             GameControlerImpl *-up- "1" CommandGameFactory
-            GameControlerImpl *-up- "1" NetworkControler
             GameControlerImpl *-up- "1" GameFacade
             GameControlerImpl *-up- "1" Serializer
             GameControlerImpl *-- "1" Status
@@ -124,6 +127,7 @@ package server {
 		    class ServerGameManager{
 		    	+createParty()
 		    	+insertClient(Command)
+		    	
 		    }
 			
 		    class Server {
@@ -133,6 +137,7 @@ package server {
 		    ServerGameManager "1" *-right- "*" GameControler
 		    ServerGameManager "1" *-down- "1" CommandLoginFactory
 		    Server "1" *-down- "1" ServerGameManager
+            ServerGameManager *-up- "1" NetworkControler
     
     }
 

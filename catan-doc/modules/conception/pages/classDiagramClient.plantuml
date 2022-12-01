@@ -4,8 +4,9 @@ package client {
         package game {
         	interface Player{}
         	interface Resource{}
+        	interface Coordinates{}
             interface GameFacade {
-	        	+trade(Player, Resource[], Player, Resource[])
+	        	+removeResourcesTo(Player, Resource[])
 	        	+addResourcesTo(Player, Resource[])
 	        	+removeResourcesTo(Player, Resource[])
             }
@@ -97,7 +98,9 @@ package client {
 
             
             NetworkControlerImpl *-- ConnectionHandler
-		   
+		   	class Message{
+		    	+content : String
+		    }
         }
         package controlerImpl {
 
@@ -106,7 +109,6 @@ package client {
                 -commands: Command[]
             }
             GameControlerImpl *-- "1" CommandGameFactory
-            GameControlerImpl *-- "1" NetworkControler
             GameControlerImpl *-- "1" GameFacade
             GameControlerImpl *-- "1" Serializer
             GameControlerImpl *-- "3-4" Player
@@ -130,6 +132,7 @@ package client {
 		    ClientGameManager "1" *-- "*" GameControler
 		    ClientGameManager "1" *-- "1" CommandLoginFactory
 		    Client "1" *-- "1" ClientGameManager
+            ServerGameManager *-up- "1" NetworkControler
     
     }
 
