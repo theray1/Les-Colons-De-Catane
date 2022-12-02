@@ -10,6 +10,6 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WebSockeHandler extends TextWebSocketHandler {
+public class CatanWebSocketHandler extends TextWebSocketHandler {
 
 }
