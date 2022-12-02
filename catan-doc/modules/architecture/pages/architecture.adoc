@@ -92,10 +92,7 @@ pour décrire l'organisation du code source.
 ====
 
 .Organisation des modules
-[plantuml]
-----
-include::example$pd-example.plantuml[]
-----
+include::packageDiagram.adoc[]
 
 
 
@@ -222,4 +219,4 @@ Quoi qu'il arrive, dans notre serveur, il n'y aura qu'un seul GameManager et aut
 
 == Conclusion
 
-Ceci est une conclusion hative; bien qu'elle existe, elle ne doit pas être utilisée dans un quelconque but de productivité ou de compréhension de ce projet. Nous remercions tous nos proches d'avoir pu contribuer de près ou de loin à ce fabuleux et merveilleux projet. :) Voilà merci à toutes et à tous. Bisouuuuuh UwU. 
+Ceci est une conclusion hative; bien qu'elle existe, elle ne doit pas être utilisée dans un quelconque but de productivité ou de compréhension de ce projet. Nous remercions tous nos proches d'avoir pu contribuer de près ou de loin à ce fabuleux et merveilleux projet. :) Voilà merci à toutes et à tous. Bisouuuuuh UwU. A REVOIR /!\
