@@ -33,7 +33,7 @@ pour montrer comment seront réparties les instances de ceci.
 .Exemple d'un diagramme de déploiement (niveau spécification)
 [plantuml]
 ----
-include::deployment.plantuml[]
+include::deploymentDiagram.plantuml[]
 ----
 
 [NOTE]
@@ -45,7 +45,7 @@ Vous pouvez profiter de ce diagramme pour expliquer le protocole de communicatio
 .Exemple d'un diagramme de déploiement (niveau instance)
 [plantuml]
 ----
-include::deploymentInstance.plantuml[]
+include::deploymentDiagramInstance.plantuml[]
 ----
 
 [NOTE]
