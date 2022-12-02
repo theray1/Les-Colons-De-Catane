@@ -1,0 +1,35 @@
+[plantuml]
+....
+@startuml
+package "catan"
+{
+  package "catan-server" 
+  {
+    package "catan-server.Server" as specific_s
+    {
+    } 
+    package "catan-server.Common" as common_s
+    {
+      
+    }
+    
+    specific_s ..> common_s : uses
+    
+  }
+  package "catan-web" 
+  {
+    package "catan-web.Client" as specific_w
+    {
+      
+    } 
+    package "catan-web.Common" as common_w
+    {
+      
+    }
+    
+    specific_w ..> common_w : uses
+    
+  }
+}
+@enduml
+....
