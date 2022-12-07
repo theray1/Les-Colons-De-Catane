@@ -1,0 +1,16 @@
+[plantuml]
+....
+@startuml
+
+start
+
+:Game master places the seas cards on the game board;
+
+:Game master places the terrain cards on the game board;
+
+
+stop
+
+@enduml
+
+....
