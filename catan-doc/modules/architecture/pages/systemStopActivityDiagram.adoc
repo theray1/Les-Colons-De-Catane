@@ -6,8 +6,10 @@ title System stop \n
 
 start
 
-while (all games are not finished AND no client is waiting for a game ?) 
-endwhile
+while (a game is in progress OR a client is waiting for a game ?) is (yes) 
+endwhile (no)
+
+:stop the server;
 
 stop
 
