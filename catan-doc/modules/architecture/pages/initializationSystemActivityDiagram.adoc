@@ -1,6 +1,8 @@
+[plantuml]
+....
 @startuml
 
-title Activity Diagram \n
+title Initialization of system \n
 
 start
 
@@ -15,3 +17,4 @@ endif
 stop
 
 @enduml
+....
