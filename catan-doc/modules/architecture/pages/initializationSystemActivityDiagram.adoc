@@ -1,0 +1,20 @@
+[plantuml]
+....
+@startuml
+
+title Initialization of system \n
+
+start
+
+:Client execute the software;
+
+if (server is started ?) then (no)
+  :Server starts;
+else (yes)
+  stop
+endif
+
+stop
+
+@enduml
+....
