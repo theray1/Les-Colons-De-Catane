@@ -1,0 +1,15 @@
+[plantuml]
+....
+@startuml
+
+title System stop \n
+
+start
+
+while (all games are not finished AND no client is waiting for a game ?) 
+endwhile
+
+stop
+
+@enduml
+....
