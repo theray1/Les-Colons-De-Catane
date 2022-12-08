@@ -6,11 +6,12 @@ import fr.univnantes.alma.core.game.map.Edge;
 import fr.univnantes.alma.core.game.map.Vertice;
 
 public abstract class BuildingAbstract implements Building {
-	private Player owner;
-	private final Coordinates coords;
+	protected final Player owner;
+	protected final Coordinates coords;
 
-	protected BuildingAbstract(Coordinates coords) {
+	protected BuildingAbstract(Coordinates coords, Player owner) {
 		this.coords = coords;
+		this.owner = owner;
 	}
 
 	@Override
