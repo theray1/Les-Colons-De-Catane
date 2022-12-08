@@ -1,9 +1,9 @@
 package fr.univnantes.alma.core.commands;
 
-import fr.univnantes.alma.core.game.Player;
-
 import java.security.InvalidParameterException;
 import java.util.Collection;
+
+import fr.univnantes.alma.core.game.entity.Player;
 
 public abstract class AbstractCommand {
 

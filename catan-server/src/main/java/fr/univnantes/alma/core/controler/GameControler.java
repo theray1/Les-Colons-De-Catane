@@ -1,7 +1,7 @@
 package fr.univnantes.alma.core.controler;
 
 import fr.univnantes.alma.core.commands.Command;
-import fr.univnantes.alma.core.game.Player;
+import fr.univnantes.alma.core.game.entity.Player;
 
 public interface GameControler {
     void receiveCommand(Command command);

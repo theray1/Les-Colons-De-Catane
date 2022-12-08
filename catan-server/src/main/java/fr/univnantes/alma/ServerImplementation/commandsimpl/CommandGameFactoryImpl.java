@@ -2,9 +2,9 @@ package fr.univnantes.alma.ServerImplementation.commandsimpl;
 
 import fr.univnantes.alma.core.commands.Command;
 import fr.univnantes.alma.core.commands.CommandGameFactory;
-import fr.univnantes.alma.core.game.Coordinates;
-import fr.univnantes.alma.core.game.Player;
-import fr.univnantes.alma.core.game.Resource;
+import fr.univnantes.alma.core.game.entity.Player;
+import fr.univnantes.alma.core.game.map.Coordinates;
+import fr.univnantes.alma.core.game.resource.Resource;
 
 public class CommandGameFactoryImpl implements CommandGameFactory {
     @Override

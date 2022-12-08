@@ -1,8 +1,8 @@
 package fr.univnantes.alma.core.commands;
 
-import fr.univnantes.alma.core.game.Coordinates;
-import fr.univnantes.alma.core.game.Player;
-import fr.univnantes.alma.core.game.Resource;
+import fr.univnantes.alma.core.game.entity.Player;
+import fr.univnantes.alma.core.game.map.Coordinates;
+import fr.univnantes.alma.core.game.resource.Resource;
 
 public interface CommandGameFactory {
     Command ActivateThieve(Player[] players);

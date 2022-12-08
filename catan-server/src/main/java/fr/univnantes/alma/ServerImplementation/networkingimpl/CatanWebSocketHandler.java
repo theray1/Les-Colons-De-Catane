@@ -2,7 +2,8 @@ package fr.univnantes.alma.ServerImplementation.networkingimpl;
 
 
 import fr.univnantes.alma.core.controler.GameControler;
-import fr.univnantes.alma.core.game.Player;
+import fr.univnantes.alma.core.game.entity.Player;
+
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
