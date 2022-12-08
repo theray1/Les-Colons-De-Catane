@@ -1,10 +1,15 @@
 package fr.univnantes.alma.core.game;
 
 public Enum Tiles{
-  Hill,
+  HILL,
   FOREST,
   MOUNTAIN,
   PASTURE,
   FIELD,
-  DESERT
+  DESERT,
+  SEA
+  
+  public static int getMaxTypeOfTiles() {
+	  return 7;
+  }
 }
