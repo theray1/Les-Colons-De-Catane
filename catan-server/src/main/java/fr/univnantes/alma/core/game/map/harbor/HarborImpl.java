@@ -1,4 +1,4 @@
-package fr.univnantes.alma.core.game.map;
+package fr.univnantes.alma.core.game.map.harbor;
 
 import java.util.Collection;
 

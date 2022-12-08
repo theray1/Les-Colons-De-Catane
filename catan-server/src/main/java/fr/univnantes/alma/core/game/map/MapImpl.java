@@ -1,5 +1,11 @@
 package fr.univnantes.alma.core.game.map;
 
+import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
+import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
+import fr.univnantes.alma.core.game.map.tile.Tile;
+import fr.univnantes.alma.core.game.map.tile.TileImpl;
+import fr.univnantes.alma.core.game.map.tile.Tiles;
+
 public class MapImpl implements Map {
 	private final int SIZE = 6;
 	private Tile[][] tiles;

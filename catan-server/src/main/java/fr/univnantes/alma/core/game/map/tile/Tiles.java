@@ -1,4 +1,4 @@
-package fr.univnantes.alma.core.game.map;
+package fr.univnantes.alma.core.game.map.tile;
 
 public enum Tiles {
 	HILL, FOREST, MOUNTAIN, PASTURE, FIELD, DESERT, SEA;

@@ -1,7 +1,7 @@
 package fr.univnantes.alma.core.commands;
 
 import fr.univnantes.alma.core.game.entity.Player;
-import fr.univnantes.alma.core.game.map.Coordinates;
+import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.resource.Resource;
 
 public interface CommandGameFactory {

@@ -3,7 +3,7 @@ package fr.univnantes.alma.core.game;
 import java.util.List;
 
 import fr.univnantes.alma.core.game.entity.Player;
-import fr.univnantes.alma.core.game.map.Coordinates;
+import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.resource.Resource;
 
 public class GameFacadeImpl implements GameFacade {

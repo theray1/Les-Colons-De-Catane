@@ -1,6 +1,8 @@
-package fr.univnantes.alma.core.game.map;
+package fr.univnantes.alma.core.game.map.tile;
 
-public class Vertice implements Location {
+import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
+
+public class Edge implements Location {
 
 	@Override
 	public boolean isFree() {
