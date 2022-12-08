@@ -70,11 +70,26 @@ Vous devez aussi présenter les prévisions de fonctionnement dans des condition
 Utilisez des diagrammes d'activité UML pour décrire l'initialisation et l'arrêt du système.
 ====
 
-.Initialisation du système
-[plantuml]
-----
-include::example$ad-initialization.plantuml[]
-----
+=== Prévisions de fonctionnement
+==== INITIALISATION DU SYSTEME : 
+Un client exécute le logiciel. Si le serveur est éteint, il s'allume.
+
+==== ARRET DU SYSTEME : 
+Une fois que toutes les parties se déroulant sur le serveur sont terminées et qu'il n'y a plus de clients en attente de parties, le serveur s'arrête jusqu'à la prochaine exécution du logiciel par un client.
+
+==== GESTION DES FAILLES ET DU REDEMARRAGE DU SYSTEME : 
+En cas d'arrêt non souhaité du serveur, par exemple avec une panne du serveur, le serveur est relancé, les parties sont détruites et les clients de la partie encore connectés sont remis dans la file d'attente des participants. +
+En cas d'arrêt inattendu d'un client jouant à une partie en cours, cette partie se termine immédiatement puis elle est détruite et les clients de la partie encore connectés sont remis dans la file d'attente des participants. Le client qui s'est arrêté devra ré-exécuter le logiciel pour se connecter de nouveau au serveur. +
+Si c'est le système entier qui s'arrête inopinément, un client devra l'exécuter à nouveau pour relancer le système. +
+
+.Diagramme d'activité de l'initialisation du système
+
+include::initializationSystemActivityDiagram.adoc[]
+
+.Diagramme d'activité de l'arrêt du système
+
+include::systemStopActivityDiagram.adoc[]
+
 
 == Vue du développement
 

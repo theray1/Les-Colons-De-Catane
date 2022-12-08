@@ -1,0 +1,17 @@
+[plantuml]
+....
+@startuml
+
+title System stop \n
+
+start
+
+while (a game is in progress OR a client is waiting for a game ?) is (yes) 
+endwhile (no)
+
+:stop the server;
+
+stop
+
+@enduml
+....
