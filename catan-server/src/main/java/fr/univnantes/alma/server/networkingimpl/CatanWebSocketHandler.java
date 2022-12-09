@@ -64,8 +64,12 @@ public class CatanWebSocketHandler extends TextWebSocketHandler implements WsCon
 
                 connectionToPlayer.put(session, player);
                 playerToConnection.put(player, session);
+            }else {
+                Player player = connectionToPlayer.get(session);
+                if (player != null) {
+                    player.getGame().submit(command);
+                }
             }
-            connectionToPlayer.get(session).getGame().submit(command);
         }catch (JsonProcessingException processingException){
             log.error(processingException.getMessage());
         }
