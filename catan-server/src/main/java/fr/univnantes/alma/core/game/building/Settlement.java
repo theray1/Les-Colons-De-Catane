@@ -6,8 +6,8 @@ import fr.univnantes.alma.core.game.map.tile.Edge;
 import fr.univnantes.alma.core.game.map.tile.Vertice;
 
 public class Settlement extends VerticeBuilding {
-	protected Settlement(Coordinates coords, Player owner) {
-		super(coords, owner);
+	protected Settlement(Coordinates coords, Buildings type, Player owner) {
+		super(coords, type, owner);
 		// TODO Auto-generated constructor stub
 	}
 

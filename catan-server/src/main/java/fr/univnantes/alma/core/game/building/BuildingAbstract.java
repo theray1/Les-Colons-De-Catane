@@ -8,10 +8,12 @@ import fr.univnantes.alma.core.game.map.tile.Vertice;
 public abstract class BuildingAbstract implements Building {
 	protected final Player owner;
 	protected final Coordinates coords;
+	protected final Buildings type;
 
-	protected BuildingAbstract(Coordinates coords, Player owner) {
+	protected BuildingAbstract(Coordinates coords, Buildings type, Player owner) {
 		this.coords = coords;
 		this.owner = owner;
+		this.type = type;
 	}
 
 	@Override
@@ -28,5 +30,10 @@ public abstract class BuildingAbstract implements Building {
 	@Override
 	public Coordinates getCoordinates() {
 		return this.coords;
+	}
+
+	@Override
+	public Buildings getType() {
+		return this.type;
 	}
 }

@@ -7,8 +7,8 @@ import fr.univnantes.alma.core.game.map.tile.Vertice;
 
 public class Road extends EdgeBuilding {
 
-	protected Road(Coordinates coords, Player owner) {
-		super(coords, owner);
+	protected Road(Coordinates coords, Buildings type, Player owner) {
+		super(coords, type, owner);
 		// TODO Auto-generated constructor stub
 	}
 
