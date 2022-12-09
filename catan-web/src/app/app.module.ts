@@ -8,6 +8,11 @@ import { BoardComponent } from './gameboard/board/board.component';
 import { PlayerinterfaceComponent } from './gameboard/playerinterface/playerinterface.component';
 import { OpponentinterfaceComponent } from './gameboard/opponentinterface/opponentinterface.component';
 import { TileComponent } from './gameboard/board/tile/tile.component';
+import { TestcompComponent } from './testcomp/testcomp.component';
+import { InterfaceComponent } from './interface/interface.component';
+import { GameviewComponent } from './interface/gameview/gameview.component';
+import { PlayerviewComponent } from './interface/playerview/playerview.component';
+import { GlobalviewComponent } from './interface/globalview/globalview.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { TileComponent } from './gameboard/board/tile/tile.component';
     BoardComponent,
     PlayerinterfaceComponent,
     OpponentinterfaceComponent,
-    TileComponent
+    TileComponent,
+    TestcompComponent,
+    InterfaceComponent,
+    GameviewComponent,
+    PlayerviewComponent,
+    GlobalviewComponent
   ],
   imports: [
     BrowserModule,

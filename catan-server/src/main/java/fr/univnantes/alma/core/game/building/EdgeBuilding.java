@@ -5,8 +5,8 @@ import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 
 public abstract class EdgeBuilding extends BuildingAbstract {
 
-	protected EdgeBuilding(Coordinates coords, Player owner) {
-		super(coords, owner);
+	protected EdgeBuilding(Coordinates coords, Buildings type, Player owner) {
+		super(coords, type, owner);
 		// TODO Auto-generated constructor stub
 	}
 
