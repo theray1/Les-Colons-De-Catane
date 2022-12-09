@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-public class CatanApplication {
+public class CatanServer {
 
     public static void main(String[] args) {
-        SpringApplication.run(CatanApplication.class, args);
+        SpringApplication.run(CatanServer.class, args);
     }
 
 

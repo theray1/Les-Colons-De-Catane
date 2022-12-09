@@ -1,4 +1,4 @@
-package fr.univnantes.alma.ServerImplementation.controlerimpl;
+package fr.univnantes.alma.server.controller;
 
 public enum Status {
     NOTSTARTED,

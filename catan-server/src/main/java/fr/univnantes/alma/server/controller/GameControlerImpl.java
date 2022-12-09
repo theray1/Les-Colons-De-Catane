@@ -1,4 +1,4 @@
-package fr.univnantes.alma.ServerImplementation.controlerimpl;
+package fr.univnantes.alma.server.controller;
 
 import fr.univnantes.alma.core.commands.Command;
 import fr.univnantes.alma.core.controler.GameControler;

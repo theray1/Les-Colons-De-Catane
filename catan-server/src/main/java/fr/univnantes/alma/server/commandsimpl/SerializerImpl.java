@@ -1,4 +1,4 @@
-package fr.univnantes.alma.ServerImplementation.commandsimpl;
+package fr.univnantes.alma.server.commandsimpl;
 
 import fr.univnantes.alma.core.commands.Command;
 import fr.univnantes.alma.core.commands.Serializer;
