@@ -2,6 +2,9 @@ package fr.univnantes.alma.core.game.map;
 
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
+import fr.univnantes.alma.core.game.map.harbor.Harbor;
+import fr.univnantes.alma.core.game.map.harbor.HarborImpl;
+import fr.univnantes.alma.core.game.map.harbor.HarborTrades;
 import fr.univnantes.alma.core.game.map.tile.Tile;
 import fr.univnantes.alma.core.game.map.tile.TileImpl;
 import fr.univnantes.alma.core.game.map.tile.Tiles;
@@ -73,12 +76,30 @@ public class MapImpl implements Map {
 	}
 
 	private void placeHarbors() {
+		Tile tile;
+		Harbor harbor;
+		int nbHarbor = 6 + (int) (Math.random() * 6);
+		for (int i = 0; i < nbHarbor; i++) {
+			tile = getRandomTileSeaWithoutHarbor();
+			harbor = new HarborImpl(HarborTrades.TWOTOONE);
+			tile.placeHarbor(harbor);
+		}
+	}
 
+	private Tile getRandomTileSeaWithoutHarbor() {
+		Tile retour = null;
+		int line = 0;
+		while (retour == null) {
+			line = (int) (Math.random() * SIZE + 1);
+			retour = tiles[line][Math.random() > 0.5 ? 0 : 1];
+			if (retour.containsHarbor())
+				retour = null;
+		}
+		return retour;
 	}
 
 	@Override
 	public Tile getTile(Coordinates coords) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

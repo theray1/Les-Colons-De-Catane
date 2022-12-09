@@ -13,4 +13,6 @@ public interface Building {
 	public Player getOwner();
 
 	public Coordinates getCoordinates();
+
+	public Buildings getType();
 }

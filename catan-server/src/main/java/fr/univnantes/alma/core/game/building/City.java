@@ -6,8 +6,8 @@ import fr.univnantes.alma.core.game.map.tile.Edge;
 import fr.univnantes.alma.core.game.map.tile.Vertice;
 
 public class City extends VerticeBuilding {
-	protected City(Coordinates coords, Player owner) {
-		super(coords, owner);
+	protected City(Coordinates coords, Buildings type, Player owner) {
+		super(coords, type, owner);
 		// TODO Auto-generated constructor stub
 	}
 
