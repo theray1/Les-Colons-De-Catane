@@ -25,7 +25,8 @@ public class TileImpl implements Tile {
 		case FOREST -> new ResourceImpl(Resources.WOOD);
 		case MOUNTAIN -> new ResourceImpl(Resources.STONE);
 		case PASTURE -> new ResourceImpl(Resources.WOOL);
-		case FIELD -> new ResourceImpl(Resources.BRICK);
+		case FIELD -> new ResourceImpl(Resources.WHEAT);
+		case HILL -> new ResourceImpl(Resources.BRICK);
 		default -> new ResourceImpl(Resources.NOTHING);
 		};
 

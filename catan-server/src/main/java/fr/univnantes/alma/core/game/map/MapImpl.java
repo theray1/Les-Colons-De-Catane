@@ -54,8 +54,11 @@ public class MapImpl implements Map {
 							type = Tiles.FIELD;
 							break;
 						case 4:
+							type = Tiles.HILL;
+							break;
+						case 5:
 							if (!desertBuild) {
-								type = Tiles.HILL;
+								type = Tiles.DESERT;
 								desertBuild = true;
 							} else {
 								validate = false;

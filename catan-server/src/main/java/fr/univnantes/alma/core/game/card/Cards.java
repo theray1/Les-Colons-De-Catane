@@ -1,5 +1,5 @@
 package fr.univnantes.alma.core.game.card;
 
-public enum DeveloppementCards {
+public enum Cards {
 	KNIGHT, PROGRESS, VP;
 }
