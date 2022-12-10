@@ -5,8 +5,12 @@ import fr.univnantes.alma.core.game.map.harbor.Harbor;
 
 public class Edge extends AbstractLocation {
 
-	protected Edge(Coordinates coords, Harbor harbor) {
+	public Edge(Coordinates coords, Harbor harbor) {
 		super(coords, harbor);
+	}
+
+	public Edge(Coordinates coords) {
+		super(coords, null);
 	}
 
 }

@@ -5,8 +5,12 @@ import fr.univnantes.alma.core.game.map.harbor.Harbor;
 
 public class Vertice extends AbstractLocation {
 
-	protected Vertice(Coordinates coords, Harbor harbor) {
+	public Vertice(Coordinates coords, Harbor harbor) {
 		super(coords, harbor);
+	}
+
+	public Vertice(Coordinates coords) {
+		super(coords, null);
 	}
 
 }

@@ -11,6 +11,12 @@ public class CoordinatesImpl implements Coordinates {
 		this.end = end;
 	}
 
+	public CoordinatesImpl(int row, int column) {
+		this.row = row;
+		this.column = column;
+		this.end = 0;
+	}
+
 	@Override
 	public int getRow() {
 		return row;

@@ -50,13 +50,13 @@ public class TileImpl implements Tile {
 	}
 
 	@Override
-	public void setBuilding(Building building, Coordinates coords) throws IllegalStateException {
+	public void setBuilding(Building building) throws IllegalStateException {
 		switch (building.getType()) {
 		case VERTICE:
-			this.getVertice(coords).setBuilding(building);
+			this.getVertice(building.getCoordinates()).setBuilding(building);
 			break;
 		case EDGE:
-			this.getEdge(coords).setBuilding(building);
+			this.getEdge(building.getCoordinates()).setBuilding(building);
 			break;
 		default:
 			throw new IllegalStateException("Building must have a type (Vertice or Edge)");
@@ -80,22 +80,22 @@ public class TileImpl implements Tile {
 
 	@Override
 	public Edge getEdge(Coordinates coords) {
-		return edges[coords.getEnd()];
+		return edges[coords.getEnd() - 1];
 	}
 
 	@Override
 	public Vertice getVertice(Coordinates coords) {
-		return vertices[coords.getEnd()];
+		return vertices[coords.getEnd() - 1];
 	}
 
 	@Override
-	public Edge setEdge(Edge edge, Coordinates coords) {
-		return edges[coords.getEnd()] = edge;
+	public void setEdge(Edge edge) {
+		edges[edge.getCoordinates().getEnd() - 1] = edge;
 	}
 
 	@Override
-	public Vertice setVertice(Vertice vertice, Coordinates coords) {
-		return vertices[coords.getEnd()] = vertice;
+	public void setVertice(Vertice vertice) {
+		vertices[vertice.getCoordinates().getEnd() - 1] = vertice;
 	}
 
 	@Override
@@ -104,13 +104,32 @@ public class TileImpl implements Tile {
 	}
 
 	@Override
-	public void placeHarbor(Harbor har) {
+	public void placeHarbor(Harbor har) throws IllegalStateException {
+		if (this.type != Tiles.SEA)
+			throw new IllegalStateException("A harbor can only be placed on an ocean tile");
+
 		this.harbor = har;
 	}
 
 	@Override
 	public boolean containsHarbor() {
 		return this.harbor != null;
+	}
+
+	@Override
+	public Harbor getHarbor() {
+		return this.harbor;
+	}
+
+	@Override
+	public boolean isComplete() {
+		if (this.type == Tiles.SEA)
+			return true;
+		for (int i = 0; i < this.edges.length; i++) {
+			if (edges[i] == null || vertices[i] == null)
+				return false;
+		}
+		return true;
 	}
 
 }

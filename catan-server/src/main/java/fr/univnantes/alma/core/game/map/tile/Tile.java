@@ -33,9 +33,8 @@ public interface Tile {
 	 * Place building on an Location of this tile
 	 * 
 	 * @param building The building to place
-	 * @param coords   The coords of the Location
 	 */
-	public void setBuilding(Building building, Coordinates coords);
+	public void setBuilding(Building building);
 
 	/**
 	 * Place robber on this tile. This tile cannot be type of SEA
@@ -57,6 +56,13 @@ public interface Tile {
 	 * @param harbor The Harbor
 	 */
 	public void placeHarbor(Harbor har);
+
+	/**
+	 * Get harbor on this tile.
+	 * 
+	 * @return harbor The Harbor
+	 */
+	public Harbor getHarbor();
 
 	/**
 	 * Test if this Tile contains Harbor
@@ -82,20 +88,18 @@ public interface Tile {
 	public Vertice getVertice(Coordinates coords);
 
 	/**
-	 * Set the edge corresponding to the coordinates.
+	 * Set the edge.
 	 * 
-	 * @param coords The coordinates
-	 * @return The edge
+	 * @param edge The edge
 	 */
-	public Edge setEdge(Edge edge, Coordinates coords);
+	public void setEdge(Edge edge);
 
 	/**
-	 * Set the vertice corresponding to the coordinates.
+	 * Set the edge.
 	 * 
-	 * @param coords The coordinates
-	 * @return The vertice
+	 * @param edge The vertice
 	 */
-	public Vertice setVertice(Vertice vertice, Coordinates coords);
+	public void setVertice(Vertice vertice);
 
 	/**
 	 * Get the type of this tile
@@ -103,4 +107,11 @@ public interface Tile {
 	 * @return The type
 	 */
 	public Tiles getType();
+
+	/**
+	 * Test if the tile instance is complete (all vertices, all edges)
+	 * 
+	 * @return true or false
+	 */
+	public boolean isComplete();
 }
