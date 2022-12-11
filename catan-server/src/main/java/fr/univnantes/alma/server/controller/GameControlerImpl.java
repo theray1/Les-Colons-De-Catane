@@ -1,7 +1,6 @@
 package fr.univnantes.alma.server.controller;
 
 import fr.univnantes.alma.core.commands.Command;
-import fr.univnantes.alma.core.controler.GameControler;
 import fr.univnantes.alma.core.game.entity.Player;
 
 import java.util.concurrent.Executor;

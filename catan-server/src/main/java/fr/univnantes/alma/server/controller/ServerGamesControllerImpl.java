@@ -1,8 +1,8 @@
 package fr.univnantes.alma.server.controller;
 
-import fr.univnantes.alma.core.controler.ServerGameController;
-import fr.univnantes.alma.core.game.Game;
-import fr.univnantes.alma.core.game.GameImpl;
+import fr.univnantes.alma.core.gamemager.ServerGameController;
+import fr.univnantes.alma.core.game.GameController;
+import fr.univnantes.alma.core.game.GameControllerImpl;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -11,26 +11,26 @@ import java.util.*;
 @Component("Default Server Game Controller")
 public class ServerGamesControllerImpl implements ServerGameController {
 
-    private final LinkedList<Game> gameList = new LinkedList<>();
+    private final LinkedList<GameController> gameControllerList = new LinkedList<>();
 
     @Override
-    public List<Game> getAllGames() {
-        return gameList;
+    public List<GameController> getAllGames() {
+        return gameControllerList;
     }
 
     @Override
-    public Game getGameWithSlot(){
-        Game lastGame = gameList.getLast();
-        if(lastGame == null || lastGame.isFull()) {
+    public GameController getGameWithSlot(){
+        GameController lastGameController = gameControllerList.getLast();
+        if(lastGameController == null || lastGameController.isFull()) {
            return addNewGame();
         }
-        return lastGame;
+        return lastGameController;
     }
 
-    private Game addNewGame() {
-        Game game= new GameImpl(this);
-        gameList.addLast(game);
-        return game;
+    private GameController addNewGame() {
+        GameController gameController = new GameControllerImpl(this);
+        gameControllerList.addLast(gameController);
+        return gameController;
 
     }
 }

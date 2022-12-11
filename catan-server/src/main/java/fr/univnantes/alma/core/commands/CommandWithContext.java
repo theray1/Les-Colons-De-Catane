@@ -5,17 +5,29 @@ import java.util.Collection;
 import java.util.Set;
 
 import fr.univnantes.alma.core.game.entity.Player;
-import jdk.jshell.spi.ExecutionControl;
 
-public abstract class AbstractCommand implements Command {
+
+public abstract class CommandWithContext implements Command {
 
     protected final Set<Player> recipient;
 
-    protected AbstractCommand(Set<Player> recipient) {
+    protected CommandContext context;
+
+    protected CommandWithContext(Set<Player> recipient) {
         if(recipient.size() > 4)
             throw new  InvalidParameterException("A game cannot have more than 4 players");
 
         this.recipient = recipient;
+    }
+
+    @Override
+    public CommandContext getContext() {
+        return context;
+    }
+
+    @Override
+    public void setContext(CommandContext context) {
+        this.context = context;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package fr.univnantes.alma.server.networkingimpl;
 
-import fr.univnantes.alma.core.controler.ServerGameController;
+import fr.univnantes.alma.core.gamemager.ServerGameController;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.WebSocketHandler;
