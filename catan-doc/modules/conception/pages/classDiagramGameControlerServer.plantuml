@@ -30,10 +30,17 @@ interface CommandGameFactory {
 	+SetGame(Player[]) : Command
 	+SetPlayer(Player) : Command
 }
-interface Serializer {
-    +serialize(Command): String
-    +deSerialize(String): Command
+interface Serializer<T> {
+    +serialize(Command): T throw SerializerException
+    +deSerialize(T): Command throw SerializerException
 }
+
+Class JSONSerializer {
+    +ObjectMapper //jackson object mapper
+}
+
+Class SerializerException{}
+
 interface NetworkControler {
 	+sendCommand(Command)
 	+addParticipant(Login, Player)
@@ -60,6 +67,7 @@ GameControlerImpl *-right- "1" NetworkControler
 GameControlerImpl *-left- "1" GameFacade
 GameControlerImpl *-down- "1" Serializer
 GameControlerImpl *-right- "1" Status
-            
+Serializer *-down- "1" JSONSerializer
+GameControlerImpl *-right- "1" Status            
             
 @enduml

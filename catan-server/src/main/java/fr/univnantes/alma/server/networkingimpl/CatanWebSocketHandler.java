@@ -1,19 +1,19 @@
 package fr.univnantes.alma.server.networkingimpl;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import fr.univnantes.alma.core.networking.SerialiserException;
+import fr.univnantes.alma.core.networking.Serializer;
+import fr.univnantes.alma.server.commandsimpl.ImmutableCommandContext;
 import fr.univnantes.alma.server.commandsimpl.LoginCommand;
 import fr.univnantes.alma.core.commands.Command;
 
-import fr.univnantes.alma.core.controler.ServerGameController;
-import fr.univnantes.alma.core.game.Game;
+import fr.univnantes.alma.core.gamemager.ServerGameController;
+import fr.univnantes.alma.core.game.GameController;
 import fr.univnantes.alma.core.game.entity.Player;
 import fr.univnantes.alma.core.networking.WsController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -28,22 +28,21 @@ import java.util.HashMap;
 public class CatanWebSocketHandler extends TextWebSocketHandler implements WsController {
 
     private static final Logger log = LoggerFactory.getLogger(CatanWebSocketHandler.class);
-    private final ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json().build();
+    private final Serializer<String> objectMapper = new JSONSerializer();
 
     private final ServerGameController serverGameController;
 
     public CatanWebSocketHandler(ServerGameController serverGameController) {
         this.serverGameController = serverGameController;
     }
-
     private final HashMap<Player,WebSocketSession> playerToConnection = new HashMap<>(4);
     private final HashMap<WebSocketSession, Player> connectionToPlayer = new HashMap<>(4);
 
     @Override
-    public void sendCommand(Game game, Command command) throws IOException {
+    public void sendCommand(GameController gameController, Command command) throws IOException {
         for(Player recipient: command.getRecipents()){
             WebSocketSession session = playerToConnection.get(recipient);
-            session.sendMessage(new TextMessage(objectMapper.writeValueAsString(command)));
+            session.sendMessage(new TextMessage(objectMapper.serialize(command)));
         }
     }
 
@@ -54,30 +53,43 @@ public class CatanWebSocketHandler extends TextWebSocketHandler implements WsCon
     }
 
     @Override
+    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+        super.afterConnectionClosed(session, status);
+        dissociateWsAndPlayer(session);
+        log.info("{} Disconnected", session.getId());
+    }
+
+    @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         super.handleTextMessage(session, message);
         try {
-            Command command = objectMapper.readValue(message.getPayload(), Command.class);
+            Command command = objectMapper.deserialize(message.getPayload());
             if (command instanceof LoginCommand) {
-                Game game = serverGameController.getGameWithSlot();
-                Player player = game.joinPlayer(command);
+                GameController gameController = serverGameController.getGameWithSlot();
+                Player player = gameController.joinPlayer(command);
 
-                connectionToPlayer.put(session, player);
-                playerToConnection.put(player, session);
+                associateWsAndPlayer(session, player);
             }else {
                 Player player = connectionToPlayer.get(session);
                 if (player != null) {
+                    command.setContext(new ImmutableCommandContext(player.getGame()));
                     player.getGame().submit(command);
                 }
             }
-        }catch (JsonProcessingException processingException){
+        }catch (SerialiserException processingException){
             log.error(processingException.getMessage());
         }
     }
 
-    @Override
-    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-        super.afterConnectionClosed(session, status);
-        log.info("{} Disconnected", session.getId());
+    private void associateWsAndPlayer(WebSocketSession session, Player player) {
+        connectionToPlayer.put(session, player);
+        playerToConnection.put(player, session);
     }
+    private void dissociateWsAndPlayer(WebSocketSession session) {
+        Player player = connectionToPlayer.remove(session);
+        playerToConnection.remove(player);
+    }
+
+
+
 }
