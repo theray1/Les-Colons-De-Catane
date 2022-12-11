@@ -51,4 +51,5 @@ public class CoordinatesImpl implements Coordinates {
 
 		return this.equalsTile(coords) && this.end == coords.getEnd();
 	}
+
 }

@@ -90,16 +90,18 @@ public interface Tile {
 	/**
 	 * Set the edge.
 	 * 
-	 * @param edge The edge
+	 * @param edge   The edge
+	 * @param coords The coordinates
 	 */
-	public void setEdge(Edge edge);
+	public void setEdge(Edge edge, Coordinates coords);
 
 	/**
 	 * Set the edge.
 	 * 
-	 * @param edge The vertice
+	 * @param edge   The vertice
+	 * @param coords The coordinates
 	 */
-	public void setVertice(Vertice vertice);
+	public void setVertice(Vertice vertice, Coordinates coords);
 
 	/**
 	 * Get the type of this tile
@@ -114,4 +116,11 @@ public interface Tile {
 	 * @return true or false
 	 */
 	public boolean isComplete();
+
+	/**
+	 * Sets the number of this tile
+	 * 
+	 * @param number
+	 */
+	public void setNumber(int number);
 }

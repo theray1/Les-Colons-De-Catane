@@ -1,5 +1,6 @@
 package fr.univnantes.alma.core.game.map;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -68,6 +69,19 @@ public class MapTest {
 		maps.generateTiles();
 		Coordinates coords = new CoordinatesImpl(2, 3, 0);
 		assertTrue(maps.getTile(coords).getCoordinates().equalsTile(coords));
+	}
+
+	@Test
+	public void testIsValidCoordinates() {
+		Map map = new MapImpl(7);
+
+		assertTrue(map.isValidCoordinates(new CoordinatesImpl(0, 0)));
+		assertTrue(map.isValidCoordinates(new CoordinatesImpl(3, 3)));
+		assertFalse(map.isValidCoordinates(new CoordinatesImpl(-1, 0)));
+		assertFalse(map.isValidCoordinates(new CoordinatesImpl(-3, 0)));
+		assertFalse(map.isValidCoordinates(new CoordinatesImpl(1, -3)));
+		assertFalse(map.isValidCoordinates(new CoordinatesImpl(-3, -3)));
+		assertFalse(map.isValidCoordinates(new CoordinatesImpl(7, 7)));
 	}
 
 }

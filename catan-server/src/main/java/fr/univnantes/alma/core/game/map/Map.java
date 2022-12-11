@@ -6,6 +6,8 @@ import fr.univnantes.alma.core.game.map.tile.Tile;
 public interface Map {
 	public void generateTiles();
 
+	public void generateEdgesVertices();
+
 	public void placeHarbors();
 
 	public Tile getTile(Coordinates coords);

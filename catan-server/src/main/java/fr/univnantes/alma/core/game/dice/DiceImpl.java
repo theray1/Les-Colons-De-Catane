@@ -10,6 +10,7 @@ public class DiceImpl implements Dice {
 
 	@Override
 	public void roll() {
-		this.value = (int) (1 + (Math.random() * 12)); // 12 => 2 Dices
+		this.value = (int) (2 + (Math.random() * 10)); // 12 => 2 Dices
+		// System.out.println("Dice has rolled to : " + this.value);
 	}
 }

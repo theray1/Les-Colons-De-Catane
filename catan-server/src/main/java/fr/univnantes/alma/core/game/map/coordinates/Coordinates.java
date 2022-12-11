@@ -37,4 +37,5 @@ public interface Coordinates {
 	 * @return true if equals, false otherwise
 	 */
 	public boolean equals(Object other);
+
 }

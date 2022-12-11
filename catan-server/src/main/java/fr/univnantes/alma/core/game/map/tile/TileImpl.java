@@ -2,7 +2,9 @@ package fr.univnantes.alma.core.game.map.tile;
 
 import fr.univnantes.alma.core.game.building.Building;
 import fr.univnantes.alma.core.game.entity.Robber;
+import fr.univnantes.alma.core.game.map.Map;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
+import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
 import fr.univnantes.alma.core.game.map.harbor.Harbor;
 import fr.univnantes.alma.core.game.resource.Resource;
 import fr.univnantes.alma.core.game.resource.ResourceImpl;
@@ -14,13 +16,16 @@ public class TileImpl implements Tile {
 	private final Tiles type;
 	private final Resource resource;
 	private Harbor harbor;
+	private int number;
+	private final Map map;
 
 	private Edge[] edges;
 	private Vertice[] vertices;
 
-	public TileImpl(Coordinates coords, Tiles type) {
+	public TileImpl(Coordinates coords, Tiles type, Map map) {
 		this.coords = coords;
 		this.type = type;
+		this.map = map;
 		this.resource = switch (type) {
 		case FOREST -> new ResourceImpl(Resources.WOOD);
 		case MOUNTAIN -> new ResourceImpl(Resources.STONE);
@@ -33,6 +38,11 @@ public class TileImpl implements Tile {
 		this.edges = new Edge[6];
 		this.vertices = new Vertice[6];
 
+	}
+
+	@Override
+	public void setNumber(int number) {
+		this.number = number;
 	}
 
 	@Override
@@ -90,13 +100,13 @@ public class TileImpl implements Tile {
 	}
 
 	@Override
-	public void setEdge(Edge edge) {
-		edges[edge.getCoordinates().getEnd() - 1] = edge;
+	public void setEdge(Edge edge, Coordinates coords) {
+		edges[coords.getEnd() - 1] = edge;
 	}
 
 	@Override
-	public void setVertice(Vertice vertice) {
-		vertices[vertice.getCoordinates().getEnd() - 1] = vertice;
+	public void setVertice(Vertice vertice, Coordinates coords) {
+		vertices[coords.getEnd() - 1] = vertice;
 	}
 
 	@Override
@@ -124,11 +134,51 @@ public class TileImpl implements Tile {
 
 	@Override
 	public boolean isComplete() {
-		if (this.type == Tiles.SEA)
-			return true;
-		for (int i = 0; i < this.edges.length; i++) {
-			if (edges[i] == null || vertices[i] == null)
-				return false;
+		Tile t, t2;
+
+		Coordinates[] neighbors = new Coordinates[6];
+
+		// Call the up left tile
+		neighbors[0] = new CoordinatesImpl(this.coords.getRow() - 1, this.coords.getColumn() - 1);
+		// Call the up right tile
+		neighbors[1] = new CoordinatesImpl(this.coords.getRow() - 1, this.coords.getColumn());
+		// Call the right tile
+		neighbors[2] = new CoordinatesImpl(this.coords.getRow(), this.coords.getColumn() + 1);
+		// Call the down right tile
+		neighbors[3] = new CoordinatesImpl(this.coords.getRow() + 1, this.coords.getColumn() + 1);
+		// Call the down left tile
+		neighbors[4] = new CoordinatesImpl(this.coords.getRow() + 1, this.coords.getColumn());
+		// Call the left tile
+		neighbors[5] = new CoordinatesImpl(this.coords.getRow(), this.coords.getColumn() - 1);
+
+		for (int i = 1; i <= 6; i++) {
+			if (!map.isValidCoordinates(neighbors[i - 1])) {
+				continue;
+			}
+
+			t = this.map.getTile(neighbors[i - 1]);
+			if (edges[i - 1] == null) {
+				if (!this.type.equals(Tiles.SEA)) {
+					return false;
+				} else if (!t.getType().equals(Tiles.SEA)) {
+					return false;
+				}
+			}
+
+			if (!t.getType().equals(Tiles.SEA) || !this.type.equals(Tiles.SEA)) {
+				if (vertices[i - 1] == null) {
+					// System.out.print("i : " + i);
+					return false;
+				}
+
+			} else if (map.isValidCoordinates(neighbors[i - 1])
+					&& !this.map.getTile(neighbors[i - 1]).getType().equals(Tiles.SEA)) {
+				if (vertices[i - 1] == null) {
+					// System.out.print("i : " + i);
+					return false;
+				}
+			}
+
 		}
 		return true;
 	}
