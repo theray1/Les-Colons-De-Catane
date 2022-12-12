@@ -40,10 +40,10 @@ include::../partials/uc-preparation.adoc[]
 
 
 .Diagramme d'activités: Mise en place d'une partie
-[plantuml]
-....
-include::../examples/ad-mise-en-place.puml[]
-....
+
+include::SetUpOfGameUseCaseActivityDiagram.adoc[]
+
+
 
 === Cas d'utilisation Jouer un tour
 
