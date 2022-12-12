@@ -2,9 +2,10 @@ package fr.univnantes.alma.core.game.entity;
 
 import java.util.List;
 
-import fr.univnantes.alma.core.game.Game;
+import fr.univnantes.alma.core.game.GameController;
 import fr.univnantes.alma.core.game.card.Card;
 import fr.univnantes.alma.core.game.resource.Resource;
+import jakarta.annotation.Nullable;
 
 public interface Player {
 	/**
@@ -19,7 +20,8 @@ public interface Player {
 	 * 
 	 * @return The game
 	 */
-	public Game getGame();
+	@Nullable
+	public GameController getGame();
 
 	/**
 	 * Get the amount of victory points (cards + points)

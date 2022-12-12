@@ -8,6 +8,31 @@ start
 
 :Game master places the terrain cards on the game board;
 
+:Game master places the terrain tokens on the game board;
+
+:Game master creates the resouces cards and development cards decks;
+
+:Game master places the thief on the game board;
+
+:Players roll the dice for define the order of play;
+
+:First player places 1 settlement and 1 road, linked to each other;
+
+:Second player places 1 settlement and 1 road, linked to each other;
+
+:Third player places 1 settlement and 1 road, linked to each other;
+
+:Fourth player places 1 settlement and 1 road, linked to each other;
+
+:Fourth player places 1 settlement and 1 road, linked to each other;
+
+:Third player places 1 settlement and 1 road, linked to each other;
+
+:Second player places 1 settlement and 1 road, linked to each other;
+
+:First player places 1 settlement and 1 road, linked to each other;
+
+:First player starts to play the game;
 
 stop
 

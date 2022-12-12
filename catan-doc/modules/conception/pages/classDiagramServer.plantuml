@@ -46,7 +46,10 @@ package server {
                 +deSerialize(String): Command
             }
             
-            abstract AbstractCommand implements Command{}
+            abstract CommandWithContext implements Command{
+            CommandContext context
+            ~ final Set<Player> recipient
+            }
         }
 
         package networking {
@@ -100,30 +103,7 @@ package server {
     }
  
     
-    package managment{
-    
-    		package Messages{
-    			class MessageLogin{
-    				-idParty : Integer
-    				
-    				+getIdParty() : Integer
-    			}
-    			
-    			class MessageCommandSTC{
-    				-command : String
-    				
-    				+getCommand() : String
-    			}
-    			
-    			class MessageCommandCTS{
-    				-command : String
-    				-idParty : Integer
-    				
-    				+getIdParty() : Integer
-    				+getCommand() : String
-    			}
-    		}
-		    
+    package gamemanager{
 		    class ServerGameManager{
 		    	+createParty()
 		    	+insertClient(Command)

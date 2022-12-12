@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import fr.univnantes.alma.core.game.Game;
+import fr.univnantes.alma.core.game.GameController;
 import fr.univnantes.alma.core.game.card.Card;
 import fr.univnantes.alma.core.game.card.Cards;
 import fr.univnantes.alma.core.game.resource.Resource;
@@ -12,7 +12,7 @@ import fr.univnantes.alma.core.game.resource.Resources;
 
 public class PlayerImpl implements Player {
 
-	private final Game game;
+	private final GameController gameController;
 
 	private final String name;
 
@@ -27,8 +27,8 @@ public class PlayerImpl implements Player {
 		return name;
 	}
 
-	public PlayerImpl(Game game, String name) {
-		this.game = game;
+	public PlayerImpl(GameController gameController, String name) {
+		this.gameController = gameController;
 		this.name = name;
 
 		this.cards = new HashMap<Cards, Integer>();
@@ -44,8 +44,8 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public Game getGame() {
-		return game;
+	public GameController getGame() {
+		return gameController;
 	}
 
 	@Override

@@ -1,6 +1,9 @@
 @startuml
   abstract Trade {}
-  abstract AbstractCommand{}
+  abstract CommandWithContext implements Command{
+  CommandContext context
+  ~ final Set<Player> recipient
+  }
   class TradeWithPlayer {}
   class TradeWithNonPlayerEntity {}
   class AcceptTrade {}
@@ -34,24 +37,24 @@
   Trade <|-down- AcceptTrade
   Trade <|-right- DenyTrade
   
-  Command <|-down- AbstractCommand
+  Command <|-down- CommandWithContext
   Command <|-down- Login
-  AbstractCommand <|-down- LoginComplete
-  AbstractCommand <|-left- BuyCard
-  AbstractCommand <|-left- MoveThieve
-  AbstractCommand <|-right- Build
-  AbstractCommand <|-right- ActiveCard
-  AbstractCommand <|-up- SetGame
-  AbstractCommand <|-up- Ping
-  AbstractCommand <|-up- ActivateThieve
-  AbstractCommand <|-up- AddResources
-  AbstractCommand <|-down- AddCard
-  AbstractCommand <|-down- Win
-  AbstractCommand <|-down- SetResources
-  AbstractCommand <|-down- SetPlayer
-  AbstractCommand <|-- EndTurn
-  AbstractCommand <|-- StartTurn
-  AbstractCommand <|-- Trade
+  CommandWithContext <|-down- LoginComplete
+  CommandWithContext <|-left- BuyCard
+  CommandWithContext <|-left- MoveThieve
+  CommandWithContext <|-right- Build
+  CommandWithContext <|-right- ActiveCard
+  CommandWithContext <|-up- SetGame
+  CommandWithContext <|-up- Ping
+  CommandWithContext <|-up- ActivateThieve
+  CommandWithContext <|-up- AddResources
+  CommandWithContext <|-down- AddCard
+  CommandWithContext <|-down- Win
+  CommandWithContext <|-down- SetResources
+  CommandWithContext <|-down- SetPlayer
+  CommandWithContext <|-- EndTurn
+  CommandWithContext <|-- StartTurn
+  CommandWithContext <|-- Trade
   
-  AbstractCommand *-- "1-4" Player
+  CommandWithContext *-- "1-4" Player
 @enduml

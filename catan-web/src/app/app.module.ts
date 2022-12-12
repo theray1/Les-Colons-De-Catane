@@ -9,6 +9,7 @@ import { PlayerviewComponent } from './interface/playerview/playerview.component
 import { GlobalviewComponent } from './interface/globalview/globalview.component';
 import { TileComponent } from './interface/gameview/tile/tile.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,4 +26,5 @@ import { TileComponent } from './interface/gameview/tile/tile.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

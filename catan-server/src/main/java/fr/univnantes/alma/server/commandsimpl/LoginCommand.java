@@ -1,11 +1,11 @@
 package fr.univnantes.alma.server.commandsimpl;
 
-import fr.univnantes.alma.core.commands.AbstractCommand;
+import fr.univnantes.alma.core.commands.CommandWithContext;
 import fr.univnantes.alma.core.game.entity.Player;
 
 import java.util.Set;
 
-public class LoginCommand extends AbstractCommand {
+public class LoginCommand extends CommandWithContext {
 
     protected LoginCommand(Set<Player> recipient) {
         super(recipient);
