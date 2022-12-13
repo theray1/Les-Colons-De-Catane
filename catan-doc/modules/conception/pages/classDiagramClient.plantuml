@@ -21,7 +21,9 @@ package client {
             	+ActivateThieve(Player[]) : Command
             	+MoveThieve(Player[], Coordinates) : Command
             	+Ping(Player[]) : Command
-            	+Build(Player[], Building) : Command
+            	+BuildSettlement(Player, Building) : Command
+                +BuildCity(Player, Building) : Command
+                +BuildRoad(Player, Building) : Command
             	+ActiveCard(Player[], Card) : Command
             	+AddCard(Player[], Player, Integer) : Command
             	+BuyCard(Player[], Resource[]) : Command
@@ -67,7 +69,9 @@ package client {
             	+ActivateThieve()
             	+MoveThieve()
             	+Ping()
-            	+Build()
+            	+BuildSettlement()
+                +BuildCity()
+                +BuildRoad()
             	+ActiveCard()
             	+AddCard()
             	+BuyCard()
