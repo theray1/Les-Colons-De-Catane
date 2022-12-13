@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Collections;
+
 import org.junit.jupiter.api.Test;
 
 import fr.univnantes.alma.core.game.map.Map;
@@ -13,6 +15,7 @@ import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
 import fr.univnantes.alma.core.game.map.harbor.Harbor;
 import fr.univnantes.alma.core.game.map.harbor.HarborImpl;
+import fr.univnantes.alma.core.game.map.harbor.HarborTrades;
 import fr.univnantes.alma.core.game.map.tile.Edge;
 import fr.univnantes.alma.core.game.map.tile.Tile;
 import fr.univnantes.alma.core.game.map.tile.TileImpl;
@@ -44,14 +47,29 @@ public class TileTest {
 		Tiles type = Tiles.PASTURE;
 		Coordinates c = new CoordinatesImpl(1, 2);
 		t = new TileImpl(c, type, null);
-		Harbor hb = new HarborImpl(null);
+		Harbor hb = new HarborImpl(HarborTrades.FOURTOONE, null, null);
 
 		assertThrows(IllegalStateException.class, () -> t.placeHarbor(hb));
 	}
 
 	@Test
+	public void testCreateRandomHarbor() {
+		Map m = new MapImpl();
+		Harbor h = m.createRandomHarbor();
+
+		if (h.isRandomTrade()) {
+			assertEquals(h.getRequireResources(), Collections.emptyList());
+			assertEquals(h.getGivenResources(), Collections.emptyList());
+		} else {
+			System.out.println(h.getRequireResources().size() + " " + h.getType().getRequire());
+			assertEquals(h.getRequireResources().size(), h.getType().getRequire());
+			assertEquals(h.getGivenResources().size(), h.getType().getGiven());
+		}
+	}
+
+	@Test
 	public void testIsComplete() {
-		Map map = new MapImpl(7);
+		Map map = new MapImpl();
 		map.generateTiles();
 		Tile t;
 
@@ -65,7 +83,7 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl(7);
+		map = new MapImpl();
 		map.generateTiles();
 
 		// Case Center Tile 0;0
@@ -77,7 +95,7 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl(7);
+		map = new MapImpl();
 		map.generateTiles();
 
 		// Case Center Tile 1;0
@@ -91,7 +109,7 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl(7);
+		map = new MapImpl();
 		map.generateTiles();
 
 		// Case Center Tile 0;3
@@ -103,7 +121,7 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl(7);
+		map = new MapImpl();
 		map.generateTiles();
 
 		// Case Center Tile 2;4
@@ -116,7 +134,7 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl(7);
+		map = new MapImpl();
 		map.generateTiles();
 
 		// Case Center Tile 1;3
@@ -129,7 +147,7 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl(7);
+		map = new MapImpl();
 		map.generateTiles();
 
 		// Case Center Tile 1;1
@@ -141,7 +159,7 @@ public class TileTest {
 		}
 		assertTrue(t.isComplete());
 
-		map = new MapImpl(7);
+		map = new MapImpl();
 		map.generateTiles();
 
 		// Case Center Tile 3;6

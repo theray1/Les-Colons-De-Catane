@@ -1,5 +1,13 @@
 package fr.univnantes.alma.core.game.map;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import fr.univnantes.alma.core.game.building.Building;
+import fr.univnantes.alma.core.game.building.Buildings;
+import fr.univnantes.alma.core.game.entity.Robber;
+import fr.univnantes.alma.core.game.entity.RobberImpl;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
 import fr.univnantes.alma.core.game.map.harbor.Harbor;
@@ -10,13 +18,19 @@ import fr.univnantes.alma.core.game.map.tile.Tile;
 import fr.univnantes.alma.core.game.map.tile.TileImpl;
 import fr.univnantes.alma.core.game.map.tile.Tiles;
 import fr.univnantes.alma.core.game.map.tile.Vertice;
+import fr.univnantes.alma.core.game.resource.Resource;
+import fr.univnantes.alma.core.game.resource.ResourceImpl;
+import fr.univnantes.alma.core.game.resource.Resources;
 
 public class MapImpl implements Map {
 	private final int size;
 	private Tile[][] tiles;
+	private List<Building> buildings;
+	private Robber robber = new RobberImpl();
 
-	public MapImpl(int size) {
-		this.size = size;
+	public MapImpl() {
+		this.size = 7;
+		this.buildings = new ArrayList<Building>();
 		// Creating the tile array
 		this.tiles = new Tile[size][];
 		for (int i = 0; i < size; i++) {
@@ -26,22 +40,30 @@ public class MapImpl implements Map {
 
 	@Override
 	public void generateTiles() {
-		boolean desertBuild = false;
 		boolean validate = false;
 		Tiles type = null;
+
+		int row = 1 + (int) (Math.random() * 10) % 5;
+		int column = 1 + (int) (Math.random() * tiles[row].length - 2);
+		tiles[row][column] = new TileImpl(new CoordinatesImpl(row, column), Tiles.DESERT, this);
+		tiles[row][column].placeRobber(robber);
+		robber.setCoordinates(tiles[row][column].getCoordinates());
+
 		for (int i = 0; i < size; i++) {
 			// First and last line
 			if (i == 0 || i == size - 1) {
-				tiles[i][1] = new TileImpl(new CoordinatesImpl(i, 1, 0), Tiles.SEA, this);
-				tiles[i][2] = new TileImpl(new CoordinatesImpl(i, 2, 0), Tiles.SEA, this);
+				tiles[i][1] = new TileImpl(new CoordinatesImpl(i, 1), Tiles.SEA, this);
+				tiles[i][2] = new TileImpl(new CoordinatesImpl(i, 2), Tiles.SEA, this);
 			} else {
 				// Course of non-ocean tiles
 				for (int y = 1; y < tiles[i].length - 1; y++) {
+					if (tiles[i][y] != null)
+						continue;
 					validate = false;
 					while (!validate) {
 
 						validate = true;
-						switch ((int) (Math.random() * Tiles.getMaxTypeOfTiles() - 1)) {
+						switch ((int) (Math.random() * Tiles.getMaxTypeOfTiles() - 3)) {
 						case 0:
 							type = Tiles.FOREST;
 							break;
@@ -57,44 +79,33 @@ public class MapImpl implements Map {
 						case 4:
 							type = Tiles.HILL;
 							break;
-						case 5:
-							if (!desertBuild) {
-								type = Tiles.DESERT;
-								desertBuild = true;
-							} else {
-								validate = false;
-							}
-							;
-							break;
 						default:
 							validate = false;
 							break;
 						}
 
 					}
-					tiles[i][y] = new TileImpl(new CoordinatesImpl(i, y, 0), type, this);
+					tiles[i][y] = new TileImpl(new CoordinatesImpl(i, y), type, this);
 				}
 			}
 
 			// The first and last tile of this line
-			tiles[i][0] = new TileImpl(new CoordinatesImpl(i, 0, 0), Tiles.SEA, this);
-			tiles[i][tiles[i].length - 1] = new TileImpl(new CoordinatesImpl(i, tiles[i].length - 1, 0), Tiles.SEA,
-					this);
+			tiles[i][0] = new TileImpl(new CoordinatesImpl(i, 0), Tiles.SEA, this);
+			tiles[i][tiles[i].length - 1] = new TileImpl(new CoordinatesImpl(i, tiles[i].length - 1), Tiles.SEA, this);
 		}
 
 	}
 
 	public void generateEdgesVertices() {
-		generateEdgesReccursive(new CoordinatesImpl(size / 2, size / 2));
+		generateEdgesVerticesReccursive(new CoordinatesImpl(size / 2, size / 2));
 	}
 
-	private void generateEdgesReccursive(Coordinates c) {
+	private void generateEdgesVerticesReccursive(Coordinates c) {
 		if (!this.isValidCoordinates(c))
 			return;
 		else if (getTile(c).isComplete()) {
 			return;
 		}
-		System.out.println();
 
 		Coordinates[] neighbors = new Coordinates[6];
 
@@ -174,7 +185,7 @@ public class MapImpl implements Map {
 		}
 
 		for (Coordinates cNext : neighbors) {
-			generateEdgesReccursive(cNext);
+			generateEdgesVerticesReccursive(cNext);
 		}
 
 	}
@@ -186,9 +197,43 @@ public class MapImpl implements Map {
 		int nbHarbor = 6 + (int) (Math.random() * 6);
 		for (int i = 0; i < nbHarbor; i++) {
 			tile = getRandomTileSeaWithoutHarbor();
-			harbor = new HarborImpl(HarborTrades.TWOTOONE);
+			harbor = createRandomHarbor();
 			tile.placeHarbor(harbor);
 		}
+	}
+
+	@Override
+	public Harbor createRandomHarbor() {
+		HarborTrades[] trades = HarborTrades.values();
+		HarborTrades trade = trades[(int) (Math.random() * trades.length)];
+		Harbor b;
+		if (trade.isRandom()) {
+			b = new HarborImpl(trade, Collections.emptyList(), Collections.emptyList());
+		} else {
+			List<Resource> require = new ArrayList<Resource>();
+			List<Resource> given = new ArrayList<Resource>();
+
+			Resource requireResourceType = new ResourceImpl(
+					Resources.values()[(int) (Math.random() * Resources.values().length)]);
+
+			Resource givenResourceType = requireResourceType;
+			while (givenResourceType == requireResourceType) {
+				givenResourceType = new ResourceImpl(
+						Resources.values()[(int) (Math.random() * Resources.values().length)]);
+			}
+			for (int i = 0; i < trade.getRequire(); i++) {
+				require.add(new ResourceImpl(requireResourceType));
+			}
+
+			for (int i = 0; i < trade.getGiven(); i++) {
+				given.add(new ResourceImpl(givenResourceType));
+			}
+
+			b = new HarborImpl(trade, require, given);
+		}
+
+		return b;
+
 	}
 
 	private Tile getRandomTileSeaWithoutHarbor() {
@@ -216,10 +261,28 @@ public class MapImpl implements Map {
 				&& coords.getColumn() < tiles[coords.getRow()].length;
 	}
 
+	@Override
+	public void placeBuilding(Building b) {
+		Tile t = getTile(b.getCoordinates());
+		Buildings typeB = b.getType();
+
+		// Is it an edge type building?
+		if (typeB == Buildings.EDGE) {
+
+		}
+	}
+
+	@Override
+	public void placeRobber(Coordinates coords) {
+		this.getTile(robber.getCoordinates()).placeRobber(null);
+		this.getTile(coords).placeRobber(robber);
+	}
+
 	/**
 	 * Methods for test
 	 */
 	public Tile[] getRow(int i) {
 		return tiles[i];
 	}
+
 }

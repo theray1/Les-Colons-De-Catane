@@ -4,6 +4,6 @@ public enum Tiles {
 	HILL, FOREST, MOUNTAIN, PASTURE, FIELD, DESERT, SEA;
 
 	public static int getMaxTypeOfTiles() {
-		return 6;
+		return 7;
 	}
 }

@@ -1,6 +1,7 @@
 package fr.univnantes.alma.core.game.map.tile;
 
 import fr.univnantes.alma.core.game.building.Building;
+import fr.univnantes.alma.core.game.building.Buildings;
 import fr.univnantes.alma.core.game.entity.Robber;
 import fr.univnantes.alma.core.game.map.Map;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
@@ -47,7 +48,10 @@ public class TileImpl implements Tile {
 
 	@Override
 	public Resource getResource() {
-		return this.resource;
+		if (containsRobber()) {
+			return new ResourceImpl(Resources.NOTHING);
+		} else
+			return this.resource;
 	}
 
 	@Override
@@ -167,20 +171,58 @@ public class TileImpl implements Tile {
 
 			if (!t.getType().equals(Tiles.SEA) || !this.type.equals(Tiles.SEA)) {
 				if (vertices[i - 1] == null) {
-					// System.out.print("i : " + i);
 					return false;
 				}
 
 			} else if (map.isValidCoordinates(neighbors[i - 1])
 					&& !this.map.getTile(neighbors[i - 1]).getType().equals(Tiles.SEA)) {
 				if (vertices[i - 1] == null) {
-					// System.out.print("i : " + i);
 					return false;
 				}
 			}
 
 		}
 		return true;
+	}
+
+	@Override
+	public boolean canBuild(Building b) {
+		Coordinates coords = b.getCoordinates();
+		Buildings bType = b.getType();
+		if (!this.getLocation(bType, coords).isFree())
+			return false;
+
+		if (bType == Buildings.EDGE) {
+			switch (coords.getEnd()) {
+			case 1:
+				if (!this.getEdge(new CoordinatesImpl(coords.getRow(), coords.getColumn(), 6)).isFree())
+					return false;
+				if (!this.getEdge(new CoordinatesImpl(coords.getRow(), coords.getColumn(), 2)).isFree())
+					return false;
+
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public Location getLocation(Buildings type, Coordinates coords) {
+		if (type == Buildings.EDGE) {
+			return this.getEdge(coords);
+		} else {
+			return this.getVertice(coords);
+		}
 	}
 
 }

@@ -52,7 +52,8 @@ public class PlayerImpl implements Player {
 	@Override
 	public void addResources(List<Resource> resources) {
 		for (Resource r : resources) {
-			this.resources.put(r.getType(), this.resources.get(r.getType()) + 1);
+			if (!r.getType().equals(Resources.NOTHING))
+				this.resources.put(r.getType(), this.resources.get(r.getType()) + 1);
 		}
 
 	}
@@ -65,6 +66,9 @@ public class PlayerImpl implements Player {
 		}
 		Resources type;
 		for (Resource r : resources) {
+			// We pass the nothing resource
+			if (!r.getType().equals(Resources.NOTHING))
+				continue;
 			type = r.getType();
 			res.put(type, res.get(type));
 			if (res.get(type) > this.resources.get(type)) {

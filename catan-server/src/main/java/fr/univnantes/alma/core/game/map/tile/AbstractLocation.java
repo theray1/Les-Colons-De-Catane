@@ -27,4 +27,9 @@ public abstract class AbstractLocation implements Location {
 
 	}
 
+	@Override
+	public Building getBuilding() {
+		return this.building;
+	}
+
 }
