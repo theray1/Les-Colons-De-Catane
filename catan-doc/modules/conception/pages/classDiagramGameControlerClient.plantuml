@@ -7,7 +7,9 @@ interface GameControler{
 	+ActivateThieve()
 	+MoveThieve()
 	+Ping()
-	+Build()
+	+BuildSettlement()
+	+BuildRoad()
+	+BuildCity()
 	+ActiveCard()
 	+AddCard()
 	+BuyCard()
@@ -39,7 +41,9 @@ interface CommandGameFactory {
 	+ActivateThieve(Player[]) : Command
 	+MoveThieve(Player[], Coordinates) : Command
 	+Ping(Player[]) : Command
-	+Build(Player[], Building) : Command
+	+BuildSettlement(Player[], Building) : Command
+	+BuildRoad(Player[], Building) : Command
+	+BuildCity(Player[], Building) : Command
 	+ActiveCard(Player[], Card) : Command
 	+AddCard(Player[], Player, Integer) : Command
 	+BuyCard(Player[], Resource[]) : Command
