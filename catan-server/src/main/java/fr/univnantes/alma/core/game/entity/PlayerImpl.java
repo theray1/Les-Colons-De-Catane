@@ -1,5 +1,6 @@
 package fr.univnantes.alma.core.game.entity;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,8 +32,8 @@ public class PlayerImpl implements Player {
 		this.gameController = gameController;
 		this.name = name;
 
-		this.cards = new HashMap<Cards, Integer>();
-		this.resources = new HashMap<Resources, Integer>();
+		this.cards = new EnumMap<>(Cards.class);
+		this.resources = new EnumMap<>(Resources.class);
 		for (Resources r : Resources.values()) {
 			if (!r.equals(Resources.NOTHING)) {
 				this.resources.put(r, 0);
@@ -58,7 +59,7 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public boolean haveResources(List<Resource> resources) {
-		HashMap<Resources, Integer> res = new HashMap<Resources, Integer>();
+		EnumMap<Resources, Integer> res = new EnumMap<>(Resources.class);
 		for (Resources r : Resources.values()) {
 			res.put(r, 0);
 		}

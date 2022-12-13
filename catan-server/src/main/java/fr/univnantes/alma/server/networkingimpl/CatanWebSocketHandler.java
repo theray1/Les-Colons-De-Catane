@@ -1,6 +1,7 @@
 package fr.univnantes.alma.server.networkingimpl;
 
 
+import fr.univnantes.alma.core.game.GameFacade;
 import fr.univnantes.alma.core.networking.SerialiserException;
 import fr.univnantes.alma.core.networking.Serializer;
 import fr.univnantes.alma.server.commandsimpl.ImmutableCommandContext;
@@ -64,21 +65,30 @@ public class CatanWebSocketHandler extends TextWebSocketHandler implements WsCon
         super.handleTextMessage(session, message);
         try {
             Command command = objectMapper.deserialize(message.getPayload());
-            if (command instanceof LoginCommand) {
-                GameController gameController = serverGameController.getGameWithSlot();
-                Player player = gameController.joinPlayer(command);
-
-                associateWsAndPlayer(session, player);
+            if (command instanceof LoginCommand loginCommand) {
+                interceptLoginCommand(session, loginCommand);
             }else {
-                Player player = connectionToPlayer.get(session);
-                if (player != null) {
-                    command.setContext(new ImmutableCommandContext(player.getGame()));
-                    player.getGame().submit(command);
-                }
+                sendCommandToGame(session, command);
             }
         }catch (SerialiserException processingException){
             log.error(processingException.getMessage());
         }
+    }
+
+    private void sendCommandToGame(WebSocketSession session, Command command) {
+        Player player = connectionToPlayer.get(session);
+        if (player != null) {
+            command.setContext(new ImmutableCommandContext(player.getGame().getFacade())); //rip demeter
+            player.getGame().submit(command);
+        }
+    }
+
+    private void interceptLoginCommand(WebSocketSession session, LoginCommand loginCommand) {
+        GameFacade gameController = serverGameController.getGameWithSlot();
+        gameController.submit(loginCommand);
+        Player player = loginCommand.getPlayer().orElseThrow(()->
+                new AssertionError("Expected player to have been created but received null"));
+        associateWsAndPlayer(session, player);
     }
 
     private void associateWsAndPlayer(WebSocketSession session, Player player) {
