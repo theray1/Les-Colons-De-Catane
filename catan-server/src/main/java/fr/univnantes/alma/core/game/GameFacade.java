@@ -9,14 +9,22 @@ import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.resource.Resource;
 
 public interface GameFacade {
-    void start()throws GameException;
-    void end();
-    void endPlayerTurn();
-    void addRessource(Player player, Resource[] resources);
-    void removeResources(Player player, Resource[] resources);
-    void moveRobber(Coordinates coordinates);
-    boolean isFull();
-    void submit(Command command);
-    Player addPlayer();
+	void start() throws GameException;
+
+	void end();
+
+	void endPlayerTurn();
+
+	void addRessource(Player player, List<Resource> resources);
+
+	void removeResources(Player player, List<Resource> resources);
+
+	void moveRobber(Coordinates coordinates);
+
+	boolean isFull();
+
+	void submit(Command command);
+
+	Player addPlayer();
 
 }
