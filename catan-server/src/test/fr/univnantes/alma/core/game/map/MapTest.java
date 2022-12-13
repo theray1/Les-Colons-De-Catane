@@ -14,7 +14,7 @@ public class MapTest {
 
 	@Test
 	public void testGenerateTile() {
-		MapImpl map = new MapImpl(7);
+		MapImpl map = new MapImpl();
 		map.generateTiles();
 		Tile[] rowTile;
 
@@ -28,7 +28,7 @@ public class MapTest {
 
 	@Test
 	public void testPlaceHarbors() {
-		MapImpl map = new MapImpl(7);
+		MapImpl map = new MapImpl();
 		map.generateTiles();
 		map.placeHarbors();
 		Tile[] rowTile;
@@ -47,7 +47,7 @@ public class MapTest {
 
 	@Test
 	public void testGenerateEdgesVertices() {
-		MapImpl map = new MapImpl(7);
+		MapImpl map = new MapImpl();
 		map.generateTiles();
 		map.generateEdgesVertices();
 
@@ -65,7 +65,7 @@ public class MapTest {
 	@Test
 	public void testGetTile() {
 		// Creating a size 6 map (Normal size)
-		Map maps = new MapImpl(7);
+		Map maps = new MapImpl();
 		maps.generateTiles();
 		Coordinates coords = new CoordinatesImpl(2, 3, 0);
 		assertTrue(maps.getTile(coords).getCoordinates().equalsTile(coords));
@@ -73,7 +73,7 @@ public class MapTest {
 
 	@Test
 	public void testIsValidCoordinates() {
-		Map map = new MapImpl(7);
+		Map map = new MapImpl();
 
 		assertTrue(map.isValidCoordinates(new CoordinatesImpl(0, 0)));
 		assertTrue(map.isValidCoordinates(new CoordinatesImpl(3, 3)));

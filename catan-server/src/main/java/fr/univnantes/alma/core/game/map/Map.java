@@ -1,6 +1,8 @@
 package fr.univnantes.alma.core.game.map;
 
+import fr.univnantes.alma.core.game.building.Building;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
+import fr.univnantes.alma.core.game.map.harbor.Harbor;
 import fr.univnantes.alma.core.game.map.tile.Tile;
 
 public interface Map {
@@ -35,4 +37,10 @@ public interface Map {
 	 * @return true or false
 	 */
 	public boolean isValidCoordinates(Coordinates coords);
+
+	public void placeBuilding(Building b);
+
+	public Harbor createRandomHarbor();
+
+	public void placeRobber(Coordinates coords);
 }

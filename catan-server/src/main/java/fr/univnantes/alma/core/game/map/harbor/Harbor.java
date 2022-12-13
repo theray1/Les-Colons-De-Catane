@@ -1,11 +1,15 @@
 package fr.univnantes.alma.core.game.map.harbor;
 
-import java.util.Collection;
+import java.util.List;
 
 import fr.univnantes.alma.core.game.resource.Resource;
 
 public interface Harbor {
-	public Collection<Resource> getRequireResources();
+	public List<Resource> getRequireResources();
 
-	public Collection<Resource> getGivenResources();
+	public List<Resource> getGivenResources();
+
+	public boolean isRandomTrade();
+
+	public HarborTrades getType();
 }

@@ -18,10 +18,13 @@ public interface Location {
 	 */
 	public void setBuilding(Building b);
 
+	public Building getBuilding();
+
 	/**
 	 * Test if this location contain a harbor
 	 * 
 	 * @return
 	 */
 	public boolean containsHarbor();
+
 }

@@ -1,6 +1,7 @@
 package fr.univnantes.alma.core.game.map.tile;
 
 import fr.univnantes.alma.core.game.building.Building;
+import fr.univnantes.alma.core.game.building.Buildings;
 import fr.univnantes.alma.core.game.entity.Robber;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.harbor.Harbor;
@@ -103,6 +104,8 @@ public interface Tile {
 	 */
 	public void setVertice(Vertice vertice, Coordinates coords);
 
+	public Location getLocation(Buildings type, Coordinates coords);
+
 	/**
 	 * Get the type of this tile
 	 * 
@@ -123,4 +126,6 @@ public interface Tile {
 	 * @param number
 	 */
 	public void setNumber(int number);
+
+	public boolean canBuild(Building b);
 }
