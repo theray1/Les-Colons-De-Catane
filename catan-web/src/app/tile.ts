@@ -7,4 +7,5 @@ export interface Tile {
     type: TileType;
     edges: Edge[];
     vertices: Vertex[];
+    image: String;
 }
