@@ -7,7 +7,7 @@ import {PlayerResources} from "../../playerResources";
   styleUrls: ['./playerview.component.css']
 })
 export class PlayerviewComponent implements OnInit {
-  resources: PlayerResources = {
+  /*resources: PlayerResources = {
     wood : 1,
     stone : 2,
     brick : 3,
@@ -18,7 +18,7 @@ export class PlayerviewComponent implements OnInit {
     roads : 2,
     settlements : 3,
     cities : 4
-  };
+  };*/
 
   constructor() { }
 

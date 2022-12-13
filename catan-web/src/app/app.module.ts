@@ -8,6 +8,8 @@ import { GameviewComponent } from './interface/gameview/gameview.component';
 import { PlayerviewComponent } from './interface/playerview/playerview.component';
 import { GlobalviewComponent } from './interface/globalview/globalview.component';
 import { TileComponent } from './interface/gameview/tile/tile.component';
+import { PlayerresourcesviewComponent } from './interface/playerview/playerresourcesview/playerresourcesview.component';
+import { PlayeractionsviewComponent } from './interface/playerview/playeractionsview/playeractionsview.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { TileComponent } from './interface/gameview/tile/tile.component';
     GameviewComponent,
     PlayerviewComponent,
     GlobalviewComponent,
-    TileComponent
+    TileComponent,
+    PlayerresourcesviewComponent,
+    PlayeractionsviewComponent
   ],
   imports: [
     BrowserModule,
