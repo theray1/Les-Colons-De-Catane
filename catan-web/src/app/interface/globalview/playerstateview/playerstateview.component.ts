@@ -10,6 +10,9 @@ export class PlayerstateviewComponent implements OnInit{
   informations : PlayerStateInformations = {
    name : `jj`,
    developments : 2,
+   knights: 0,
+   biggestArmy: false,
+   longestRoad: false,
    resources : 4,
    victory_points : 3
   }

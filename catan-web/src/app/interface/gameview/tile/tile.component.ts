@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Edge } from 'src/app/edge';
 import { Tile } from 'src/app/tile';
 import { TileImageProviderService } from 'src/app/tile-image-provider.service';
@@ -14,19 +14,23 @@ export class TileComponent implements Tile, OnInit{
 
   constructor(private tileImageProvider: TileImageProviderService){}
 
-  id: number = 0;
-  type: TileType = TileType.DESERT;
-  edges: Edge[] = [];
-  vertices: Vertex[] = [];
+  @Input() id: number = 0;
+  @Input() type: TileType = TileType.DESERT;
+  @Input() edges: Edge[] = [];
+  @Input() vertices: Vertex[] = [];
 
-  image?: String;
+  @Input() image: String = "";
 
   getTileDisplay(){
     this.image = this.tileImageProvider.getImage(this.type);
   }
 
+  getType(): TileType{
+    return this.type
+  }
+
   ngOnInit(){
-    this.getTileDisplay();
+    //this.getTileDisplay();
   }
 
 }

@@ -15,12 +15,14 @@ export class GameviewComponent implements OnInit {
   constructor(private tiledProvider: TileProviderService){}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getBoard()
   }
 
-  board: Tile[][] = [[{id: 0, type: TileType.DESERT, edges: [], vertices: []}], [], [], [], [], [], []];
+  board: Tile[][] = [];
 
-
+  getBoard(){
+    this.board = this.tiledProvider.getTiles()
+  }
   
 
 }

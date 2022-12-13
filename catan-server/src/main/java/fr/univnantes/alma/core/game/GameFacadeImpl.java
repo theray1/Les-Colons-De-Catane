@@ -4,6 +4,7 @@ import java.util.List;
 
 import fr.univnantes.alma.core.commands.Command;
 import fr.univnantes.alma.core.game.entity.Player;
+import fr.univnantes.alma.core.game.exception.GameException;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.resource.Resource;
 
@@ -16,37 +17,38 @@ public class GameFacadeImpl implements GameFacade {
 	}
 
 	@Override
-	public void start() {
-		// TODO Auto-generated method stub
+	public void start() throws GameException {
+		controller.start();
+
 	}
 
 	@Override
 	public void end() {
-		// TODO Auto-generated method stub
+		controller.end();
 
 	}
 
 	@Override
 	public void endPlayerTurn() {
-		// TODO Auto-generated method stub
+		controller.endPlayerTurn();
 
 	}
 
 	@Override
-	public void addRessource(Player player, Resource[] resources) {
-		// TODO Auto-generated method stub
+	public void addRessource(Player player, List<Resource> resources) {
+		controller.addRessource(player, resources);
 
 	}
 
 	@Override
-	public void removeResources(Player player, Resource[] resources) {
-		// TODO Auto-generated method stub
+	public void removeResources(Player player, List<Resource> resources) {
+		controller.removeResources(player, resources);
 
 	}
 
 	@Override
 	public void moveRobber(Coordinates coordinates) {
-		// TODO Auto-generated method stub
+		controller.moveRobber(coordinates);
 
 	}
 

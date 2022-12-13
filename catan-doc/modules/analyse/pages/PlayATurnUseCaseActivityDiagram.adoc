@@ -2,6 +2,8 @@
 ....
 @startuml
 
+title Activity Diagram \n
+
 start
 
 :Active player throw dice;
@@ -19,7 +21,36 @@ if (dice score equals 7 ?) then (true)
   repeat while(is still player not analysed ?)
   :Active player moves the thief;
   :Active player steals a random card of a player with 1 settlement adjacent to the thief location;
+else(false) 
+  if (thief is placed on an empty tile ?) then (true)
+    repeat: verify for each player;
+      repeat: verify for each settlement of the player;
+        if (thief is not on the tile of the settlement?) then(true)
+          :Player obtain 1 resource;
+        endif
+      repeat while(is still settlement not analysed ?)
+      repeat: verify for each city of the player;
+        if (thief is not on the tile of the city?) then(true)
+          :Player obtain 2 resources;
+        endif
+      repeat while(is still city not analysed ?)
+    repeat while(is still player not analysed ?)
+  endif
 endif
+
+repeat:Active player make a trade;
+  if(Active player make a trade with the reserve ?) then(true)
+    if(Active player has a city or a settlement near a port ?) then(true)
+      if(The port aforementionned is "2 for 1" ?) then(true)
+        :Active player exchanges 2 resources for 1 to the reserve;
+      else (false)
+        :Active player exchanges 3 resources for 1 to the reserve;
+      endif
+    endif
+    :Active player exchanges 4 resources for 1 to the reserve;
+  else(Active player make a trade with another player)
+  endif
+repeat while(Does the player still want to trade ?)
 
 stop
 
