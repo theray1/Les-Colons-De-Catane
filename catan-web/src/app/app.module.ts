@@ -12,6 +12,8 @@ import { PlayerresourcesviewComponent } from './interface/playerview/playerresou
 import { PlayeractionsviewComponent } from './interface/playerview/playeractionsview/playeractionsview.component';
 import { EventlistviewComponent } from './interface/globalview/eventlistview/eventlistview.component';
 import { PlayerstateviewComponent } from './interface/globalview/playerstateview/playerstateview.component';
+import { EdgeComponent } from './interface/gameview/tile/edge/edge.component';
+import { VertexComponent } from './interface/gameview/tile/vertex/vertex.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { PlayerstateviewComponent } from './interface/globalview/playerstateview
     PlayerresourcesviewComponent,
     PlayeractionsviewComponent,
     EventlistviewComponent,
-    PlayerstateviewComponent
+    PlayerstateviewComponent,
+    EdgeComponent,
+    VertexComponent
   ],
   imports: [
     BrowserModule,

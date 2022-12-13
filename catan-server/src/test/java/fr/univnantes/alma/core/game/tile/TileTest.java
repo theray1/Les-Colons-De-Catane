@@ -9,8 +9,8 @@ import java.util.Collections;
 
 import org.junit.jupiter.api.Test;
 
-import fr.univnantes.alma.core.game.map.Map;
-import fr.univnantes.alma.core.game.map.MapImpl;
+import fr.univnantes.alma.core.game.map.CatanMap;
+import fr.univnantes.alma.core.game.map.CatanMapImpl;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
 import fr.univnantes.alma.core.game.map.harbor.Harbor;
@@ -54,7 +54,7 @@ public class TileTest {
 
 	@Test
 	public void testCreateRandomHarbor() {
-		Map m = new MapImpl();
+		CatanMap m = new CatanMapImpl();
 		Harbor h = m.createRandomHarbor();
 
 		if (h.isRandomTrade()) {
@@ -69,12 +69,12 @@ public class TileTest {
 
 	@Test
 	public void testIsComplete() {
-		Map map = new MapImpl();
-		map.generateTiles();
+		CatanMap catanMap = new CatanMapImpl();
+		catanMap.generateTiles();
 		Tile t;
 
 		// Case Center Tile
-		t = map.getTile(new CoordinatesImpl(3, 3));
+		t = catanMap.getTile(new CoordinatesImpl(3, 3));
 		assertFalse(t.isComplete());
 		for (int i = 1; i < 7; i++) {
 			t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, i));
@@ -83,11 +83,11 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl();
-		map.generateTiles();
+		catanMap = new CatanMapImpl();
+		catanMap.generateTiles();
 
 		// Case Center Tile 0;0
-		t = map.getTile(new CoordinatesImpl(0, 0));
+		t = catanMap.getTile(new CoordinatesImpl(0, 0));
 		assertFalse(t.isComplete());
 		t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, 3));
 		t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, 4));
@@ -95,11 +95,11 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl();
-		map.generateTiles();
+		catanMap = new CatanMapImpl();
+		catanMap.generateTiles();
 
 		// Case Center Tile 1;0
-		t = map.getTile(new CoordinatesImpl(1, 0));
+		t = catanMap.getTile(new CoordinatesImpl(1, 0));
 		assertFalse(t.isComplete());
 		t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, 2));
 		t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, 3));
@@ -109,11 +109,11 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl();
-		map.generateTiles();
+		catanMap = new CatanMapImpl();
+		catanMap.generateTiles();
 
 		// Case Center Tile 0;3
-		t = map.getTile(new CoordinatesImpl(0, 3));
+		t = catanMap.getTile(new CoordinatesImpl(0, 3));
 		assertFalse(t.isComplete());
 		t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, 4));
 		t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, 5));
@@ -121,11 +121,11 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl();
-		map.generateTiles();
+		catanMap = new CatanMapImpl();
+		catanMap.generateTiles();
 
 		// Case Center Tile 2;4
-		t = map.getTile(new CoordinatesImpl(2, 4));
+		t = catanMap.getTile(new CoordinatesImpl(2, 4));
 		assertFalse(t.isComplete());
 		for (int i = 1; i < 7; i++) {
 			t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, i));
@@ -134,11 +134,11 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl();
-		map.generateTiles();
+		catanMap = new CatanMapImpl();
+		catanMap.generateTiles();
 
 		// Case Center Tile 1;3
-		t = map.getTile(new CoordinatesImpl(1, 3));
+		t = catanMap.getTile(new CoordinatesImpl(1, 3));
 		assertFalse(t.isComplete());
 		for (int i = 1; i < 7; i++) {
 			t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, i));
@@ -147,11 +147,11 @@ public class TileTest {
 
 		assertTrue(t.isComplete());
 
-		map = new MapImpl();
-		map.generateTiles();
+		catanMap = new CatanMapImpl();
+		catanMap.generateTiles();
 
 		// Case Center Tile 1;1
-		t = map.getTile(new CoordinatesImpl(1, 1));
+		t = catanMap.getTile(new CoordinatesImpl(1, 1));
 		assertFalse(t.isComplete());
 		for (int i = 1; i < 7; i++) {
 			t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, i));
@@ -159,11 +159,11 @@ public class TileTest {
 		}
 		assertTrue(t.isComplete());
 
-		map = new MapImpl();
-		map.generateTiles();
+		catanMap = new CatanMapImpl();
+		catanMap.generateTiles();
 
 		// Case Center Tile 3;6
-		t = map.getTile(new CoordinatesImpl(3, 6));
+		t = catanMap.getTile(new CoordinatesImpl(3, 6));
 		assertFalse(t.isComplete());
 		for (int i = 1; i < 7; i++) {
 			t.setVertice(new Vertice(), new CoordinatesImpl(0, 0, i));

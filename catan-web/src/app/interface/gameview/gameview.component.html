@@ -11,16 +11,18 @@
     <div id="menu">
       <h1>uh</h1>
     </div>
-    
-    
-    <div class="d-flex justify-content-center align-items-center calc1 centerOnDiv">
-      <div id="plateau" class="d-flex flex-column ">
-        <div *ngFor="let tilearray of board" class="d-flex flex-column etage"> 
-          <div *ngFor="let tile of tilearray" class="d-flex justify-content-center">
-            test
+
+    <div id="plateau" class="justify-content-center">
+      <div *ngFor="let tilearray of board" class="d-flex mb-4 flex-row etage justify-content-center"> 
+        <div *ngFor="let tile of tilearray" class="">
+          <!-- <img src={{tile.image}} alt="qlfqlfqjlfqfjqfhlq"> -->  
+          <app-tile [image]="tile.image"></app-tile>
+          <div *ngFor="let edge of tile.edges">
+            zofuqhf
           </div>
         </div>
       </div>
     </div>
+
   </body>
   

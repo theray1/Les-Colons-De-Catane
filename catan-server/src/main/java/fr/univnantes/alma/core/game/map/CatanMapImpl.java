@@ -22,13 +22,13 @@ import fr.univnantes.alma.core.game.resource.Resource;
 import fr.univnantes.alma.core.game.resource.ResourceImpl;
 import fr.univnantes.alma.core.game.resource.Resources;
 
-public class MapImpl implements Map {
+public class CatanMapImpl implements CatanMap {
 	private final int size;
 	private Tile[][] tiles;
 	private List<Building> buildings;
 	private Robber robber = new RobberImpl();
 
-	public MapImpl() {
+	public CatanMapImpl() {
 		this.size = 7;
 		this.buildings = new ArrayList<Building>();
 		// Creating the tile array

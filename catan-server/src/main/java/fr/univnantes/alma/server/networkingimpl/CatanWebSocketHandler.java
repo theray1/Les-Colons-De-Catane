@@ -5,6 +5,7 @@ import fr.univnantes.alma.core.game.GameFacade;
 import fr.univnantes.alma.core.networking.SerialiserException;
 import fr.univnantes.alma.core.networking.Serializer;
 import fr.univnantes.alma.server.commandsimpl.ImmutableCommandContext;
+import fr.univnantes.alma.server.commandsimpl.JSONSerializer;
 import fr.univnantes.alma.server.commandsimpl.LoginCommand;
 import fr.univnantes.alma.core.commands.Command;
 

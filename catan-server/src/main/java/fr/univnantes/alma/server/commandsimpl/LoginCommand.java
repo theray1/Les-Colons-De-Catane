@@ -6,7 +6,7 @@ import fr.univnantes.alma.core.game.entity.Player;
 import java.util.Optional;
 import java.util.Set;
 
-public class LoginCommand extends CommandWithContext {
+public class LoginCommand extends JacksonCommandWithContext {
 
     private Optional<Player> player = Optional.empty();
 

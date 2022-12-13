@@ -10,11 +10,11 @@ import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
 import fr.univnantes.alma.core.game.map.tile.Tile;
 
-public class MapTest {
+public class CatanMapTest {
 
 	@Test
 	public void testGenerateTile() {
-		MapImpl map = new MapImpl();
+		CatanMapImpl map = new CatanMapImpl();
 		map.generateTiles();
 		Tile[] rowTile;
 
@@ -28,7 +28,7 @@ public class MapTest {
 
 	@Test
 	public void testPlaceHarbors() {
-		MapImpl map = new MapImpl();
+		CatanMapImpl map = new CatanMapImpl();
 		map.generateTiles();
 		map.placeHarbors();
 		Tile[] rowTile;
@@ -47,7 +47,7 @@ public class MapTest {
 
 	@Test
 	public void testGenerateEdgesVertices() {
-		MapImpl map = new MapImpl();
+		CatanMapImpl map = new CatanMapImpl();
 		map.generateTiles();
 		map.generateEdgesVertices();
 
@@ -65,7 +65,7 @@ public class MapTest {
 	@Test
 	public void testGetTile() {
 		// Creating a size 6 map (Normal size)
-		Map maps = new MapImpl();
+		CatanMap maps = new CatanMapImpl();
 		maps.generateTiles();
 		Coordinates coords = new CoordinatesImpl(2, 3, 0);
 		assertTrue(maps.getTile(coords).getCoordinates().equalsTile(coords));
@@ -73,15 +73,15 @@ public class MapTest {
 
 	@Test
 	public void testIsValidCoordinates() {
-		Map map = new MapImpl();
+		CatanMap catanMap = new CatanMapImpl();
 
-		assertTrue(map.isValidCoordinates(new CoordinatesImpl(0, 0)));
-		assertTrue(map.isValidCoordinates(new CoordinatesImpl(3, 3)));
-		assertFalse(map.isValidCoordinates(new CoordinatesImpl(-1, 0)));
-		assertFalse(map.isValidCoordinates(new CoordinatesImpl(-3, 0)));
-		assertFalse(map.isValidCoordinates(new CoordinatesImpl(1, -3)));
-		assertFalse(map.isValidCoordinates(new CoordinatesImpl(-3, -3)));
-		assertFalse(map.isValidCoordinates(new CoordinatesImpl(7, 7)));
+		assertTrue(catanMap.isValidCoordinates(new CoordinatesImpl(0, 0)));
+		assertTrue(catanMap.isValidCoordinates(new CoordinatesImpl(3, 3)));
+		assertFalse(catanMap.isValidCoordinates(new CoordinatesImpl(-1, 0)));
+		assertFalse(catanMap.isValidCoordinates(new CoordinatesImpl(-3, 0)));
+		assertFalse(catanMap.isValidCoordinates(new CoordinatesImpl(1, -3)));
+		assertFalse(catanMap.isValidCoordinates(new CoordinatesImpl(-3, -3)));
+		assertFalse(catanMap.isValidCoordinates(new CoordinatesImpl(7, 7)));
 	}
 
 }
