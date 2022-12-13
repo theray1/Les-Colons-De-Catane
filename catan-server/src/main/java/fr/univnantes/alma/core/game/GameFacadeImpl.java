@@ -18,7 +18,6 @@ public class GameFacadeImpl implements GameFacade {
 	@Override
 	public void start() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

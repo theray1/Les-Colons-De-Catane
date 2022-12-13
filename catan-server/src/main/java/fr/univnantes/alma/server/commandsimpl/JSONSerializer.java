@@ -1,4 +1,4 @@
-package fr.univnantes.alma.server.networkingimpl;
+package fr.univnantes.alma.server.commandsimpl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
