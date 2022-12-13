@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {PlayerResources} from "../../../playerResources";
+import {PlayerResources} from "../../../player-resources";
 
 @Component({
   selector: 'app-playerresourcesview',

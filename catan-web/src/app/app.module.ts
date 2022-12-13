@@ -10,6 +10,8 @@ import { GlobalviewComponent } from './interface/globalview/globalview.component
 import { TileComponent } from './interface/gameview/tile/tile.component';
 import { PlayerresourcesviewComponent } from './interface/playerview/playerresourcesview/playerresourcesview.component';
 import { PlayeractionsviewComponent } from './interface/playerview/playeractionsview/playeractionsview.component';
+import { EventlistviewComponent } from './interface/globalview/eventlistview/eventlistview.component';
+import { PlayerstateviewComponent } from './interface/globalview/playerstateview/playerstateview.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { PlayeractionsviewComponent } from './interface/playerview/playeractions
     GlobalviewComponent,
     TileComponent,
     PlayerresourcesviewComponent,
-    PlayeractionsviewComponent
+    PlayeractionsviewComponent,
+    EventlistviewComponent,
+    PlayerstateviewComponent
   ],
   imports: [
     BrowserModule,
