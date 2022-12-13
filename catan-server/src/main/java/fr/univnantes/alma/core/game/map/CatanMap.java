@@ -1,23 +1,25 @@
 package fr.univnantes.alma.core.game.map;
 
+import fr.univnantes.alma.core.game.building.Building;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
+import fr.univnantes.alma.core.game.map.harbor.Harbor;
 import fr.univnantes.alma.core.game.map.tile.Tile;
 
-public interface Map {
+public interface CatanMap {
 	/**
 	 * Generation of tiles
 	 */
-	public void generateTiles();
+	void generateTiles();
 
 	/**
 	 * Generation of vertices and edges
 	 */
-	public void generateEdgesVertices();
+	void generateEdgesVertices();
 
 	/**
 	 * Harbor generation
 	 */
-	public void placeHarbors();
+	void placeHarbors();
 
 	/**
 	 * Getter of an Tile
@@ -26,7 +28,7 @@ public interface Map {
 	 * @param coords The coordinates
 	 * @return The tile
 	 */
-	public Tile getTile(Coordinates coords);
+	Tile getTile(Coordinates coords);
 
 	/**
 	 * Test if coords are correct
@@ -34,5 +36,11 @@ public interface Map {
 	 * @param coords The coords
 	 * @return true or false
 	 */
-	public boolean isValidCoordinates(Coordinates coords);
+	boolean isValidCoordinates(Coordinates coords);
+
+	void placeBuilding(Building b);
+
+	Harbor createRandomHarbor();
+
+	void placeRobber(Coordinates coords);
 }

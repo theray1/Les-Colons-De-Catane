@@ -1,5 +1,6 @@
 package fr.univnantes.alma.core.game.entity;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,8 +32,8 @@ public class PlayerImpl implements Player {
 		this.gameController = gameController;
 		this.name = name;
 
-		this.cards = new HashMap<Cards, Integer>();
-		this.resources = new HashMap<Resources, Integer>();
+		this.cards = new EnumMap<>(Cards.class);
+		this.resources = new EnumMap<>(Resources.class);
 		for (Resources r : Resources.values()) {
 			if (!r.equals(Resources.NOTHING)) {
 				this.resources.put(r, 0);
@@ -51,19 +52,23 @@ public class PlayerImpl implements Player {
 	@Override
 	public void addResources(List<Resource> resources) {
 		for (Resource r : resources) {
-			this.resources.put(r.getType(), this.resources.get(r.getType()) + 1);
+			if (!r.getType().equals(Resources.NOTHING))
+				this.resources.put(r.getType(), this.resources.get(r.getType()) + 1);
 		}
 
 	}
 
 	@Override
 	public boolean haveResources(List<Resource> resources) {
-		HashMap<Resources, Integer> res = new HashMap<Resources, Integer>();
+		EnumMap<Resources, Integer> res = new EnumMap<>(Resources.class);
 		for (Resources r : Resources.values()) {
 			res.put(r, 0);
 		}
 		Resources type;
 		for (Resource r : resources) {
+			// We pass the nothing resource
+			if (!r.getType().equals(Resources.NOTHING))
+				continue;
 			type = r.getType();
 			res.put(type, res.get(type));
 			if (res.get(type) > this.resources.get(type)) {

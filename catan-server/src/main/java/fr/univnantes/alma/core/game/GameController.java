@@ -5,11 +5,13 @@ import fr.univnantes.alma.core.gamemager.ServerGameController;
 import fr.univnantes.alma.core.game.entity.Player;
 
 public interface GameController {
-    Player joinPlayer(Command command);
+    Player addPlayer();
+
+    GameFacade getFacade();
+
     boolean isFull();
-
-    ServerGameController getGameController();
-
     void submit(Command command);
+
+
 
 }

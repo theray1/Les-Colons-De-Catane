@@ -1,8 +1,9 @@
 package fr.univnantes.alma.core.game.map.tile;
 
 import fr.univnantes.alma.core.game.building.Building;
+import fr.univnantes.alma.core.game.building.Buildings;
 import fr.univnantes.alma.core.game.entity.Robber;
-import fr.univnantes.alma.core.game.map.Map;
+import fr.univnantes.alma.core.game.map.CatanMap;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
 import fr.univnantes.alma.core.game.map.harbor.Harbor;
@@ -17,15 +18,15 @@ public class TileImpl implements Tile {
 	private final Resource resource;
 	private Harbor harbor;
 	private int number;
-	private final Map map;
+	private final CatanMap catanMap;
 
 	private Edge[] edges;
 	private Vertice[] vertices;
 
-	public TileImpl(Coordinates coords, Tiles type, Map map) {
+	public TileImpl(Coordinates coords, Tiles type, CatanMap catanMap) {
 		this.coords = coords;
 		this.type = type;
-		this.map = map;
+		this.catanMap = catanMap;
 		this.resource = switch (type) {
 		case FOREST -> new ResourceImpl(Resources.WOOD);
 		case MOUNTAIN -> new ResourceImpl(Resources.STONE);
@@ -47,7 +48,10 @@ public class TileImpl implements Tile {
 
 	@Override
 	public Resource getResource() {
-		return this.resource;
+		if (containsRobber()) {
+			return new ResourceImpl(Resources.NOTHING);
+		} else
+			return this.resource;
 	}
 
 	@Override
@@ -152,11 +156,11 @@ public class TileImpl implements Tile {
 		neighbors[5] = new CoordinatesImpl(this.coords.getRow(), this.coords.getColumn() - 1);
 
 		for (int i = 1; i <= 6; i++) {
-			if (!map.isValidCoordinates(neighbors[i - 1])) {
+			if (!catanMap.isValidCoordinates(neighbors[i - 1])) {
 				continue;
 			}
 
-			t = this.map.getTile(neighbors[i - 1]);
+			t = this.catanMap.getTile(neighbors[i - 1]);
 			if (edges[i - 1] == null) {
 				if (!this.type.equals(Tiles.SEA)) {
 					return false;
@@ -167,20 +171,58 @@ public class TileImpl implements Tile {
 
 			if (!t.getType().equals(Tiles.SEA) || !this.type.equals(Tiles.SEA)) {
 				if (vertices[i - 1] == null) {
-					// System.out.print("i : " + i);
 					return false;
 				}
 
-			} else if (map.isValidCoordinates(neighbors[i - 1])
-					&& !this.map.getTile(neighbors[i - 1]).getType().equals(Tiles.SEA)) {
+			} else if (catanMap.isValidCoordinates(neighbors[i - 1])
+					&& !this.catanMap.getTile(neighbors[i - 1]).getType().equals(Tiles.SEA)) {
 				if (vertices[i - 1] == null) {
-					// System.out.print("i : " + i);
 					return false;
 				}
 			}
 
 		}
 		return true;
+	}
+
+	@Override
+	public boolean canBuild(Building b) {
+		Coordinates coords = b.getCoordinates();
+		Buildings bType = b.getType();
+		if (!this.getLocation(bType, coords).isFree())
+			return false;
+
+		if (bType == Buildings.EDGE) {
+			switch (coords.getEnd()) {
+			case 1:
+				if (!this.getEdge(new CoordinatesImpl(coords.getRow(), coords.getColumn(), 6)).isFree())
+					return false;
+				if (!this.getEdge(new CoordinatesImpl(coords.getRow(), coords.getColumn(), 2)).isFree())
+					return false;
+
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public Location getLocation(Buildings type, Coordinates coords) {
+		if (type == Buildings.EDGE) {
+			return this.getEdge(coords);
+		} else {
+			return this.getVertice(coords);
+		}
 	}
 
 }

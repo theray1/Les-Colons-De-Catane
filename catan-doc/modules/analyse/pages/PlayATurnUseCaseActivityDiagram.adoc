@@ -1,0 +1,27 @@
+[plantuml]
+....
+@startuml
+
+start
+
+:Active player throw dice;
+
+if (dice score equals 7 ?) then (true)
+  repeat: verify for each player;  
+    if (player have more than 7 cards) then (true)
+      if (player have even card number) then (true)
+        :player discard half of his cards;
+      else (false)
+        :player discard half of his cards minus 1 card;
+      endif
+    else(false)
+    endif
+  repeat while(is still player not analysed ?)
+  :Active player moves the thief;
+  :Active player steals a random card of a player with 1 settlement adjacent to the thief location;
+endif
+
+stop
+
+@enduml
+....

@@ -130,9 +130,9 @@ participant "__:AdapterWebSocket__" as AdapterWebSocket
 participant "__:Serveur__" as Serveur
 
 sunye -> Client : Je bouge le voleur sur la case 2 et je prend une carte de Nathan
-Client -> ServerProxy : BougerVoleur(map[2], "Nathan")
-ServerProxy ->> AdapterWebSocket : Erreur : BougerVoleur(map[2], "Nathan")
-AdapterWebSocket -> Serveur : BougerVoleur(map[2], "Nathan")
+Client -> ServerProxy : BougerVoleur(catanMap[2], "Nathan")
+ServerProxy ->> AdapterWebSocket : Erreur : BougerVoleur(catanMap[2], "Nathan")
+AdapterWebSocket -> Serveur : BougerVoleur(catanMap[2], "Nathan")
 AdapterWebSocket ->> ServerProxy : erreur
 
 
@@ -161,8 +161,8 @@ participant "__:AdapterWebSocket__" as AdapterWebSocket
 participant "__:Serveur__" as Serveur
 
 nathan -> Client : Je construis une colonie en case 2 emplacement 2
-Client -> ServerProxy : ConstruireBatiment(Structure.Colonie, map[2].[2])
-ServerProxy ->> AdapterWebSocket : Erreur : ConstruireBatiment(Structure.Colonie, map[2].[2])
+Client -> ServerProxy : ConstruireBatiment(Structure.Colonie, catanMap[2].[2])
+ServerProxy ->> AdapterWebSocket : Erreur : ConstruireBatiment(Structure.Colonie, catanMap[2].[2])
 AdapterWebSocket -> Serveur : ConstruireColonie(typeStructure, emplacement)
 AdapterWebSocket ->> ServerProxy : erreur
 
