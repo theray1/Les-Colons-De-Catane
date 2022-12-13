@@ -1,0 +1,10 @@
+#playerview {
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    flex-direction: row;
+}
+
+/*app-playeractionsview {
+    border-color: blueviolet;
+}*/
