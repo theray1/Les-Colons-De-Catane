@@ -3,7 +3,7 @@ package fr.univnantes.alma.core.game.map.tile;
 import fr.univnantes.alma.core.game.building.Building;
 import fr.univnantes.alma.core.game.building.Buildings;
 import fr.univnantes.alma.core.game.entity.Robber;
-import fr.univnantes.alma.core.game.map.Map;
+import fr.univnantes.alma.core.game.map.CatanMap;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
 import fr.univnantes.alma.core.game.map.harbor.Harbor;
@@ -18,15 +18,15 @@ public class TileImpl implements Tile {
 	private final Resource resource;
 	private Harbor harbor;
 	private int number;
-	private final Map map;
+	private final CatanMap catanMap;
 
 	private Edge[] edges;
 	private Vertice[] vertices;
 
-	public TileImpl(Coordinates coords, Tiles type, Map map) {
+	public TileImpl(Coordinates coords, Tiles type, CatanMap catanMap) {
 		this.coords = coords;
 		this.type = type;
-		this.map = map;
+		this.catanMap = catanMap;
 		this.resource = switch (type) {
 		case FOREST -> new ResourceImpl(Resources.WOOD);
 		case MOUNTAIN -> new ResourceImpl(Resources.STONE);
@@ -156,11 +156,11 @@ public class TileImpl implements Tile {
 		neighbors[5] = new CoordinatesImpl(this.coords.getRow(), this.coords.getColumn() - 1);
 
 		for (int i = 1; i <= 6; i++) {
-			if (!map.isValidCoordinates(neighbors[i - 1])) {
+			if (!catanMap.isValidCoordinates(neighbors[i - 1])) {
 				continue;
 			}
 
-			t = this.map.getTile(neighbors[i - 1]);
+			t = this.catanMap.getTile(neighbors[i - 1]);
 			if (edges[i - 1] == null) {
 				if (!this.type.equals(Tiles.SEA)) {
 					return false;
@@ -174,8 +174,8 @@ public class TileImpl implements Tile {
 					return false;
 				}
 
-			} else if (map.isValidCoordinates(neighbors[i - 1])
-					&& !this.map.getTile(neighbors[i - 1]).getType().equals(Tiles.SEA)) {
+			} else if (catanMap.isValidCoordinates(neighbors[i - 1])
+					&& !this.catanMap.getTile(neighbors[i - 1]).getType().equals(Tiles.SEA)) {
 				if (vertices[i - 1] == null) {
 					return false;
 				}
