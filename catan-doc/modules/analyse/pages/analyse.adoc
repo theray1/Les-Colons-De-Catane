@@ -49,6 +49,11 @@ include::SetUpOfGameUseCaseActivityDiagram.adoc[]
 
 include::../partials/uc-playturn.adoc[]
 
+
+.Diagramme d'activités: Mise en place d'une partie
+
+include::PlayATurnUseCaseActivityDiagram.adoc[]
+
 == Activités
 
 include::../partials/activities.adoc[]
