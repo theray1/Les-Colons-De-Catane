@@ -4,35 +4,35 @@
 
 start
 
-:Game master places the seas cards on the game board;
+:Le maître du jeu place les cartes "mer" sur le plateau de jeu;
 
-:Game master places the terrain cards on the game board;
+:Le maître du jeu place les cartes "terrain" sur le plateau de jeu;
 
-:Game master places the terrain tokens on the game board;
+:Le maître du jeu place les jetons "terrain" sur le plateau de jeu;
 
-:Game master creates the resouces cards and development cards decks;
+:Le maître du jeu crée les pioches des cartes de ressource et des cartes de développement;
 
-:Game master places the thief on the game board;
+:Le maître du jeu place le voleur sur le plateau de jeu;
 
-:Players roll the dice for define the order of play;
+:Les joueurs lancent les dés pour déterminer l'ordre du jeu;
 
-:First player places 1 settlement and 1 road, linked to each other;
+:Le premier joueur place sur le plateau une colonie et 1 route qui sont connectées; 
 
-:Second player places 1 settlement and 1 road, linked to each other;
+:Le second joueur place sur le plateau une colonie et 1 route qui sont connectées; 
 
-:Third player places 1 settlement and 1 road, linked to each other;
+:Le troisième joueur place sur le plateau une colonie et 1 route qui sont connectées; 
 
-:Fourth player places 1 settlement and 1 road, linked to each other;
+:Le quatrième joueur place sur le plateau une colonie et 1 route qui sont connectées; 
 
-:Fourth player places 1 settlement and 1 road, linked to each other;
+:Le quatrième joueur place sur le plateau une colonie et 1 route qui sont connectées; 
 
-:Third player places 1 settlement and 1 road, linked to each other;
+:Le troisième joueur place sur le plateau une colonie et 1 route qui sont connectées; 
 
-:Second player places 1 settlement and 1 road, linked to each other;
+:Le second joueur place sur le plateau une colonie et 1 route qui sont connectées; 
 
-:First player places 1 settlement and 1 road, linked to each other;
+:Le premier joueur place sur le plateau une colonie et 1 route qui sont connectées; 
 
-:First player starts to play the game;
+:Le premier joueur commence la partie;
 
 stop
 
