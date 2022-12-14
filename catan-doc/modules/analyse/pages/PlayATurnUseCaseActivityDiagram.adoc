@@ -2,55 +2,90 @@
 ....
 @startuml
 
-title Activity Diagram \n
-
 start
 
-:Active player throw dice;
+:Le joueur actif lance les dés;
 
-if (dice score equals 7 ?) then (true)
-  repeat: verify for each player;  
-    if (player have more than 7 cards) then (true)
-      if (player have even card number) then (true)
-        :player discard half of his cards;
+if (le score des dés est égal à 7 ?) then (true)
+  repeat: vérifie pour chaque joueur;  
+    if (le joueur a plus de 7 cartes ?) then (true)
+      if (le joueur a un nombre de cartes pair ?) then (true)
+        :Le joueur se défausse de la moitié de ses cartes;
       else (false)
-        :player discard half of his cards minus 1 card;
+        :Le joueur se défausse de la moitié de ses cartes moins 1;
       endif
     else(false)
     endif
-  repeat while(is still player not analysed ?)
-  :Active player moves the thief;
-  :Active player steals a random card of a player with 1 settlement adjacent to the thief location;
+  repeat while(y a t-il  encore des joueurs non analysés ?)
+  :Le joueur actif déplace le voleur;
+  :Le joueur actif vole une carte choisie aléatoirement d'un joueur ayant 1 colonie adjacente à la case où est le voleur;
 else(false) 
-  if (thief is placed on an empty tile ?) then (true)
-    repeat: verify for each player;
-      repeat: verify for each settlement of the player;
-        if (thief is not on the tile of the settlement?) then(true)
-          :Player obtain 1 resource;
+  if (le voleur est placé sur une tuile vide ?) then (true)
+    repeat: vérifie pour chaque joueur;
+      repeat: vérifie pour chaque colonie du joueur;
+        if (le voleur n'est pas sur la tuile de la colonie ?) then(true)
+          :Le joueur obtient 1 ressource;
         endif
-      repeat while(is still settlement not analysed ?)
-      repeat: verify for each city of the player;
-        if (thief is not on the tile of the city?) then(true)
-          :Player obtain 2 resources;
+      repeat while(y a t-il encore des colonies non analysées ?)
+      repeat:  vérifie pour chaque ville du joueur;
+        if (le voleur n'est pas sur la tuile de la ville ?) then(true)
+          :Le joueur obtient 2 ressources;
         endif
-      repeat while(is still city not analysed ?)
-    repeat while(is still player not analysed ?)
+      repeat while(y a t-il encore des villes non analysées ?)
+    repeat while(y a t-il encore des joueurs non analysés ?)
   endif
 endif
 
-repeat:Active player make a trade;
-  if(Active player make a trade with the reserve ?) then(true)
-    if(Active player has a city or a settlement near a port ?) then(true)
-      if(The port aforementionned is "2 for 1" ?) then(true)
-        :Active player exchanges 2 resources for 1 to the reserve;
+repeat:Le joueur actif veut faire un échange ?;
+  if(Le joueur actif veut faire un échange avec la réserve?) then(true)
+    if(Le joueur actif a une ville ou une colonie près d'un port ?) then(true)
+      if(le port est-il un "2 pour 1 ressource" ?) then(true)
+        :Le joueur actif échange 2 ressources contre 1 avec la réserve;
       else (false)
-        :Active player exchanges 3 resources for 1 to the reserve;
+        :Le joueur actif échange 3 ressources contre 1 avec la réserve;
       endif
     endif
-    :Active player exchanges 4 resources for 1 to the reserve;
-  else(Active player make a trade with another player)
+    :Le joueur actif échange 4 ressources contre 1 avec la réserve;
+  else(false)
+    :Le joueur actif fait un échange avec un autre joueur;
   endif
-repeat while(Does the player still want to trade ?)
+repeat while(Le joueur actif veut-il encore faire des échanges ?)
+
+repeat:Le joueur actif veut et peut construire une route ?;
+  :Le joueur actif construit une route;
+repeat while(Le joueur actif veut et peut encore construire une route ?)
+
+if(5 routes du joueur actif sont interconnectées OU le joueur actif a plus de routes que les autres joueurs ?) then (true)
+  :Le joueur obtient la carte "plus longue route";
+endif
+
+repeat:Le joueur actif veut et peut construire une colonie ?;
+  :Le joueur actif construit une colonie;
+repeat while(Le joueur actif veut et peut encore construire une colonie ?)
+
+repeat:Le joueur actif veut et peut construire une ville ?;
+  :Le joueur actif construit une ville;
+repeat while(Le joueur actif veut et peut encore construire une ville ?)
+  
+repeat:Le joueur actif veut et peut piocher une carte développement ?;
+  switch (type de la carte ?)
+  case(chevalier)
+    :Le joueur actif tire une carte chevalier;
+  case(progrès)
+    :Le joueur actif tire une carte progrès;
+  case(point de victoire)
+    :Le joueur actif tire une carte point de victoire;
+  endswitch
+repeat while(Le joueur actif veut et peut encore piocher une carte développement ?)  
+
+repeat: vérifie pour chaque joueur;
+  if(le joueur a au moins 10 points de vie) then (true)
+    :Ce joueur est déclaré vainqueur de la partie;
+    :Fin de la partie;
+    end
+  endif
+repeat while(y a t-il  encore des joueurs non analysés ?)
+
 
 stop
 
