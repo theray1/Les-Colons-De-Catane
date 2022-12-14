@@ -1,5 +1,5 @@
 export interface PlayerStateInformations {
-    name : string;
+    //name : string;
     developments : number;
     knights : number;
     longestRoad: boolean;

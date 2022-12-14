@@ -14,6 +14,7 @@ import { EventlistviewComponent } from './interface/globalview/eventlistview/eve
 import { PlayerstateviewComponent } from './interface/globalview/playerstateview/playerstateview.component';
 import { EdgeComponent } from './interface/gameview/tile/edge/edge.component';
 import { VertexComponent } from './interface/gameview/tile/vertex/vertex.component';
+import { ReserveviewComponent } from './interface/globalview/reserveview/reserveview.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { VertexComponent } from './interface/gameview/tile/vertex/vertex.compone
     EventlistviewComponent,
     PlayerstateviewComponent,
     EdgeComponent,
-    VertexComponent
+    VertexComponent,
+    ReserveviewComponent
   ],
   imports: [
     BrowserModule,

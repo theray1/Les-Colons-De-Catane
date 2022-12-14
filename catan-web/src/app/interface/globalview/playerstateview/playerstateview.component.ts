@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {PlayerStateInformations} from "../../../player-state-informations";
 
 @Component({
@@ -8,17 +8,22 @@ import {PlayerStateInformations} from "../../../player-state-informations";
 })
 export class PlayerstateviewComponent implements OnInit{
   informations : PlayerStateInformations = {
-   name : `jj`,
+   //name : `jj`,
    developments : 2,
    knights: 0,
-   biggestArmy: false,
+   biggestArmy: true,
    longestRoad: false,
    resources : 4,
    victory_points : 3
+  };
+  //name:string;
+    name:string = "test";
+
+  constructor(/*@Inject(String) n : string*/) {
+      //this.name = n;
   }
 
-  constructor() { }
-
   ngOnInit(): void {
+
   }
 }
