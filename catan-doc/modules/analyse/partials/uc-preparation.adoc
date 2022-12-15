@@ -1,4 +1,4 @@
-La préparation est la phase qui précède le jeu à proprement parler au cours de laquelle les joueurs préparent le plateau et mettent en places les éléments nécessaires pour pouvoir prendre le premier tour.
+La préparation est la phase qui précède le jeu à proprement parler au cours de laquelle les joueurs préparent le plateau et mettent en places les éléments nécessaires pour pouvoir débuter le premier tour.
 
 [cols="30s,70n",options="header", frame=all]
 |===
@@ -11,7 +11,7 @@ La préparation est la phase qui précède le jeu à proprement parler au cours 
 | Tout le jeu
 
 | Condition de succès
-| La partie peut démarrer ; Chaque joueur a installé deux colonies et deux routes sur le plateau, à récupéré les ressources correspondantes et l’ordre de jeu est déterminé.
+| La partie peut démarrer ; Chaque joueur a installé deux colonies et deux routes sur le plateau, a récupéré les ressources correspondantes et l’ordre de jeu est déterminé.
 
 | Condition d'échec
 | Les joueurs n’arrivent pas à décider leur couleur ou l’ordre de jeu. Le plateau ne propose pas une répartition des tuiles satisfaisante (selon les joueurs).
@@ -27,7 +27,7 @@ La préparation est la phase qui précède le jeu à proprement parler au cours 
 
 | Pré-conditions
 a|
-- 3 ou 4 joueurs sont disponibles pour jouer.
+- 4 joueurs sont disponibles pour jouer.
 
 | Post-conditions
 a|
@@ -37,8 +37,8 @@ a|
 | Scénario nominal
 a|
 . Le maître du jeu place les 6 cartes représentant la mer autour du terrain.
-. Le maître du jeu place les 19 tuiles terrains de manière aléatoire.
-. Le maître du jeu place les 18 jetons numérotés sur les tuiles terrains, mais aucun sur la carte désert.
+. Le maître du jeu place les 19 tuiles terrain de manière aléatoire.
+. Le maître du jeu place les 18 jetons numérotés sur les tuiles terrain, mais aucun sur la carte désert.
 . Le maître du jeu crée les pioches de cartes ressources et développement.
 . Le maître du jeu place le voleur sur la case désert.
 . Chaque joueur lance les 2 dés afin de déterminer l’ordre de jeu. Celui ayant le meilleur score commence, puis l’ordre est celui des aiguilles d’une montre.
