@@ -1,5 +1,6 @@
 import { Color } from "./color";
 
 export interface Building{
-    color: Color
+    color: Color|null;
+    buildingType : String;
 }

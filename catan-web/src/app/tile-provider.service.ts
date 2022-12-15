@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { TileComponent } from './interface/gameview/tile/tile.component';
 import { Tile } from './tile';
 import { TileType } from './tiletype';
 import { Vertex } from './vertex';
@@ -21,31 +22,74 @@ export class TileProviderService {
   }
 
   getTiles(): Tile[][]{
-    return [
-      [{id: 0, type: TileType.DESERT, edges: [this.vertices[0] , this.vertices[1], this.vertices[2], this.vertices[3], this.vertices[4], this.vertices[5]], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}], 
 
-      [{id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}], 
+    var tileBoard: Tile[][] = []; 
+    var currentRow: Tile[] = [];
 
-      [{id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"},
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}], 
+    for(var i = 0; i < 4; i++) {
+      var current: Tile = new TileComponent();
+      current.image = "assets/water.png";
+      current.type = TileType.WATER;
+      currentRow.push(current);
+    }
+    tileBoard.push(currentRow);
+    currentRow = [];
 
-      [{id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"},], 
+    for(var i = 0; i < 5; i++) {
+      var current: Tile = new TileComponent();
+      current.image = (i==0 || i==4)? "assets/water.png" : "assets/empty.png";
+      current.type = (i==0 || i==4)? TileType.WATER : TileType.DESERT;
+      currentRow.push(current)
+    }
+    tileBoard.push(currentRow);
+    currentRow = [];
 
-      [{id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}, 
-      {id: 0, type: TileType.DESERT, edges: [], vertices: [], image: "assets/desert.png"}],
-    ];
+    for(var i = 0; i < 6; i++) {
+      var current: Tile = new TileComponent();
+      current.image = (i==0 || i==5)? "assets/water.png" : "assets/empty.png";
+      current.type = (i==0 || i==5)? TileType.WATER : TileType.DESERT;
+      currentRow.push(current)
+    }
+    tileBoard.push(currentRow);
+    currentRow = [];
+    
+    for(var i = 0; i < 7; i++) {
+      var current: Tile = new TileComponent();
+      current.image = (i==0 || i==6)? "assets/water.png" : "assets/empty.png";
+      current.type = (i==0 || i==6)? TileType.WATER : TileType.DESERT;
+      currentRow.push(current)
+    }
+    tileBoard.push(currentRow);
+    currentRow = [];
+
+    for(var i = 0; i < 6; i++) {
+      var current: Tile = new TileComponent();
+      current.image = (i==0 || i==5)? "assets/water.png" : "assets/empty.png";
+      current.type = (i==0 || i==5)? TileType.WATER : TileType.DESERT;
+      currentRow.push(current)
+    }
+    tileBoard.push(currentRow);
+    currentRow = [];
+
+    for(var i = 0; i < 5; i++) {
+      var current: Tile = new TileComponent();
+      current.image = (i==0 || i==4)? "assets/water.png" : "assets/empty.png";
+      current.type = (i==0 || i==4)? TileType.WATER : TileType.DESERT;
+      currentRow.push(current)
+    }
+    tileBoard.push(currentRow);
+    currentRow = [];
+
+    for(var i = 0; i < 4; i++) {
+      var current: Tile = new TileComponent();
+      current.image = "assets/water.png";
+      current.type = TileType.WATER;
+      currentRow.push(current)
+    }
+    tileBoard.push(currentRow);
+    currentRow = [];
+
+    return tileBoard;
   }
 
 }

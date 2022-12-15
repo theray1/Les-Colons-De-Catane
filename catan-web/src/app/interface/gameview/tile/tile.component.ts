@@ -12,7 +12,10 @@ import { Vertex } from 'src/app/vertex';
 })
 export class TileComponent implements Tile, OnInit{
 
-  constructor(private tileImageProvider: TileImageProviderService){}
+  constructor(){}
+  testFunction(): void {
+    throw new Error('Method not implemented.');
+  }
 
   @Input() id: number = 0;
   @Input() type: TileType = TileType.DESERT;
@@ -21,16 +24,12 @@ export class TileComponent implements Tile, OnInit{
 
   @Input() image: String = "";
 
-  getTileDisplay(){
-    this.image = this.tileImageProvider.getImage(this.type);
-  }
-
   getType(): TileType{
     return this.type
   }
 
   ngOnInit(){
-    //this.getTileDisplay();
+    
   }
 
 }

@@ -12,9 +12,10 @@ import { PlayerresourcesviewComponent } from './interface/playerview/playerresou
 import { PlayeractionsviewComponent } from './interface/playerview/playeractionsview/playeractionsview.component';
 import { EventlistviewComponent } from './interface/globalview/eventlistview/eventlistview.component';
 import { PlayerstateviewComponent } from './interface/globalview/playerstateview/playerstateview.component';
-import { EdgeComponent } from './interface/gameview/tile/edge/edge.component';
-import { VertexComponent } from './interface/gameview/tile/vertex/vertex.component';
+import { EdgeComponent } from './interface/gameview/edge/edge.component';
+import { VertexComponent } from './interface/gameview/vertex/vertex.component';
 import { ReserveviewComponent } from './interface/globalview/reserveview/reserveview.component';
+import { CityComponent } from './interface/gameview/city/city.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ReserveviewComponent } from './interface/globalview/reserveview/reserve
     PlayerstateviewComponent,
     EdgeComponent,
     VertexComponent,
-    ReserveviewComponent
+    ReserveviewComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule,

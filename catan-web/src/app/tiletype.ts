@@ -4,5 +4,6 @@ export enum TileType{
     WHEAT,
     BRICK,
     STONE,
-    DESERT
+    DESERT,
+    WATER
 }

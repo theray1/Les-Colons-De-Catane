@@ -1,0 +1,57 @@
+    .tile{
+    position: relative;
+    }
+    
+    #v1 {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+    
+    #v2 {
+    margin: 0;
+    position: absolute;
+    top: 28%;
+    left: 90%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+    
+    #v3 {
+    margin: 0;
+    position: absolute;
+    top: 72%;
+    left: 90%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+    
+    #v4 {
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+    
+    #v5 {
+    margin: 0;
+    position: absolute;
+    top: 72%;
+    left: 10%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+    
+    #v6 {
+    margin: 0;
+    position: absolute;
+    top: 28%;
+    left: 10%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }

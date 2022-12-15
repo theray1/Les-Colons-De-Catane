@@ -13,13 +13,19 @@
     </div>
 
     <div id="plateau" class="justify-content-center">
-      <div *ngFor="let tilearray of board" class="d-flex mb-4 flex-row etage justify-content-center"> 
-        <div *ngFor="let tile of tilearray" class="">
-          <!-- <img src={{tile.image}} alt="qlfqlfqjlfqfjqfhlq"> -->  
+      <div *ngFor="let tilearray of boardTiles" class="d-flex mb-4 flex-row etage justify-content-center"> 
+        <div *ngFor="let tile of tilearray" class="mx-1 tile" (click)="test()">
+
           <app-tile [image]="tile.image"></app-tile>
-          <div *ngFor="let edge of tile.edges">
-            zofuqhf
+
+          <div *ngIf="tile.vertices[5] != null">
+            <app-vertex class="vertex6 circle"></app-vertex>
           </div>
+
+          <div *ngIf="tile.vertices[4] != null">
+            <app-vertex class="vertex5 circle"></app-vertex>
+          </div>
+
         </div>
       </div>
     </div>
