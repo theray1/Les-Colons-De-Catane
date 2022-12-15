@@ -11,16 +11,16 @@ La préparation est la phase qui précède le jeu à proprement parler au cours 
 | Tout le jeu
 
 | Condition de succès
-| La partie peut démarrer ; Chaque joueur a installé deux colonies et deux routes sur le plateau, à récupéré les ressources correspondantes et l’ordre de jeu est déterminé.
+| La partie peut démarrer ; Chaque joueur a installé deux colonies et deux routes sur le plateau, a récupéré les ressources correspondantes et l’ordre de jeu est déterminé.
 
 | Condition d'échec
 | Les joueurs n’arrivent pas à décider leur couleur ou l’ordre de jeu. Le plateau ne propose pas une répartition des tuiles satisfaisante (selon les joueurs).
 
 | Évènement déclencheur 
-| Instanciation d’une partie.
+| Instanciation d’une partie
 
 | Fréquence
-| Une fois par partie.
+| Une fois par partie
 
 | Acteurs principaux:
 | Plateau, Joueurs
