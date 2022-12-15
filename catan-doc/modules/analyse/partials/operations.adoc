@@ -20,8 +20,9 @@ post: Une colonie a été construite sur le terrain.
 Player::construireVille() +
 
 pre: 
--Le joueur lançant cette opération a au moins deux ressources de blé et trois ressources de roche à utiliser pour construire cette ville. +
--Le joueur lançant cette opération a au moins une colonie à utiliser pour la transformer en ville.
+
+* Le joueur lançant cette opération a au moins deux ressources de blé et trois ressources de roche à utiliser pour construire cette ville.
+* Le joueur lançant cette opération a au moins une colonie à utiliser pour la transformer en ville.
 
 post: Une ville a été construite sur le terrain.
 
