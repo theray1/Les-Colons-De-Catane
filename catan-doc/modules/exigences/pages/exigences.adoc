@@ -130,11 +130,7 @@ Distinguez les classes d'utilisateurs les plus importantes pour ce produit de ce
 
 Le logiciel {project} n'a qu'une seule classe d'utilisateurs : les joueurs.
 Les joueurs doivent utiliser la même interface utilisateur pour jouer les uns contre les autres.
-
-[NOTE]
-====
-TODO: Complétez la description ci-dessus
-====
+Le logiciel ne garde pas trace de l'évolution d'un joueur, du nombre de partie qu'il a joué, etc... et ne permet pas de différencier de niveaux de joueurs, par exemple.
 
 === Environnement opérationnel
 
@@ -142,11 +138,6 @@ NOTE: Décrivez l'environnement dans lequel le logiciel fonctionnera, y compris 
 
 Le logiciel {project} doit fonctionner sur tout système d'exploitation populaire et récent{nbsp}: Linux, Windows, ou MacOS.
 Le client Web devrait fonctionner sur tout navigateur Web récent{nbsp}: Firefox, Chrome, Safari, ou Edge.
-
-[NOTE]
-====
-TODO: Complétez la description ci-dessus
-====
 
 == Contraintes de conception et de mise en œuvre
 
@@ -383,7 +374,7 @@ Au minimum, clarifiez les préférences relatives pour divers attributs, comme l
 
 ==== Extensibilité
 
-NOTE: TODO
+. Le logiciel doit pouvoir permettre d'envisager l'implémentations des extensions de {project} dans le futur, notamment.
 
 ==== Maintenabilité
 

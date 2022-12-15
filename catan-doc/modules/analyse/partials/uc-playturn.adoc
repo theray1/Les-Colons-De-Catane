@@ -1,17 +1,12 @@
-Le tour de jeu est une période pendant laquelle un joueur actif peut décider d’interagir avec le jeu.
+Le tour de jeu est une période pendant laquelle un joueur actif peut interagir avec le jeu.
 
 
 [cols="30s,70n",options="header", frame=all]
 |===
 | Item | Description
 
-
-
 | Cas d'utilisation	
 | Tour de jeu
-
-| Alias
-| à compléter
 
 | Objectif contextuel
 | Permettre à la partie de progresser, à l’échelle d’un tour de jeu.
@@ -20,13 +15,13 @@ Le tour de jeu est une période pendant laquelle un joueur actif peut décider d
 | Tout le jeu
 
 | Condition de succès
-| Le joueur actif a effectué toutes les actions obligatoires de son tour et ne souhaite plus effectuer d’actions optionnelles / facultatives, ou la partie se finit
+| Le joueur actif a effectué toutes les actions obligatoires de son tour et ne souhaite plus effectuer d’actions optionnelles ou facultatives, ou la partie se termine.
 
 | Condition d'échec
 | Le joueur actif n’est pas en mesure de jouer.
 
 | Acteurs principaux:
-| Plateau, joueurs, Cartes Ressources
+| Plateau, Joueurs
 
 | Acteurs secondaires
 | Dés, Constructions, Cartes
@@ -35,15 +30,15 @@ Le tour de jeu est une période pendant laquelle un joueur actif peut décider d
 | Le tour précédent est terminé, ou la préparation est terminée.
 
 | Fréquence
-| Un tour de jeu par joueur, par tour de table 
+| Un tour de jeu par joueur par tour de table 
 
 | Pré-conditions 
 a| 
-- La partie a déjà été initialisée. Il n’y a pas de tour de jeu en cours. 
+- La partie a déjà été initialisée. Il n’y a pas de tour de jeu en cours. Le joueur actif a été designé en fonction de l'ordre de jeu.
 
 | Post-conditions
 a| 
-- Il n’y a plus de tour de jeu en cours.
+- Il n’y a plus de tour de jeu en cours. Le joueur suivant dnas l'ordre de jeu devient le joueur actif.
 
 
 | Scénario nominal
@@ -87,11 +82,6 @@ a|
 * 7a : le joueur tire une carte chevalier
 * 7abis : le joueur tire une carte progrès
 * 7ater : le joueur tire une carte point de victoire
-
-
-| Cas d'utilisation subordonnés 
-| Récolter des ressources
- Faire des échanges
 
 |===
 
