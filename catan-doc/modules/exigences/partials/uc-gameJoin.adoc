@@ -2,9 +2,6 @@
 |===
 | Item | Description
 
-| # 
-| Rejoindre une partie
-
 | Cas d'utilisation	
 | Joindre une partie 
 
@@ -40,13 +37,14 @@ a|
 
 | Scénario nominal
 a|
-. Le client choisi sa partie non démarré et non pleine. Il envoie au serveur la commande correspondante (1)
+. Le client choisi sa partie non démarré et non pleine. Il envoie au serveur la commande correspondante
 . Le serveur associe le client à une partie.
 
 
 | Extensions	
 a| 
-. (1) : Si le serveur n’a plus de partie disponible, il en crée une nouvelle et associe le client à cette partie
+- 1.a : Le serveur n’a plus de partie disponible 
+- 1.a.1 : Le serveur crée une nouvelle partie et associe le client à cette dernière
 
 
 |===
