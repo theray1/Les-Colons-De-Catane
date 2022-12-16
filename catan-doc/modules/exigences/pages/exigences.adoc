@@ -175,60 +175,7 @@ Les communications entre le client et le serveur de jeu doivent utiliser des Web
 [#features]
 == Exigences fonctionnelles
 
-[NOTE]
-====
-Décrire les exigences fonctionnelles du système qui peuvent être exprimées et langage naturel. Pour plusieurs applications, c’est la partie principale de la SEL et son organisation doit, par conséquent, être bien réfléchie. Elle est habituellement hiérarchisée par caractéristiques, mais elle peut l’être, par utilisateur ou par sous-système. Les exigences fonctionnelles peuvent inclure les caractéristiques, les capacités et la sécurité.
-
-Lorsque des outils de développement, tels des référentiels d’exigences ou des outils de modélisation sont utilisés, on peut référer à ces données en indiquant l’endroit et le nom de cet outil]
-====
-
-[TIP]
-====
-Ici, il ne s'agit plus de décrire le domaine métier, mais de spécifier ce que le système *doit* faire.
-
-N'oubliez pas qu'il s'agit d'une spécification de que le système *doit* faire et non pas de *comment* il le fait.
-====
-
-=== Fonctionnalité A
-
-[NOTE]
-====
-Ajoutez la description de la fonctionnalité "A".
-====
-
-TIP: Ne dites pas vraiment "Fonctionnalité A". Indiquez le nom de la fonctionnalité en quelques mots seulement.
-
-==== Description et priorité
-
-[NOTE]
-====
-Fournissez une brève description de la fonctionnalité et indiquez si elle a une priorité élevée, moyenne ou faible. 
-Vous pouvez également inclure des évaluations spécifiques des éléments de priorité, comme les avantages, les pénalités, les coûts et les risques (chacun étant évalué sur une échelle relative allant de 1 à 9).
-====
-
-==== Séquences de Stimulus/Réponse
-
-NOTE: Liste des séquences d'actions de l'utilisateur et des réponses du système qui stimulent le comportement défini pour cette fonctionnalité. Celles-ci correspondront aux éléments de dialogue associés aux cas d'utilisation.
-
-==== Exigences fonctionnelles
-
-[NOTE]
-====
-Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
-
-Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
-
-Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
-
-Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
-
-* REQ-1:	
-* REQ-2:
-====
-
-==== Description sous la forme d'un cas d'utilisation
-
-=== Connexion du client au serveur
+=== Fonctionnalité : Connexion du client au serveur
 
 ==== Description et priorité
 
@@ -238,28 +185,16 @@ Le client se connecte au serveur. Cette fonctionnalité a une priorité élevée
 
 Le stimulus de cette fonctionnalité est le lancement du logiciel par le client. La réponse du serveur sera un message indiquant que la connexion au serveur est en cours.
 
-==== Exigences fonctionnelles TODO
+==== Exigences fonctionnelles
 
-[NOTE]
-====
-Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
-
-Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
-
-Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
-
-Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
-
-* REQ-1:	
-* REQ-2:
-====
+* REQ-1: En cas d'erreur de connexion, le logiciel s'arrête. 
 
 ==== Description sous la forme d'un cas d'utilisation
 
 .connexion
 include::../partials/uc-connection.adoc[]
 
-=== Création de la partie
+=== Fonctionnalité : Création de la partie
 
 ==== Description et priorité
 
@@ -267,79 +202,92 @@ Le serveur créé une partie. Cette fonctionnalité a une priorité élevée.
 
 ==== Séquences de Stimulus/Réponse
 
-Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs en attente dans la file d'attente du serveur. La réponse du serveur sera un message indiquant que la création de la partie est en cours.
+Le stimulus de cette fonctionnalité est le fait qu'il y ait un joueur en attente dans la file d'attente du serveur. La réponse du serveur sera un message indiquant que la création de la partie est en cours.
 
-==== Exigences fonctionnelles TODO
+==== Exigences fonctionnelles 
 
-[NOTE]
-====
-Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
-
-Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
-
-Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
-
-Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
-
-* REQ-1:	
-* REQ-2:
-====
+* REQ-1: En cas d'erreur dans la création de la partie, un message d'erreur est affiché pour le client
 
 ==== Description sous la forme d'un cas d'utilisation
 .création de la partie
 include::../partials/uc-createGame.adoc[]
 
-=== gameJoin
-Un client peut demander au serveur de le placer dans une partie
+=== Fonctionnalité : Rejoindre une partie
+Un client demande au serveur de le placer dans une partie.
 
 ==== Description et priorité
 
-Le serveur créé une partie. Cette fonctionnalité a une priorité élevée.
+Le serveur place le client dans une partie déjà créée. Cette fonctionnalité a une priorité élevée.
 
 ==== Séquences de Stimulus/Réponse
 
-Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs en attente dans la file d'attente du serveur. La réponse du serveur sera un message indiquant que la création de la partie est en cours.
+Le stimulus de cette fonctionnalité est le fait qu'il y ait au moins une partie créée en attente d'initialisation ayant moins de quatre joueurs. La réponse du serveur sera un message indiquant que l'incorporation du joueur à la partie est en cours.
 
-==== Exigences fonctionnelles TODO
+==== Exigences fonctionnelles 
 
-[NOTE]
-====
-Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
-
-Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
-
-Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
-
-Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
-
-* REQ-1:	
-* REQ-2:
-====
+* REQ-1: En cas d'erreur dans l'incorporation du joueur à la partie, un message d'erreur est affiché pour le client
 
 ==== Description sous la forme d'un cas d'utilisation
 
-.uc-gameJoin
+.Rejoindre une partie
 include::../partials/uc-gameJoin.adoc[]
 
-=== initGame
-Avant de démarrer, une partie doir etre initialisée
+=== Fonctionnalité : Initialisation de la partie
+
+Met en place la partie afin qu'elle puisse débuter.
+
+==== Description et priorité
+
+Le serveur exécute la commande d'initialisation de la partie. Cette fonctionnalité a une priorité élevée.
+
+==== Séquences de Stimulus/Réponse
+
+Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs dans une partie en attente d'initialisation. La réponse du serveur sera un message indiquant que l'initialisation de la partie est en cours.
+
+==== Exigences fonctionnelles 
+
+* REQ-1: En cas d'erreur dans l'initialisation de la partie, un message d'erreur est affiché pour le client
 
 ==== Description sous la forme d'un cas d'utilisation
-.uc-initGame
+.Initialisation de la partie
 include::../partials/uc-initGame.adoc[]
 
-=== startGame
-Quand une partie est pleine, le serveur démarre la partie.
+=== Fonctionnalité : Commence la partie
+le serveur met en place les conditions nécessaires pour que le premier tour du jeu puisse commencer.
+
+==== Description et priorité
+
+Le serveur exécute les commandes nécessaires au commencement de la partie. Cette fonctionnalité a une priorité élevée.
+
+==== Séquences de Stimulus/Réponse
+
+Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs dans une partie initialisée. La réponse du serveur sera un message indiquant que la préparation de la partie est en cours.
+
+==== Exigences fonctionnelles 
+
+* REQ-1: En cas d'erreur dans le commencement de la partie, un message d'erreur est affiché pour le client
 
 ==== Description sous la forme d'un cas d'utilisation
-.uc-startGame
+.Commence la partie
 include::../partials/uc-startGame.adoc[]
 
-=== playGame
-Description complete d'un tour de jeux
+=== Fonctionnalité : Jouer un tour
+Un client joue un tour de jeu complet.
+
+==== Description et priorité
+
+Le client envoie les différentes commandes d'actions de jeu selon si il peut et veut les utiliser. Cette fonctionnalité a une priorité élevée.
+
+==== Séquences de Stimulus/Réponse
+
+Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs dans une partie demarrée. La réponse du serveur sera un message indiquant que l'initialisation de la partie est en cours.
+
+==== Exigences fonctionnelles
+
+* REQ-1: En cas d'erreur dans un tour d'un joueur de la partie, un message d'erreur est affiché pour le client
 
 ==== Description sous la forme d'un cas d'utilisation
-.uc-playTurn
+.Jouer un tour
 include::../partials/uc-playTurn.adoc[]
 
 [#nonfunctional]
@@ -359,15 +307,6 @@ Aucune pour le moment.
 
 Pour les clients, le logiciel doit être facile à utiliser et fluide dans son exécution. +
 Pour les développeurs, le code doit avoir un couplage faible et une excellente maintenabilité.
-
-[NOTE]
-====
-Précisez toute autre caractéristique de qualité du produit qui sera importante pour les clients ou les développeurs. En voici quelques-unes : adaptabilité, disponibilité, exactitude, flexibilité, interopérabilité, maintenabilité, portabilité, fiabilité, réutilisabilité, robustesse, testabilité et convivialité. 
-
-Rédigez-les de manière à ce qu'elles soient spécifiques, quantitatives et vérifiables, si possible. 
-
-Au minimum, clarifiez les préférences relatives pour divers attributs, comme la facilité d'utilisation par rapport à la facilité d'apprentissage. 
-====
 
 ==== Extensibilité
 
