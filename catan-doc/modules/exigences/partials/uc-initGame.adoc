@@ -8,22 +8,22 @@
 
 
 | Objectif contextuel
-| Lancer l'execution du 1er tour sur une partie initialisée
+| Lancer l'exécution du 1er tour sur une partie initialisée
 
 | Portée	
-| Le serveur et les Clients
+| Le serveur et les clients
 
 | Condition de succès
 | La partie est initialisée dans l'état juste avant le 1er tour. Les clients ont reçu toutes les commandes les concernant
 
 | Condition d'échec
-| La partie n'est est initialisée dans l'état juste avant le 1er tour ou les clients ont reçu toutes les commandes les concernant
+| La partie n'est pas initialisée dans l'état juste avant le 1er tour ou les clients n'ont pas reçu toutes les commandes les concernant
 
 | Acteurs principaux:
 | Le serveur et les clients dans la partie concernée
 
 | Événement déclencheur
-| la partie a été créer
+| la partie a été créée
 
 
 | Fréquence
@@ -31,18 +31,18 @@
 
 | Pré-conditions 
 a| 
-- La partie a été créer
+- La partie a été créée
 
 
 | Post-conditions
 a| 
-- La partie est initialisée et prete pour le 1er tour
+- La partie est initialisée et prête pour le 1er tour
 
 
 | Scénario nominal
 a|
-. Le serveur execute la commande d'initialisation de partie.
-. Le serveur envoie les commandes nécéssaire pour synchroniser les clients.
+. Le serveur exécute la commande d'initialisation de partie.
+. Le serveur envoie les commandes nécéssaires pour synchroniser les clients.
 
 |===
 
