@@ -35,10 +35,10 @@ DataAccess7 - [Client]
 On part sur 3 composants : 
 
 * Serveur
-* Réseau (WebSockets)
+* Réseau (MiddleWare WebSockets)
 * Client
 
-Ainsi on obtient plusieurs diagram en fonction de chaque intéractions : 
+Voici le diagramme de composants correspondant : 
 
 [plantuml]
 ....
@@ -49,15 +49,15 @@ left to right direction
 [Client]
 [Middleware]
 
-[Server] - ServerToClient : "\t\t"
-ServerToClient )- [Middleware] : "\t\t"
-[Server] - ClientToServer : "\t\t"
-ClientToServer )- [Middleware] : "\t\t"
+[Middleware] - ServerToClientServer : "\t\t"
+ServerToClientServer )- [Server] : "\t\t"
+[Server] - ClientToServerServer : "\t\t"
+ClientToServerServer )- [Middleware] : "\t\t"
 
-[Middleware] - a : "\t\t"
-a )- [Client] : "\t\t"
-[Middleware] - b : "\t\t"
-b )- [Client] : "\t\t"
+[Middleware] - ClientToServerClient : "\t\t"
+ClientToServerClient )-up- [Client] : "\t\t"
+[Client] - ServerToClientClient : "\t\t"
+ServerToClientClient )- [Middleware] : "\t\t"
 @enduml
 ....
 
