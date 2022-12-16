@@ -2,20 +2,20 @@
 
 Bienvenue sur notre projet Catane !
 
-=== Sommaire :
-==== Analyse 
+== Sommaire :
+=== Analyse 
 L'analyse globale du projet, les rêgles, les différents besoins.
 
-==== Architecture
+=== Architecture
 L'architecture logiciel, on retrou ve les liens logiques, les nœud logiques.
 
-==== Spécification des composants
+=== Spécification des composants
 Les différents composants qui communiquent pour établir le jeu.
 
-==== Conception détaillée
+=== Conception détaillée
 Les diagrammes de classes qui permettent la conception et l'implementation du jeu.
 
-==== Spécification des exigences
+=== Spécification des exigences
 Les éxigences générales du projet, le serveur, les interfaces logiciels, les fonctionalités...
 
 == Catane ! C'est quoi ?
