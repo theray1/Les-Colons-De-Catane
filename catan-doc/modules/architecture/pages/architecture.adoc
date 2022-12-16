@@ -34,7 +34,7 @@ On peut voir l'utilisation des 2 protocols coté serveur via ce diagramme de sé
 
 [plantuml]
 ----
-include::sequenceDiagram_Protocols.plantuml[]
+include::examples/sequenceDiagram_Protocols.plantuml[]
 ----
 
 Le noeud logique Game Client utilise TypeScript ainsi que le framework Angular pour gérer l'affichage au sein d'un navigateur web.
