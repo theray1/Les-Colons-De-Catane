@@ -28,10 +28,10 @@ Au niveau de la vue physique, on retrouve donc 2 nœuds logiques qui sont :
 * Game Server
 * Game Client
 
-Ainsi ces 2 nœuds vont devoir comuniquer et différents protocols vont être utilisé.
+Ainsi ces 2 nœuds vont devoir comuniquer et différents protocoles vont être utilisé.
 Ces 2 nœuds ne peuvent pas être réduit, on retrouvera forcément un serveur qui gère les parties, évite qu'il y ait de la fraude et des clients qui font office de passerelles entre le joueur (Personne physique) et le jeu (logiciel).
 On note pour le serveur, l'utilisation de Java Spring pour la gestion des sockets ainsi que le protocole HTTP pour la première connexion du client.
-On peut voir l'utilisation des 2 protocols coté serveur via ce diagramme de séquence :
+On peut voir l'utilisation des 2 protocoles coté serveur via ce diagramme de séquence :
 
 include::sequenceDiagram_Protocols.adoc[]
 
@@ -54,7 +54,7 @@ include::deploymentDiagram.adoc[]
 
 include::deploymentDiagramInstance.adoc[]
 
-Ainsi, on peut voir que chaque nœuds Client est "dupliqué", on retrouve les mêmes librairies, les mêmes composants, les mêmes protocols.
+Ainsi, on peut voir que chaque nœuds Client est "dupliqué", on retrouve les mêmes librairies, les mêmes composants, les mêmes protocoles.
 Pour les clients, on retrouve Angular qui gère l'interface utilisteur et Typescript qui s'occupe de la communication avec le serveur.
 Pour l'exemple, il y a 4 clients qui est le nombre maximal de joueur pour une seule partie.
 Sur le diagramme, un seul lien relie chaque client au serveur, mais c'est bien un lien différent pour chaque protocol (HTTP et WebSocket).

@@ -8,33 +8,17 @@ Ce chapitre décrit les exigences du projet «{project}». Il suit la norme IEEE
 
 === Avant-propos
 
-NOTE: Identifier le produit dont les exigences logicielles sont spécifiées dans ce document, y compris le numéro de révision ou de version. Décrire l'étendue du produit couvert par ce SRS, en particulier si ce SRS ne décrit qu'une partie du système ou un seul sous-système.
-
 L'objectif de ce document est de décrire les spécifications des exigences du projet "{project}" pour les étudiants en génie logiciel.
 
-Le public visé par cette spécification comprend les développeurs potentiels de l'application, ainsi que les personnes chargées de l'évaluation technique.
-
-
 === Définitions, acronymes et abréviations
-
-NOTE: Décrivez toutes les normes ou conventions typographiques qui ont été suivies lors de la rédaction de ce SRS, telles que les polices de caractères ou les mises en évidence qui ont une signification particulière. Par exemple, indiquez si les priorités des exigences de niveau supérieur sont supposées être héritées par les exigences détaillées, ou si chaque énoncé d'exigence doit avoir sa propre priorité.
 
 Aucune jusqu'à présent.
 
 === Public visé et suggestions de lecture
 
-[NOTE]
-====
-Ce document s'adresse aux membres du groupe de ce projet, ainsi qu'à la personne chargée de son évaluation.
-
-Décrire les différents types de lecteurs auxquels le document est destiné, tels que les développeurs, les chefs de projet, le personnel du marketing, les utilisateurs, les testeurs et les rédacteurs de la documentation. 
-
-Décrivez le contenu et l'organisation du reste de ce SRS. Suggérer un ordre de lecture du document, en commençant par les sections d'aperçu et en poursuivant par les sections les plus pertinentes pour chaque type de lecteur.
-====
+Le public visé par cette spécification comprend les développeurs potentiels de l'application, ainsi que les personnes chargées de l'évaluation technique.
 
 === Portée du projet
-
-NOTE: Fournissez une brève description du logiciel spécifié et de son objectif, y compris les avantages, les objectifs et les buts pertinents. Reliez le logiciel aux objectifs de l'entreprise ou aux stratégies commerciales. Si vous disposez d'un document distinct sur la vision et la portée, faites-y référence plutôt que d'en reproduire le contenu ici.
 
 Le système logiciel à produire est une version simplifiée du jeu de plateau {project}, qui sera désigné par le terme "{project}" dans le présent document.
 
@@ -43,13 +27,6 @@ Le système {project} permettra à des joueurs de différents endroits de s'affr
 === Références
 
 . IEEE Standard 830-1993: IEEE Recommended Practice for Software Requirements Specifications
-
-[TIP]
-====
-Énumérez tous les autres documents ou adresses Web auxquels ce SRS fait référence. 
-Il peut s'agir de guides de style d'interface utilisateur, de contrats, de normes, de spécifications des exigences du système, de documents de cas d'utilisation ou d'un document sur la vision et la portée. 
-Fournissez suffisamment d'informations pour que le lecteur puisse accéder à une copie de chaque référence, notamment le titre, l'auteur, le numéro de version, la date et la source ou l'emplacement.
-====
 
 === Vue d’ensemble 
 
@@ -71,86 +48,67 @@ La figure <<deployment>> présente l'architecture globale du logiciel.
 Les joueurs interagissent avec un client Web, qui utilise le protocole HTTP pour communiquer avec (au maximum) un serveur de jeu.
 Les serveurs utilisent le protocole TCP/IP pour communiquer avec un serveur de gestion de base de données, qui stocke toutes les données du logiciel.
 
-[NOTE]
-====
-Améliorez le diagramme de déploiement pour qu'il représente le système que vous allez développer.
-
-Pour plus de détails sur les diagrammes de déploiement{nbsp}:
-
-* https://www.uml-diagrams.org/deployment-diagrams-overview.html
-====
-
 [#deployment]
-.UML Diagramme de déploiement 
+.UML Diagramme de déploiement
 [plantuml]
-----
-include::example$deployment-diagram.puml[]
-----
+....
+@startuml
+node "Game Server" as server {
+    artifact "Spring" as modeA
+    artifact "Java" as modeB
+}
+node "Game Client Nathan" as nathan {
+    artifact "Angular" as modeCa
+    artifact "TypeScript" as modeDs
+}
+node "Game Client Rodrigue" as rodrigue {
+    artifact "Angular" as modeCqqs
+    artifact "TypeScript" as modeDv
+}
+node "Game Client Erwan" as erwan {
+    artifact "Angular" as modeCq
+    artifact "TypeScript" as modeDe
+}
+node "Game Client Bilal" as bilal {
+    artifact "Angular" as modeCg
+    artifact "TypeScript" as modeDh
+}
 
-[NOTE]
-====
-Décrivez le contexte et l'origine du produit spécifié dans ce SRS.  
-Par exemple, indiquez si ce produit est un membre suivant d'une famille de produits, un remplacement de certains systèmes existants ou un nouveau produit autonome. 
+server -up- nathan : <<protocol>> Web Socket and HTTP
+server -down- rodrigue : <<protocol>>  Web Socket and HTTP
+server -left- erwan : <<protocol>> Web Socket and HTTP
+server -right- bilal : <<protocol>> Web Socket and HTTP
+@enduml
+....
 
-Si le SRS définit un composant d'un système plus vaste, faites le lien entre les exigences du système plus vaste et la fonctionnalité de ce logiciel et identifiez les interfaces entre les deux. 
-Un diagramme simple qui montre les principaux composants du système global, les interconnexions des sous-systèmes et les interfaces externes peut être utile.
-====
+
+
+Ce logiciel est un nouveau produit autonome.
 
 === Fonctionnalités du produit
 
-[NOTE]
-====
-Résumez les principales fonctions que le produit doit exécuter ou doit permettre à l'utilisateur d'exécuter. Les détails seront fournis à la section 3, aussi seul un résumé de haut niveau (comme une liste à puces) est nécessaire ici. 
-
-Organisez les fonctions de manière à ce qu'elles soient compréhensibles pour tout lecteur du SRS. 
-====
-
 Le logiciel {project} doit assurer deux fonctions principales :
 
-. Création de jeu : permettre à deux joueurs de se découvrir et de commencer une partie.
+. Création de jeu : permettre à quatre joueurs de lancer l'initialisation et de commencer une partie.
 . Le jeu{nbsp}: permettre aux joueurs de jouer effectivement à {project} jusqu'à la victoire de l'un d'entre eux.
-
-TIP: Il s'agit ici d'une vue générale des fonctionnalités et non de leur description détaillée.
-
-[NOTE]
-====
-Une image des principaux groupes d'exigences connexes et de leurs relations, comme une carte conceptuelle, est souvent utile.
-====
-
 
 === Caractéristiques et classes d'utilisateurs
 
-[NOTE]
-====
-Identifiez les différentes classes d'utilisateurs qui, selon vous, utiliseront ce produit. 
-Les classes d'utilisateurs peuvent être différenciées en fonction de la fréquence d'utilisation, du sous-ensemble de fonctions du produit utilisé, de l'expertise technique, des niveaux de sécurité ou de privilège, du niveau d'éducation ou de l'expérience. 
-Décrivez les caractéristiques pertinentes de chaque classe d'utilisateurs.  Certaines exigences peuvent ne concerner que certaines classes d'utilisateurs. 
-Distinguez les classes d'utilisateurs les plus importantes pour ce produit de celles qui sont moins importantes à satisfaire.
-====
-
 Le logiciel {project} n'a qu'une seule classe d'utilisateurs : les joueurs.
 Les joueurs doivent utiliser la même interface utilisateur pour jouer les uns contre les autres.
-Le logiciel ne garde pas trace de l'évolution d'un joueur, du nombre de partie qu'il a joué, etc... et ne permet pas de différencier de niveaux de joueurs, par exemple.
+Le logiciel ne garde pas trace de l'évolution d'un joueur, du nombre de partie qu'il a joué, etc... et ne permet pas de différencier le niveau des joueurs, par exemple.
 
 === Environnement opérationnel
-
-NOTE: Décrivez l'environnement dans lequel le logiciel fonctionnera, y compris la plate-forme matérielle, le système d'exploitation et ses versions, ainsi que tout autre composant logiciel ou application avec lequel il doit coexister pacifiquement.
 
 Le logiciel {project} doit fonctionner sur tout système d'exploitation populaire et récent{nbsp}: Linux, Windows, ou MacOS.
 Le client Web devrait fonctionner sur tout navigateur Web récent{nbsp}: Firefox, Chrome, Safari, ou Edge.
 
 == Contraintes de conception et de mise en œuvre
 
-[NOTE]
-====
-Décrivez tous les éléments ou problèmes qui limiteront les options disponibles pour les développeurs. Il peut s'agir de politiques d'entreprise ou de réglementation, de limitations matérielles (exigences en matière de temps et de mémoire), d'interfaces avec d'autres applications, de technologies, d'outils et de bases de données spécifiques à utiliser, d'opérations parallèles, d'exigences linguistiques, de protocoles de communication, de considérations de sécurité, de conventions de conception ou de normes de programmation (par exemple, si l'organisation du client est responsable de la maintenance du logiciel livré).
-====
-
 === Langages de programmation
 
 . Le serveur de jeu doit être développé en Java (version ≥ 11), en utilisant le https://spring.io [Spring Framework].
 . Le client doit être développé en TypeScript (version ≥ 4.0), en utilisant le https://angular.io [Angular Framework].
-
 
 === Langage de conception
 
@@ -178,31 +136,15 @@ Décrivez tous les éléments ou problèmes qui limiteront les options disponibl
 
 == Documentation utilisateur
 
-[NOTE]
-====
-Dressez la liste des composants de la documentation utilisateur (tels que les manuels d'utilisation, l'aide en ligne et les didacticiels) qui seront fournis avec le logiciel. Identifiez tous les formats ou normes connus de livraison de la documentation utilisateur.
-====
-
-
 Aucune documentation utilisateur n'est requise pour la première version du logiciel.
 
 === Hypothèses et dépendances
 
-[NOTE]
-====
-Dressez la liste de tous les facteurs supposés (par opposition aux faits connus) qui pourraient affecter les exigences énoncées dans le SRS. Il peut s'agir de composants tiers ou commerciaux que vous prévoyez d'utiliser, de problèmes liés à l'environnement de développement ou d'exploitation, ou de contraintes. Le projet pourrait être affecté si ces hypothèses sont incorrectes, ne sont pas partagées ou changent. Identifiez également toutes les dépendances du projet vis-à-vis de facteurs externes, tels que les composants logiciels que vous avez l'intention de réutiliser à partir d'un autre projet, à moins qu'elles ne soient déjà documentées ailleurs (par exemple, dans le document de vision et de portée ou dans le plan de projet).
-====
-
-Aucun jusqu'à présent.
+Aucune jusqu'à présent.
 
 === Exigences reportées
 
-[NOTE]
-====
-Énumérer les exigences qui peuvent être réalisées dans des versions futures du système.
-Les versions futures du système comprendront l’utilisation d’un mécanisme de persistance de données ainsi que différentes interfaces utilisateur: web, IHM classique, etc.
-Elles permettront aussi l’accès distant à travers une interface REST.
-====
+Aucune jusqu'à présent.
 
 == Exigences en matière d'interface externe
 
@@ -220,32 +162,13 @@ Les détails de la conception de l'interface utilisateur doivent être document�
 
 === Interfaces matérielles
 
-[NOTE]
-====
-Décrire les caractéristiques logiques et physiques de chaque interface entre le produit logiciel et les composants matériels du système. 
-Cela peut inclure les types de dispositifs pris en charge, la nature des interactions de données et de contrôle entre le logiciel et le matériel, et les protocoles de communication à utiliser.
-====
-
 Le logiciel n'interagit pas directement avec un quelconque dispositif matériel.
 
 === Interfaces logicielles
 
-[NOTE]
-====
-Décrivez les connexions entre ce produit et d'autres composants logiciels spécifiques (nom et version), y compris les bases de données, les systèmes d'exploitation, les outils, les bibliothèques et les composants commerciaux intégrés. Identifiez les éléments de données ou les messages qui entrent dans le système et qui en sortent et décrivez le but de chacun. Décrivez les services nécessaires et la nature des communications. 
-
-Se référer aux documents qui décrivent les protocoles détaillés des interfaces de programmation d'applications. Identifiez les données qui seront partagées entre les composants logiciels. 
-
-Si le mécanisme de partage des données doit être mis en œuvre d'une manière spécifique (par exemple, l'utilisation d'une zone de données globale dans un système d'exploitation multitâche), spécifiez-le comme une contrainte de mise en œuvre.
-====
-
 La partie client du logiciel doit fonctionner sur des navigateurs web, tandis que la partie serveur doit interagir avec une base de données par le biais de l'API Java Persistence (JPA).
 
-
-
 === Interfaces de communication
-
-NOTE: Décrivez les exigences associées à toute fonction de communication requise par ce produit, notamment le courrier électronique, le navigateur Web, les protocoles de communication des serveurs de réseau, les formulaires électroniques, etc. Définissez tout formatage pertinent des messages. Identifiez les normes de communication qui seront utilisées, telles que FTP ou HTTP. Précisez les problèmes de sécurité ou de cryptage des communications, les taux de transfert des données et les mécanismes de synchronisation.
 
 Les communications entre le client et le serveur de jeu doivent utiliser des Websockets.
 
@@ -305,19 +228,93 @@ Chaque exigence doit être identifiée de manière unique par un numéro de séq
 
 ==== Description sous la forme d'un cas d'utilisation
 
+=== Connexion du client au serveur
+
+==== Description et priorité
+
+Le client se connecte au serveur. Cette fonctionnalité a une priorité élevée.
+
+==== Séquences de Stimulus/Réponse
+
+Le stimulus de cette fonctionnalité est le lancement du logiciel par le client. La réponse du serveur sera un message indiquant que la connexion au serveur est en cours.
+
+==== Exigences fonctionnelles TODO
+
+[NOTE]
+====
+Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
+
+Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
+
+Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
+
+Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
+
+* REQ-1:	
+* REQ-2:
+====
+
+==== Description sous la forme d'un cas d'utilisation
+
 .connexion
 include::../partials/uc-connection.adoc[]
 
-=== Creation de partie
+=== Création de la partie
 
-Le serveur s'assure d'avoir des parties de disponible pour les clients se connectants.
+==== Description et priorité
+
+Le serveur créé une partie. Cette fonctionnalité a une priorité élevée.
+
+==== Séquences de Stimulus/Réponse
+
+Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs en attente dans la file d'attente du serveur. La réponse du serveur sera un message indiquant que la création de la partie est en cours.
+
+==== Exigences fonctionnelles TODO
+
+[NOTE]
+====
+Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
+
+Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
+
+Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
+
+Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
+
+* REQ-1:	
+* REQ-2:
+====
 
 ==== Description sous la forme d'un cas d'utilisation
-.uc-createGame
+.création de la partie
 include::../partials/uc-createGame.adoc[]
 
 === gameJoin
 Un client peut demander au serveur de le placer dans une partie
+
+==== Description et priorité
+
+Le serveur créé une partie. Cette fonctionnalité a une priorité élevée.
+
+==== Séquences de Stimulus/Réponse
+
+Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs en attente dans la file d'attente du serveur. La réponse du serveur sera un message indiquant que la création de la partie est en cours.
+
+==== Exigences fonctionnelles TODO
+
+[NOTE]
+====
+Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
+
+Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
+
+Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
+
+Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
+
+* REQ-1:	
+* REQ-2:
+====
 
 ==== Description sous la forme d'un cas d'utilisation
 
@@ -350,18 +347,18 @@ include::../partials/uc-playTurn.adoc[]
 
 === Exigences de performance 
 
-NOTE: S'il existe des exigences de performance pour le produit dans diverses circonstances, indiquez-les ici et expliquez leur raison d'être, afin d'aider les développeurs à comprendre l'intention et à faire des choix de conception appropriés. Spécifiez les relations temporelles pour les systèmes en temps réel. Faites en sorte que ces exigences soient aussi spécifiques que possible. Vous devrez peut-être énoncer des exigences de performance pour des exigences fonctionnelles ou des caractéristiques individuelles.
-
-
 . Le jeu doit être _jouable_, ce qui signifie que les utilisateurs doivent avoir un retour rapide de leurs actions et que les retards dus aux problèmes de communication/connexion doivent être correctement tenus.
 . Le client Web doit pouvoir s'exécuter sur un ordinateur personnel doté de 4 Go de RAM.
 
 
 === Exigences de sécurité
 
-NOTE: Précisez toute exigence concernant les questions de sécurité ou de confidentialité entourant l'utilisation du produit ou la protection des données utilisées ou créées par le produit. Définissez toute exigence en matière d'authentification de l'identité de l'utilisateur. Faites référence à toute politique ou réglementation externe contenant des questions de sécurité qui affectent le produit. Définissez toutes les certifications de sécurité ou de confidentialité qui doivent être satisfaites.
+Aucune pour le moment.
 
 === Attributs de qualité logicielle
+
+Pour les clients, le logiciel doit être facile à utiliser et fluide dans son exécution. +
+Pour les développeurs, le code doit avoir un couplage faible et une excellente maintenabilité.
 
 [NOTE]
 ====
@@ -374,35 +371,21 @@ Au minimum, clarifiez les préférences relatives pour divers attributs, comme l
 
 ==== Extensibilité
 
-. Le logiciel doit pouvoir permettre d'envisager l'implémentations des extensions de {project} dans le futur, notamment.
+. Le logiciel doit pouvoir permettre d'envisager l'implémentation des extensions de {project}, notamment dans le futur.
 
 ==== Maintenabilité
 
 . Le logiciel doit être lisible et facile à maintenir.
-. La source Java doit respecter les directives de Google : https://google-styleguide.googlecode.com/svn/trunk/javaguide.html.
+. Le code source Java doit respecter les directives de Google : https://google-styleguide.googlecode.com/svn/trunk/javaguide.html.
 
 === Règles métier
 
-NOTE: Énumérez tous les principes de fonctionnement du produit, tels que les personnes ou les rôles qui peuvent remplir telle ou telle fonction dans des circonstances spécifiques. Il ne s'agit pas d'exigences fonctionnelles en soi, mais elles peuvent impliquer certaines exigences fonctionnelles pour faire respecter les règles.
-
+Il n'y a pas de règles métier pour ce projet.
 
 == Autres exigences
 
-NOTE: Définissez toute autre exigence non couverte ailleurs dans le SRS. Il peut s'agir d'exigences relatives à la base de données, à l'internationalisation, à la législation, aux objectifs de réutilisation du projet, etc. Ajoutez toute nouvelle section pertinente pour le projet.
+Aucune pour le moment.
 
-=== Annexe A : Glossaire
-
-TIP: https://docs.asciidoctor.org/asciidoc/latest/sections/glossary/
-
-
-NOTE: Définissez tous les termes nécessaires pour interpréter correctement le SRS, y compris les acronymes et les abréviations. Vous pouvez créer un glossaire distinct couvrant plusieurs projets ou l'ensemble de l'organisation, et vous contenter d'inclure les termes spécifiques à un seul projet dans chaque SRS.
-
-=== Annexe B : Modèles d'analyse
+=== Annexe A : Modèles d'analyse
 
 Voir le chapitre <<domain>> (analyse du domaine) pour plus de détails.
-
-NOTE: En option, inclure tout modèle d'analyse pertinent, tel que des diagrammes de flux de données, des diagrammes de classe, des diagrammes d'état-transition ou des diagrammes entité-relation.
-
-=== Annexe C : Liste à déterminer
-
-NOTE: Recueillir une liste numérotée des références TBD (To Be Done) qui restent dans le SRS afin de pouvoir les suivre jusqu'à leur fermeture.
