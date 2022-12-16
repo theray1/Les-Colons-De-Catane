@@ -1,11 +1,5 @@
 package fr.univnantes.alma.core.game;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import fr.univnantes.alma.core.commands.Command;
 import fr.univnantes.alma.core.game.dice.Dice;
 import fr.univnantes.alma.core.game.dice.DiceImpl;
@@ -13,10 +7,15 @@ import fr.univnantes.alma.core.game.entity.NotEnoughResourcesException;
 import fr.univnantes.alma.core.game.entity.Player;
 import fr.univnantes.alma.core.game.entity.PlayerImpl;
 import fr.univnantes.alma.core.game.exception.GameException;
-import fr.univnantes.alma.core.game.map.Map;
-import fr.univnantes.alma.core.game.map.MapImpl;
+import fr.univnantes.alma.core.game.map.CatanMapImpl;
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.resource.Resource;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class GameControllerImpl implements GameController {
 
@@ -27,11 +26,11 @@ public class GameControllerImpl implements GameController {
 	private int currentplayer = 0;
 	private static final int MAX_PLAYERS = 4;
 
-	private final Map map;
+	private final CatanMapImpl map;
 	private final Dice dice;
 
 	public GameControllerImpl() {
-		this.map = new MapImpl();
+		this.map = new CatanMapImpl();
 		this.dice = new DiceImpl();
 	}
 

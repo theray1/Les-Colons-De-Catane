@@ -88,7 +88,8 @@ public class CatanWebSocketHandler extends TextWebSocketHandler implements WsCon
         GameFacade gameController = serverGameController.getGameWithSlot();
         gameController.submit(loginCommand);
         Player player = loginCommand.getPlayer().orElseThrow(()->
-                new AssertionError("Expected player to have been created but received null"));
+                new AssertionError("Missing player in command. This indicate a malformed command." +
+                        "Make sure that command receive context"));
         associateWsAndPlayer(session, player);
     }
 
@@ -100,7 +101,4 @@ public class CatanWebSocketHandler extends TextWebSocketHandler implements WsCon
         Player player = connectionToPlayer.remove(session);
         playerToConnection.remove(player);
     }
-
-
-
 }
