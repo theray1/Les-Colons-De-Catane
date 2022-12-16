@@ -2,6 +2,8 @@
 :project-name: Catane 
 = Les colons de Catane
 
+Projet avec le site : https://gitlab.univ-nantes.fr/E220463J/catane-website
+
 == Introduction
 
 L'objectif de ce projet est de spécifier, concevoir et mettre en œuvre une version en ligne du jeu de plateau *{project-name}*.
