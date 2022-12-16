@@ -1,17 +1,6 @@
 :project: Catane
 = Analyse du domaine
 
-== Travail à réaliser
-
-
-Objectif::
-Description du jeu _{project}_ sous la forme d'un diagramme de classes conceptuelles et d'actions.
-
-
-
-Moyens::
-Utilisez une approche itérative pour découvrir toutes les classes conceptuelles et les actions du jeu.
-
 == Introduction 
 
 == Modèle du domaine
