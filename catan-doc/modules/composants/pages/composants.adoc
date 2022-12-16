@@ -1,5 +1,4 @@
-Diagrammes des composants
-------------------------
+#Diagrammes des composants
 
 Composants (idée générale)
 [plantuml]
