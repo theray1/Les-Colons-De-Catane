@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Architecture :: Projet Catane - Website - Le meilleur groupe :) (car il y a Nathan)</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://naomod.univ-nantes.io/ooad/projet-2022">Projet Catane - Website - Le meilleur groupe :) (car il y a Nathan)</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Catan-doc" data-version="dev">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Projet Catan</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Analyse du domaine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../analyse/analyse.html">Analyse du domaine</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spécification des composants</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../composants/composants.html">composants.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Conception détaillée</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../conception/conception.html">Conception détaillée</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spécification des exigences</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../exigences/exigences.html">Spécification des exigences</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Projet Catan</span>
+    <span class="version">dev.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Projet Catan</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">dev.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Projet Catan</a></li>
+    <li>Architecture</li>
+    <li><a href="architecture.html">Architecture</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Architecture</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le but de ce chapitre est de spécifier l&#8217;architecture d&#8217;une famille de produits,
+dont le projet Les colons de Catane en fait partie.</p>
+</div>
+<div class="paragraph">
+<p>Il s&#8217;agit ici de choix génériques, qui peuvent s&#8217;appliquer à plusieurs projets.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Vous pouvez retrouver dans cette partie, l&#8217;ensemble des principes d&#8217;architectures que nous allons utiliser.
+Des librairies utilisés, en passant par les différents nœuds logiques, vous pouvez observer comment le serveur est gérer au niveau de son architecture.
+== Vue physique</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La vue physique a pour but de décrire comment devrait être déployé le logiciel selon des nœuds logiques.
+Ainsi que de définir comment ou plutôt par quel moyen les différents nœuds vont communiquer entre eux.
+Et enfin le dernier but de cette vue est de donner les différentes contraintes de déploiement,
+comme quelles librairies sont utilisées, quels sont les besoins matériels.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Au niveau de la vue physique, on retrouve donc 2 nœuds logiques qui sont :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Game Server</p>
+</li>
+<li>
+<p>Game Client</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ainsi ces 2 nœuds vont devoir comuniquer et différents protocols vont être utilisé.
+Ces 2 nœuds ne peuvent pas être réduit, on retrouvera forcément un serveur qui gère les parties, évite qu&#8217;il y ait de la fraude et des clients qui font office de passerelles entre le joueur (Personne physique) et le jeu (logiciel).
+On note pour le serveur, l&#8217;utilisation de Java Spring pour la gestion des sockets ainsi que le protocole HTTP pour la première connexion du client.
+On peut voir l&#8217;utilisation des 2 protocols coté serveur via ce diagramme de séquence :</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/NSqn3eCm38NXdLFa0eMTYQ47O66ggigodsWa9wPEmlb9XoxTdhxX_KkfvBKb7RRiAAOd9CJCsWH1eeDhFD4b99EcA1CvlsFjtXpJGViVZIJ6uVRxcEU2JqDct2FjJkcrkbLZqp8UIlcRVZo71LdwkW00" alt="diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Coté client, [PARTIE POUR LE RAY ERWAN]</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/NSqn3eCm38NXdLFa0eMTYQ5Nw5GnMF4JjUGuaPCWzVOD0qktfszu_rORUUj9fvSvQjOJ7CIYTaPWSSGc9uQ4bBahwa8UFzA6TyTIwFYZcJZ7yBW_rfLHD7yJh3s53gSq5oMxakzzsc0yrWy0" alt="diagram">
+</div>
+<div class="title">Figure 1. Exemple d&#8217;un diagramme de déploiement (niveau spécification)</div>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/NSqX3iCm38LXtbFa0cjvKS583r0q3LZsKnV9SI8dgRJRBmCZOqyVUFzM6tdhIQV373Nh1GdHMBiWI7HmYnU6X9IbA-f2pg_OXdV7KkZyevaaSxZzFjPLK3I_4wpT8vrEQRVHDCPSbEoRVZod3IPZVG00" alt="diagram">
+</div>
+<div class="title">Figure 2. Exemple d&#8217;un diagramme de déploiement (niveau instance)</div>
+</div>
+<div class="paragraph">
+<p>Ainsi, on peut voir que chaque nœuds Client est "dupliqué", on retrouve les mêmes librairies, les mêmes composants, les mêmes protocols.
+Pour les clients, on retrouve Angular qui gère l&#8217;interface utilisteur et Typescript qui s&#8217;occupe de la communication avec le serveur.
+Pour l&#8217;exemple, il y a 4 clients qui est le nombre maximal de joueur pour une seule partie.
+Sur le diagramme, un seul lien relie chaque client au serveur, mais c&#8217;est bien un lien différent pour chaque protocol (HTTP et WebSocket).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vue_de_la_fiabilité"><a class="anchor" href="#_vue_de_la_fiabilité"></a>Vue de la fiabilité</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Dans cette partie, vous allez présenter les différents choix architecturaux pour assurer la fiabilité du système.</p>
+</div>
+<div class="paragraph">
+<p>Vous devez aussi présenter les prévisions de fonctionnement dans des conditions limite&#160;:
+* Comment le système est initialisé&#160;?
+* Comment le système est arrêté&#160;?
+* Comment sont gérés les failles et le redémarrage du système&#160;?</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Utilisez des diagrammes d&#8217;activité UML pour décrire l&#8217;initialisation et l&#8217;arrêt du système.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_prévisions_de_fonctionnement"><a class="anchor" href="#_prévisions_de_fonctionnement"></a>Prévisions de fonctionnement</h3>
+<div class="sect3">
+<h4 id="_initialisation_du_systeme"><a class="anchor" href="#_initialisation_du_systeme"></a>INITIALISATION DU SYSTEME :</h4>
+<div class="paragraph">
+<p>Un client exécute le logiciel. Si le serveur est éteint, il s&#8217;allume.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arret_du_systeme"><a class="anchor" href="#_arret_du_systeme"></a>ARRET DU SYSTEME :</h4>
+<div class="paragraph">
+<p>Une fois que toutes les parties se déroulant sur le serveur sont terminées et qu&#8217;il n&#8217;y a plus de clients en attente de parties, le serveur s&#8217;arrête jusqu&#8217;à la prochaine exécution du logiciel par un client.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gestion_des_failles_et_du_redemarrage_du_systeme"><a class="anchor" href="#_gestion_des_failles_et_du_redemarrage_du_systeme"></a>GESTION DES FAILLES ET DU REDEMARRAGE DU SYSTEME :</h4>
+<div class="paragraph">
+<p>En cas d&#8217;arrêt non souhaité du serveur, par exemple avec une panne du serveur, le serveur est relancé, les parties sont détruites et les clients de la partie encore connectés sont remis dans la file d&#8217;attente des participants.<br>
+En cas d&#8217;arrêt inattendu d&#8217;un client jouant à une partie en cours, cette partie se termine immédiatement puis elle est détruite et les clients de la partie encore connectés sont remis dans la file d&#8217;attente des participants. Le client qui s&#8217;est arrêté devra ré-exécuter le logiciel pour se connecter de nouveau au serveur.<br>
+Si c&#8217;est le système entier qui s&#8217;arrête inopinément, un client devra l&#8217;exécuter à nouveau pour relancer le système.<br></p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/9Own3i8m44Ft-mgFwI-q0vMOc5bP8kg8az84vQv0-NhQijdoi-pHF3PVvYpYwfcu57MDMR_HjHRK15lDEUDMH0vOf3zdPN7mm_lYX3y8gydViN4GqOHWR2ysgE7eSCAfsxc2K6edG7_z4qTiWp0R4LRQ7fhNfx1CclRDJSkukUtb3m00" alt="diagram">
+</div>
+<div class="title">Figure 3. Diagramme d&#8217;activité de l&#8217;initialisation du système</div>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/BOux3i8m44JxFSMKyHMW83T0WfR6WiLPoJzv5wBSFdQK-itCcrdDD_kbI6HYaV7Sr3X1hLIyCj71YTP5EfmyWayCKKX6RIKqLiNz0Ozt5CusqEh590TyIyDPkBa1fetL4UVFkPQB8xeSAbiOoktFxJgSfHBDFTYFxG00" alt="diagram">
+</div>
+<div class="title">Figure 4. Diagramme d&#8217;activité de l&#8217;arrêt du système</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vue_du_développement"><a class="anchor" href="#_vue_du_développement"></a>Vue du développement</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Décrivez ici l&#8217;organisation du code source.
+Plutôt que décrire les paquetages Java ou Typescript, décrivez plutôt les artefacts Maven et les modules Node.js.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Utilisez un <a href="https://www.uml-diagrams.org/package-diagrams-overview.html">Diagramme de paquetages</a>
+pour décrire l&#8217;organisation du code source.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/VP513i8W44Ntd6BIlHp0XMdI8tW0C-9eY8Ks39M5uUvIQggaeIic_F-6bz2oH-SdquiHrHCV18r2ZxOHRm5GtXsOt8jSau8vhCJolBG06NWafUzQNJZt5ohkiDrWp60pg_Auabyq7x-r8ELfRS8H9YQUEt4h7-XQDK-Px7fDrfVQeNoyHcwamvvq-9SEXNGKBTbR-eqF" alt="diagram">
+</div>
+<div class="title">Figure 5. Organisation des modules</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vue_logique"><a class="anchor" href="#_vue_logique"></a>Vue logique</h2>
+<div class="sectionbody">
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/TL4x3eCm3Drz2ekD8HVeXDIvKzc00JLk6oabbMlQwpULWK8KDh-FNvwSwYKzo_ZmuEagA07PtUw2rZ5Tn8K1e3aJluaxQ8xUqI1nE3bhFNrwfWus20sgkmvgLeG7B5fffO2iMXgS7_ax5yQWckkWJ1gPLN-HwrwBEwsxtLQqbpsffHcVCNwwnghnpAH7I5EpwcxZYWORF-WB" alt="diagram">
+</div>
+<div class="title">Figure 6. Diagramme de composants de la vue logique</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vue_des_processus"><a class="anchor" href="#_vue_des_processus"></a>Vue des processus</h2>
+<div class="sectionbody">
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/RO_12SCm34NFyHHQe1cWfq0fXTA4GBA0i4LgajX1idCfsQTxTB4wBhsK7YNzzpwg9227E4zgGJtYGD2oroGIfIDUYH-g-5xwEnEQRc7hXhGkhhZYPu8ZdBMFWS2GW7WzKX0eor8Lc_eLj8dGTi5fTqWkgT6wvBZWJ3Mw5EL_OBC3U-RaNM0_4JS9kY6uWtqzPyfyhjnKHSwahzu0" alt="diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vue_technique_traduction_de_uml_en_code_source"><a class="anchor" href="#_vue_technique_traduction_de_uml_en_code_source"></a>Vue technique : traduction de UML en code source</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nous allons simplement nous répartir le travail pour que chacun code une partie du projet.
+L&#8217;idéal serait que tout le monde "touche à tout" et donc il serait interessent de ne pas distribuer simplement chaque classe à chacun.</p>
+</div>
+<div class="sect2">
+<h3 id="_règles_de_traduction_des_types_de_base"><a class="anchor" href="#_règles_de_traduction_des_types_de_base"></a>Règles de traduction des types de base</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Traduction des types de base</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">UML</th>
+<th class="tableblock halign-left valign-top">Java</th>
+<th class="tableblock halign-left valign-top">TypeScript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>D&#8217;après : <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" class="bare">https://www.typescriptlang.org/docs/handbook/basic-types.html</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conventions_de_codage"><a class="anchor" href="#_conventions_de_codage"></a>Conventions de codage</h3>
+<div class="paragraph">
+<p>Ce projet respecte les conventions JAVA distribuées par Oracle. Cela nous permet d&#8217;affirmer que notre code est "propre" selon les normes java présentes à cette adresse : <a href="https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html" class="bare">https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_règles_de_traduction_des_composants"><a class="anchor" href="#_règles_de_traduction_des_composants"></a>Règles de traduction des composants</h3>
+<div class="paragraph">
+<p>Du côté serveur, on se retrouver avec 2 composants dont un qui ne sera pas codé qui est JavaSpring.
+Le composant principal que nous nommons Server est l&#8217;ensemble des GameManager, GameControler, GameFacade&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Du côté client, on va également se retrouver avec 2 composants dont un qui ne sera aussi pas codé et qui gère les webSockets, il n&#8217;a pas de nom.
+On va devoir également coder le composant principal que nous nommons, incroyable nom, Client qui regroupe l&#8217;ensemble des GameManager, GameControler, GameFacade&#8230;&#8203;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_règles_de_traduction_des_classes"><a class="anchor" href="#_règles_de_traduction_des_classes"></a>Règles de traduction des classes</h3>
+<div class="paragraph">
+<p>Nous allons interpreter les diagrames UML tout simplement avec un package donne un package, une classe donne une classe&#8230;&#8203;
+Chaque classe utilisera une référence à une interface et non une classe pour minimiser le couplage.</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuIf8JCvEJ4zLA4ajBgdcuipCAqajIajCJbK80GdKSd4cvoGM5uDvdha5EGgf5IMfUId5CEbQBWSW5sWG0000" alt="diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Ainsi, on va se retrouver avec un manager, ce dernier permet coté serveur de gérer l&#8217;ensemble des parties et de faire le lien entre ces dernières et Java Spring, et du coté client de faire le lien entre la librairie de websocket et la partie.
+Pour la partie, c&#8217;est le contrôleur qui va gérer cela, faire le lien entre le NetworkControler, la GameFacade et la CommandFactory.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NetworkControler : Le contrôleur qui s&#8217;occupe de la partie réseau, avec ce dernier, aucune commande ni ressource du GameControler ne sort.</p>
+</li>
+<li>
+<p>GameFacade : Du design pattern Facade, cette classe permet de faire le lien entre le GameControler et le package du jeu. Cela permet de minimiser le couplage.</p>
+</li>
+<li>
+<p>CommandFactory : Du designPattern Factory, cette classe permet de fabriquer les Commands (cf Conception).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_règles_de_traduction_des_associations"><a class="anchor" href="#_règles_de_traduction_des_associations"></a>Règles de traduction des associations</h3>
+<div class="paragraph">
+<p>Les associations entre les classes / interfaces, sont assez simple :</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/ROyn2e0m34NtdY8u2XtKJauzX1SeDOAWJJ5n4kzkQRieZk-5_o2MnHroxfjQW-2nE8ym8SjrAxyvvWmz90ma248HnkfM1azx9COPQ84kQwNAiTMwyhixlCBc9so-uK6RCYrjazjDiatL5iESFdW0" alt="diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Ainsi lorsqu&#8217;il n&#8217;y a pas de cardinalité, c&#8217;est qu&#8217;il y a une association de 1 pour 1.
+Quoi qu&#8217;il arrive, dans notre serveur, il n&#8217;y aura qu&#8217;un seul GameManager et autant de GameControler qu&#8217;il y a de partie.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ceci est une conclusion hative; bien qu&#8217;elle existe, elle ne doit pas être utilisée dans un quelconque but de productivité ou de compréhension de ce projet. Nous remercions tous nos proches d&#8217;avoir pu contribuer de près ou de loin à ce fabuleux et merveilleux projet. :) Voilà merci à toutes et à tous. Bisouuuuuh UwU. A REVOIR /!\</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

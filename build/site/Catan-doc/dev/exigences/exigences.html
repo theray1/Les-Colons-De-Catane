@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Spécification des exigences :: Projet Catane - Website - Le meilleur groupe :) (car il y a Nathan)</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://naomod.univ-nantes.io/ooad/projet-2022">Projet Catane - Website - Le meilleur groupe :) (car il y a Nathan)</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Catan-doc" data-version="dev">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Projet Catan</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Analyse du domaine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../analyse/analyse.html">Analyse du domaine</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spécification des composants</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../composants/composants.html">composants.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Conception détaillée</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../conception/conception.html">Conception détaillée</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spécification des exigences</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="exigences.html">Spécification des exigences</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Projet Catan</span>
+    <span class="version">dev.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Projet Catan</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">dev.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Projet Catan</a></li>
+    <li>Spécification des exigences</li>
+    <li><a href="exigences.html">Spécification des exigences</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Spécification des exigences</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ce chapitre décrit les exigences du projet «Les colons de Catane». Il suit la norme IEEE 830-1998.</p>
+</div>
+<div class="sect2">
+<h3 id="_avant_propos"><a class="anchor" href="#_avant_propos"></a>Avant-propos</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Identifier le produit dont les exigences logicielles sont spécifiées dans ce document, y compris le numéro de révision ou de version. Décrire l&#8217;étendue du produit couvert par ce SRS, en particulier si ce SRS ne décrit qu&#8217;une partie du système ou un seul sous-système.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>L&#8217;objectif de ce document est de décrire les spécifications des exigences du projet "Les colons de Catane" pour les étudiants en génie logiciel.</p>
+</div>
+<div class="paragraph">
+<p>Le public visé par cette spécification comprend les développeurs potentiels de l&#8217;application, ainsi que les personnes chargées de l&#8217;évaluation technique.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_définitions_acronymes_et_abréviations"><a class="anchor" href="#_définitions_acronymes_et_abréviations"></a>Définitions, acronymes et abréviations</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Décrivez toutes les normes ou conventions typographiques qui ont été suivies lors de la rédaction de ce SRS, telles que les polices de caractères ou les mises en évidence qui ont une signification particulière. Par exemple, indiquez si les priorités des exigences de niveau supérieur sont supposées être héritées par les exigences détaillées, ou si chaque énoncé d&#8217;exigence doit avoir sa propre priorité.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Aucune jusqu&#8217;à présent.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_public_visé_et_suggestions_de_lecture"><a class="anchor" href="#_public_visé_et_suggestions_de_lecture"></a>Public visé et suggestions de lecture</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ce document s&#8217;adresse aux membres du groupe de ce projet, ainsi qu&#8217;à la personne chargée de son évaluation.</p>
+</div>
+<div class="paragraph">
+<p>Décrire les différents types de lecteurs auxquels le document est destiné, tels que les développeurs, les chefs de projet, le personnel du marketing, les utilisateurs, les testeurs et les rédacteurs de la documentation.</p>
+</div>
+<div class="paragraph">
+<p>Décrivez le contenu et l&#8217;organisation du reste de ce SRS. Suggérer un ordre de lecture du document, en commençant par les sections d&#8217;aperçu et en poursuivant par les sections les plus pertinentes pour chaque type de lecteur.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_portée_du_projet"><a class="anchor" href="#_portée_du_projet"></a>Portée du projet</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Fournissez une brève description du logiciel spécifié et de son objectif, y compris les avantages, les objectifs et les buts pertinents. Reliez le logiciel aux objectifs de l&#8217;entreprise ou aux stratégies commerciales. Si vous disposez d&#8217;un document distinct sur la vision et la portée, faites-y référence plutôt que d&#8217;en reproduire le contenu ici.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le système logiciel à produire est une version simplifiée du jeu de plateau Les colons de Catane, qui sera désigné par le terme "Les colons de Catane" dans le présent document.</p>
+</div>
+<div class="paragraph">
+<p>Le système Les colons de Catane permettra à des joueurs de différents endroits de s&#8217;affronter dans des parties courtes et intensives.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_références"><a class="anchor" href="#_références"></a>Références</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>IEEE Standard 830-1993: IEEE Recommended Practice for Software Requirements Specifications</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Énumérez tous les autres documents ou adresses Web auxquels ce SRS fait référence.
+Il peut s&#8217;agir de guides de style d&#8217;interface utilisateur, de contrats, de normes, de spécifications des exigences du système, de documents de cas d&#8217;utilisation ou d&#8217;un document sur la vision et la portée.
+Fournissez suffisamment d&#8217;informations pour que le lecteur puisse accéder à une copie de chaque référence, notamment le titre, l&#8217;auteur, le numéro de version, la date et la source ou l&#8217;emplacement.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vue_densemble"><a class="anchor" href="#_vue_densemble"></a>Vue d’ensemble</h3>
+<div class="paragraph">
+<p>Le reste de ce document contient une description globale du système logiciel Les colons de Catane (section <a href="#description">Description générale</a>, les exigences fonctionnelles spécifiques (section <a href="#fonctional">[fonctional]</a>) et les exigences non-fonctionnelles du système (voir <a href="#nonfonctional">[nonfonctional]</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_organisation_du_chapitre"><a class="anchor" href="#_organisation_du_chapitre"></a>Organisation du chapitre</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="description"><a class="anchor" href="#description"></a>Description générale</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_perspectives_du_produit"><a class="anchor" href="#_perspectives_du_produit"></a>Perspectives du produit</h3>
+<div class="paragraph">
+<p>Les colons de Catane est un jeu de plateau où plusieurs joueurs s&#8217;affrontent.
+Le logiciel Les colons de Catane doit permettre aux joueurs qui sont connectés à Internet d&#8217;utiliser leurs appareils connectés pour jouer.
+Ainsi, "Les colons de Catane" est une version électronique en ligne du jeu de plateau.</p>
+</div>
+<div class="paragraph">
+<p>Bien que le système soit distribué et organisé en différents composants, les joueurs doivent le percevoir comme un seul logiciel.
+La figure <a href="#deployment">Figure 1</a> présente l&#8217;architecture globale du logiciel.
+Les joueurs interagissent avec un client Web, qui utilise le protocole HTTP pour communiquer avec (au maximum) un serveur de jeu.
+Les serveurs utilisent le protocole TCP/IP pour communiquer avec un serveur de gestion de base de données, qui stocke toutes les données du logiciel.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Améliorez le diagramme de déploiement pour qu&#8217;il représente le système que vous allez développer.</p>
+</div>
+<div class="paragraph">
+<p>Pour plus de détails sur les diagrammes de déploiement&#160;:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.uml-diagrams.org/deployment-diagrams-overview.html" class="bare">https://www.uml-diagrams.org/deployment-diagrams-overview.html</a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="deployment" class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/NO_D2eD030RlUOgyGEZTawr2QQ6mi4BFKID8rxNinbvAtxqhsnymrndc8sLK3hfC3i3FlM3bHl6AJy1qYOm3TufNQJE0LzQiX8U4hNRaIJ99NXPhLcuvobQj3nUxIhyoafD1wLikiAdCxcIGrd4xTpVH21z8ovt-vGBFPWzGYk_J7sy0" alt="diagram">
+</div>
+<div class="title">Figure 1. UML Diagramme de déploiement</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Décrivez le contexte et l&#8217;origine du produit spécifié dans ce SRS.
+Par exemple, indiquez si ce produit est un membre suivant d&#8217;une famille de produits, un remplacement de certains systèmes existants ou un nouveau produit autonome.</p>
+</div>
+<div class="paragraph">
+<p>Si le SRS définit un composant d&#8217;un système plus vaste, faites le lien entre les exigences du système plus vaste et la fonctionnalité de ce logiciel et identifiez les interfaces entre les deux.
+Un diagramme simple qui montre les principaux composants du système global, les interconnexions des sous-systèmes et les interfaces externes peut être utile.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fonctionnalités_du_produit"><a class="anchor" href="#_fonctionnalités_du_produit"></a>Fonctionnalités du produit</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Résumez les principales fonctions que le produit doit exécuter ou doit permettre à l&#8217;utilisateur d&#8217;exécuter. Les détails seront fournis à la section 3, aussi seul un résumé de haut niveau (comme une liste à puces) est nécessaire ici.</p>
+</div>
+<div class="paragraph">
+<p>Organisez les fonctions de manière à ce qu&#8217;elles soient compréhensibles pour tout lecteur du SRS.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le logiciel Les colons de Catane doit assurer deux fonctions principales :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Création de jeu : permettre à deux joueurs de se découvrir et de commencer une partie.</p>
+</li>
+<li>
+<p>Le jeu&#160;: permettre aux joueurs de jouer effectivement à Les colons de Catane jusqu&#8217;à la victoire de l&#8217;un d&#8217;entre eux.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Il s&#8217;agit ici d&#8217;une vue générale des fonctionnalités et non de leur description détaillée.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Une image des principaux groupes d&#8217;exigences connexes et de leurs relations, comme une carte conceptuelle, est souvent utile.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_caractéristiques_et_classes_dutilisateurs"><a class="anchor" href="#_caractéristiques_et_classes_dutilisateurs"></a>Caractéristiques et classes d&#8217;utilisateurs</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Identifiez les différentes classes d&#8217;utilisateurs qui, selon vous, utiliseront ce produit.
+Les classes d&#8217;utilisateurs peuvent être différenciées en fonction de la fréquence d&#8217;utilisation, du sous-ensemble de fonctions du produit utilisé, de l&#8217;expertise technique, des niveaux de sécurité ou de privilège, du niveau d&#8217;éducation ou de l&#8217;expérience.
+Décrivez les caractéristiques pertinentes de chaque classe d&#8217;utilisateurs.  Certaines exigences peuvent ne concerner que certaines classes d&#8217;utilisateurs.
+Distinguez les classes d&#8217;utilisateurs les plus importantes pour ce produit de celles qui sont moins importantes à satisfaire.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le logiciel Les colons de Catane n&#8217;a qu&#8217;une seule classe d&#8217;utilisateurs : les joueurs.
+Les joueurs doivent utiliser la même interface utilisateur pour jouer les uns contre les autres.
+Le logiciel ne garde pas trace de l&#8217;évolution d&#8217;un joueur, du nombre de partie qu&#8217;il a joué, etc&#8230;&#8203; et ne permet pas de différencier de niveaux de joueurs, par exemple.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_environnement_opérationnel"><a class="anchor" href="#_environnement_opérationnel"></a>Environnement opérationnel</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Décrivez l&#8217;environnement dans lequel le logiciel fonctionnera, y compris la plate-forme matérielle, le système d&#8217;exploitation et ses versions, ainsi que tout autre composant logiciel ou application avec lequel il doit coexister pacifiquement.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le logiciel Les colons de Catane doit fonctionner sur tout système d&#8217;exploitation populaire et récent&#160;: Linux, Windows, ou MacOS.
+Le client Web devrait fonctionner sur tout navigateur Web récent&#160;: Firefox, Chrome, Safari, ou Edge.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contraintes_de_conception_et_de_mise_en_œuvre"><a class="anchor" href="#_contraintes_de_conception_et_de_mise_en_œuvre"></a>Contraintes de conception et de mise en œuvre</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Décrivez tous les éléments ou problèmes qui limiteront les options disponibles pour les développeurs. Il peut s&#8217;agir de politiques d&#8217;entreprise ou de réglementation, de limitations matérielles (exigences en matière de temps et de mémoire), d&#8217;interfaces avec d&#8217;autres applications, de technologies, d&#8217;outils et de bases de données spécifiques à utiliser, d&#8217;opérations parallèles, d&#8217;exigences linguistiques, de protocoles de communication, de considérations de sécurité, de conventions de conception ou de normes de programmation (par exemple, si l&#8217;organisation du client est responsable de la maintenance du logiciel livré).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_langages_de_programmation"><a class="anchor" href="#_langages_de_programmation"></a>Langages de programmation</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le serveur de jeu doit être développé en Java (version ≥ 11), en utilisant le <a href="https://spring.io" class="bare">https://spring.io</a> [Spring Framework].</p>
+</li>
+<li>
+<p>Le client doit être développé en TypeScript (version ≥ 4.0), en utilisant le <a href="https://angular.io" class="bare">https://angular.io</a> [Angular Framework].</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_langage_de_conception"><a class="anchor" href="#_langage_de_conception"></a>Langage de conception</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Les documents sur le développement du logiciel doivent être écrits dans le format Asciidoc.</p>
+</li>
+<li>
+<p>Les diagrammes UML d&#8217;analyse, conception et mise en œuvre devront être réalisés en PlantUML.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conception"><a class="anchor" href="#_conception"></a>Conception</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_mise_en_œuvre"><a class="anchor" href="#_mise_en_œuvre"></a>Mise en œuvre</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Les tests dynamiques doivent utiliser JUnit (version &gt;= 5.0) et Jasmine (version &gt;= 3.5.0).</p>
+</li>
+<li>
+<p>Le code doit journaliser ses principales opérations en utilisant <a href="https://www.slf4j.org" class="bare">https://www.slf4j.org</a> [SLF4J].</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_outils_de_construction"><a class="anchor" href="#_outils_de_construction"></a>Outils de construction</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tous les artefacts logiciels doivent utiliser un outil de construction : Maven ou Groovy pour Java, npm pour TypeScript.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_outils_de_développement"><a class="anchor" href="#_outils_de_développement"></a>Outils de développement</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_bibliothèques_et_composants_logiciels"><a class="anchor" href="#_bibliothèques_et_composants_logiciels"></a>Bibliothèques et composants logiciels</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vérification"><a class="anchor" href="#_vérification"></a>Vérification</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Les doubles tests doivent être utilisés pour tester chaque composant indépendamment.</p>
+</li>
+<li>
+<p>Chaque test unitaire doit décrire son intention.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_documentation_utilisateur"><a class="anchor" href="#_documentation_utilisateur"></a>Documentation utilisateur</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Dressez la liste des composants de la documentation utilisateur (tels que les manuels d&#8217;utilisation, l&#8217;aide en ligne et les didacticiels) qui seront fournis avec le logiciel. Identifiez tous les formats ou normes connus de livraison de la documentation utilisateur.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Aucune documentation utilisateur n&#8217;est requise pour la première version du logiciel.</p>
+</div>
+<div class="sect2">
+<h3 id="_hypothèses_et_dépendances"><a class="anchor" href="#_hypothèses_et_dépendances"></a>Hypothèses et dépendances</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Dressez la liste de tous les facteurs supposés (par opposition aux faits connus) qui pourraient affecter les exigences énoncées dans le SRS. Il peut s&#8217;agir de composants tiers ou commerciaux que vous prévoyez d&#8217;utiliser, de problèmes liés à l&#8217;environnement de développement ou d&#8217;exploitation, ou de contraintes. Le projet pourrait être affecté si ces hypothèses sont incorrectes, ne sont pas partagées ou changent. Identifiez également toutes les dépendances du projet vis-à-vis de facteurs externes, tels que les composants logiciels que vous avez l&#8217;intention de réutiliser à partir d&#8217;un autre projet, à moins qu&#8217;elles ne soient déjà documentées ailleurs (par exemple, dans le document de vision et de portée ou dans le plan de projet).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Aucun jusqu&#8217;à présent.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exigences_reportées"><a class="anchor" href="#_exigences_reportées"></a>Exigences reportées</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Énumérer les exigences qui peuvent être réalisées dans des versions futures du système.
+Les versions futures du système comprendront l’utilisation d’un mécanisme de persistance de données ainsi que différentes interfaces utilisateur: web, IHM classique, etc.
+Elles permettront aussi l’accès distant à travers une interface REST.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exigences_en_matière_dinterface_externe"><a class="anchor" href="#_exigences_en_matière_dinterface_externe"></a>Exigences en matière d&#8217;interface externe</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_interfaces_utilisateur"><a class="anchor" href="#_interfaces_utilisateur"></a>Interfaces utilisateur</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Décrivez les caractéristiques logiques de chaque interface entre le produit logiciel et les utilisateurs.</p>
+</div>
+<div class="paragraph">
+<p>Il peut s&#8217;agir d&#8217;exemples d&#8217;images d&#8217;écran, de normes d&#8217;interface graphique ou de guides de style de famille de produits à respecter, de contraintes de disposition des écrans, de boutons et de fonctions standard (p. ex., aide) qui apparaîtront sur chaque écran, de raccourcis clavier, de normes d&#8217;affichage des messages d&#8217;erreur, etc.</p>
+</div>
+<div class="paragraph">
+<p>Définissez les composants logiciels pour lesquels une interface utilisateur est nécessaire.
+Les détails de la conception de l&#8217;interface utilisateur doivent être documentés dans une spécification d&#8217;interface utilisateur distincte.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interfaces_matérielles"><a class="anchor" href="#_interfaces_matérielles"></a>Interfaces matérielles</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Décrire les caractéristiques logiques et physiques de chaque interface entre le produit logiciel et les composants matériels du système.
+Cela peut inclure les types de dispositifs pris en charge, la nature des interactions de données et de contrôle entre le logiciel et le matériel, et les protocoles de communication à utiliser.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le logiciel n&#8217;interagit pas directement avec un quelconque dispositif matériel.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interfaces_logicielles"><a class="anchor" href="#_interfaces_logicielles"></a>Interfaces logicielles</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Décrivez les connexions entre ce produit et d&#8217;autres composants logiciels spécifiques (nom et version), y compris les bases de données, les systèmes d&#8217;exploitation, les outils, les bibliothèques et les composants commerciaux intégrés. Identifiez les éléments de données ou les messages qui entrent dans le système et qui en sortent et décrivez le but de chacun. Décrivez les services nécessaires et la nature des communications.</p>
+</div>
+<div class="paragraph">
+<p>Se référer aux documents qui décrivent les protocoles détaillés des interfaces de programmation d&#8217;applications. Identifiez les données qui seront partagées entre les composants logiciels.</p>
+</div>
+<div class="paragraph">
+<p>Si le mécanisme de partage des données doit être mis en œuvre d&#8217;une manière spécifique (par exemple, l&#8217;utilisation d&#8217;une zone de données globale dans un système d&#8217;exploitation multitâche), spécifiez-le comme une contrainte de mise en œuvre.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>La partie client du logiciel doit fonctionner sur des navigateurs web, tandis que la partie serveur doit interagir avec une base de données par le biais de l&#8217;API Java Persistence (JPA).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interfaces_de_communication"><a class="anchor" href="#_interfaces_de_communication"></a>Interfaces de communication</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Décrivez les exigences associées à toute fonction de communication requise par ce produit, notamment le courrier électronique, le navigateur Web, les protocoles de communication des serveurs de réseau, les formulaires électroniques, etc. Définissez tout formatage pertinent des messages. Identifiez les normes de communication qui seront utilisées, telles que FTP ou HTTP. Précisez les problèmes de sécurité ou de cryptage des communications, les taux de transfert des données et les mécanismes de synchronisation.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Les communications entre le client et le serveur de jeu doivent utiliser des Websockets.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="anchor" href="#features"></a>Exigences fonctionnelles</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Décrire les exigences fonctionnelles du système qui peuvent être exprimées et langage naturel. Pour plusieurs applications, c’est la partie principale de la SEL et son organisation doit, par conséquent, être bien réfléchie. Elle est habituellement hiérarchisée par caractéristiques, mais elle peut l’être, par utilisateur ou par sous-système. Les exigences fonctionnelles peuvent inclure les caractéristiques, les capacités et la sécurité.</p>
+</div>
+<div class="paragraph">
+<p>Lorsque des outils de développement, tels des référentiels d’exigences ou des outils de modélisation sont utilisés, on peut référer à ces données en indiquant l’endroit et le nom de cet outil]</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ici, il ne s&#8217;agit plus de décrire le domaine métier, mais de spécifier ce que le système <strong>doit</strong> faire.</p>
+</div>
+<div class="paragraph">
+<p>N&#8217;oubliez pas qu&#8217;il s&#8217;agit d&#8217;une spécification de que le système <strong>doit</strong> faire et non pas de <strong>comment</strong> il le fait.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_fonctionnalité_a"><a class="anchor" href="#_fonctionnalité_a"></a>Fonctionnalité A</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ajoutez la description de la fonctionnalité "A".</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Ne dites pas vraiment "Fonctionnalité A". Indiquez le nom de la fonctionnalité en quelques mots seulement.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_description_et_priorité"><a class="anchor" href="#_description_et_priorité"></a>Description et priorité</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Fournissez une brève description de la fonctionnalité et indiquez si elle a une priorité élevée, moyenne ou faible.
+Vous pouvez également inclure des évaluations spécifiques des éléments de priorité, comme les avantages, les pénalités, les coûts et les risques (chacun étant évalué sur une échelle relative allant de 1 à 9).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_séquences_de_stimulusréponse"><a class="anchor" href="#_séquences_de_stimulusréponse"></a>Séquences de Stimulus/Réponse</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Liste des séquences d&#8217;actions de l&#8217;utilisateur et des réponses du système qui stimulent le comportement défini pour cette fonctionnalité. Celles-ci correspondront aux éléments de dialogue associés aux cas d&#8217;utilisation.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exigences_fonctionnelles"><a class="anchor" href="#_exigences_fonctionnelles"></a>Exigences fonctionnelles</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s&#8217;agit des capacités logicielles qui doivent être présentes pour permettre à l&#8217;utilisateur d&#8217;effectuer les services fournis par la fonction ou d&#8217;exécuter le cas d&#8217;utilisation.</p>
+</div>
+<div class="paragraph">
+<p>Indiquez comment le produit doit réagir aux conditions d&#8217;erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires.</p>
+</div>
+<div class="paragraph">
+<p>Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.</p>
+</div>
+<div class="paragraph">
+<p>Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>REQ-1:</p>
+</li>
+<li>
+<p>REQ-2:</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_sous_la_forme_dun_cas_dutilisation"><a class="anchor" href="#_description_sous_la_forme_dun_cas_dutilisation"></a>Description sous la forme d&#8217;un cas d&#8217;utilisation</h4>
+<table class="tableblock frame-sides grid-all stretch">
+<caption class="title">Table 1. connexion</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Item</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>#</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ce cas d&#8217;utilisation relève de la connexion au serveur par le client.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cas d&#8217;utilisation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connexion au serveur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition de succès</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le client a rejoint un lobby (sorte de salle d&#8217;attente pour les joueurs avant l&#8217;initialisation de la partie)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition d&#8217;échec</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le client n’a pas pu se connecter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Événement déclencheur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L’utilisateur désire se connecter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fréquence</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Une ou plusieurs fois par session</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pré-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un serveur opérationnel</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Post-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si succès alors il est identifié et connecté au serveur</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scénario nominal</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le client établit une connexion entre le client et le serveur</p>
+</li>
+<li>
+<p>Le client s’identifie</p>
+</li>
+<li>
+<p>Le client rejoint un lobby disponible</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creation_de_partie"><a class="anchor" href="#_creation_de_partie"></a>Creation de partie</h3>
+<div class="paragraph">
+<p>Le serveur s&#8217;assure d&#8217;avoir des parties de disponible pour les clients se connectants.</p>
+</div>
+<div class="sect3">
+<h4 id="_description_sous_la_forme_dun_cas_dutilisation_2"><a class="anchor" href="#_description_sous_la_forme_dun_cas_dutilisation_2"></a>Description sous la forme d&#8217;un cas d&#8217;utilisation</h4>
+<table class="tableblock frame-sides grid-all stretch">
+<caption class="title">Table 2. uc-createGame</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Item</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>#</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cas d&#8217;utilisation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Création de la partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Objectif contextuel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Créer une partie pour accueillir des clients</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Niveau</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition de succès</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Une partie est en attente d&#8217;initialisation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition d&#8217;échec</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur ne peut pas créer de partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acteurs principaux:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Événement déclencheur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plus de partie disponible pour accueillir des clients</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pré-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un client est en recherche de partie</p>
+</li>
+<li>
+<p>Plus de partie disponible</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Post-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Une partie créée et en attente d&#8217;initialisation</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scénario nominal</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Le serveur décide de créer une nouvelle partie.
+Il crée la partie et l&#8217;ajoute à sa liste de partie.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Extension</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>2.a : Le serveur n&#8217;arrive pas à créer la partie</p>
+</li>
+<li>
+<p>2.a.1 : Le serveur envoie un message d&#8217;erreur (sous forme de commande) au joueur essayant de se connecter</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Problèmes ouverts</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Le joueur demande lui même de créer une partie</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contraintes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur n&#8217;a plus de place pour créer une partie</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gamejoin"><a class="anchor" href="#_gamejoin"></a>gameJoin</h3>
+<div class="paragraph">
+<p>Un client peut demander au serveur de le placer dans une partie</p>
+</div>
+<div class="sect3">
+<h4 id="_description_sous_la_forme_dun_cas_dutilisation_3"><a class="anchor" href="#_description_sous_la_forme_dun_cas_dutilisation_3"></a>Description sous la forme d&#8217;un cas d&#8217;utilisation</h4>
+<table class="tableblock frame-sides grid-all stretch">
+<caption class="title">Table 3. uc-gameJoin</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Item</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>#</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rejoindre une partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cas d&#8217;utilisation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Joindre une partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Niveau</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition de succès</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le client est dans une partie en attente de lancement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition d&#8217;échec</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aucune partie disponible ou déconnexion du client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acteurs principaux:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acteurs secondaires</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Événement déclencheur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le client connecté attend</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fréquence</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Une fois par partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pré-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un client en attente de partie ET un serveur opérationnel</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Post-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Le client est dans une partie avec un ou plusieurs autres clients</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scénario nominal</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le client choisi sa partie non démarré et non pleine. Il envoie au serveur la commande correspondante (1)</p>
+</li>
+<li>
+<p>Le serveur associe le client à une partie.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Extensions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>(1) : Si le serveur n’a plus de partie disponible, il en crée une nouvelle et associe le client à cette partie</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_initgame"><a class="anchor" href="#_initgame"></a>initGame</h3>
+<div class="paragraph">
+<p>Avant de démarrer, une partie doir etre initialisée</p>
+</div>
+<div class="sect3">
+<h4 id="_description_sous_la_forme_dun_cas_dutilisation_4"><a class="anchor" href="#_description_sous_la_forme_dun_cas_dutilisation_4"></a>Description sous la forme d&#8217;un cas d&#8217;utilisation</h4>
+<table class="tableblock frame-sides grid-all stretch">
+<caption class="title">Table 4. uc-initGame</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Item</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cas d&#8217;utilisation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initialiser la partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Objectif contextuel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lancer l&#8217;execution du 1er tour sur une partie initialisée</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Portée</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur et les Clients</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition de succès</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La partie est initialisée dans l&#8217;état juste avant le 1er tour. Les clients ont reçu toutes les commandes les concernant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition d&#8217;échec</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La partie n&#8217;est est initialisée dans l&#8217;état juste avant le 1er tour ou les clients ont reçu toutes les commandes les concernant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acteurs principaux:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur et les clients dans la partie concernée</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Événement déclencheur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">la partie a été créer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fréquence</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quand il y a 4 joueurs dans la partie.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pré-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La partie a été créer</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Post-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La partie est initialisée et prete pour le 1er tour</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scénario nominal</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le serveur execute la commande d&#8217;initialisation de partie.</p>
+</li>
+<li>
+<p>Le serveur envoie les commandes nécéssaire pour synchroniser les clients.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_startgame"><a class="anchor" href="#_startgame"></a>startGame</h3>
+<div class="paragraph">
+<p>Quand une partie est pleine, le serveur démarre la partie.</p>
+</div>
+<div class="sect3">
+<h4 id="_description_sous_la_forme_dun_cas_dutilisation_5"><a class="anchor" href="#_description_sous_la_forme_dun_cas_dutilisation_5"></a>Description sous la forme d&#8217;un cas d&#8217;utilisation</h4>
+<table class="tableblock frame-sides grid-all stretch">
+<caption class="title">Table 5. uc-startGame</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Item</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cas d&#8217;utilisation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Démarrer la partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Objectif contextuel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lancer l&#8217;execution du 1er tour sur une partie initialisée</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Portée</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur et les Clients</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition de succès</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le 1er tour est démarré sur le serveur et les clients dans la partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition d&#8217;échec</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tout les clients et le serveur ne sont pas en train d&#8217;executer le 1er tour</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acteurs principaux:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur et les clients dans la partie concernée</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Événement déclencheur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">la partie a dans son lobby 4 clients connectés</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fréquence</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A chaque partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pré-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La partie a été initialisée</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Post-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La 1er tour est en cours sur le serveur et les Clients</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scénario nominal</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le serveur envoie la commande de début de partie quand il y 4 joueurs dans une partie initialisée</p>
+</li>
+<li>
+<p>Le serveur envoie la commande de début de tour.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cas d&#8217;utilisation supérieur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initialiser la partie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cas d&#8217;utilisation subordonnés</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tour de jeu</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_playgame"><a class="anchor" href="#_playgame"></a>playGame</h3>
+<div class="paragraph">
+<p>Description complete d&#8217;un tour de jeux</p>
+</div>
+<div class="sect3">
+<h4 id="_description_sous_la_forme_dun_cas_dutilisation_6"><a class="anchor" href="#_description_sous_la_forme_dun_cas_dutilisation_6"></a>Description sous la forme d&#8217;un cas d&#8217;utilisation</h4>
+<div class="paragraph">
+<div class="title">uc-playTurn</div>
+<p>Le tour de jeu est une période pendant laquelle un joueur actif peut décider d’interagir avec le jeu.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Item</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cas d&#8217;utilisation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tour de jeu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Alias</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">à compléter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Objectif contextuel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permettre à la partie de progresser, à l’échelle d’un tour de jeu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Portée</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le serveur et les clients dans la partie en cours.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition de succès</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le client actif a effectué toutes les actions obligatoires de son tour et ne souhaite plus effectuer d’actions optionnelles / facultatives, ou la partie se finit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Condition d&#8217;échec</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le client actif n’est pas en mesure de jouer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acteurs principaux:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clients, Serveur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Événement déclencheur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le tour précédent est terminé, ou la préparation est terminée.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fréquence</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un tour de jeu par joueur, par tour de table</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pré-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La connexion bidirectionnel client-server est établit et le serveur a envoyer la commande de début de partie</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Post-conditions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Le serveur a validé la commande de fin de tour ou de partie et les autres clients les ont recues.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Scénario nominal</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le serveur execute la commande de lancer de des et l&#8217;envoie aux clients</p>
+</li>
+<li>
+<p>Le client actif recoie la commande correspondant au résultat du lancer de dés.</p>
+</li>
+<li>
+<p>Chaque client dont une ou plusieurs colonies se trouvent sur les bords d’une tuile terrain ayant un jeton numéroté correspondant au score du lancer, recevra un certain nombre de commandes leur donnant des cartes ressources, qui sont cachées aux yeux des autres joueurs.</p>
+</li>
+<li>
+<p>Le client actif peut proposer plusieurs commandes d&#8217;échanges de ses ressources avec un autre joueur. Les client joueurs peuvent envoyer des commandes pour faire des contre-propositions.</p>
+</li>
+<li>
+<p>Le client actif peut envoyer une commande d&#8217;utilisation d&#8217;une carte développement qu&#8217;il possède.</p>
+</li>
+<li>
+<p>Le client peut envoyer des commandes de construction de routes (jusqu’à 13)au prix de ressources. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.</p>
+</li>
+<li>
+<p>Le client actif peut envoyer des commandes de constructions de colonies. Pour un nombre total de commandes inférieur ou égale à celui qu’il peut encore construire (le maximum est 5 colonies). Le serveur vérifie que les commandes sont valide et les propages aux autres clients.</p>
+</li>
+<li>
+<p>Le client peux envoyer des commandes de construction de villes. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.</p>
+</li>
+<li>
+<p>Le client peut envoyer une commande pour tirer une carte de Développement. Le serveur vérifie que les commandes sont valide et les propages aux autres clients.
+.Le serveur vérifie si un client vérifie les conditions de victoire. Si il y a un gagnant, le serveur envoie la commande de victoire (ie qu’il a 10 PV ou plus).</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Extensions</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>2a. Le lancer de dés est égale à 7 :</p>
+</li>
+<li>
+<p>2a1 Aucun client ne reçoit de ressources (donc pas de commandes), les client possédant plus de 7 cartes recoivent du serveur des commandes leur faisant défausser la moitier de leurs carte. Le client actif envoie une commande déplacant le voleur sur une tuile dont il privera la récolte. Le serveur envoie une commande au client actif donnant les ressource volée au hasard à une colonie adjacente à la tuile où est placé le voleur.</p>
+</li>
+<li>
+<p>2b. Le score du joueur au lancer de dés est différent de 7 :</p>
+</li>
+<li>
+<p>2ba. Le voleur est sur une tuile sur laquelle il n’a pas de villes ni de colonies :</p>
+</li>
+<li>
+<p>2ba1. Les joueurs recevront 1 carte ressources par colonie et 2 cartes ressources par villes placées sur les tuiles où le voleur n’est pas présent.</p>
+</li>
+<li>
+<p>2bb. Le voleur est sur une tuile sur en contact avec des villes ou colonies :</p>
+</li>
+<li>
+<p>2bb1. Les clients ne recevront aucune commande donnant des carte ressources pour leurs colonies et villes placées sur la tuile où est le voleur.</p>
+</li>
+<li>
+<p>6a : 5 routes du client sont connectées entre elles :</p>
+</li>
+<li>
+<p>6a1. Le clients recoit une commande donnant la carte « route la plus longue ».</p>
+</li>
+<li>
+<p>6b : le client a plus de routes que les autres :</p>
+</li>
+<li>
+<p>6b1. * 6a1. Le clients recoit une commande donnant la carte « route la plus longue ».</p>
+</li>
+<li>
+<p>9a. Un client a 10 PV ou plus :</p>
+</li>
+<li>
+<p>9a1 : ce client est déclaré vainqueur et le serveur envoie une commande désignant ce client comme vainqueur. Le serveur envoie une commande signalant la fin de la partie.</p>
+</li>
+<li>
+<p>9b. Aucun joueur n’a au moins 10 PV :</p>
+</li>
+<li>
+<p>9b1 : La partie continue (Le serveur désigne le prochain joueur et envoie la commande de tour suivant)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variations</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>3bis. Le client actif peut envoyer plusieurs commande échanges de ses ressources avec la réserve :</p>
+</li>
+<li>
+<p>3bis-a. le client actif a construit une colonie ou une ville près d’un port :</p>
+</li>
+<li>
+<p>3bis-a1. le client actif envoie une commande échangant 3 ressources contre 1.</p>
+</li>
+<li>
+<p>3bis-a2.  le client actif envoie une commande échangant 2 ressources contre 1</p>
+</li>
+<li>
+<p>3bis-b. le client actif n’a construit ni colonie ni ville près d’un port :</p>
+</li>
+<li>
+<p>3bis-b1. le client actif envoie une commande échangant 4 ressources contre 1</p>
+</li>
+<li>
+<p>8a : le client actif a recu une commande lui faisant tirer une carte chevalier</p>
+</li>
+<li>
+<p>8abis : le client actif a recu une commande lui faisant tirer une carte progrès</p>
+</li>
+<li>
+<p>8ater : le client actif a recu une commande lui faisant tirer une carte point de victoire</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="nonfunctional"><a class="anchor" href="#nonfunctional"></a>Autres exigences non-fonctionnelles</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exigences_de_performance"><a class="anchor" href="#_exigences_de_performance"></a>Exigences de performance</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+S&#8217;il existe des exigences de performance pour le produit dans diverses circonstances, indiquez-les ici et expliquez leur raison d&#8217;être, afin d&#8217;aider les développeurs à comprendre l&#8217;intention et à faire des choix de conception appropriés. Spécifiez les relations temporelles pour les systèmes en temps réel. Faites en sorte que ces exigences soient aussi spécifiques que possible. Vous devrez peut-être énoncer des exigences de performance pour des exigences fonctionnelles ou des caractéristiques individuelles.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le jeu doit être <em>jouable</em>, ce qui signifie que les utilisateurs doivent avoir un retour rapide de leurs actions et que les retards dus aux problèmes de communication/connexion doivent être correctement tenus.</p>
+</li>
+<li>
+<p>Le client Web doit pouvoir s&#8217;exécuter sur un ordinateur personnel doté de 4 Go de RAM.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exigences_de_sécurité"><a class="anchor" href="#_exigences_de_sécurité"></a>Exigences de sécurité</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Précisez toute exigence concernant les questions de sécurité ou de confidentialité entourant l&#8217;utilisation du produit ou la protection des données utilisées ou créées par le produit. Définissez toute exigence en matière d&#8217;authentification de l&#8217;identité de l&#8217;utilisateur. Faites référence à toute politique ou réglementation externe contenant des questions de sécurité qui affectent le produit. Définissez toutes les certifications de sécurité ou de confidentialité qui doivent être satisfaites.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attributs_de_qualité_logicielle"><a class="anchor" href="#_attributs_de_qualité_logicielle"></a>Attributs de qualité logicielle</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Précisez toute autre caractéristique de qualité du produit qui sera importante pour les clients ou les développeurs. En voici quelques-unes : adaptabilité, disponibilité, exactitude, flexibilité, interopérabilité, maintenabilité, portabilité, fiabilité, réutilisabilité, robustesse, testabilité et convivialité.</p>
+</div>
+<div class="paragraph">
+<p>Rédigez-les de manière à ce qu&#8217;elles soient spécifiques, quantitatives et vérifiables, si possible.</p>
+</div>
+<div class="paragraph">
+<p>Au minimum, clarifiez les préférences relatives pour divers attributs, comme la facilité d&#8217;utilisation par rapport à la facilité d&#8217;apprentissage.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_extensibilité"><a class="anchor" href="#_extensibilité"></a>Extensibilité</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le logiciel doit pouvoir permettre d&#8217;envisager l&#8217;implémentations des extensions de Les colons de Catane dans le futur, notamment.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_maintenabilité"><a class="anchor" href="#_maintenabilité"></a>Maintenabilité</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Le logiciel doit être lisible et facile à maintenir.</p>
+</li>
+<li>
+<p>La source Java doit respecter les directives de Google : <a href="https://google-styleguide.googlecode.com/svn/trunk/javaguide.html" class="bare">https://google-styleguide.googlecode.com/svn/trunk/javaguide.html</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_règles_métier"><a class="anchor" href="#_règles_métier"></a>Règles métier</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Énumérez tous les principes de fonctionnement du produit, tels que les personnes ou les rôles qui peuvent remplir telle ou telle fonction dans des circonstances spécifiques. Il ne s&#8217;agit pas d&#8217;exigences fonctionnelles en soi, mais elles peuvent impliquer certaines exigences fonctionnelles pour faire respecter les règles.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_autres_exigences"><a class="anchor" href="#_autres_exigences"></a>Autres exigences</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Définissez toute autre exigence non couverte ailleurs dans le SRS. Il peut s&#8217;agir d&#8217;exigences relatives à la base de données, à l&#8217;internationalisation, à la législation, aux objectifs de réutilisation du projet, etc. Ajoutez toute nouvelle section pertinente pour le projet.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_annexe_a_glossaire"><a class="anchor" href="#_annexe_a_glossaire"></a>Annexe A : Glossaire</h3>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<a href="https://docs.asciidoctor.org/asciidoc/latest/sections/glossary/" class="bare">https://docs.asciidoctor.org/asciidoc/latest/sections/glossary/</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Définissez tous les termes nécessaires pour interpréter correctement le SRS, y compris les acronymes et les abréviations. Vous pouvez créer un glossaire distinct couvrant plusieurs projets ou l&#8217;ensemble de l&#8217;organisation, et vous contenter d&#8217;inclure les termes spécifiques à un seul projet dans chaque SRS.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_annexe_b_modèles_danalyse"><a class="anchor" href="#_annexe_b_modèles_danalyse"></a>Annexe B : Modèles d&#8217;analyse</h3>
+<div class="paragraph">
+<p>Voir le chapitre <a href="#domain">[domain]</a> (analyse du domaine) pour plus de détails.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+En option, inclure tout modèle d&#8217;analyse pertinent, tel que des diagrammes de flux de données, des diagrammes de classe, des diagrammes d&#8217;état-transition ou des diagrammes entité-relation.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_annexe_c_liste_à_déterminer"><a class="anchor" href="#_annexe_c_liste_à_déterminer"></a>Annexe C : Liste à déterminer</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Recueillir une liste numérotée des références TBD (To Be Done) qui restent dans le SRS afin de pouvoir les suivre jusqu&#8217;à leur fermeture.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
