@@ -22,16 +22,15 @@ Expliquez dans cette section les répondes aux différentes exigences non-foncti
 
 === Concurrence
 
-NOTE: TODO!
+4 joueurs doivent pouvoir être connectés simultanément à une partie afin qu'elle se déroule correctement. Au moins 2 parties doivent pouvoir se passer en même temps.
 
 === Performance
 
-NOTE: TODO!
+Le logiciel doit s'exécuter de manière rapide et fluide tout au long de chacun de ses cycles de vie.
 
 === Interopérabilité
 
-NOTE: TODO!
-
+Le faible couplage du logiciel, obtenu grâce à l'utilisation de nombreuses interfaces permet à notre système d'avoir une forte interopérabilité.
 
 === Portabilité
 
@@ -51,7 +50,7 @@ N'ayant pas à nous occuper de l'authentification de l'utilisateur nous admetton
 
 ==== Maintenabilité
 
-NOTE: TODO!
+L'architecture de notre logiciel divisée en compartiments et en sous-compartiments nous offre une grande maintenabilité pour les changements futurs éventuels.
 
 === Interface utilisateur
 
@@ -64,10 +63,10 @@ NOTE: TODO!
 === Interface ou protocoles de communication
 
 Nous utilisons websocket sur lequel nous envoyons des commandes serialize en JSON
-(voir command pattern plus bas). Le client et le serveur doivent savoir quel class instancier
-a la reception d'une commande. On ajoute un parameter "type" dans la commande serialize
-et definitions un mapping commun entre le client serveur.
-Pour ce faire on définit le nom des commandes suivantes:
+(voir command pattern plus bas). Le client et le serveur doivent savoir quelle classe instancier 
+a la reception d'une commande. On ajoute un paramètre "type" dans la commande serialize
+et nous définissons un mapping commun entre le client et le serveur.
+Pour ce faire, on définit le nom des commandes suivantes:
 
 |====
 |   ActivateThieve
