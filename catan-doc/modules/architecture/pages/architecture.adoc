@@ -114,11 +114,27 @@ include::packageDiagram.adoc[]
 
 == Vue logique
 
-[NOTE]
-====
-L'objectif de la vue logique est de décrire les différents composants qui jouent un rôle commun
-dans les différents projets qui respectent une même architecture.
-====
+.Diagramme de composants de la vue logique
+[plantuml]
+....
+@startuml
+left to right direction
+
+[Server]
+[Client]
+[Middleware]
+
+[Middleware] - ServerToClientServer : "\t\t"
+ServerToClientServer )- [Server] : "\t\t"
+[Server] - ClientToServerServer : "\t\t"
+ClientToServerServer )- [Middleware] : "\t\t"
+
+[Middleware] - ClientToServerClient : "\t\t"
+ClientToServerClient )-up- [Client] : "\t\t"
+[Client] - ServerToClientClient : "\t\t"
+ServerToClientClient )- [Middleware] : "\t\t"
+@enduml
+....
 
 
 == Vue des processus
