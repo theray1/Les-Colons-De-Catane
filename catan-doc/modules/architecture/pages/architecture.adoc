@@ -32,10 +32,8 @@ Ces 2 nœuds ne peuvent pas être réduit, on retrouvera forcément un serveur q
 On note pour le serveur, l'utilisation de Java Spring pour la gestion des sockets ainsi que le protocole HTTP pour la première connexion du client.
 On peut voir l'utilisation des 2 protocols coté serveur via ce diagramme de séquence :
 
-[plantuml]
-----
-include::examples/sequenceDiagram_Protocols.plantuml[]
-----
+include::sequenceDiagram_Protocols.adoc[]
+
 
 Le noeud logique Game Client utilise TypeScript ainsi que le framework Angular pour gérer l'affichage au sein d'un navigateur web.
 
@@ -47,16 +45,13 @@ Les dépendances principales sont :
 * zone.js
 
 .Exemple d'un diagramme de déploiement (niveau spécification)
-[plantuml]
-----
-include::deploymentDiagram.plantuml[]
-----
+
+
+include::deploymentDiagram.adoc[]
 
 .Exemple d'un diagramme de déploiement (niveau instance)
-[plantuml]
-----
-include::deploymentDiagramInstance.plantuml[]
-----
+
+include::deploymentDiagramInstance.adoc[]
 
 Ainsi, on peut voir que chaque nœuds Client est "dupliqué", on retrouve les mêmes librairies, les mêmes composants, les mêmes protocols.
 Pour les clients, on retrouve Angular qui gère l'interface utilisteur et Typescript qui s'occupe de la communication avec le serveur.

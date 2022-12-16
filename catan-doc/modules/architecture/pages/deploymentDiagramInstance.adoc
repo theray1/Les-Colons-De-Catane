@@ -1,3 +1,5 @@
+[plantuml]
+....
 @startuml
 node "Game Server" as server {
     artifact "Spring" as modeA
@@ -25,3 +27,4 @@ server -down- rodrigue : <<protocol>>  Web Socket and HTTP
 server -left- erwan : <<protocol>> Web Socket and HTTP
 server -right- bilal : <<protocol>> Web Socket and HTTP
 @enduml
+....
