@@ -139,25 +139,12 @@ L'interêt de l'observateur c'est comme son nom l'indique d'observer. Ainsi, en 
 
 == Choix techniques - Distribution des processus
 
-[NOTE]
-====
-Explicitez les différents choix techniques et les réponses technologiques aux différentes contraintes que le système implique.
-====
+Pour cela nous allons donc vous présenter l'environnement général de développement.
 
-Pour cela nous allons donc vous présenter l'environnement général de développement puis énoncer les 4 contraintes que nous avons déterminées de notre logiciel.
-
-Nous avons fais le choix d'utiliser comme environnement de travail l'IDE eclipse.
-Pour la raison que nous connaissons tous très bien cette environnement, ce qui nous permet d'avoir tous le même environnement de développement.
+Nous avons fait le choix d'utiliser comme environnement de travail l'IDE IntelliJ.
+Pour la raison que nous connaissons tous très bien cet environnement, ce qui nous permet d'avoir tous le même environnement de développement.
 
 Également, cette IDE permet la gestion d'un projet maven ce qui nous sera parfaitement adapté.
-
-Voici les 4 contraintes que nous avons déterminées :
-
-. L'interface graphique.
-. La communication vers la base de données.
-. La communication entre les machines.
-. La sécurité.
-
 
 == Diagrammes de classes
 
