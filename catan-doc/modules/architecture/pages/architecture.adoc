@@ -37,7 +37,14 @@ On peut voir l'utilisation des 2 protocols coté serveur via ce diagramme de sé
 include::sequenceDiagram_Protocols.plantuml[]
 ----
 
-Coté client, [PARTIE POUR LE RAY ERWAN]
+Le noeud logique Game Client utilise TypeScript ainsi que le framework Angular pour gérer l'affichage au sein d'un navigateur web.
+
+Les dépendances principales sont :
+
+* angular
+* rxjs
+* tslib
+* zone.js
 
 .Exemple d'un diagramme de déploiement (niveau spécification)
 [plantuml]
