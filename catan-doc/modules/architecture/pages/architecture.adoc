@@ -3,33 +3,18 @@
 
 == Introduction
 
-[NOTE]
-====
-Le but de ce chapitre est de spécifier l'architecture d'une famille de produits,
-dont le projet {project} en fait partie.
-
-Il s'agit ici de choix génériques, qui peuvent s'appliquer à plusieurs projets.
-====
 Vous pouvez retrouver dans cette partie, l'ensemble des principes d'architectures que nous allons utiliser.
-Des librairies utilisés, en passant par les différents nœuds logiques, vous pouvez observer comment le serveur est gérer au niveau de son architecture.
+Des librairies utilisées, en passant par les différents nœuds logiques, vous pourrez observer comment le serveur est géré au niveau de son architecture.
 
 == Vue physique
-
-[NOTE]
-====
-La vue physique a pour but de décrire comment devrait être déployé le logiciel selon des nœuds logiques.
-Ainsi que de définir comment ou plutôt par quel moyen les différents nœuds vont communiquer entre eux.
-Et enfin le dernier but de cette vue est de donner les différentes contraintes de déploiement,
-comme quelles librairies sont utilisées, quels sont les besoins matériels.
-====
 
 Au niveau de la vue physique, on retrouve donc 2 nœuds logiques qui sont :
 
 * Game Server
 * Game Client
 
-Ainsi ces 2 nœuds vont devoir comuniquer et différents protocoles vont être utilisé.
-Ces 2 nœuds ne peuvent pas être réduit, on retrouvera forcément un serveur qui gère les parties, évite qu'il y ait de la fraude et des clients qui font office de passerelles entre le joueur (Personne physique) et le jeu (logiciel).
+Ainsi ces 2 nœuds vont devoir communiquer et différents protocoles vont être utilisés.
+Ces 2 nœuds ne peuvent pas être réduits, on retrouvera forcément un serveur qui gère les parties, évite qu'il y ait de la fraude et des clients qui font office de passerelles entre le joueur (Personne physique) et le jeu (logiciel).
 On note pour le serveur, l'utilisation de Java Spring pour la gestion des sockets ainsi que le protocole HTTP pour la première connexion du client.
 On peut voir l'utilisation des 2 protocoles coté serveur via ce diagramme de séquence :
 
@@ -62,21 +47,6 @@ Sur le diagramme, un seul lien relie chaque client au serveur, mais c'est bien u
 
 == Vue de la fiabilité
 
-[NOTE]
-====
-Dans cette partie, vous allez présenter les différents choix architecturaux pour assurer la fiabilité du système.
-
-Vous devez aussi présenter les prévisions de fonctionnement dans des conditions limite{nbsp}:
-* Comment le système est initialisé{nbsp}?
-* Comment le système est arrêté{nbsp}?
-* Comment sont gérés les failles et le redémarrage du système{nbsp}?
-====
-
-[TIP]
-====
-Utilisez des diagrammes d'activité UML pour décrire l'initialisation et l'arrêt du système.
-====
-
 === Prévisions de fonctionnement
 ==== INITIALISATION DU SYSTEME : 
 Un client exécute le logiciel. Si le serveur est éteint, il s'allume.
@@ -97,27 +67,10 @@ include::initializationSystemActivityDiagram.adoc[]
 
 include::systemStopActivityDiagram.adoc[]
 
-
 == Vue du développement
-
-[NOTE]
-====
-Décrivez ici l'organisation du code source.
-Plutôt que décrire les paquetages Java ou Typescript, décrivez plutôt les artefacts Maven et les modules Node.js.
-====
-
-
-[TIP]
-====
-Utilisez un https://www.uml-diagrams.org/package-diagrams-overview.html[Diagramme de paquetages]
-pour décrire l'organisation du code source.
-====
 
 .Organisation des modules
 include::packageDiagram.adoc[]
-
-
-
 
 == Vue logique
 
@@ -254,7 +207,3 @@ Test4 *-- "3-4" Test3
 ....
 Ainsi lorsqu'il n'y a pas de cardinalité, c'est qu'il y a une association de 1 pour 1.
 Quoi qu'il arrive, dans notre serveur, il n'y aura qu'un seul GameManager et autant de GameControler qu'il y a de partie.
-
-== Conclusion
-
-Ceci est une conclusion hative; bien qu'elle existe, elle ne doit pas être utilisée dans un quelconque but de productivité ou de compréhension de ce projet. Nous remercions tous nos proches d'avoir pu contribuer de près ou de loin à ce fabuleux et merveilleux projet. :) Voilà merci à toutes et à tous. Bisouuuuuh UwU. A REVOIR /!\
