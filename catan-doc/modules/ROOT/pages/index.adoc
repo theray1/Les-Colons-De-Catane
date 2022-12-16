@@ -2,7 +2,11 @@
 
 Bienvenue sur notre projet Catane !
 
-== Sommaire :
+== Liens
+Projet source : https://gitlab.univ-nantes.fr/E220463J/projet-2022
+Projet site source : https://gitlab.univ-nantes.fr/E220463J/catane-website
+
+== Sommaire
 === Analyse 
 L'analyse globale du projet, les rêgles, les différents besoins.
 
