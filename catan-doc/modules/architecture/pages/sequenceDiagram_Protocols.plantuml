@@ -1,0 +1,12 @@
+@startuml
+
+== Protocol HTTP ==
+Client --> Server : Login
+
+Server --> Server : Socket interception
+
+== Protocol WebSockets ==
+Server --> Client : Sending Commands
+Client --> Server : Sending Commands
+
+@enduml
