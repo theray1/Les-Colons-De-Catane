@@ -238,9 +238,7 @@ Le client se connecte au serveur. Cette fonctionnalité a une priorité élevée
 
 Le stimulus de cette fonctionnalité est le lancement du logiciel par le client. La réponse du serveur sera un message indiquant que la connexion au serveur est en cours.
 
-==== Exigences fonctionnelles
-
-
+==== Exigences fonctionnelles TODO
 
 [NOTE]
 ====
@@ -261,16 +259,62 @@ Chaque exigence doit être identifiée de manière unique par un numéro de séq
 .connexion
 include::../partials/uc-connection.adoc[]
 
-=== Création de partie
+=== Création de la partie
 
-Le serveur s'assure d'avoir des parties de disponible pour les clients se connectants.
+==== Description et priorité
+
+Le serveur créé une partie. Cette fonctionnalité a une priorité élevée.
+
+==== Séquences de Stimulus/Réponse
+
+Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs en attente dans la file d'attente du serveur. La réponse du serveur sera un message indiquant que la création de la partie est en cours.
+
+==== Exigences fonctionnelles TODO
+
+[NOTE]
+====
+Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
+
+Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
+
+Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
+
+Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
+
+* REQ-1:	
+* REQ-2:
+====
 
 ==== Description sous la forme d'un cas d'utilisation
-.uc-createGame
+.création de la partie
 include::../partials/uc-createGame.adoc[]
 
 === gameJoin
 Un client peut demander au serveur de le placer dans une partie
+
+==== Description et priorité
+
+Le serveur créé une partie. Cette fonctionnalité a une priorité élevée.
+
+==== Séquences de Stimulus/Réponse
+
+Le stimulus de cette fonctionnalité est le fait qu'il y ait quatre joueurs en attente dans la file d'attente du serveur. La réponse du serveur sera un message indiquant que la création de la partie est en cours.
+
+==== Exigences fonctionnelles TODO
+
+[NOTE]
+====
+Détaillez les exigences fonctionnelles détaillées associées à cette fonctionnalité. Il s'agit des capacités logicielles qui doivent être présentes pour permettre à l'utilisateur d'effectuer les services fournis par la fonction ou d'exécuter le cas d'utilisation. 
+
+Indiquez comment le produit doit réagir aux conditions d'erreur prévues ou aux entrées non valides. Les exigences doivent être concises, complètes, non ambiguës, vérifiables et nécessaires. 
+
+Utilisez la mention "A faire" pour indiquer que les informations nécessaires ne sont pas encore disponibles.
+
+Chaque exigence doit être identifiée de manière unique par un numéro de séquence ou une étiquette significative.
+
+* REQ-1:	
+* REQ-2:
+====
 
 ==== Description sous la forme d'un cas d'utilisation
 
@@ -312,6 +356,9 @@ include::../partials/uc-playTurn.adoc[]
 Aucune pour le moment.
 
 === Attributs de qualité logicielle
+
+Pour les clients, le logiciel doit être facile à utiliser et fluide dans son exécution. +
+Pour les développeurs, le code doit avoir un couplage faible et une excellente maintenabilité.
 
 [NOTE]
 ====
