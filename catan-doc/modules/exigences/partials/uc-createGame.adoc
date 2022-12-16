@@ -2,9 +2,6 @@
 |===
 | Item | Description
 
-| # 
-| 1
-
 | Cas d'utilisation	
 | Création de la partie
 
@@ -28,8 +25,8 @@
 
 | Pré-conditions 
 a| 
-- Un client est en recherche de partie
-- Plus de partie disponible
+- 1.Un client est en recherche de partie
+- 2.Plus de partie disponible
 
 | Post-conditions
 a| 
