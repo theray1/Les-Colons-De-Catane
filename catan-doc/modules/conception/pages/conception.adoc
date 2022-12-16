@@ -60,9 +60,7 @@ et nous définissons un mapping commun entre le client et le serveur.
 Pour ce faire, on définit le nom des commandes suivantes:
 
 |====
-|   ActivateThieve
-|   MoveThieve
-|   Ping
+|   ActivateThieve | MoveThieve | Ping
 |   Build
 |   ActiveCard
 |   AddCard
