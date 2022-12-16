@@ -11,14 +11,8 @@ Moyens::
 Appliquez les concepts vus en cours: design patterns, principes GRASP, bonnes pratiques, etc.
 
 
-
-
 == Réponses aux exigences non-fonctionnelles
 
-[NOTE]
-====
-Expliquez dans cette section les répondes aux différentes exigences non-fonctionnelles spécifiées.
-====
 
 === Concurrence
 
@@ -56,9 +50,6 @@ L'architecture de notre logiciel divisée en compartiments et en sous-compartime
 
 NOTE: TODO!
 
-=== Interface logicielle
-
-NOTE: TODO!
 
 === Interface ou protocoles de communication
 
@@ -92,12 +83,9 @@ Pour ce faire, on définit le nom des commandes suivantes:
 
 === Correction
 
-NOTE: TODO!
+Nous comptons mettre en place une méthode fonctionnelle et une méthode structurelle dnas le but d'élaborer des scénarios de tests afin de nous assurer que notre code est correct.
 
 == Patrons logiciels utilisés
-
-NOTE: Décrivez dans cette partie les patrons logiciels utilisés pour mettre en œuvre l'application.
-
 
 === Patron de conception Commandes
 
@@ -110,7 +98,7 @@ Chaque commande a une implémentation (un comportement précis) et cela permet a
 include::classDiagramCommands.plantuml[]
 ....
 
-===Explications des différentes commandes :
+=== Explications des différentes commandes :
 
 [options="header"]
 |=======================
@@ -145,18 +133,9 @@ Cela va permettre dans une version future, de pouvoir changer l'implémentation 
 
 La factory va nous permettre d'avoir une classe qui permet d'instancier les commandes (cf: Design pattern Commandes).
 
-=== Patron de conception Mediator
-
-NOTE: TODO!
-
 === Patron de conception Observateur
 
 L'interêt de l'observateur c'est comme son nom l'indique d'observer. Ainsi, en considérant l'interface graphique comme un observer, elle ne va jamais impacter et avoir le moindre effet de bord sur le jeu. De plus, grâce à la méthode notifyObservers(), l'interface graphique sera mise à jour uniquement lorsqu'il y aura des changements. 
-
-
-=== Patron architectural "B"
-
-NOTE: TODO!
 
 == Choix techniques - Distribution des processus
 
