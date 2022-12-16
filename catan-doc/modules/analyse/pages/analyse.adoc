@@ -13,26 +13,13 @@ include::classDiagramTile.adoc[]
 
 == Cas d'utilisation
 
-[NOTE]
-====
-Utilisez le canevas proposé par Alistar Cockburn pour décrire les cas d'utilisation.
-
-Additionnellement, utilisez des diagrammes d'activités UML pour illustrer les cas d'utilisation.
-====
-
-
 === Cas d'utilisation "Mise en place d'une partie"
 
 include::../partials/uc-preparation.adoc[]
 
-
-
-
 .Diagramme d'activités: Mise en place d'une partie
 
 include::SetUpOfGameUseCaseActivityDiagram.adoc[]
-
-
 
 === Cas d'utilisation Jouer un tour
 
