@@ -1,4 +1,4 @@
-Welcome to AsciiDocLIVE!
+Diagrammes des composants
 ------------------------
 
 Composants (idée générale)
