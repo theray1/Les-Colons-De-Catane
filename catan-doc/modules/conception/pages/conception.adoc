@@ -60,9 +60,7 @@ et nous définissons un mapping commun entre le client et le serveur.
 Pour ce faire, on définit le nom des commandes suivantes:
 
 |====
-|   ActivateThieve
-|   MoveThieve
-|   Ping
+|   ActivateThieve | MoveThieve | Ping
 |   Build
 |   ActiveCard
 |   AddCard
@@ -95,7 +93,7 @@ Chaque commande a une implémentation (un comportement précis) et cela permet a
 
 [plantuml]
 ....
-include::classDiagramCommands.plantuml[]
+include::classDiagramCommands.adoc[]
 ....
 
 === Explications des différentes commandes :
@@ -151,33 +149,33 @@ Pour la raison que nous connaissons tous très bien cet environnement, ce qui no
 === Indications de notations
 [plantuml]
 ....
-include::classDiagramIndications.plantuml[]
+include::classDiagramIndications.adoc[]
 ....
 
 == Server
 
 [plantuml]
 ....
-include::classDiagramServer.plantuml[]
+include::classDiagramServer.adoc[]
 ....
 
 === CameControllerServer
 
 [plantuml]
 ....
-include::classDiagramGameControlerServer.plantuml[]
+include::classDiagramGameControlerServer.adoc[]
 ....
 
 == Client
 
 [plantuml]
 ....
-include::classDiagramClient.plantuml[]
+include::classDiagramClient.adoc[]
 ....
 
 === CameControlerClient
 
 [plantuml]
 ....
-include::classDiagramGameControlerClient.plantuml[]
+include::classDiagramGameControlerClient.adoc[]
 ....
