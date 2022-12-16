@@ -21,14 +21,20 @@ Et enfin le dernier but de cette vue est de donner les différentes contraintes 
 comme quelles librairies sont utilisées, quels sont les besoins matériels.
 ====
 
-[NOTE]
-====
-Pour décrire la vue physique, vous allez vous appuyer sur deux diagrammes{nbsp}:
+Au niveau de la vue physique, on retrouve donc 2 nœuds logiques qui sont :
+* Game Server
+* Game Client
 
-. Le diagramme de déploiement, qui ci doit expliquer la plupart des points énoncés précédemment.
-. Le diagramme de déploiement au niveau des instances, qui respecte les spécifications du diagramme précédent,
-pour montrer comment seront réparties les instances de ceci.
-====
+Ainsi ces 2 nœuds vont devoir comuniquer et différents protocols vont être utilisé.
+On note pour le serveur, l'utilisation de Java Spring pour la gestion des sockets ainsi que le protocole HTTP pour la première connexion du client.
+On peut voir l'utilisation des 2 protocols coté serveur via ce diagramme de séquence :
+
+[plantuml]
+----
+include::sequenceDiagram_Protocols.plantuml[]
+----
+
+Coté client, [PARTIE POUR LE RAY ERWAN]
 
 .Exemple d'un diagramme de déploiement (niveau spécification)
 [plantuml]
@@ -36,22 +42,17 @@ pour montrer comment seront réparties les instances de ceci.
 include::deploymentDiagram.plantuml[]
 ----
 
-[NOTE]
-====
-Décrivez les nœuds logiques, ainsi que les artefacts qui peuvent être déployés sur ces nœuds.
-Vous pouvez profiter de ce diagramme pour expliquer le protocole de communication entre les nœuds.
-====
-
 .Exemple d'un diagramme de déploiement (niveau instance)
 [plantuml]
 ----
 include::deploymentDiagramInstance.plantuml[]
 ----
 
-[NOTE]
-====
-Expliquez ce diagramme, si les artefacts déployés sont différents, vous pouvez le montrer.
-====
+Ainsi, on peut voir que chaque nœuds Client est "dupliqué", on retrouve les mêmes librairies, les mêmes composants, les mêmes protocols.
+Pour les clients, on retrouve Angular qui gère l'interface utilisteur et Typescript qui s'occupe de la communication avec le serveur.
+Pour l'exemple, il y a 4 clients qui est le nombre maximal de joueur pour une seule partie.
+Sur le diagramme, un seul lien relie chaque client au serveur, mais c'est bien un lien différent pour chaque protocol (HTTP et WebSocket).
+
 
 == Vue de la fiabilité
 
