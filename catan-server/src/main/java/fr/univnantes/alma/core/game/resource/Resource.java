@@ -6,5 +6,5 @@ public interface Resource {
 	 * 
 	 * @return The type
 	 */
-	public Resources getType();
+	Resources getType();
 }

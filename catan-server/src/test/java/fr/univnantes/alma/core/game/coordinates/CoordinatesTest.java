@@ -1,12 +1,11 @@
 package fr.univnantes.alma.core.game.coordinates;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 
 import fr.univnantes.alma.core.game.map.coordinates.Coordinates;
 import fr.univnantes.alma.core.game.map.coordinates.CoordinatesImpl;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CoordinatesTest {
 	@Test
@@ -25,7 +24,7 @@ public class CoordinatesTest {
 		Coordinates co2 = new CoordinatesImpl(0, 1, 3);
 		Coordinates co3 = new CoordinatesImpl(0, 1, 2);
 
-		assertTrue(co1.equals(co3));
-		assertFalse(co1.equals(co2));
+		assertEquals(co1, co3);
+		assertNotEquals(co1, co2);
 	}
 }

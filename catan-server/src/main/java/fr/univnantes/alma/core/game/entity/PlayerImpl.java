@@ -1,7 +1,6 @@
 package fr.univnantes.alma.core.game.entity;
 
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,9 +18,9 @@ public class PlayerImpl implements Player {
 
 	private int victoryPoints = 0;
 
-	private Map<Resources, Integer> resources;
+	private final Map<Resources, Integer> resources;
 
-	private Map<Cards, Integer> cards;
+	private final Map<Cards, Integer> cards;
 
 	@Override
 	public String getName() {

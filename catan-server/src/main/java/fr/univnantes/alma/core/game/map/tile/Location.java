@@ -9,22 +9,22 @@ public interface Location {
 	 * 
 	 * @return True if Free, false otherwise
 	 */
-	public boolean isFree();
+	boolean isFree();
 
 	/**
 	 * Place building on this Location
 	 * 
 	 * @param b The Building
 	 */
-	public void setBuilding(Building b);
+	void setBuilding(Building b);
 
-	public Building getBuilding();
+	Building getBuilding();
 
 	/**
 	 * Test if this location contain a harbor
 	 * 
 	 * @return
 	 */
-	public boolean containsHarbor();
+	boolean containsHarbor();
 
 }

@@ -13,7 +13,7 @@ public interface Player {
 	 * 
 	 * @return His name
 	 */
-	public String getName();
+	String getName();
 
 	/**
 	 * Get player's game
@@ -21,54 +21,54 @@ public interface Player {
 	 * @return The game
 	 */
 	@Nullable
-	public GameController getGame();
+	GameController getGame();
 
 	/**
 	 * Get the amount of victory points (cards + points)
 	 * 
 	 * @return the amount
 	 */
-	public int getAmountOfVictoryPoints();
+	int getAmountOfVictoryPoints();
 
 	/**
 	 * Add resources to this player
 	 * 
 	 * @param resources The resources
 	 */
-	public void addResources(List<Resource> resources);
+	void addResources(List<Resource> resources);
 
 	/**
 	 * Test if the player has these resources in hand
 	 * 
 	 * @param resources The resources
 	 */
-	public boolean haveResources(List<Resource> resources);
+	boolean haveResources(List<Resource> resources);
 
 	/**
 	 * Remove resources to this player
 	 * 
 	 * @param resources The resources
 	 */
-	public void removeResources(List<Resource> resources) throws NotEnoughResourcesException;
+	void removeResources(List<Resource> resources) throws NotEnoughResourcesException;
 
 	/**
 	 * Allows to obtain the number of resources of a player
 	 * 
 	 * @return The amount of resources
 	 */
-	public int getAmountOfResources();
+	int getAmountOfResources();
 
 	/**
 	 * Give cards to player
 	 * 
 	 * @param cards
 	 */
-	public void addCard(List<Card> cards);
+	void addCard(List<Card> cards);
 
 	/**
 	 * Give points to player
 	 * 
 	 * @param amount
 	 */
-	public void givePoints(int amount);
+	void givePoints(int amount);
 }

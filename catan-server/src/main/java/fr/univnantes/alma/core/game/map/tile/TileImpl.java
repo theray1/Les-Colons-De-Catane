@@ -20,8 +20,8 @@ public class TileImpl implements Tile {
 	private int number;
 	private final CatanMap catanMap;
 
-	private Edge[] edges;
-	private Vertice[] vertices;
+	private final Edge[] edges;
+	private final Vertice[] vertices;
 
 	public TileImpl(Coordinates coords, Tiles type, CatanMap catanMap) {
 		this.coords = coords;
@@ -67,14 +67,9 @@ public class TileImpl implements Tile {
 	@Override
 	public void setBuilding(Building building) throws IllegalStateException {
 		switch (building.getType()) {
-		case VERTICE:
-			this.getVertice(building.getCoordinates()).setBuilding(building);
-			break;
-		case EDGE:
-			this.getEdge(building.getCoordinates()).setBuilding(building);
-			break;
-		default:
-			throw new IllegalStateException("Building must have a type (Vertice or Edge)");
+			case VERTICE -> this.getVertice(building.getCoordinates()).setBuilding(building);
+			case EDGE -> this.getEdge(building.getCoordinates()).setBuilding(building);
+			default -> throw new IllegalStateException("Building must have a type (Vertice or Edge)");
 		}
 	}
 

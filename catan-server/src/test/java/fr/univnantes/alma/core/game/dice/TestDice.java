@@ -1,10 +1,10 @@
 package fr.univnantes.alma.core.game.dice;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 
-public class testDice {
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class TestDice {
 	@Test
 	public void testDiceRoll() {
 		Dice d = new DiceImpl();

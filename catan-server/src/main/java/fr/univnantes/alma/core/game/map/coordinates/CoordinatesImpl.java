@@ -43,11 +43,9 @@ public class CoordinatesImpl implements Coordinates {
 			return true;
 		}
 
-		if (!(o instanceof CoordinatesImpl)) {
+		if (!(o instanceof CoordinatesImpl coords)) {
 			return false;
 		}
-
-		CoordinatesImpl coords = (CoordinatesImpl) o;
 
 		return this.equalsTile(coords) && this.end == coords.getEnd();
 	}

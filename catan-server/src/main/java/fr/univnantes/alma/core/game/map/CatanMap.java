@@ -22,7 +22,7 @@ public interface CatanMap {
 	void placeHarbors();
 
 	/**
-	 * Getter of an Tile
+	 * Tile getter
 	 * 
 	 * @exception IllegalArgumentException Throw if the coordinates are not correct
 	 * @param coords The coordinates

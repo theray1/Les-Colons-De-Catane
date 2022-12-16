@@ -5,11 +5,11 @@ import java.util.List;
 import fr.univnantes.alma.core.game.resource.Resource;
 
 public interface Harbor {
-	public List<Resource> getRequireResources();
+	List<Resource> getRequireResources();
 
-	public List<Resource> getGivenResources();
+	List<Resource> getGivenResources();
 
-	public boolean isRandomTrade();
+	boolean isRandomTrade();
 
-	public HarborTrades getType();
+	HarborTrades getType();
 }

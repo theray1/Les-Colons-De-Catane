@@ -7,10 +7,10 @@ public interface Dice {
 	 * 
 	 * @return an integer
 	 */
-	public int getValue();
+	int getValue();
 
 	/**
 	 * Do roll the dice
 	 */
-	public void roll();
+	void roll();
 }

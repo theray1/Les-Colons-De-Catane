@@ -21,7 +21,7 @@ public class HarborImpl implements Harbor {
 
 	@Override
 	public List<Resource> getRequireResources() {
-		List<Resource> result = new ArrayList<Resource>();
+		List<Resource> result = new ArrayList<>();
 		if (require == null)
 			return result;
 		for (Resource r : require) {
@@ -32,7 +32,7 @@ public class HarborImpl implements Harbor {
 
 	@Override
 	public List<Resource> getGivenResources() {
-		List<Resource> result = new ArrayList<Resource>();
+		List<Resource> result = new ArrayList<>();
 		if (given == null)
 			return result;
 		for (Resource r : given) {

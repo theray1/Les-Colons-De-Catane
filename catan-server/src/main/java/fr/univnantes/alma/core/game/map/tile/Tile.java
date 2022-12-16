@@ -12,65 +12,65 @@ public interface Tile {
 	/**
 	 * Get the resource of this tile
 	 * 
-	 * @return An Clone of the resource
+	 * @return A Clone of the resource
 	 */
-	public Resource getResource();
+	Resource getResource();
 
 	/**
-	 * Get the coordinates of this tile. An Tile must have coordinates
+	 * Get the coordinates of this tile. A Tile must have coordinates
 	 * 
 	 * @return The coords of this tile
 	 */
-	public Coordinates getCoordinates();
+	Coordinates getCoordinates();
 
 	/**
 	 * Test if this Tile contains Robber
 	 * 
 	 * @return true if Yes, false otherwise
 	 */
-	public boolean containsRobber();
+	boolean containsRobber();
 
 	/**
-	 * Place building on an Location of this tile
+	 * Place building on a Location of this tile
 	 * 
 	 * @param building The building to place
 	 */
-	public void setBuilding(Building building);
+	void setBuilding(Building building);
 
 	/**
 	 * Place robber on this tile. This tile cannot be type of SEA
 	 * 
 	 * @param rob The Robber
 	 */
-	public void placeRobber(Robber rob);
+	void placeRobber(Robber rob);
 
 	/**
 	 * Remove robber of this tile
 	 * 
 	 * @return The robber
 	 */
-	public Robber removeRobber();
+	Robber removeRobber();
 
 	/**
 	 * Place harbor on this tile. This tile must be type of SEA
 	 * 
-	 * @param harbor The Harbor
+	 * @param har The Harbor
 	 */
-	public void placeHarbor(Harbor har);
+	void placeHarbor(Harbor har);
 
 	/**
 	 * Get harbor on this tile.
 	 * 
 	 * @return harbor The Harbor
 	 */
-	public Harbor getHarbor();
+	Harbor getHarbor();
 
 	/**
 	 * Test if this Tile contains Harbor
 	 * 
 	 * @return true if Yes, false otherwise
 	 */
-	public boolean containsHarbor();
+	boolean containsHarbor();
 
 	/**
 	 * Get the edge corresponding to the coordinates.
@@ -78,7 +78,7 @@ public interface Tile {
 	 * @param coords The coordinates
 	 * @return The edge
 	 */
-	public Edge getEdge(Coordinates coords);
+	Edge getEdge(Coordinates coords);
 
 	/**
 	 * Get the vertice corresponding to the coordinates.
@@ -86,7 +86,7 @@ public interface Tile {
 	 * @param coords The coordinates
 	 * @return The vertice
 	 */
-	public Vertice getVertice(Coordinates coords);
+	Vertice getVertice(Coordinates coords);
 
 	/**
 	 * Set the edge.
@@ -94,38 +94,38 @@ public interface Tile {
 	 * @param edge   The edge
 	 * @param coords The coordinates
 	 */
-	public void setEdge(Edge edge, Coordinates coords);
+	void setEdge(Edge edge, Coordinates coords);
 
 	/**
 	 * Set the edge.
 	 * 
-	 * @param edge   The vertice
+	 * @param vertice The vertice
 	 * @param coords The coordinates
 	 */
-	public void setVertice(Vertice vertice, Coordinates coords);
+	void setVertice(Vertice vertice, Coordinates coords);
 
-	public Location getLocation(Buildings type, Coordinates coords);
+	Location getLocation(Buildings type, Coordinates coords);
 
 	/**
 	 * Get the type of this tile
 	 * 
 	 * @return The type
 	 */
-	public Tiles getType();
+	Tiles getType();
 
 	/**
 	 * Test if the tile instance is complete (all vertices, all edges)
 	 * 
 	 * @return true or false
 	 */
-	public boolean isComplete();
+	boolean isComplete();
 
 	/**
 	 * Sets the number of this tile
 	 * 
 	 * @param number
 	 */
-	public void setNumber(int number);
+	void setNumber(int number);
 
-	public boolean canBuild(Building b);
+	boolean canBuild(Building b);
 }
