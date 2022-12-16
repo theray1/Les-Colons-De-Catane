@@ -1,2 +1,32 @@
 = Projet Catane
 
+Bienvenue sur notre projet Catane !
+
+=== Sommaire :
+==== Analyse 
+L'analyse globale du projet, les rêgles, les différents besoins.
+
+==== Architecture
+L'architecture logiciel, on retrou ve les liens logiques, les nœud logiques.
+
+==== Spécification des composants
+Les différents composants qui communiquent pour établir le jeu.
+
+==== Conception détaillée
+Les diagrammes de classes qui permettent la conception et l'implementation du jeu.
+
+==== Spécification des exigences
+Les éxigences générales du projet, le serveur, les interfaces logiciels, les fonctionalités...
+
+== Catane ! C'est quoi ?
+Pour rappel, Catane est un jeu de plateau dont voici un image :
+image:https://ladameenbois.fr/wp-content/uploads/2018/11/catan.jpg[]
+
+Source : https://ladameenbois.fr/wp-content/uploads/2018/11/catan.jpg
+
+Il peut se jouer jusqu'à 4 joueurs dans sa version de base. Etant donné que le jeu se compose de tuiles interchangeables, chaque partie est différentes de la précédente rendant ainsi l'expérience de jeu illimitée.
+Il existe plusieurs variantes au jeu, avec des cartes qui peuvent changer radicalement !
+
+
+
+

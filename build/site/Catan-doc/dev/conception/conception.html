@@ -183,47 +183,20 @@
 </div>
 <div class="sect2">
 <h3 id="_concurrence"><a class="anchor" href="#_concurrence"></a>Concurrence</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-TODO!
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>4 joueurs doivent pouvoir être connectés simultanément à une partie afin qu&#8217;elle se déroule correctement. Au moins 2 parties doivent pouvoir se passer en même temps.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_performance"><a class="anchor" href="#_performance"></a>Performance</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-TODO!
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Le logiciel doit s&#8217;exécuter de manière rapide et fluide tout au long de chacun de ses cycles de vie.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_interopérabilité"><a class="anchor" href="#_interopérabilité"></a>Interopérabilité</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-TODO!
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Le faible couplage du logiciel, obtenu grâce à l&#8217;utilisation de nombreuses interfaces permet à notre système d&#8217;avoir une forte interopérabilité.</p>
 </div>
 </div>
 <div class="sect2">
@@ -248,17 +221,8 @@ TODO!
 </div>
 <div class="sect3">
 <h4 id="_maintenabilité"><a class="anchor" href="#_maintenabilité"></a>Maintenabilité</h4>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-TODO!
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>L&#8217;architecture de notre logiciel divisée en compartiments et en sous-compartiments nous offre une grande maintenabilité pour les changements futurs éventuels.</p>
 </div>
 </div>
 </div>
@@ -296,10 +260,10 @@ TODO!
 <h3 id="_interface_ou_protocoles_de_communication"><a class="anchor" href="#_interface_ou_protocoles_de_communication"></a>Interface ou protocoles de communication</h3>
 <div class="paragraph">
 <p>Nous utilisons websocket sur lequel nous envoyons des commandes serialize en JSON
-(voir command pattern plus bas). Le client et le serveur doivent savoir quel class instancier
-a la reception d&#8217;une commande. On ajoute un parameter "type" dans la commande serialize
-et definitions un mapping commun entre le client serveur.
-Pour ce faire on définit le nom des commandes suivantes:</p>
+(voir command pattern plus bas). Le client et le serveur doivent savoir quelle classe instancier
+a la reception d&#8217;une commande. On ajoute un paramètre "type" dans la commande serialize
+et nous définissons un mapping commun entre le client et le serveur.
+Pour ce faire, on définit le nom des commandes suivantes:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
