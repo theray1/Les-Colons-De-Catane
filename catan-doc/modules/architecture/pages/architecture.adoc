@@ -10,7 +10,8 @@ dont le projet {project} en fait partie.
 
 Il s'agit ici de choix génériques, qui peuvent s'appliquer à plusieurs projets.
 ====
-
+Vous pouvez retrouver dans cette partie, l'ensemble des principes d'architectures que nous allons utiliser.
+Des librairies utilisés, en passant par les différents nœuds logiques, vous pouvez observer comment le serveur est gérer au niveau de son architecture.
 == Vue physique
 
 [NOTE]
@@ -27,6 +28,7 @@ Au niveau de la vue physique, on retrouve donc 2 nœuds logiques qui sont :
 * Game Client
 
 Ainsi ces 2 nœuds vont devoir comuniquer et différents protocols vont être utilisé.
+Ces 2 nœuds ne peuvent pas être réduit, on retrouvera forcément un serveur qui gère les parties, évite qu'il y ait de la fraude et des clients qui font office de passerelles entre le joueur (Personne physique) et le jeu (logiciel).
 On note pour le serveur, l'utilisation de Java Spring pour la gestion des sockets ainsi que le protocole HTTP pour la première connexion du client.
 On peut voir l'utilisation des 2 protocols coté serveur via ce diagramme de séquence :
 

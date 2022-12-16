@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Conception détaillée :: Projet Catane - Website - Le meilleur groupe :) (car il y a Nathan)</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://naomod.univ-nantes.io/ooad/projet-2022">Projet Catane - Website - Le meilleur groupe :) (car il y a Nathan)</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Catan-doc" data-version="dev">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Projet Catan</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Analyse du domaine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../analyse/analyse.html">Analyse du domaine</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spécification des composants</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../composants/composants.html">composants.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Conception détaillée</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="conception.html">Conception détaillée</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spécification des exigences</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../exigences/exigences.html">Spécification des exigences</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Projet Catan</span>
+    <span class="version">dev.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Projet Catan</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">dev.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Projet Catan</a></li>
+    <li>Conception détaillée</li>
+    <li><a href="conception.html">Conception détaillée</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Conception détaillée</h1>
+<div class="sect1">
+<h2 id="_travail_à_réaliser"><a class="anchor" href="#_travail_à_réaliser"></a>Travail à réaliser</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Objectif</dt>
+<dd>
+<p>Spécification détaillée des composants: leur structure (diagramme de classes de conception), ainsi que le comportement de chaque opération fournie par le composants. Le comportement peut-être décrit en utilisant les diagrammes d&#8217;activité, d&#8217;interaction, les machines d&#8217;état, ainsi que OCL.</p>
+</dd>
+<dt class="hdlist1">Moyens</dt>
+<dd>
+<p>Appliquez les concepts vus en cours: design patterns, principes GRASP, bonnes pratiques, etc.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_réponses_aux_exigences_non_fonctionnelles"><a class="anchor" href="#_réponses_aux_exigences_non_fonctionnelles"></a>Réponses aux exigences non-fonctionnelles</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Expliquez dans cette section les répondes aux différentes exigences non-fonctionnelles spécifiées.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_concurrence"><a class="anchor" href="#_concurrence"></a>Concurrence</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_performance"><a class="anchor" href="#_performance"></a>Performance</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interopérabilité"><a class="anchor" href="#_interopérabilité"></a>Interopérabilité</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_portabilité"><a class="anchor" href="#_portabilité"></a>Portabilité</h3>
+<div class="paragraph">
+<p>Pour l&#8217;instant, le jeu est uniquement disponible sur navigateur.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sécurité"><a class="anchor" href="#_sécurité"></a>Sécurité</h3>
+<div class="paragraph">
+<p>Pour l&#8217;instant il n&#8217;y a pas vraiment de sécurité au niveau de la connexion. Quant au serveur, lui, s&#8217;il reçoit des commandes d&#8217;un autre joueur alors que ce n&#8217;est pas son tour, la commande est annulé, de même quand la commande est impossible (proposition de ressources non valide &#8230;&#8203;).</p>
+</div>
+<div class="sect3">
+<h4 id="_exigence_de_sécurité"><a class="anchor" href="#_exigence_de_sécurité"></a>Exigence de sécurité</h4>
+<div class="paragraph">
+<p>Notre système doit être sécurisé, même si nous ne manipulons pas des données sensibles. Pour cela nous devons vérifier l&#8217;identité de l&#8217;utilisateur.</p>
+</div>
+<div class="paragraph">
+<p>N&#8217;ayant pas à nous occuper de l&#8217;authentification de l&#8217;utilisateur nous admettons que le système s&#8217;occupant de cela est correct et lui-même sécurisé. Nous admettons également que, quelle que soit la plateforme utilisée (web, logiciel, application) le service d&#8217;authentification sera le même pour tous.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_maintenabilité"><a class="anchor" href="#_maintenabilité"></a>Maintenabilité</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interface_utilisateur"><a class="anchor" href="#_interface_utilisateur"></a>Interface utilisateur</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interface_logicielle"><a class="anchor" href="#_interface_logicielle"></a>Interface logicielle</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interface_ou_protocoles_de_communication"><a class="anchor" href="#_interface_ou_protocoles_de_communication"></a>Interface ou protocoles de communication</h3>
+<div class="paragraph">
+<p>Nous utilisons websocket sur lequel nous envoyons des commandes serialize en JSON
+(voir command pattern plus bas). Le client et le serveur doivent savoir quel class instancier
+a la reception d&#8217;une commande. On ajoute un parameter "type" dans la commande serialize
+et definitions un mapping commun entre le client serveur.
+Pour ce faire on définit le nom des commandes suivantes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ActivateThieve</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MoveThieve</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ping</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Build</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ActiveCard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AddCard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BuyCard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EndTurn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StartTurn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Win</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SetResources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AddResources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TradeWithNonPlayerEntity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TradeWithPlayer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DenyTrade</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AcceptTrade</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LoginComplete</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SetGame</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SetPlayer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_correction"><a class="anchor" href="#_correction"></a>Correction</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_patrons_logiciels_utilisés"><a class="anchor" href="#_patrons_logiciels_utilisés"></a>Patrons logiciels utilisés</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Décrivez dans cette partie les patrons logiciels utilisés pour mettre en œuvre l&#8217;application.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_patron_de_conception_commandes"><a class="anchor" href="#_patron_de_conception_commandes"></a>Patron de conception Commandes</h3>
+<div class="paragraph">
+<p>Nous utilisons le patron Commandes qui permet à au client et au serveur d&#8217;avoir un objet de communication.
+Ainsi le client (le joueur), lorsque c&#8217;est à lui de jouer peut émettre des commandes et ainsi communiquer avec le serveur.
+Chaque commande a une implémentation (un comportement précis) et cela permet au serveur de savoir quoi faire.</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/LOqv2iD0301xls8_4BjtPKY-aCgu498m0XtBQjVlZrEaI3SC3BDbXzQ7wVJsnXbwCHLnr45SI1fZbujlKoneAEU2uSYrI_XIuVmJCr1WUVpwTKM5p9V0sS2UOGPEELS5_nxtOzhOwQOF" alt="diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>===Explications des différentes commandes :</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Commande</th>
+<th class="tableblock halign-left valign-top">Explications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ActivateThieve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choix de la nouvelle position du voleur par le joueur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MoveThieve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Déplacer le voleur vers une certaine tuile.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ping</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permet au server de verifier si le joueur n&#8217;est pas déconnecté.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Build</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Placer un nouveau batiment pour un joueur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ActiveCard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activer une carte.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AddCard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ajouter une carte pour un joueur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BuyCard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acheter une carte.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StartTour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indique au joueur que c&#8217;est à lui de jouer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EndTour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mettre fin au tour du joueur actif.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Win</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Déclarer la victoire d&#8217;un joueur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SetResources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Saisir le nombre de ressources d&#8217;un joueur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AddResources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribuer des ressources à un joueur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TradeWithNonPlayerEntity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proposition d&#8217;échange entre un joueur et une entité non joueur (banque ou port).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TradeWithPlayer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proposition d&#8217;échange entre deux joueurs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DenyTrade</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refuser l&#8217;échange d&#8217;un autre joueur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AcceptTrade</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accepter l&#8217;échange d&#8217;un autre joueur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LoginComplete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indiquer au client qu&#8217;il est bien login.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SetGame</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Saisir l&#8217;état actuel de la partie. Envoyée une fois par le serveur au début de la partie.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SetPlayer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dire au client qu&#8217;elle est le joueur qu&#8217;il joue (&#8658; lui indiquer sa couleur).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_patron_de_conception_facade"><a class="anchor" href="#_patron_de_conception_facade"></a>Patron de conception Facade</h3>
+<div class="paragraph">
+<p>Ce design pattern va nous permettre d&#8217;avoir une classe qui fait le lien entre le serveur et le package qui implémente le jeu.
+Cela va permettre dans une version future, de pouvoir changer l&#8217;implémentation du jeu sans changer le serveur.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_patron_de_conception_factory"><a class="anchor" href="#_patron_de_conception_factory"></a>Patron de conception Factory</h3>
+<div class="paragraph">
+<p>La factory va nous permettre d&#8217;avoir une classe qui permet d&#8217;instancier les commandes (cf: Design pattern Commandes).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_patron_de_conception_mediator"><a class="anchor" href="#_patron_de_conception_mediator"></a>Patron de conception Mediator</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_patron_de_conception_observateur"><a class="anchor" href="#_patron_de_conception_observateur"></a>Patron de conception Observateur</h3>
+<div class="paragraph">
+<p>L&#8217;interêt de l&#8217;observateur c&#8217;est comme son nom l&#8217;indique d&#8217;observer. Ainsi, en considérant l&#8217;interface graphique comme un observer, elle ne va jamais impacter et avoir le moindre effet de bord sur le jeu. De plus, grâce à la méthode notifyObservers(), l&#8217;interface graphique sera mise à jour uniquement lorsqu&#8217;il y aura des changements.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_patron_architectural_b"><a class="anchor" href="#_patron_architectural_b"></a>Patron architectural "B"</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TODO!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_choix_techniques_distribution_des_processus"><a class="anchor" href="#_choix_techniques_distribution_des_processus"></a>Choix techniques - Distribution des processus</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Explicitez les différents choix techniques et les réponses technologiques aux différentes contraintes que le système implique.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Pour cela nous allons donc vous présenter l&#8217;environnement général de développement puis énoncer les 4 contraintes que nous avons déterminées de notre logiciel.</p>
+</div>
+<div class="paragraph">
+<p>Nous avons fais le choix d&#8217;utiliser comme environnement de travail l&#8217;IDE eclipse.
+Pour la raison que nous connaissons tous très bien cette environnement, ce qui nous permet d&#8217;avoir tous le même environnement de développement.</p>
+</div>
+<div class="paragraph">
+<p>Également, cette IDE permet la gestion d&#8217;un projet maven ce qui nous sera parfaitement adapté.</p>
+</div>
+<div class="paragraph">
+<p>Voici les 4 contraintes que nous avons déterminées :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>L&#8217;interface graphique.</p>
+</li>
+<li>
+<p>La communication vers la base de données.</p>
+</li>
+<li>
+<p>La communication entre les machines.</p>
+</li>
+<li>
+<p>La sécurité.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_diagrammes_de_classes"><a class="anchor" href="#_diagrammes_de_classes"></a>Diagrammes de classes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_indications_de_notations"><a class="anchor" href="#_indications_de_notations"></a>Indications de notations</h3>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/LOqn3eGm30HxNf4F7FHK53GyuAeJXMLRo99ZHt72-myA2hhHQ5QxH8FQUjRXQvN3zMHAOgYTE95KnYOdNoPbfwuS4xeXboPkKu7Z9KOWn_HvzlEC2X6hm54XRqQ2S6Sn5WMxJt_xiB3HHNy0" alt="diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_server"><a class="anchor" href="#_server"></a>Server</h2>
+<div class="sectionbody">
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/LOqn2iCm303tlC8VQB9doj0Vb4wbWv144CYIaMo_l-dGeTjnSDoH7QAFgilJWjDrCXKnr45SI8Ano-JBbEeqb7D3D-JMnMrhSFw95SYnt7xzlgD2vbtW3AWFZicnDWNx_bxlvM2ZYpu0" alt="diagram">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_camecontrollerserver"><a class="anchor" href="#_camecontrollerserver"></a>CameControllerServer</h3>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/LOqn2iCm34NtdC8NQB9d2hJG0vHEfOEGFi4WIqQsS_wcGuTkZmUFjxLEqKVHwMc1vdf0KZRM8KYI0zppWTEauZ8KRM4tHktPRQcq_ucPn3bTVlswib9hjqnxKBbJmTMjXolYWJWGSrMox_prdZQOdFG1" alt="diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_client"><a class="anchor" href="#_client"></a>Client</h2>
+<div class="sectionbody">
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/LOqn2iCm303tlC8VQB9d2hHVw1Go24a4WImPIyxxcmuTkXq7nssHq7DKdTxMELmlfYA6EeWBIMTCkVWsfJeDvLZG3Rcbk2qDpZyn0pcMnwzVLrI8U0cS7UfJXItdfc3VttvC6nlTz040" alt="diagram">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_camecontrolerclient"><a class="anchor" href="#_camecontrolerclient"></a>CameControlerClient</h3>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/LOqn2iCm303tlC8VQB9d2gJG5tGg7OGaWa2MZ2pd_Ks73jsEW-EsdX0vgavF2-wk9rCHGnt4XIGOKqw-JAbEGxalw8RSKjoM1iUVc84So-tNhoigz7uNE0Bg0ohlRXck7BiAMyvDmRxprtlQsEYY3m00" alt="diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
