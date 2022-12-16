@@ -12,6 +12,7 @@ Il s'agit ici de choix génériques, qui peuvent s'appliquer à plusieurs projet
 ====
 Vous pouvez retrouver dans cette partie, l'ensemble des principes d'architectures que nous allons utiliser.
 Des librairies utilisés, en passant par les différents nœuds logiques, vous pouvez observer comment le serveur est gérer au niveau de son architecture.
+
 == Vue physique
 
 [NOTE]
