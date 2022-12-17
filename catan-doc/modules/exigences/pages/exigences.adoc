@@ -150,15 +150,8 @@ Aucune jusqu'à présent.
 
 === Interfaces utilisateur
 
-[NOTE]
-====
-Décrivez les caractéristiques logiques de chaque interface entre le produit logiciel et les utilisateurs. 
-
-Il peut s'agir d'exemples d'images d'écran, de normes d'interface graphique ou de guides de style de famille de produits à respecter, de contraintes de disposition des écrans, de boutons et de fonctions standard (p. ex., aide) qui apparaîtront sur chaque écran, de raccourcis clavier, de normes d'affichage des messages d'erreur, etc. 
-
-Définissez les composants logiciels pour lesquels une interface utilisateur est nécessaire. 
-Les détails de la conception de l'interface utilisateur doivent être documentés dans une spécification d'interface utilisateur distincte.
-====
+.exemple d'interface utilisateur
+image::../../conception/pages/UI.png[]
 
 === Interfaces matérielles
 
