@@ -48,7 +48,7 @@ L'architecture de notre logiciel divisée en compartiments et en sous-compartime
 
 === Interface utilisateur
 
-NOTE: TODO!
+image::UI.png[]
 
 
 === Interface ou protocoles de communication
